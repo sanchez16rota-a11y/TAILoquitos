@@ -604,7 +604,7 @@
     },
     {
       "id": 51,
-      "enunciado": Según METRICA v3, la relación jerárquica entre un objeto que representa la totalidad de ese objeto y las partes que lo componen, es una relación entre clases de tipo:",
+      "enunciado": "Según METRICA v3, la relación jerárquica entre un objeto que representa la totalidad de ese objeto y las partes que lo componen, es una relación entre clases de tipo:",
       "opciones": {
         "a": "Herencia.",
         "b": "Composición.",
