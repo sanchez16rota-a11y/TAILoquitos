@@ -1,0 +1,97 @@
+[
+  {
+    "title": "Singleton",
+    "hint": "Garantiza una sola instancia de la clase",
+    "cat": "Creacional"
+  },
+  {
+    "title": "Factory Method",
+    "hint": "Delega la creación de objetos a subclases",
+    "cat": "Creacional"
+  },
+  {
+    "title": "Abstract Factory",
+    "hint": "Crea familias de objetos relacionados",
+    "cat": "Creacional"
+  },
+  {
+    "title": "Builder",
+    "hint": "Construye objetos complejos paso a paso",
+    "cat": "Creacional"
+  },
+  {
+    "title": "Prototype",
+    "hint": "Clona objetos existentes",
+    "cat": "Creacional"
+  },
+  {
+    "title": "Adapter",
+    "hint": "Permite que interfaces incompatibles colaboren",
+    "cat": "Estructural"
+  },
+  {
+    "title": "Bridge",
+    "hint": "Separa abstracción de implementación",
+    "cat": "Estructural"
+  },
+  {
+    "title": "Composite",
+    "hint": "Trata objetos individuales y grupos uniformemente",
+    "cat": "Estructural"
+  },
+  {
+    "title": "Decorator",
+    "hint": "Añade comportamientos envolviendo objetos",
+    "cat": "Estructural"
+  },
+  {
+    "title": "Facade",
+    "hint": "Interfaz simplificada para un subsistema complejo",
+    "cat": "Estructural"
+  },
+  {
+    "title": "Proxy",
+    "hint": "Sustituto que controla el acceso a otro objeto",
+    "cat": "Estructural"
+  },
+  {
+    "title": "Observer",
+    "hint": "Notifica cambios a objetos suscritos",
+    "cat": "Comportamiento"
+  },
+  {
+    "title": "Strategy",
+    "hint": "Familia de algoritmos intercambiables",
+    "cat": "Comportamiento"
+  },
+  {
+    "title": "Command",
+    "hint": "Encapsula una solicitud como objeto",
+    "cat": "Comportamiento"
+  },
+  {
+    "title": "State",
+    "hint": "El objeto cambia comportamiento según su estado",
+    "cat": "Comportamiento"
+  },
+  {
+    "title": "Iterator",
+    "hint": "Recorre colecciones sin exponer su estructura",
+    "cat": "Comportamiento"
+  },
+  {
+    "title": "Mediator",
+    "hint": "Objeto central que coordina comunicación entre otros",
+    "cat": "Comportamiento"
+  },
+  {
+    "title": "Memento",
+    "hint": "Captura y restaura el estado interno de un objeto",
+    "cat": "Comportamiento"
+  },
+  {
+    "title": "Visitor",
+    "hint": "Operación sobre elementos sin cambiar su clase",
+    "cat": "Comportamiento"
+  }
+]
