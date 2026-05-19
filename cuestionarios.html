@@ -78,7 +78,7 @@
       padding: 12px;
       border-radius: 10px;
       border: 1px solid var(--border);
-      background: white;
+      background: darkslateblue;
       margin-bottom: 14px;
     }
 
@@ -283,10 +283,6 @@
 </head>
 
 <body>
-  <header>
-    <h1>TaiLoquitos - Cuestionarios</h1>
-    <p>Modo aprender y modo examen desde archivos JSON</p>
-  </header>
 
   <main>
     <section class="card">
@@ -469,7 +465,7 @@
       if (!owner || !repo) {
         jsonSelect.innerHTML = `<option value="">No se pudo detectar el repositorio</option>`;
         setStatus(
-          "No se pudo detectar usuario/repositorio. Si estás abriendo el HTML en local, súbelo a GitHub Pages o rellena GITHUB_OWNER y GITHUB_REPO en el código.",
+          "no se encontraron cuestionarios.",
           true
         );
         return;

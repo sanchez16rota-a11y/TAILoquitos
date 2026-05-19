@@ -270,7 +270,7 @@ button:disabled {
 .card {
   position: absolute;
   width: 100%;
-  max-width: 420px;
+  max-width: 380px;
   background:
     linear-gradient(180deg, rgba(255,255,255,0.09), rgba(255,255,255,0.03)),
     var(--tl-card-2);
