@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Clasifica o Muere</title>
+<link rel="stylesheet" href="css/estilos.css">  
 <link rel="stylesheet" href="css/clasificaomuere.css">  
 <style>
     :root {
@@ -30,8 +31,6 @@
     body {
       min-height: 100vh;
       font-family: var(--font-sans);
-      background: linear-gradient(180deg, #eef5ff 0%, #ffffff 42%);
-      color: var(--color-text-primary);
       padding: 18px;
     }
     #app { padding: 1rem 0 2rem; max-width: 620px; margin: 0 auto; }
@@ -125,11 +124,6 @@
           <option>Cargando JSON...</option>
         </select>
         <div class="err" id="json-err"></div>
-        <div class="schema-hint">
-          Carpeta esperada: <code>json/clasifica-o-muere/</code><br>
-          Carga automática usando la API pública de GitHub, sin scripts .sh.<br>
-          Formato de cada mazo: <code>[{"title":"…","hint":"…","cat":"…"}]</code>
-        </div>
         <div class="btn-row">
           <button onclick="loadSelectedDeck()" id="btn-play" class="btn-primary" disabled>Jugar →</button>
           <button onclick="loadJsonList()">Recargar carpeta</button>
@@ -235,7 +229,7 @@
       const { owner, repo } = inferGitHubRepo();
       if (!owner || !repo) {
         select.innerHTML = '<option>No se pudo detectar el repositorio</option>';
-        setError('Abre esta página desde GitHub Pages o rellena GITHUB_OWNER y GITHUB_REPO dentro del HTML.');
+        setError('sin datos.');
         return;
       }
 

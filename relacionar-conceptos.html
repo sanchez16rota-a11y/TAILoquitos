@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Relaciona Conceptos</title>
+  <link rel="stylesheet" href="css/estilos.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -34,8 +35,7 @@
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: var(--bg-tertiary);
-      color: var(--text-primary);
+
       min-height: 100vh;
       padding: 2rem 1rem;
     }
@@ -57,7 +57,6 @@
     .title {
       font-size: 20px;
       font-weight: 600;
-      color: var(--text-primary);
       display: flex;
       align-items: center;
       gap: 8px;
@@ -278,18 +277,7 @@
 
   <div id="message" class="message"></div>
   <div id="board-wrap">
-    <div class="placeholder">
-      <i class="ti ti-cards" aria-hidden="true"></i>
-      <p>Elige un JSON detectado automáticamente desde <strong>json/relacionar/</strong> o pulsa <strong>Ejemplo</strong></p>
-    </div>
-    <div class="format-hint">
-      <strong>Modo GitHub Pages:</strong> sube tus archivos <code>.json</code> a <code>json/relacionar/</code> y pulsa <strong>Actualizar lista</strong>. No hace falta Bash ni tocar este HTML.<br><br>
-      <strong>Formato del JSON:</strong><br>
-      Array de objetos con los campos <code>concepto</code> y <code>definicion</code>:<br><br>
-      <code>[{"concepto": "Término", "definicion": "Descripción del término"}, ...]</code><br><br>
-      También acepta: <code>concept/term/palabra</code> y <code>definition/desc/descripcion/significado</code>
-    </div>
-  </div>
+
 
 </div>
 
