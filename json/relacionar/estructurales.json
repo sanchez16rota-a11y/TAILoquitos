@@ -1,0 +1,51 @@
+[
+  {
+    "patron": "Adapter",
+    "tipo": "Estructural",
+    "definicion": "Permite que clases con interfaces incompatibles trabajen juntas introduciendo un objeto intermedio que traduce las peticiones.",
+    "que_resuelve": "El problema de integrar módulos externos, librerías antiguas o servicios de terceros que ya vienen cerrados o precompilados y cuyo código fuente no se puede modificar.",
+    "palabras_clave_examen": ["interfaz incompatible", "código de terceros", "clase intermedia", "traducir", "reutilizar"]
+  },
+  {
+    "patron": "Proxy",
+    "tipo": "Estructural",
+    "definicion": "Proporciona un sustituto o intermediario para otro objeto con el fin de controlar el acceso a él.",
+    "que_resuelve": "La sobrecarga, la latencia o la falta de seguridad. Intercepta las peticiones del cliente para añadir lógica de control de acceso (seguridad) o para devolver copias inmediatas en memoria (caché) sin molestar al objeto real.",
+    "palabras_clave_examen": ["objeto sustituto", "intermediario", "interceptar", "control de acceso", "caché"]
+  },
+  {
+    "patron": "Composite",
+    "tipo": "Estructural",
+    "definicion": "Permite componer objetos en estructuras de árbol para representar jerarquías de parte-todo, haciendo que los clientes traten a los objetos individuales y a las composiciones de manera uniforme.",
+    "que_resuelve": "La complejidad de tratar de manera diferente a un elemento único frente a una agrupación de elementos. Permite que estructuras complejas (como carpetas con archivos dentro) expongan la misma interfaz que un componente simple.",
+    "palabras_clave_examen": ["estructuras de árbol", "jerarquía parte-todo", "de manera uniforme", "objeto compuesto"]
+  },
+  {
+    "patron": "Decorator",
+    "tipo": "Estructural",
+    "definicion": "Permite añadir responsabilidades y funcionalidades a un objeto de forma dinámica y transparente en tiempo de ejecución sin afectar a otros objetos de la misma clase.",
+    "que_resuelve": "La rigidez de la herencia tradicional. Evita la explosión de subclases combinatorias cuando se quieren añadir pequeños complementos o funcionalidades opcionales e independientes a un objeto en caliente.",
+    "palabras_clave_examen": ["añadir responsabilidades", "dinámica", "tiempo de ejecución", "sin afectar a otros objetos", "envolver"]
+  },
+  {
+    "patron": "Facade",
+    "tipo": "Estructural",
+    "definicion": "Proporciona una interfaz unificada y simplificada para un conjunto de interfaces de un subsistema complejo.",
+    "que_resuelve": "La alta complejidad de cara al cliente. Agrupa las llamadas a múltiples subsistemas e interfaces independientes en un único punto de entrada unificado, facilitando el uso de una arquitectura compleja a capas superiores.",
+    "palabras_clave_examen": ["interfaz unificada", "simplificar", "subsistema complejo", "punto de entrada"]
+  },
+  {
+    "patron": "Bridge",
+    "tipo": "Estructural",
+    "definicion": "Desacopla una abstracción de su implementación de manera que ambas puedan variar de forma independiente.",
+    "que_resuelve": "El crecimiento exponencial de clases cuando se cruzan dos dimensiones independientes (como una interfaz de control y los dispositivos que controla). Separa la jerarquía de conceptos de la jerarquía de tecnologías utilizando una referencia interna.",
+    "palabras_clave_examen": ["desacopla abstracción de implementación", "variar de forma independiente", "jerarquías separadas"]
+  },
+  {
+    "patron": "Flyweight",
+    "tipo": "Estructural",
+    "definicion": "Comparte de forma eficiente gran cantidad de objetos de gran granularidad para ahorrar memoria RAM.",
+    "que_resuelve": "El consumo excesivo y crítico de memoria provocado por la instanciación de miles de objetos idénticos. Divide el estado del objeto en intrínseco (común y compartido) y extrínseco (variable) para reutilizar las instancias.",
+    "palabras_clave_examen": ["compartir objetos de forma eficiente", "ahorrar memoria RAM", "gran cantidad de objetos", "estado intrínseco"]
+  }
+]

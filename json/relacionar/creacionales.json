@@ -1,0 +1,37 @@
+[
+  {
+    "patron": "Singleton",
+    "tipo": "Creacional",
+    "definicion": "Garantiza que una clase tenga una única instancia en todo el ciclo de vida de la aplicación y proporciona un punto de acceso global a ella.",
+    "que_resuelve": "La duplicación de recursos costosos o críticos. Protege el acceso a un recurso compartido único (como un pool de conexiones o un gestor de configuración) actuando como una puerta de entrada única.",
+    "palabras_clave_examen": ["única instancia", "acceso global", "recurso compartido"]
+  },
+  {
+    "patron": "Factory Method",
+    "tipo": "Creacional",
+    "definicion": "Define una interfaz para crear un objeto, pero deja que sean las subclases las que decidan qué clase exacta instanciar.",
+    "que_resuelve": "El acoplamiento fuerte. Permite añadir nuevos tipos de objetos (subclases) al sistema en el futuro sin necesidad de modificar ni romper el código principal que los utiliza.",
+    "palabras_clave_examen": ["delega en subclases", "interfaz de creación", "independencia del código"]
+  },
+  {
+    "patron": "Abstract Factory",
+    "tipo": "Creacional",
+    "definicion": "Proporciona una interfaz para crear familias de objetos relacionados o dependientes sin especificar sus clases concretas.",
+    "que_resuelve": "La incoherencia entre objetos que deben trabajar juntos. Garantiza que todos los productos creados por una misma factoría sean totalmente compatibles entre sí (por ejemplo, todo el kit de componentes de interfaz de un sistema operativo concreto).",
+    "palabras_clave_examen": ["familia de objetos relacionados", "conjunto de objetos compatibles", "evitar mezclar entornos"]
+  },
+  {
+    "patron": "Builder",
+    "tipo": "Creacional",
+    "definicion": "Separa la construcción de un objeto complejo de su representación, de manera que el mismo proceso de construcción pueda crear representaciones diferentes.",
+    "que_resuelve": "El antipatrón del constructor telescópico (constructores gigantes con decenas de argumentos). Permite inicializar y configurar las distintas partes de un objeto con múltiples campos opcionales paso a paso de forma limpia.",
+    "palabras_clave_examen": ["construcción compleja", "paso a paso", "campos opcionales", "secuencial"]
+  },
+  {
+    "patron": "Prototype",
+    "tipo": "Creacional",
+    "definicion": "Especifica los tipos de objetos a crear por medio de una instancia prototípica (un molde), y crea nuevos objetos clonando este prototipo.",
+    "que_resuelve": "El alto coste computacional o de rendimiento que supone inicializar y configurar un objeto complejo desde cero mediante consultas pesadas. Genera réplicas idénticas de forma inmediata mediante duplicación en memoria.",
+    "palabras_clave_examen": ["clonar", "molde", "copia en memoria", "duplicar"]
+  }
+]
