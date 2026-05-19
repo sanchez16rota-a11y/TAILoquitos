@@ -1,0 +1,726 @@
+{
+  "titulo": "Bloque 3 - Tema 5: Diseño y Programación Orientada a Objetos, Patrones y UML",
+  "descripcion": "Test de 60 preguntas sobre POO, principios SOLID, patrones de diseño GoF y diagramas UML basado en el material proporcionado.",
+  "preguntas": [
+    {
+      "id": 1,
+      "enunciado": "SOLID es un acrónimo que hace referencia a 5 principios del diseño orientado a objetos. Señale cuál NO es uno de ellos:",
+      "opciones": {
+        "a": "S (Single): principio de responsabilidad única.",
+        "b": "I (Interface): principio de desacoplamiento de interfaz.",
+        "c": "D (Dependency): de inversión de dependencia.",
+        "d": "L (Liskov): principio de sustitución de Liskov."
+      },
+      "correcta": "b",
+      "explicacion": "La letra 'I' en SOLID corresponde al principio de segregación de interfaces (Interface Segregation Principle), el cual establece que las clases cliente no deben verse obligadas a depender de interfaces o métodos que no utilizan. El término 'desacoplamiento de interfaz' no es la denominación oficial del principio."
+    },
+    {
+      "id": 2,
+      "enunciado": "¿En qué consiste el principio de diseño orientado a objetos \"inversión de dependencia\"?",
+      "opciones": {
+        "a": "En que las clases deben depender de abstracciones, no de implementaciones.",
+        "b": "En disponer de varias interfaces específicas que una interfaz de propósito general.",
+        "c": "En disponer de funcionalidades que se requieran en un futuro.",
+        "d": "En que una clase no delega en un tercero diferentes tipos de flujos de control."
+      },
+      "correcta": "a",
+      "explicacion": "El principio de inversión de dependencias (la 'D' de SOLID) dicta que los módulos de alto nivel no deben depender de módulos de bajo nivel, sino que ambos deben depender de abstracciones. Asimismo, las abstracciones no deben depender de los detalles, sino los detalles de las abstracciones."
+    },
+    {
+      "id": 3,
+      "enunciado": "¿Qué acrónimo se corresponde con el principio \"No vas a necesitar eso\"?",
+      "opciones": {
+        "a": "KISS.",
+        "b": "LoD.",
+        "c": "YAGNI.",
+        "d": "loC."
+      },
+      "correcta": "c",
+      "explicacion": "YAGNI responde a las siglas 'You Aren't Gonna Need It' (No lo vas a necesitar). Es un principio de la programación extrema (XP) que prescribe no añadir ninguna funcionalidad al software hasta que sea absolutamente necesario, combatiendo la sobreingeniería."
+    },
+    {
+      "id": 4,
+      "enunciado": "Si una aplicación dispone de varios métodos diferentes para abrir una conexión con un gestor documental, ¿qué principio NO se cumple?",
+      "opciones": {
+        "a": "KISS.",
+        "b": "SOLID.",
+        "c": "YAGNI.",
+        "d": "DRY."
+      },
+      "correcta": "d",
+      "explicacion": "El principio DRY (Don't Repeat Yourself - No te repitas) promueve la reducción de la duplicación de código y lógica. Al tener múltiples métodos independientes que implementan de forma separada la apertura de la misma conexión, se está duplicando conocimiento y violando este principio."
+    },
+    {
+      "id": 5,
+      "enunciado": "El principio de diseño orientado a objetos \"sustitución Liskov\" establece que:",
+      "opciones": {
+        "a": "Los objetos de un programa deberían ser reemplazables por instancias de sus subtipos sin alterar el correcto funcionamiento del programa.",
+        "b": "Los módulos software deber ser abiertos para su modificación y cerrados para su extensión.",
+        "c": "Una clase debe tener responsabilidad sobre una única funcionalidad del software.",
+        "d": "Una clase puede ser reemplazada por otra no relacionada sin afectar al comportamiento del software."
+      },
+      "correcta": "a",
+      "explicacion": "El principio de sustitución de Liskov (LSP) determina que los objetos de un programa deben poder ser reemplazados por instancias de sus subclases o tipos derivados sin que se altere la consistencia, corrección y el comportamiento esperado del sistema."
+    },
+    {
+      "id": 6,
+      "enunciado": "En POO, ¿qué son las clases abstractas?",
+      "opciones": {
+        "a": "Aquellas que se dividen en subclases.",
+        "b": "Las que no tienen instancias.",
+        "c": "Aquellas que están predefinidas.",
+        "d": "Las que no son reutilizables."
+      },
+      "correcta": "b",
+      "explicacion": "Una clase abstracta es una clase diseñada para servir de base compartida a una jerarquía, pero que el compilador impide instanciar directamente mediante el operador 'new'. Contiene la firma de métodos abstractos obligatorios para sus descendientes concretos."
+    },
+    {
+      "id": 7,
+      "enunciado": "Un objeto:",
+      "opciones": {
+        "a": "Es una librería de métodos que se pueden realizar con un tipo de información.",
+        "b": "Se crea como generalización de una clase.",
+        "c": "Encapsula la información junto con las operaciones que se pueden realizar sobre ella.",
+        "d": "Es el elemento básico de ejecución en POO y estructurada."
+      },
+      "correcta": "c",
+      "explicacion": "El objeto es la unidad fundamental de la POO en tiempo de ejecución. Representa una entidad concreta del mundo real o conceptual que cohesiona y encapsula un estado interno (atributos) con un comportamiento asociado (métodos)."
+    },
+    {
+      "id": 8,
+      "enunciado": "En relación con las clases en POO señale la afirmación INCORRECTA:",
+      "opciones": {
+        "a": "Los atributos son los que mantienen el estado del objeto.",
+        "b": "Los atributos suelen ser privados.",
+        "c": "Una clase se puede considerar como un tipo de datos disponible.",
+        "d": "Las clases existen en tiempo de ejecución."
+      },
+      "correcta": "d",
+      "explicacion": "Las clases son moldes estáticos conceptuales definidos en tiempo de compilación. Lo que realmente existe, ocupa memoria y se ejecuta en tiempo de ejecución (runtime) son las instancias de esas clases, es decir, los objetos."
+    },
+    {
+      "id": 9,
+      "enunciado": "Los objetos se caracterizan por (señale la INCORRECTA):",
+      "opciones": {
+        "a": "Los atributos.",
+        "b": "El estado.",
+        "c": "El comportamiento.",
+        "d": "La identidad."
+      },
+      "correcta": "a",
+      "explicacion": "De acuerdo con el análisis formal de la POO (como el de Grady Booch), las tres características intrínsecas e indispensables de cualquier objeto son su Estado, su Comportamiento y su Identidad. Los 'atributos' son el mecanismo estructural que define la clase para soportar el estado, pero la característica en sí del objeto es el estado dinámico."
+    },
+    {
+      "id": 10,
+      "enunciado": "En la POO, el tipo de método cuyo único objetivo es modificar el valor de un atributo es:",
+      "opciones": {
+        "a": "Constructor.",
+        "b": "Setter.",
+        "c": "Getter.",
+        "d": "Modifier."
+      },
+      "correcta": "b",
+      "explicacion": "Los métodos mutadores, conocidos popularmente como 'setters', se implementan en las clases con el único fin de recibir un valor por parámetro e insertarlo en un atributo, habitualmente privado, garantizando el encapsulamiento."
+    },
+    {
+      "id": 11,
+      "enunciado": "El mecanismo por el cual se pueden crear clases complejas agregando objetos de clases ya existentes se denomina:",
+      "opciones": {
+        "a": "Polimorfismo.",
+        "b": "Composición.",
+        "c": "Herencia.",
+        "d": "Sobrecarga."
+      },
+      "correcta": "b",
+      "explicacion": "La composición consiste en estructurar una clase compleja conteniendo referencias e instancias de otros objetos independientes más sencillos como atributos propios (relación de tipo 'tiene un' o 'es parte de')."
+    },
+    {
+      "id": 12,
+      "enunciado": "Señale la respuesta INCORRECTA:",
+      "opciones": {
+        "a": "La sobrecarga consiste en definir nuevos métodos dentro de una clase con el mismo nombre pero diferente signatura.",
+        "b": "La sobreescritura consiste en redefinir un método en una clase hija.",
+        "c": "La sobrecarga de operadores es admitida en algunos lenguajes de programación.",
+        "d": "La sobrecarga implica herencia."
+      },
+      "correcta": "d",
+      "explicacion": "La sobrecarga ocurre por completo dentro del ámbito de una misma clase al definir varios métodos homónimos con parámetros distintos. No requiere en absoluto la existencia de mecanismos o jerarquías de herencia para operar."
+    },
+    {
+      "id": 13,
+      "enunciado": "¿Cuál de las siguientes NO se considera una ventaja de la POO?",
+      "opciones": {
+        "a": "La reusabilidad.",
+        "b": "La interoperabilidad.",
+        "c": "La extensibilidad.",
+        "d": "La generalidad."
+      },
+      "correcta": "d",
+      "explicacion": "La reusabilidad, extensibilidad y mantenibilidad son pilares y ventajas clave de la POO. La 'generalidad' se asocia más a características de programación genérica (plantillas o templates), y la plantilla oficial la califica como la opción incorrecta dentro de las ventajas intrínsecas de este modelo."
+    },
+    {
+      "id": 14,
+      "enunciado": "¿Cuál del los siguientes es un patrón de diseño creacional?",
+      "opciones": {
+        "a": "Singleton.",
+        "b": "Facade.",
+        "c": "Wrapper.",
+        "d": "Template method."
+      },
+      "correcta": "a",
+      "explicacion": "Singleton es un patrón clasificado por el Gang of Four (GoF) como creacional, dado que su función primordial es gobernar y restringir el proceso de instanciación de una clase para garantizar que exista un único objeto en memoria."
+    },
+    {
+      "id": 15,
+      "enunciado": "¿Cuál del los siguientes es un patrón de diseño estructural?",
+      "opciones": {
+        "a": "Builder.",
+        "b": "Flyweight.",
+        "c": "Strategy.",
+        "d": "Command."
+      },
+      "correcta": "b",
+      "explicacion": "Flyweight (Peso Ligero) es un patrón estructural de GoF cuyo objetivo es optimizar el almacenamiento y uso de memoria del sistema compartiendo eficientemente datos intrínsecos comunes entre un gran volumen de objetos."
+    },
+    {
+      "id": 16,
+      "enunciado": "¿Cuál del los siguientes es un patrón de diseño de comportamiento?",
+      "opciones": {
+        "a": "Model View Controller.",
+        "b": "Composite.",
+        "c": "State.",
+        "d": "Proxy."
+      },
+      "correcta": "c",
+      "explicacion": "El patrón State permite a un objeto alterar drásticamente su comportamiento en tiempo de ejecución en respuesta a cambios en su estado interno, encapsulando las lógicas condicionales en clases de estado independientes."
+    },
+    {
+      "id": 17,
+      "enunciado": "¿Cuál de las siguientes afirmaciones NO se corresponde con los patrones de diseño?",
+      "opciones": {
+        "a": "Son reusables.",
+        "b": "Permiten resolver problemas similares a ocasiones anteriores.",
+        "c": "Estandarizan el modo en que se realiza el diseño.",
+        "d": "Formaliza un vocabulario común entre usuarios."
+      },
+      "correcta": "d",
+      "explicacion": "Los patrones de diseño asientan un vocabulario expresivo y técnico común para el equipo de *desarrolladores, analistas e ingenieros de software*, permitiendo discutir arquitecturas de código ágilmente. No formalizan términos para los usuarios finales de la aplicación."
+    },
+    {
+      "id": 18,
+      "enunciado": "El patrón de diseño que consiste en garantizar que una clase solo tenga una instancia y proporcionar un punto de acceso global a ella se denomina:",
+      "opciones": {
+        "a": "Singleton.",
+        "b": "Proxy.",
+        "c": "Command.",
+        "d": "Visitor."
+      },
+      "correcta": "a",
+      "explicacion": "Se trata de la definición canónica del patrón creacional Singleton, asegurando un punto centralizado y unificado de acceso a recursos globales únicos (como pools de conexiones o archivos de configuración)."
+    },
+    {
+      "id": 19,
+      "enunciado": "El patrón de diseño que permite construir objetos complejos a partir de otros más simples y similares entre sí se denomina:",
+      "opciones": {
+        "a": "Composite.",
+        "b": "Facade.",
+        "c": "Wrapper.",
+        "d": "Template method."
+      },
+      "correcta": "a",
+      "explicacion": "El patrón estructural Composite (Objeto Compuesto) crea estructuras de datos en forma de árbol permitiendo que los clientes den un tratamiento homogéneo e indiferenciado tanto a los componentes individuales o terminales (hojas) como a los contenedores compuestos de subelementos."
+    },
+    {
+      "id": 20,
+      "enunciado": "El patrón de diseño que guarda parte o todo el estado interno de un objeto, para que pueda ser restaurado posteriormente se denomina:",
+      "opciones": {
+        "a": "State.",
+        "b": "Proxy.",
+        "c": "Command.",
+        "d": "Memento."
+      },
+      "correcta": "d",
+      "explicacion": "El patrón de comportamiento Memento (Recordatorio) externaliza e inmortaliza una instantánea del estado de un objeto en un momento determinado sin vulnerar su encapsulación, permitiendo al sistema implementar mecánicas de restauración o deshacer (Ctrl+Z)."
+    },
+    {
+      "id": 21,
+      "enunciado": "El patrón de diseño Visitor permite:",
+      "opciones": {
+        "a": "Coordinar las relaciones entre sus asociados.",
+        "b": "Definir nuevas operaciones sobre una jerarquía de clases sin modificar las clases sobre las que opera.",
+        "c": "Solicitar una operación a un objeto sin conocer el contenido de la operación.",
+        "d": "Proveer una interfaz unificada sencilla que haga intermediaria entre un cliente y una interfaz o grupo de ellas."
+      },
+      "correcta": "b",
+      "explicacion": "El patrón Visitor (Visitante) ayuda a desacoplar los algoritmos y operaciones de las estructuras de objetos jerárquicos sobre las que operan, posibilitando incorporar comportamientos inéditos usando doble despacho sin alterar las clases de la jerarquía."
+    },
+    {
+      "id": 22,
+      "enunciado": "¿Cuál es la versión actual de UML?",
+      "opciones": {
+        "a": "2.5.1.",
+        "b": "2.5.2",
+        "c": "2.5.3.",
+        "d": "2.4.7."
+      },
+      "correcta": "a",
+      "explicacion": "UML 2.5.1 es la versión oficial e histórica de referencia estándar aprobada por la ISO (como ISO/IEC 19505) y por el OMG (Object Management Group) que suele consolidarse como materia fija en las plantillas y exámenes de oposición oficiales."
+    },
+    {
+      "id": 23,
+      "enunciado": "¿Cuál de las siguientes NO es una característica de UML?",
+      "opciones": {
+        "a": "Escalable.",
+        "b": "Estándar.",
+        "c": "Es una metodología.",
+        "d": "Exhaustivo."
+      },
+      "correcta": "c",
+      "explicacion": "UML son las siglas de Unified Modeling Language (Lenguaje de Modelado Unificado). Al ser un lenguaje de notación gráfica, provee herramientas visuales para documentar y diseñar sistemas, pero es agnóstico del proceso; no impone fases de desarrollo, metodologías, plazos ni pautas de gestión de proyectos."
+    },
+    {
+      "id": 24,
+      "enunciado": "¿Cuál de los siguientes NO es un diagrama de estructura de UML?",
+      "opciones": {
+        "a": "Diagrama de clases.",
+        "b": "Diagrama de objetos.",
+        "c": "Diagrama de casos de uso.",
+        "d": "Diagrama de paquetes."
+      },
+      "correcta": "c",
+      "explicacion": "El diagrama de casos de uso se cataloga dentro del bloque de diagramas de comportamiento (específicamente modela requisitos funcionales dinámicos y la interacción de actores externos con el sistema), mientras que los diagramas de clases, objetos y paquetes representan componentes arquitectónicos estructurales fijos."
+    },
+    {
+      "id": 25,
+      "enunciado": "¿Cuál de los siguientes NO es tipo de relación del diagrama de clases?",
+      "opciones": {
+        "a": "Composición.",
+        "b": "Agrupación.",
+        "c": "Agregación.",
+        "d": "Dependencia."
+      },
+      "correcta": "b",
+      "explicacion": "En la especificación de UML para diagramas de clases existen relaciones formales tipificadas como la asociación, agregación, composición, herencia/generalización y dependencia. El concepto 'agrupación' no constituye ninguna relación semántica ni sintáctica regulada en UML."
+    },
+    {
+      "id": 26,
+      "enunciado": "En relación con el diagrama de componentes indique la respuesta INCORRECTA:",
+      "opciones": {
+        "a": "Proporciona una visión estática de la construcción del sistema de información.",
+        "b": "Los elementos son los componentes y software y las dependencias entre ellos.",
+        "c": "Un componente es un modulo de software.",
+        "d": "Muestra la organización de los componentes."
+      },
+      "correcta": "a",
+      "explicacion": "Aunque los componentes en sí son piezas estáticas del código o ejecutables, de acuerdo con la clasificación estricta de las soluciones de este test se marca la 'a' como incorrecta, puesto que el diagrama se enfoca más en ilustrar de manera macro la organización física, interfaces proporcionadas/requeridas y dependencias de despliegue que una simple vista estática de construcción interna."
+    },
+    {
+      "id": 27,
+      "enunciado": "¿Cuál de los siguientes diagramas de UML permite capturar los requisitos funcionales del sistema y expresarlos desde el punto de vista del usuario?",
+      "opciones": {
+        "a": "Diagrama de máquina de estados.",
+        "b": "Diagrama de comunicación.",
+        "c": "Diagrama de actividad.",
+        "d": "Diagrama de casos de uso."
+      },
+      "correcta": "d",
+      "explicacion": "El diagrama de casos de uso es la herramienta primordial empleada en las fases de análisis de requisitos funcionales para ilustrar el alcance del sistema y los servicios que este brinda, modelados a través de la interacción directa de actores (usuarios u otros sistemas) externos."
+    },
+    {
+      "id": 28,
+      "enunciado": "Indique qué patrón de diseño permite añadir responsabilidades a un objeto dinámicamente:",
+      "opciones": {
+        "a": "Decorator.",
+        "b": "Composite.",
+        "c": "Adapter.",
+        "d": "Proxy."
+      },
+      "correcta": "a",
+      "explicacion": "El patrón Decorator (Decorador) dota de flexibilidad al desarrollo permitiendo adjuntar o añadir funcionalidades y responsabilidades extras a un objeto individual dinámicamente en tiempo de ejecución, configurando una alternativa mucho más elástica que la herencia estática por subclases."
+    },
+    {
+      "id": 29,
+      "enunciado": "¿Cuál de los siguientes NO es un diagrama de comportamiento, según UML?",
+      "opciones": {
+        "a": "Diagrama de casos de uso.",
+        "b": "Diagrama de despliegue.",
+        "c": "Diagrama de actividad.",
+        "d": "Diagrama de máquina de estado."
+      },
+      "correcta": "b",
+      "explicacion": "El diagrama de despliegue es un diagrama de estructura física o estática. Muestra la arquitectura de hardware del sistema, los nodos de cómputo físico y cómo se distribuyen y alojan los artefactos de software sobre ellos."
+    },
+    {
+      "id": 30,
+      "enunciado": "Cuál de los siguientes patrones de diseño está clasificado como patrón de comportamiento:",
+      "opciones": {
+        "a": "Builder.",
+        "b": "Singleton.",
+        "c": "Visitor.",
+        "d": "Flywight."
+      },
+      "correcta": "c",
+      "explicacion": "Visitor pertenece al subgrupo de patrones de comportamiento de GoF. En contraste, Builder y Singleton son de corte creacional, y Flyweight es de tipo estructural."
+    },
+    {
+      "id": 31,
+      "enunciado": "¿A cuál de los siguientes tipos pertenece el patrón de diseño Singleton?",
+      "opciones": {
+        "a": "Creacional.",
+        "b": "Comportamiento.",
+        "c": "Estructural.",
+        "d": "Arquitectura."
+      },
+      "correcta": "a",
+      "explicacion": "Singleton se integra en los patrones creacionales porque aborda de manera exclusiva la problemática de instanciación y ciclo de vida de los objetos del sistema."
+    },
+    {
+      "id": 32,
+      "enunciado": "De acuerdo con la norma ISO/IEC 19505-1:2012, ¿qué significa UML?",
+      "opciones": {
+        "a": "Unified Marking Language.",
+        "b": "United Modeling Language.",
+        "c": "United Marking Language.",
+        "d": "Unified Modeling Language."
+      },
+      "correcta": "d",
+      "explicacion": "La traducción literal e internacionalizada estandarizada en las normas ISO para el acrónimo UML es 'Unified Modeling Language' (Lenguaje de Modelado Unificado)."
+    },
+    {
+      "id": 33,
+      "enunciado": "De los siguientes diagramas de UML, ¿cuál NO es un diagrama de estructura?",
+      "opciones": {
+        "a": "Diagrama de paquetes.",
+        "b": "Diagrama de componentes.",
+        "c": "Diagrama de despliegue.",
+        "d": "Diagrama de actividad."
+      },
+      "correcta": "d",
+      "explicacion": "El diagrama de actividad es un diagrama de comportamiento dinámico, el cual se asimila a un organigrama o diagrama de flujo detallado para plasmar la secuencia lógica de acciones, bifurcaciones y flujos concurrentes dentro del sistema."
+    },
+    {
+      "id": 34,
+      "enunciado": "En un diagrama de clases, si un método va precedido de \"-\" (signo menos) quiere decir que es accesible:",
+      "opciones": {
+        "a": "Desde dentro de la clase.",
+        "b": "Desde cualquier clase de cualquier paquete de clases.",
+        "c": "Desde clases del mismo paquete.",
+        "d": "Desde dentro de la clase y clases que hereden de ella."
+      },
+      "correcta": "a",
+      "explicacion": "En las convenciones de visibilidad de UML, el signo menos (-) denota visibilidad de tipo 'private' (privado), indicando que el miembro de la clase solo puede ser accedido y leído por la propia clase que lo define."
+    },
+    {
+      "id": 35,
+      "enunciado": "En un diagrama de clases, ¿cuál de los siguientes NO es un elemento?",
+      "opciones": {
+        "a": "Relaciones.",
+        "b": "Paquetes.",
+        "c": "Interfaces.",
+        "d": "Dependencia."
+      },
+      "correcta": "d",
+      "explicacion": "Aunque la 'dependencia' se modela y dibuja gráficamente mediante una flecha discontinua en el diagrama de clases, se clasifica conceptualmente en la categoría formal de 'Relación' entre elementos (bloques estructurales), no como un elemento autónomo contenedor en sí mismo."
+    },
+    {
+      "id": 36,
+      "enunciado": "El diagrama UML que tiene como objetivo mostrar la disposición de las particiones físicas del sistema de información se denomina:",
+      "opciones": {
+        "a": "Diagrama de comunicación.",
+        "b": "Diagrama de componentes.",
+        "c": "Diagrama de despliegue.",
+        "d": "Diagrama de arquitectura software."
+      },
+      "correcta": "c",
+      "explicacion": "El diagrama de despliegue expone la topología de la infraestructura física del hardware (nodos, servidores, redes locales, mainframes) y mapea las particiones ejecutables y capas del sistema sobre dicha red física."
+    },
+    {
+      "id": 37,
+      "enunciado": "¿Qué diagrama muestra una instantánea del sistema en un determinado momento en el tiempo?",
+      "opciones": {
+        "a": "Diagrama de tiempo.",
+        "b": "Diagrama de estructura compuesta.",
+        "c": "Diagrama de componentes.",
+        "d": "Diagrama de objetos."
+      },
+      "correcta": "d",
+      "explicacion": "El diagrama de objetos plasma estados e instancias concretas de clases interconectadas por enlaces fijos en un instante congelado del tiempo de ejecución, sirviendo habitualmente para ilustrar ejemplos complejos de arquitecturas de datos."
+    },
+    {
+      "id": 38,
+      "enunciado": "En un diagrama de estructura compuesta, el elemento que comunica las partes de una estructura, conectando instancias concretas se denomina:",
+      "opciones": {
+        "a": "Conector.",
+        "b": "Parte.",
+        "c": "Puerto.",
+        "d": "Propiedad."
+      },
+      "correcta": "a",
+      "explicacion": "En los diagramas de estructura compuesta de UML, un conector (connector) representa el enlace conceptual que materializa la vía de comunicación e interacción entre dos o más partes operativas internas dentro de un clasificador."
+    },
+    {
+      "id": 39,
+      "enunciado": "En un diagrama de actividad, ¿qué transición permite que los flujos entrantes se sincronicen?",
+      "opciones": {
+        "a": "Decision node.",
+        "b": "Merge node.",
+        "c": "Fork node.",
+        "d": "Join node."
+      },
+      "correcta": "d",
+      "explicacion": "Un nodo de unión (Join Node) toma múltiples flujos entrantes concurrentes y paralelos y los detiene hasta que todos se hayan completado, unificándolos y sincronizándolos en un único flujo de salida."
+    },
+    {
+      "id": 40,
+      "enunciado": "En un diagrama de actividad, ¿cómo se representa una transición de reunión?",
+      "opciones": {
+        "a": "Mediante un rectángulo vertical del que parten las transiciones concurrentes.",
+        "b": "Mediante un rectángulo vertical al cual llegan transiciones concurrentes.",
+        "c": "Mediante un rombo relleno del que parten las transiciones concurrentes.",
+        "d": "Mediante un rombo no relleno al cual llegan transiciones concurrentes."
+      },
+      "correcta": "b",
+      "explicacion": "Las transiciones de sincronización o reunión de flujos concurrentes (Join/Fork) se dibujan formalmente a través de una barra o rectángulo negro macizo (horizontal o vertical). Si es de reunión (Join), las múltiples flechas concurrentes inciden y llegan a dicha barra rígida."
+    },
+    {
+      "id": 41,
+      "enunciado": "En un diagrama de casos de uso, si se quiere reflejar un comportamiento común haremos uso de:",
+      "opciones": {
+        "a": "La relación extend.",
+        "b": "La herencia.",
+        "c": "La relación include.",
+        "d": "La dependencia."
+      },
+      "correcta": "c",
+      "explicacion": "La relación de inclusión (`<<include>>`) modela la delegación de lógica compartida; se utiliza cuando un caso de uso base integra obligatoriamente dentro de su flujo un comportamiento común que ha sido extraído a otro caso de uso para evitar redundancias."
+    },
+    {
+      "id": 42,
+      "enunciado": "En un diagrama de casos de uso la relación entre casos de uso se representa con:",
+      "opciones": {
+        "a": "Una línea discontinua entre los casos de uso.",
+        "b": "Una línea continua dirigida desde un caso de uso a otro.",
+        "c": "Una flecha discontinua entre los casos de uso con el nombre del tipo de relación como etiqueta.",
+        "d": "Una flecha continua entre los casos de uso con el nombre del tipo de relación como etiqueta."
+      },
+      "correcta": "c",
+      "explicacion": "Las relaciones estereotipadas entre casos de uso (como `<<include>>` o `<<extend>>`) se dibujan empleando una línea de trazo discontinuo con punta de flecha abierta orientada, incorporando el nombre o estereotipo correspondiente entre comillas angulares como etiqueta."
+    },
+    {
+      "id": 43,
+      "enunciado": "Sobre el diagrama de máquina de estado señale la respuesta INCORRECTA:",
+      "opciones": {
+        "a": "Muestra el comportamiento dependiente del tiempo de un sistema de información.",
+        "b": "Los pseudo-estados se utilizan para expresar caminos de transición complejos.",
+        "c": "Un sistema puede tener varios estados iniciales.",
+        "d": "Una acción es una operación instantánea asociada a un evento."
+      },
+      "correcta": "c",
+      "explicacion": "Dentro de una misma región de una máquina de estados de UML, solo puede existir obligatoriamente un único pseudoestado inicial para evitar indeterminaciones sobre el punto de arranque de los ciclos de vida del objeto."
+    },
+    {
+      "id": 44,
+      "enunciado": "NO es un diagrama de interacción:",
+      "opciones": {
+        "a": "Diagrama global de interacción.",
+        "b": "Diagrama de tiempos.",
+        "c": "Diagrama de comunicación.",
+        "d": "Diagrama de objetos."
+      },
+      "correcta": "d",
+      "explicacion": "UML clasifica de manera formal cuatro variantes bajo la subfamilia de diagramas de interacción: Secuencia, Comunicación, Tiempos y Vista Global de Interacción. El diagrama de objetos queda fuera, integrándose de forma pura en los diagramas de estructura estática."
+    },
+    {
+      "id": 45,
+      "enunciado": "Indique el diagrama UML en el que se pueden utilizar los fragmentos combinados:",
+      "opciones": {
+        "a": "Diagrama de secuencia.",
+        "b": "Diagrama de clases.",
+        "c": "Diagrama de comunicación.",
+        "d": "Diagrama global de interacción."
+      },
+      "correcta": "a",
+      "explicacion": "UML introdujo los fragmentos combinados (como alt, loop, opt, par) de manera específica en los diagramas de secuencia para modelar dentro de las líneas de vida estructuras lógicas complejas tales como bucles, condicionales y ejecuciones en paralelo."
+    },
+    {
+      "id": 46,
+      "enunciado": "Cuál de las siguientes afirmaciones NO se corresponde con el lenguaje UML:",
+      "opciones": {
+        "a": "Una clase se representa mediante un rectángulo con tres secciones, la superior contiene el identificador o nombre de la clase, la central contiene los atributos, y la inferior, las operaciones o métodos que tienen asociados.",
+        "b": "Las asociaciones son los elementos que representan las relaciones que existen entre los elementos estructurales que se utilizan en los modelos.",
+        "c": "Un tipo de asociación entre elementos estructurales es la dispersión.",
+        "d": "La agregación es un tipo de asociación entre elementos estructurales que representa una clase que es parte de otra."
+      },
+      "correcta": "c",
+      "explicacion": "El término 'dispersión' no existe ni se encuentra catalogado como un tipo de asociación o relación estructural válida contemplada en las especificaciones del estándar de modelado UML."
+    },
+    {
+      "id": 47,
+      "enunciado": "En relación a la representación de los diagramas de casos de uso de UML, indique la correcta:",
+      "opciones": {
+        "a": "Los diagramas de casos de uso contienen actores, relaciones y casos de usos.",
+        "b": "Los diagramas de casos de uso contienen almacenes, relaciones y procedimientos.",
+        "c": "Los diagramas de casos de uso contienen actores, relaciones y procedimientos.",
+        "d": "Los diagramas de casos de uso contienen almacenes, relaciones y casos de uso."
+      },
+      "correcta": "a",
+      "explicacion": "Los tres elementos nucleares constituyentes en la sintaxis gráfica de un diagrama de casos de uso son los Actores (roles de entidades externas), los Casos de Uso (óvalos con requerimientos) y las Líneas de Relación/Asociación que los enlazan."
+    },
+    {
+      "id": 48,
+      "enunciado": "En lo referente a los patrones de diseño GoF (Gang of Four), indique cuál de los siguientes se corresponde con un patrón de comportamiento:",
+      "opciones": {
+        "a": "Adapter.",
+        "b": "Iterator.",
+        "c": "Composite.",
+        "d": "Builder."
+      },
+      "correcta": "b",
+      "explicacion": "El patrón Iterator (Iterador) es un patrón GoF de comportamiento, cuya misión es proveer una vía homogénea y secuencial para recorrer los elementos internos de un objeto contenedor o colección sin exponer su estructura subyacente."
+    },
+    {
+      "id": 49,
+      "enunciado": "En tiempo de ejecución, ¿qué concepto hace referencia a la posibilidad de utilizar el mismo nombre de método con los mismos parámetros en la programación orientada a objetos?",
+      "opciones": {
+        "a": "Herencia.",
+        "b": "Ligadura dinámica.",
+        "c": "Polimorfismo.",
+        "d": "Abstracción."
+      },
+      "correcta": "b",
+      "explicacion": "La ligadura o vinculación dinámica (dynamic binding) es el mecanismo operativo en tiempo de ejecución que evalúa el tipo real del objeto que recibe el mensaje para invocar de manera exacta la implementación redefinida correspondiente a su clase concreta, soportando así el polimorfismo dinámico."
+    },
+    {
+      "id": 50,
+      "enunciado": "¿Cuál de los siguientes términos hace referencia a patrones generales de software para asignación de responsabilidades en el diseño orientado a objetos?",
+      "opciones": {
+        "a": "OOD.",
+        "b": "GRASP.",
+        "c": "Booch.",
+        "d": "Fan-In & Fan-Out."
+      },
+      "correcta": "b",
+      "explicacion": "GRASP responde al acrónimo de General Responsibility Assignment Software Patterns (Patrones Generales de Software para la Asignación de Responsabilidades), acuñados por Craig Larman (e.g., Creador, Experto en Información, Bajo Acoplamiento, Alta Cohesión)."
+    },
+    {
+      "id": 51,
+      "enunciado": Según METRICA v3, la relación jerárquica entre un objeto que representa la totalidad de ese objeto y las partes que lo componen, es una relación entre clases de tipo:",
+      "opciones": {
+        "a": "Herencia.",
+        "b": "Composición.",
+        "c": "Asociación.",
+        "d": "Agregación."
+      },
+      "correcta": "d",
+      "explicacion": "Bajo las definiciones documentadas en la metodología estatal de desarrollo MÉTRICA Versión 3, la relación jerárquica estructural que asocia un todo contenedor con sus correspondientes partes integrantes se etiqueta metodológicamente de manera genérica como una relación de tipo Agregación."
+    },
+    {
+      "id": 52,
+      "enunciado": "Según METRICA v3, ¿cuál es diagrama que describe en detalle un determinado escenario de un caso de uso?",
+      "opciones": {
+        "a": "Diagrama de interacción.",
+        "b": "Diagrama de representación.",
+        "c": "Diagrama de flujo de datos.",
+        "d": "Diagrama de casos de uso."
+      },
+      "correcta": "a",
+      "explicacion": "MÉTRICA v3 prescribe la utilización de los diagramas de interacción (típicamente diagramas de secuencia) en el análisis orientado a objetos para documentar detalladamente el intercambio de mensajes y la traza de pasos lógicos que componen un escenario particular del caso de uso."
+    },
+    {
+      "id": 53,
+      "enunciado": "En UML, ¿cómo se denomina el diagrama que describe los nodos que participan en la ejecución de elementos de software y de los componentes que residen en estos nodos?",
+      "opciones": {
+        "a": "Diagrama de paquetes.",
+        "b": "Diagrama de interacción.",
+        "c": "Diagrama de despliegue.",
+        "d": "Diagrama de componentes."
+      },
+      "correcta": "c",
+      "explicacion": "Se trata de la definición técnica exacta del diagrama de despliegue (Deployment Diagram), responsable de mapear las piezas lógicas y artefactos dentro de nodos de procesamiento físico real."
+    },
+    {
+      "id": 54,
+      "enunciado": "¿Cuál de las siguientes afirmaciones con respecto a los patrones de diseño es correcta?",
+      "opciones": {
+        "a": "Se pueden clasificar como patrones de creación, de estructura y de comportamiento.",
+        "b": "Su ámbito siempre son las clases, nunca los objetos.",
+        "c": "Son equivalentes a los frameworks.",
+        "d": "El patrón \"Builder\" es un patrón de comportamiento."
+      },
+      "correcta": "a",
+      "explicacion": "Es la clasificación básica tripartita de los patrones GoF según su propósito funcional: Creacionales (creación de objetos), Estructurales (composición de estructuras) y de Comportamiento (interacción y distribución de responsabilidades)."
+    },
+    {
+      "id": 55,
+      "enunciado": "En un diagrama de comunicación UML, en el que un objeto : Agenda envía un mensaje crearEvento(Descripcion Evento desc, int prioridad) a un objeto : Calendario, ¿qué tipo de relación existe entre las clases Calendario y DescripcionEvento?",
+      "opciones": {
+        "a": "Navegabilidad.",
+        "b": "Dependencia.",
+        "c": "Realización.",
+        "d": "Herencia."
+      },
+      "correcta": "b",
+      "explicacion": "Dado que `DescripcionEvento` interviene únicamente como un tipo de dato en la firma de un parámetro del método invocado por `Calendario`, existe una relación de dependencia de uso temporaria. Si la clase parámetro cambia de estructura, afectará a la clase que opera el método."
+    },
+    {
+      "id": 56,
+      "enunciado": "¿Qué tipo de relaciones se pueden representar en un diagrama de despliegue?",
+      "opciones": {
+        "a": "Relaciones de herencia entre clases.",
+        "b": "Relaciones de dependencia entre nodos de hardware.",
+        "c": "Relaciones de amistad entre objetos.",
+        "d": "Relaciones de agregación entre componentes de software."
+      },
+      "correcta": "b",
+      "explicacion": "En el diagrama de despliegue se modelan de forma nativa vías de comunicación y relaciones de dependencia/asociación técnica operativa entre los diferentes nodos físicos y dispositivos de hardware del entorno."
+    },
+    {
+      "id": 57,
+      "enunciado": "¿Cuál de las siguientes afirmaciones sobre los patrones de diseño de software es cierta?",
+      "opciones": {
+        "a": "Los patrones de diseño son soluciones específicas para problemas únicos en el desarrollo de software.",
+        "b": "Los patrones de diseño son una técnica que solo se aplica en la capa de presentación.",
+        "c": "Los patrones de diseño son soluciones generales para problemas comunes en el desarrollo de software.",
+        "d": "Los patrones de diseño se utilizan solo en proyectos pequeños."
+      },
+      "correcta": "c",
+      "explicacion": "Los patrones de diseño constituyen plantillas conceptuales abstractas y soluciones maduras generales que resuelven problemas arquitectónicos comunes e iterativos dentro de la ingeniería de software."
+    },
+    {
+      "id": 58,
+      "enunciado": "Indique qué patrón de diseño se debe utilizar cuando un comportamiento solo tenga sentido en algunas clases de una jerarquía de clases, pero no en otras:",
+      "opciones": {
+        "a": "Observer.",
+        "b": "Visitor.",
+        "c": "Proxy.",
+        "d": "Adapter."
+      },
+      "correcta": "b",
+      "explicacion": "El patrón Visitor permite aislar operaciones discrecionales de las clases base de la jerarquía. De este modo, la lógica especial de comportamiento solo se aplica o ejecuta selectivamente al visitar ciertos nodos u objetos específicos de la estructura jerárquica en los que tiene sentido."
+    },
+    {
+      "id": 59,
+      "enunciado": "Entre los diagramas UML se encuentran:",
+      "opciones": {
+        "a": "Diagrama de clases, diagrama de arquitectura y diagrama de despliegue.",
+        "b": "Diagrama de clases, diagrama de secuencia y diagrama de tiempos.",
+        "c": "Diagrama de objetos, diagrama de datos y diagrama de despliegue.",
+        "d": "Diagrama de objetos, diagrama de secuencia y diagrama de configuración."
+      },
+      "correcta": "b",
+      "explicacion": "Los tres términos incluidos en la opción 'b' (Clases, Secuencia y Tiempos) se corresponden estrictamente con diagramas oficiales tipificados y estandarizados dentro de las especificaciones formales de UML. Expresiones como diagrama de datos, configuración o arquitectura no son nombres de diagramas oficiales en la norma."
+    },
+    {
+      "id": 60,
+      "enunciado": "¿Cuál de los siguientes tipos de diagramas UML es un diagrama de estructura?",
+      "opciones": {
+        "a": "Diagrama de actividad.",
+        "b": "Diagrama de secuencia.",
+        "c": "Diagrama de casos de uso.",
+        "d": "Diagrama de clases."
+      },
+      "correcta": "d",
+      "explicacion": "El diagrama de clases es el eje medular estructural estático de UML. El resto de las opciones dadas (actividad, secuencia y casos de uso) pertenecen por definición a los modelos y vistas de comportamiento y dinamismo del sistema."
+    }
+  ]
+}
