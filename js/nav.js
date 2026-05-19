@@ -13,8 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
     <div class="tai-links">
       <a href="index.html">Inicio</a>
       <a href="cuestionarios.html">Cuestionarios</a>
-      <a href="relacionar.html">Relacionar</a>
-      <a href="convertidor.html">Convertidor JSON</a>
+      <a href="relacionar-conceptos.html">Relacionar</a>
+      <a href="clasifica-o-muere.html">Clasifica o muere</a>
     </div>
   `;
 
