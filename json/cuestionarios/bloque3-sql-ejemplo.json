@@ -1,0 +1,42 @@
+{
+  "titulo": "Bloque 3 - SQL básico",
+  "descripcion": "Cuestionario de ejemplo sobre SQL, JOIN e índices.",
+  "preguntas": [
+    {
+      "id": 1,
+      "enunciado": "¿Cuál es el propósito principal de la sentencia EXPLAIN en SQL?",
+      "opciones": {
+        "a": "Eliminar registros duplicados de una tabla",
+        "b": "Mostrar el plan de ejecución de una consulta",
+        "c": "Crear un índice único",
+        "d": "Modificar la estructura de una tabla"
+      },
+      "correcta": "b",
+      "explicacion": "EXPLAIN muestra el plan de ejecución de una consulta. Permite analizar cómo el SGBD va a acceder a las tablas, si usará índices y qué coste estima."
+    },
+    {
+      "id": 2,
+      "enunciado": "¿Qué tipo de JOIN se utiliza para obtener todas las filas de ambas tablas, incluso si no hay coincidencia entre ellas?",
+      "opciones": {
+        "a": "INNER JOIN",
+        "b": "LEFT JOIN",
+        "c": "RIGHT JOIN",
+        "d": "FULL OUTER JOIN"
+      },
+      "correcta": "d",
+      "explicacion": "FULL OUTER JOIN devuelve las filas coincidentes y también las no coincidentes de ambas tablas. Cuando no hay correspondencia, se rellenan con NULL los campos de la otra tabla."
+    },
+    {
+      "id": 3,
+      "enunciado": "En SQL, ¿qué diferencia principal hay entre un índice único y un índice normal?",
+      "opciones": {
+        "a": "El índice único solo puede crearse sobre claves ajenas",
+        "b": "El índice normal impide valores duplicados",
+        "c": "El índice único impide valores duplicados en las columnas indexadas",
+        "d": "No existe diferencia entre ambos"
+      },
+      "correcta": "c",
+      "explicacion": "Un índice único mejora las búsquedas y además garantiza que no haya valores duplicados en las columnas indexadas. Un índice normal puede permitir duplicados."
+    }
+  ]
+}

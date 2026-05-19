@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>TaiLoquitos - Cuestionarios</title>
+
+  <style>
+    :root {
+      --bg: #f4f6fb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --green: #16a34a;
+      --red: #dc2626;
+      --yellow: #ca8a04;
+      --border: #e5e7eb;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    header {
+      background: linear-gradient(135deg, #1d4ed8, #2563eb);
+      color: white;
+      padding: 28px 18px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    header p {
+      margin: 8px 0 0;
+      opacity: 0.9;
+    }
+
+    main {
+      max-width: 950px;
+      margin: 24px auto;
+      padding: 0 16px 40px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 22px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+      margin-bottom: 18px;
+      border: 1px solid var(--border);
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    select, button {
+      font: inherit;
+    }
+
+    select {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: white;
+      margin-bottom: 14px;
+    }
+
+    button {
+      border: none;
+      border-radius: 10px;
+      padding: 11px 16px;
+      cursor: pointer;
+      font-weight: 700;
+      transition: transform 0.08s ease, background 0.15s ease;
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+    }
+
+    button:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
+
+    .btn-secondary {
+      background: #e5e7eb;
+      color: #111827;
+    }
+
+    .btn-green {
+      background: var(--green);
+      color: white;
+    }
+
+    .btn-red {
+      background: var(--red);
+      color: white;
+    }
+
+    .btn-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .status {
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
+    .question-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    .question-text {
+      font-size: 1.1rem;
+      line-height: 1.5;
+      margin-bottom: 18px;
+      white-space: pre-wrap;
+    }
+
+    .options {
+      display: grid;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .option {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px;
+      cursor: pointer;
+      background: white;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .option:hover {
+      border-color: var(--primary);
+      background: #eff6ff;
+    }
+
+    .option input {
+      margin-top: 4px;
+    }
+
+    .option.selected {
+      border-color: var(--primary);
+      background: #eff6ff;
+    }
+
+    .result-box {
+      padding: 14px;
+      border-radius: 12px;
+      margin-top: 14px;
+      line-height: 1.5;
+    }
+
+    .ok {
+      background: #dcfce7;
+      border: 1px solid #86efac;
+      color: #14532d;
+    }
+
+    .bad {
+      background: #fee2e2;
+      border: 1px solid #fecaca;
+      color: #7f1d1d;
+    }
+
+    .blank {
+      background: #fef9c3;
+      border: 1px solid #fde68a;
+      color: #713f12;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 12px;
+      margin: 18px 0;
+    }
+
+    .summary-item {
+      padding: 16px;
+      background: #f9fafb;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      text-align: center;
+    }
+
+    .summary-item strong {
+      display: block;
+      font-size: 1.8rem;
+      margin-bottom: 4px;
+    }
+
+    .review-question {
+      border-top: 1px solid var(--border);
+      padding-top: 18px;
+      margin-top: 18px;
+    }
+
+    .small {
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 4px 9px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .pill-ok {
+      background: #dcfce7;
+      color: #166534;
+    }
+
+    .pill-bad {
+      background: #fee2e2;
+      color: #991b1b;
+    }
+
+    .pill-blank {
+      background: #fef9c3;
+      color: #854d0e;
+    }
+
+    a {
+      color: var(--primary);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    code {
+      background: #f3f4f6;
+      padding: 2px 5px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>TaiLoquitos - Cuestionarios</h1>
+    <p>Modo aprender y modo examen desde archivos JSON</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <p><a href="index.html">← Volver al índice</a></p>
+
+      <label for="jsonSelect">Elige un cuestionario JSON</label>
+      <select id="jsonSelect">
+        <option value="">Cargando cuestionarios...</option>
+      </select>
+
+      <div class="btn-row">
+        <button class="btn-primary" id="loadBtn">Cargar cuestionario</button>
+        <button class="btn-secondary" id="reloadBtn">Actualizar lista</button>
+      </div>
+
+      <p class="status" id="statusText"></p>
+    </section>
+
+    <section class="card hidden" id="infoCard">
+      <h2 id="quizTitle"></h2>
+      <p id="quizDescription"></p>
+      <p class="small" id="quizMeta"></p>
+
+      <div class="btn-row">
+        <button class="btn-green" id="learnModeBtn">Modo aprender</button>
+        <button class="btn-primary" id="examModeBtn">Modo examen</button>
+      </div>
+    </section>
+
+    <section class="card hidden" id="questionCard">
+      <div class="question-title" id="questionCounter"></div>
+      <div class="question-text" id="questionText"></div>
+
+      <form class="options" id="optionsForm"></form>
+
+      <div class="btn-row">
+        <button class="btn-primary" id="answerBtn">Responder</button>
+        <button class="btn-secondary" id="blankBtn">Dejar en blanco</button>
+        <button class="btn-secondary hidden" id="nextBtn">Siguiente</button>
+        <button class="btn-red" id="finishBtn">Finalizar</button>
+      </div>
+
+      <div id="feedbackBox" class="hidden"></div>
+    </section>
+
+    <section class="card hidden" id="summaryCard">
+      <h2>Resultado del cuestionario</h2>
+
+      <div class="summary-grid">
+        <div class="summary-item">
+          <strong id="sumCorrect">0</strong>
+          Aciertos
+        </div>
+
+        <div class="summary-item">
+          <strong id="sumWrong">0</strong>
+          Fallos
+        </div>
+
+        <div class="summary-item">
+          <strong id="sumBlank">0</strong>
+          Blancos
+        </div>
+
+        <div class="summary-item">
+          <strong id="sumNet">0</strong>
+          Netas
+        </div>
+      </div>
+
+      <p class="small">
+        Fórmula usada: aciertos - fallos / 3. Las respuestas en blanco no restan.
+      </p>
+
+      <div class="btn-row">
+        <button class="btn-primary" id="reviewBtn">Ver corrección completa</button>
+        <button class="btn-secondary" id="restartBtn">Volver al inicio</button>
+      </div>
+
+      <div id="reviewBox" class="hidden"></div>
+    </section>
+  </main>
+
+  <script>
+    /*
+      CONFIGURACIÓN IMPORTANTE
+
+      Si tu web está publicada como:
+      https://usuario.github.io/repositorio/
+
+      Normalmente esto se detecta solo.
+
+      Pero si fallara, puedes rellenar manualmente:
+      const GITHUB_OWNER = "tuusuario";
+      const GITHUB_REPO = "turepositorio";
+    */
+
+    const GITHUB_OWNER = "";
+    const GITHUB_REPO = "";
+
+    const JSON_FOLDER = "json/cuestionarios";
+
+    let quizData = null;
+    let questions = [];
+    let currentQuestionIndex = 0;
+    let mode = null;
+    let userAnswers = [];
+
+    const jsonSelect = document.getElementById("jsonSelect");
+    const loadBtn = document.getElementById("loadBtn");
+    const reloadBtn = document.getElementById("reloadBtn");
+    const statusText = document.getElementById("statusText");
+
+    const infoCard = document.getElementById("infoCard");
+    const quizTitle = document.getElementById("quizTitle");
+    const quizDescription = document.getElementById("quizDescription");
+    const quizMeta = document.getElementById("quizMeta");
+
+    const learnModeBtn = document.getElementById("learnModeBtn");
+    const examModeBtn = document.getElementById("examModeBtn");
+
+    const questionCard = document.getElementById("questionCard");
+    const questionCounter = document.getElementById("questionCounter");
+    const questionText = document.getElementById("questionText");
+    const optionsForm = document.getElementById("optionsForm");
+
+    const answerBtn = document.getElementById("answerBtn");
+    const blankBtn = document.getElementById("blankBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    const finishBtn = document.getElementById("finishBtn");
+    const feedbackBox = document.getElementById("feedbackBox");
+
+    const summaryCard = document.getElementById("summaryCard");
+    const sumCorrect = document.getElementById("sumCorrect");
+    const sumWrong = document.getElementById("sumWrong");
+    const sumBlank = document.getElementById("sumBlank");
+    const sumNet = document.getElementById("sumNet");
+    const reviewBtn = document.getElementById("reviewBtn");
+    const restartBtn = document.getElementById("restartBtn");
+    const reviewBox = document.getElementById("reviewBox");
+
+    function getRepoInfo() {
+      if (GITHUB_OWNER && GITHUB_REPO) {
+        return {
+          owner: GITHUB_OWNER,
+          repo: GITHUB_REPO
+        };
+      }
+
+      const host = window.location.hostname;
+      const pathParts = window.location.pathname.split("/").filter(Boolean);
+
+      if (host.endsWith(".github.io")) {
+        const owner = host.replace(".github.io", "");
+        const repo = pathParts[0];
+
+        return {
+          owner,
+          repo
+        };
+      }
+
+      return {
+        owner: null,
+        repo: null
+      };
+    }
+
+    function setStatus(message, isError = false) {
+      statusText.textContent = message;
+      statusText.style.color = isError ? "#dc2626" : "#6b7280";
+    }
+
+    async function loadJsonList() {
+      const { owner, repo } = getRepoInfo();
+
+      jsonSelect.innerHTML = `<option value="">Cargando cuestionarios...</option>`;
+      setStatus("Buscando archivos JSON en GitHub...");
+
+      if (!owner || !repo) {
+        jsonSelect.innerHTML = `<option value="">No se pudo detectar el repositorio</option>`;
+        setStatus(
+          "No se pudo detectar usuario/repositorio. Si estás abriendo el HTML en local, súbelo a GitHub Pages o rellena GITHUB_OWNER y GITHUB_REPO en el código.",
+          true
+        );
+        return;
+      }
+
+      const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${JSON_FOLDER}`;
+
+      try {
+        const response = await fetch(apiUrl);
+
+        if (!response.ok) {
+          throw new Error(`GitHub respondió con estado ${response.status}`);
+        }
+
+        const files = await response.json();
+
+        const jsonFiles = files
+          .filter(file => file.type === "file" && file.name.toLowerCase().endsWith(".json"))
+          .sort((a, b) => a.name.localeCompare(b.name, "es"));
+
+        if (jsonFiles.length === 0) {
+          jsonSelect.innerHTML = `<option value="">No hay archivos JSON</option>`;
+          setStatus(`No se encontraron JSON en ${JSON_FOLDER}.`, true);
+          return;
+        }
+
+        jsonSelect.innerHTML = `<option value="">Selecciona un cuestionario...</option>`;
+
+        jsonFiles.forEach(file => {
+          const option = document.createElement("option");
+          option.value = file.download_url;
+          option.textContent = file.name;
+          jsonSelect.appendChild(option);
+        });
+
+        setStatus(`Encontrados ${jsonFiles.length} cuestionarios en ${JSON_FOLDER}.`);
+      } catch (error) {
+        console.error(error);
+        jsonSelect.innerHTML = `<option value="">Error al cargar la lista</option>`;
+        setStatus("No pude leer la carpeta de JSON. Revisa que el repo sea público y que exista json/cuestionarios/.", true);
+      }
+    }
+
+    async function loadSelectedQuiz() {
+      const selectedUrl = jsonSelect.value;
+
+      if (!selectedUrl) {
+        setStatus("Selecciona un JSON primero.", true);
+        return;
+      }
+
+      try {
+        setStatus("Cargando cuestionario...");
+
+        const response = await fetch(selectedUrl);
+
+        if (!response.ok) {
+          throw new Error(`No se pudo cargar el JSON. Estado ${response.status}`);
+        }
+
+        const data = await response.json();
+
+        validateQuiz(data);
+
+        quizData = data;
+        questions = data.preguntas;
+        currentQuestionIndex = 0;
+        userAnswers = [];
+
+        quizTitle.textContent = data.titulo || "Cuestionario sin título";
+        quizDescription.textContent = data.descripcion || "Sin descripción.";
+        quizMeta.textContent = `${questions.length} preguntas cargadas.`;
+
+        infoCard.classList.remove("hidden");
+        questionCard.classList.add("hidden");
+        summaryCard.classList.add("hidden");
+        reviewBox.classList.add("hidden");
+
+        setStatus("Cuestionario cargado correctamente.");
+      } catch (error) {
+        console.error(error);
+        setStatus("El JSON no tiene el formato correcto o no se pudo cargar.", true);
+      }
+    }
+
+    function validateQuiz(data) {
+      if (!data || typeof data !== "object") {
+        throw new Error("El JSON no es un objeto válido.");
+      }
+
+      if (!Array.isArray(data.preguntas)) {
+        throw new Error("Falta el array preguntas.");
+      }
+
+      data.preguntas.forEach((q, index) => {
+        if (!q.enunciado) {
+          throw new Error(`La pregunta ${index + 1} no tiene enunciado.`);
+        }
+
+        if (!q.opciones || typeof q.opciones !== "object") {
+          throw new Error(`La pregunta ${index + 1} no tiene opciones.`);
+        }
+
+        if (!q.correcta) {
+          throw new Error(`La pregunta ${index + 1} no tiene respuesta correcta.`);
+        }
+
+        if (!q.explicacion) {
+          throw new Error(`La pregunta ${index + 1} no tiene explicación.`);
+        }
+      });
+    }
+
+    function startQuiz(selectedMode) {
+      mode = selectedMode;
+      currentQuestionIndex = 0;
+      userAnswers = questions.map(() => null);
+
+      infoCard.classList.add("hidden");
+      summaryCard.classList.add("hidden");
+      reviewBox.classList.add("hidden");
+      questionCard.classList.remove("hidden");
+
+      renderQuestion();
+    }
+
+    function renderQuestion() {
+      const question = questions[currentQuestionIndex];
+
+      feedbackBox.classList.add("hidden");
+      feedbackBox.innerHTML = "";
+
+      questionCounter.textContent = `Pregunta ${currentQuestionIndex + 1} de ${questions.length}`;
+      questionText.textContent = question.enunciado;
+
+      optionsForm.innerHTML = "";
+
+      const optionKeys = Object.keys(question.opciones);
+
+      optionKeys.forEach(key => {
+        const label = document.createElement("label");
+        label.className = "option";
+
+        const input = document.createElement("input");
+        input.type = "radio";
+        input.name = "answer";
+        input.value = key;
+
+        if (userAnswers[currentQuestionIndex] === key) {
+          input.checked = true;
+          label.classList.add("selected");
+        }
+
+        input.addEventListener("change", () => {
+          document.querySelectorAll(".option").forEach(el => el.classList.remove("selected"));
+          label.classList.add("selected");
+        });
+
+        const text = document.createElement("span");
+        text.innerHTML = `<strong>${key.toUpperCase()})</strong> ${escapeHtml(question.opciones[key])}`;
+
+        label.appendChild(input);
+        label.appendChild(text);
+
+        optionsForm.appendChild(label);
+      });
+
+      const blankLabel = document.createElement("label");
+      blankLabel.className = "option";
+
+      const blankInput = document.createElement("input");
+      blankInput.type = "radio";
+      blankInput.name = "answer";
+      blankInput.value = "";
+
+      if (userAnswers[currentQuestionIndex] === "") {
+        blankInput.checked = true;
+        blankLabel.classList.add("selected");
+      }
+
+      blankInput.addEventListener("change", () => {
+        document.querySelectorAll(".option").forEach(el => el.classList.remove("selected"));
+        blankLabel.classList.add("selected");
+      });
+
+      const blankText = document.createElement("span");
+      blankText.innerHTML = `<strong>Blanco</strong> No responder esta pregunta`;
+
+      blankLabel.appendChild(blankInput);
+      blankLabel.appendChild(blankText);
+      optionsForm.appendChild(blankLabel);
+
+      answerBtn.classList.remove("hidden");
+      blankBtn.classList.remove("hidden");
+      nextBtn.classList.add("hidden");
+
+      if (mode === "exam") {
+        answerBtn.textContent = currentQuestionIndex === questions.length - 1 ? "Guardar y finalizar" : "Guardar y siguiente";
+      } else {
+        answerBtn.textContent = "Responder";
+      }
+
+      finishBtn.classList.toggle("hidden", mode !== "exam");
+    }
+
+    function getSelectedAnswer() {
+      const selected = document.querySelector('input[name="answer"]:checked');
+      return selected ? selected.value : null;
+    }
+
+    function answerQuestion(forceBlank = false) {
+      const selectedAnswer = forceBlank ? "" : getSelectedAnswer();
+
+      if (selectedAnswer === null) {
+        showFeedback("blank", "Elige una opción o marca blanco.");
+        return;
+      }
+
+      userAnswers[currentQuestionIndex] = selectedAnswer;
+
+      if (mode === "learn") {
+        showLearnCorrection(selectedAnswer);
+
+        answerBtn.classList.add("hidden");
+        blankBtn.classList.add("hidden");
+        nextBtn.classList.remove("hidden");
+
+        if (currentQuestionIndex === questions.length - 1) {
+          nextBtn.textContent = "Ver resultado final";
+        } else {
+          nextBtn.textContent = "Siguiente";
+        }
+      } else {
+        if (currentQuestionIndex === questions.length - 1) {
+          showSummary();
+        } else {
+          currentQuestionIndex++;
+          renderQuestion();
+        }
+      }
+    }
+
+    function showLearnCorrection(selectedAnswer) {
+      const question = questions[currentQuestionIndex];
+      const correct = normalizeAnswer(question.correcta);
+      const selected = normalizeAnswer(selectedAnswer);
+
+      if (selectedAnswer === "") {
+        showFeedback(
+          "blank",
+          `<strong>En blanco.</strong><br>
+           Respuesta correcta: <strong>${correct.toUpperCase()}</strong><br><br>
+           <strong>Explicación:</strong><br>${escapeHtml(question.explicacion)}`
+        );
+        return;
+      }
+
+      if (selected === correct) {
+        showFeedback(
+          "ok",
+          `<strong>✅ Correcta.</strong><br><br>
+           <strong>Explicación:</strong><br>${escapeHtml(question.explicacion)}`
+        );
+      } else {
+        showFeedback(
+          "bad",
+          `<strong>❌ Fallada.</strong><br>
+           Tu respuesta: <strong>${selected.toUpperCase()}</strong><br>
+           Respuesta correcta: <strong>${correct.toUpperCase()}</strong><br><br>
+           <strong>Explicación:</strong><br>${escapeHtml(question.explicacion)}`
+        );
+      }
+    }
+
+    function showFeedback(type, html) {
+      feedbackBox.className = "result-box";
+
+      if (type === "ok") {
+        feedbackBox.classList.add("ok");
+      } else if (type === "bad") {
+        feedbackBox.classList.add("bad");
+      } else {
+        feedbackBox.classList.add("blank");
+      }
+
+      feedbackBox.innerHTML = html;
+      feedbackBox.classList.remove("hidden");
+    }
+
+    function goNextQuestion() {
+      if (currentQuestionIndex === questions.length - 1) {
+        showSummary();
+        return;
+      }
+
+      currentQuestionIndex++;
+      renderQuestion();
+    }
+
+    function showSummary() {
+      questionCard.classList.add("hidden");
+      summaryCard.classList.remove("hidden");
+
+      const result = calculateResults();
+
+      sumCorrect.textContent = result.correct;
+      sumWrong.textContent = result.wrong;
+      sumBlank.textContent = result.blank;
+      sumNet.textContent = formatNumber(result.net);
+    }
+
+    function calculateResults() {
+      let correct = 0;
+      let wrong = 0;
+      let blank = 0;
+
+      questions.forEach((question, index) => {
+        const answer = userAnswers[index];
+
+        if (answer === null || answer === "") {
+          blank++;
+        } else if (normalizeAnswer(answer) === normalizeAnswer(question.correcta)) {
+          correct++;
+        } else {
+          wrong++;
+        }
+      });
+
+      const net = correct - wrong / 3;
+
+      return {
+        correct,
+        wrong,
+        blank,
+        net
+      };
+    }
+
+    function renderReview() {
+      reviewBox.innerHTML = "";
+
+      questions.forEach((question, index) => {
+        const userAnswer = userAnswers[index];
+        const correctAnswer = normalizeAnswer(question.correcta);
+
+        let statusClass = "pill-blank";
+        let statusText = "En blanco";
+
+        if (userAnswer !== null && userAnswer !== "") {
+          if (normalizeAnswer(userAnswer) === correctAnswer) {
+            statusClass = "pill-ok";
+            statusText = "Correcta";
+          } else {
+            statusClass = "pill-bad";
+            statusText = "Fallada";
+          }
+        }
+
+        const div = document.createElement("div");
+        div.className = "review-question";
+
+        div.innerHTML = `
+          <span class="pill ${statusClass}">${statusText}</span>
+          <h3>Pregunta ${index + 1}</h3>
+          <p>${escapeHtml(question.enunciado)}</p>
+
+          <p>
+            <strong>Tu respuesta:</strong>
+            ${formatAnswer(userAnswer, question)}
+          </p>
+
+          <p>
+            <strong>Respuesta correcta:</strong>
+            ${correctAnswer.toUpperCase()}) ${escapeHtml(question.opciones[correctAnswer] || "")}
+          </p>
+
+          <p>
+            <strong>Explicación:</strong><br>
+            ${escapeHtml(question.explicacion)}
+          </p>
+        `;
+
+        reviewBox.appendChild(div);
+      });
+
+      reviewBox.classList.remove("hidden");
+    }
+
+    function finishExam() {
+      showSummary();
+    }
+
+    function restart() {
+      quizData = null;
+      questions = [];
+      currentQuestionIndex = 0;
+      mode = null;
+      userAnswers = [];
+
+      infoCard.classList.add("hidden");
+      questionCard.classList.add("hidden");
+      summaryCard.classList.add("hidden");
+      reviewBox.classList.add("hidden");
+
+      setStatus("Elige otro cuestionario para empezar.");
+    }
+
+    function normalizeAnswer(value) {
+      return String(value || "").trim().toLowerCase();
+    }
+
+    function formatNumber(value) {
+      return Number(value).toFixed(2).replace(".", ",");
+    }
+
+    function formatAnswer(answer, question) {
+      if (answer === null || answer === "") {
+        return "Blanco";
+      }
+
+      const key = normalizeAnswer(answer);
+      return `${key.toUpperCase()}) ${escapeHtml(question.opciones[key] || "")}`;
+    }
+
+    function escapeHtml(text) {
+      return String(text)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    loadBtn.addEventListener("click", loadSelectedQuiz);
+    reloadBtn.addEventListener("click", loadJsonList);
+
+    learnModeBtn.addEventListener("click", () => startQuiz("learn"));
+    examModeBtn.addEventListener("click", () => startQuiz("exam"));
+
+    answerBtn.addEventListener("click", event => {
+      event.preventDefault();
+      answerQuestion(false);
+    });
+
+    blankBtn.addEventListener("click", event => {
+      event.preventDefault();
+      answerQuestion(true);
+    });
+
+    nextBtn.addEventListener("click", event => {
+      event.preventDefault();
+      goNextQuestion();
+    });
+
+    finishBtn.addEventListener("click", event => {
+      event.preventDefault();
+      finishExam();
+    });
+
+    reviewBtn.addEventListener("click", renderReview);
+    restartBtn.addEventListener("click", restart);
+
+    loadJsonList();
+  </script>
+</body>
+</html>
