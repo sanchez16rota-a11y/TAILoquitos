@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relaciona Conceptos</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg-primary: #ffffff;
+      --bg-secondary: #f5f5f2;
+      --bg-tertiary: #eeede8;
+      --text-primary: #1a1a18;
+      --text-secondary: #666660;
+      --border: rgba(0,0,0,0.12);
+      --border-hover: rgba(0,0,0,0.25);
+      --radius-md: 8px;
+      --radius-lg: 12px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-primary: #1e1e1c;
+        --bg-secondary: #2a2a28;
+        --bg-tertiary: #333330;
+        --text-primary: #f0efe8;
+        --text-secondary: #999990;
+        --border: rgba(255,255,255,0.12);
+        --border-hover: rgba(255,255,255,0.25);
+      }
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg-tertiary);
+      color: var(--text-primary);
+      min-height: 100vh;
+      padding: 2rem 1rem;
+    }
+
+    #app {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .title {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .title i { font-size: 22px; }
+
+    .controls {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    select {
+      padding: 7px 12px;
+      font-size: 13px;
+      font-weight: 500;
+      border: 0.5px solid var(--border-hover);
+      border-radius: var(--radius-md);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: inherit;
+      max-width: 260px;
+    }
+
+    button {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 14px;
+      font-size: 13px;
+      font-weight: 500;
+      border: 0.5px solid var(--border-hover);
+      border-radius: var(--radius-md);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      cursor: pointer;
+      transition: background .15s, border-color .15s;
+      font-family: inherit;
+    }
+
+    button:hover { background: var(--bg-secondary); border-color: var(--border-hover); }
+    button:active { transform: scale(0.98); }
+
+    .file-btn { position: relative; overflow: hidden; }
+    .file-btn input[type=file] {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      cursor: pointer;
+      font-size: 0;
+    }
+
+    .active-file {
+      font-size: 12px;
+      color: var(--text-secondary);
+      background: var(--bg-secondary);
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 5px 12px;
+      display: none;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 1rem;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-bottom: 1.5rem;
+    }
+
+    .stat {
+      background: var(--bg-secondary);
+      border-radius: var(--radius-md);
+      padding: 12px;
+      text-align: center;
+    }
+
+    .stat-val { font-size: 24px; font-weight: 600; color: var(--text-primary); }
+    .stat-lbl { font-size: 12px; color: var(--text-secondary); margin-top: 2px; }
+
+    .board {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .col-title {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .cards-col { display: flex; flex-direction: column; gap: 8px; }
+
+    .card {
+      padding: 11px 14px;
+      border-radius: var(--radius-md);
+      border: 0.5px solid var(--border);
+      background: var(--bg-primary);
+      cursor: pointer;
+      font-size: 14px;
+      line-height: 1.45;
+      color: var(--text-primary);
+      transition: border-color .15s, background .15s, transform .1s;
+      user-select: none;
+    }
+
+    .card:hover { border-color: var(--border-hover); background: var(--bg-secondary); }
+    .card.selected { border-color: #378ADD; background: #E6F1FB; color: #0C447C; }
+    .card.matched  { border-color: #3B6D11; background: #EAF3DE; color: #27500A; pointer-events: none; }
+    .card.wrong    { border-color: #A32D2D; background: #FCEBEB; color: #791F1F; }
+
+    @media (prefers-color-scheme: dark) {
+      .card.selected { background: #042C53; color: #B5D4F4; border-color: #185FA5; }
+      .card.matched  { background: #173404; color: #C0DD97; border-color: #3B6D11; }
+      .card.wrong    { background: #501313; color: #F7C1C1; border-color: #A32D2D; }
+    }
+
+    .message {
+      text-align: center;
+      padding: 12px;
+      border-radius: var(--radius-md);
+      margin-bottom: 1rem;
+      font-size: 14px;
+      font-weight: 500;
+      display: none;
+    }
+
+    .msg-ok  { background: #EAF3DE; color: #27500A; }
+    .msg-err { background: #FCEBEB; color: #791F1F; }
+    .msg-win { background: #E6F1FB; color: #0C447C; font-size: 16px; }
+
+    .placeholder {
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      background: var(--bg-secondary);
+      border-radius: var(--radius-lg);
+      border: 0.5px dashed var(--border-hover);
+      color: var(--text-secondary);
+    }
+
+    .placeholder i { font-size: 32px; display: block; margin-bottom: 10px; }
+    .placeholder p { font-size: 14px; line-height: 1.6; }
+    .placeholder strong { color: var(--text-primary); }
+
+    .format-hint {
+      font-size: 12px;
+      color: var(--text-secondary);
+      background: var(--bg-secondary);
+      border-radius: var(--radius-md);
+      padding: 12px 14px;
+      margin-top: 1rem;
+      line-height: 1.7;
+      border: 0.5px solid var(--border);
+    }
+
+    .format-hint strong { color: var(--text-primary); }
+    .format-hint code {
+      font-family: monospace;
+      background: var(--bg-primary);
+      border: 0.5px solid var(--border);
+      border-radius: 4px;
+      padding: 1px 5px;
+      font-size: 11px;
+    }
+
+    @media (max-width: 520px) {
+      .board { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: repeat(3,1fr); }
+    }
+  </style>
+</head>
+<body>
+<div id="app">
+
+  <div class="top-bar">
+    <p class="title">
+      <i class="ti ti-link" aria-hidden="true"></i>
+      Relaciona conceptos
+    </p>
+    <div class="controls">
+      <select id="json-selector" title="JSON disponibles en GitHub">
+        <option value="">Cargando JSON...</option>
+      </select>
+      <button id="btn-load-server" title="Cargar JSON seleccionado desde GitHub">
+        <i class="ti ti-folder" aria-hidden="true"></i>Cargar
+      </button>
+      <button id="btn-refresh-list" title="Volver a leer la carpeta de JSON en GitHub">
+        <i class="ti ti-reload" aria-hidden="true"></i>Actualizar lista
+      </button>
+      <button id="btn-demo">
+        <i class="ti ti-sparkles" aria-hidden="true"></i>Ejemplo
+      </button>
+      <button id="btn-new" style="display:none">
+        <i class="ti ti-refresh" aria-hidden="true"></i>Nueva ronda
+      </button>
+    </div>
+  </div>
+
+  <div class="active-file" id="file-label">
+    <i class="ti ti-file-text" aria-hidden="true"></i>
+    <span id="file-name-text"></span>
+    <span id="pair-count" style="color:var(--text-secondary)"></span>
+  </div>
+
+  <div class="stats" id="stats" style="display:none">
+    <div class="stat"><div class="stat-val" id="s-correctas">0</div><div class="stat-lbl">correctas</div></div>
+    <div class="stat"><div class="stat-val" id="s-intentos">0</div><div class="stat-lbl">intentos</div></div>
+    <div class="stat"><div class="stat-val" id="s-restantes">0</div><div class="stat-lbl">restantes</div></div>
+  </div>
+
+  <div id="message" class="message"></div>
+  <div id="board-wrap">
+    <div class="placeholder">
+      <i class="ti ti-cards" aria-hidden="true"></i>
+      <p>Elige un JSON detectado automáticamente desde <strong>json/relacionar/</strong> o pulsa <strong>Ejemplo</strong></p>
+    </div>
+    <div class="format-hint">
+      <strong>Modo GitHub Pages:</strong> sube tus archivos <code>.json</code> a <code>json/relacionar/</code> y pulsa <strong>Actualizar lista</strong>. No hace falta Bash ni tocar este HTML.<br><br>
+      <strong>Formato del JSON:</strong><br>
+      Array de objetos con los campos <code>concepto</code> y <code>definicion</code>:<br><br>
+      <code>[{"concepto": "Término", "definicion": "Descripción del término"}, ...]</code><br><br>
+      También acepta: <code>concept/term/palabra</code> y <code>definition/desc/descripcion/significado</code>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  let allData = [];
+  let conceptos = [], definiciones = [];
+  let selCon = null, selDef = null;
+  let correctas = 0, intentos = 0;
+  let totalPairs = 0;
+
+  const BATCH = 6;
+
+  // Carpeta del repositorio donde se guardarán los JSON de esta herramienta.
+  // Si cambias usuario, repo o carpeta, actualiza estas constantes.
+  const GITHUB_OWNER = 'sanchez16rota-a11y';
+  const GITHUB_REPO = 'TAILoquitos';
+  const JSON_FOLDER = 'json/relacionar';
+  const GITHUB_API_URL = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${JSON_FOLDER}`;
+
+  function shuffle(arr) {
+    const a = [...arr];
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  function showMsg(txt, cls, dur) {
+    const el = document.getElementById('message');
+    el.textContent = txt;
+    el.className = 'message ' + cls;
+    el.style.display = 'block';
+    if (dur) setTimeout(() => el.style.display = 'none', dur);
+  }
+
+  function updateStats() {
+    document.getElementById('s-correctas').textContent = correctas;
+    document.getElementById('s-intentos').textContent = intentos;
+    document.getElementById('s-restantes').textContent = totalPairs - correctas;
+  }
+
+  function startRound(data) {
+    allData = data;
+    totalPairs = data.length;
+    correctas = 0; intentos = 0;
+    document.getElementById('stats').style.display = 'grid';
+    document.getElementById('btn-new').style.display = '';
+    updateStats();
+    loadBatch();
+  }
+
+  function loadBatch() {
+    const remaining = allData.filter(d => !d._matched);
+    const batch = shuffle(remaining).slice(0, BATCH);
+    conceptos = shuffle(batch.map(d => ({ id: d.id, text: d.concepto })));
+    definiciones = shuffle(batch.map(d => ({ id: d.id, text: d.definicion })));
+    selCon = null; selDef = null;
+    renderBoard();
+  }
+
+  function renderBoard() {
+    const wrap = document.getElementById('board-wrap');
+    wrap.innerHTML = '';
+    const board = document.createElement('div');
+    board.className = 'board';
+
+    const left = document.createElement('div');
+    const right = document.createElement('div');
+
+    const lt = document.createElement('p'); lt.className = 'col-title'; lt.textContent = 'Conceptos';
+    const rt = document.createElement('p'); rt.className = 'col-title'; rt.textContent = 'Definiciones';
+
+    const lc = document.createElement('div'); lc.className = 'cards-col'; lc.id = 'col-con';
+    const rc = document.createElement('div'); rc.className = 'cards-col'; rc.id = 'col-def';
+
+    left.appendChild(lt); left.appendChild(lc);
+    right.appendChild(rt); right.appendChild(rc);
+
+    conceptos.forEach(item => {
+      const card = document.createElement('div');
+      card.className = 'card'; card.dataset.id = item.id; card.dataset.type = 'con';
+      card.textContent = item.text;
+      card.addEventListener('click', onCardClick);
+      lc.appendChild(card);
+    });
+
+    definiciones.forEach(item => {
+      const card = document.createElement('div');
+      card.className = 'card'; card.dataset.id = item.id; card.dataset.type = 'def';
+      card.textContent = item.text;
+      card.addEventListener('click', onCardClick);
+      rc.appendChild(card);
+    });
+
+    board.appendChild(left); board.appendChild(right);
+    wrap.appendChild(board);
+  }
+
+  function onCardClick(e) {
+    const card = e.currentTarget;
+    const type = card.dataset.type;
+    const id = card.dataset.id;
+    if (card.classList.contains('matched')) return;
+
+    if (type === 'con') {
+      document.querySelectorAll('#col-con .card.selected').forEach(c => c.classList.remove('selected'));
+      card.classList.add('selected');
+      selCon = { id, el: card };
+    } else {
+      document.querySelectorAll('#col-def .card.selected').forEach(c => c.classList.remove('selected'));
+      card.classList.add('selected');
+      selDef = { id, el: card };
+    }
+
+    if (selCon && selDef) {
+      intentos++;
+      if (selCon.id === selDef.id) {
+        correctas++;
+        selCon.el.classList.remove('selected'); selCon.el.classList.add('matched');
+        selDef.el.classList.remove('selected'); selDef.el.classList.add('matched');
+        const match = allData.find(d => d.id === selCon.id);
+        if (match) match._matched = true;
+        showMsg('✓ ¡Correcto!', 'msg-ok', 1200);
+        selCon = null; selDef = null;
+        updateStats();
+        const remaining = allData.filter(d => !d._matched);
+        if (remaining.length === 0) {
+          setTimeout(() => {
+            showMsg(`🎉 ¡Completado! ${correctas} pares en ${intentos} intentos`, 'msg-win');
+          }, 400);
+        } else {
+          const matched = document.querySelectorAll('.card.matched').length;
+          const total = conceptos.length * 2;
+          if (matched === total) setTimeout(loadBatch, 600);
+        }
+      } else {
+        selCon.el.classList.add('wrong'); selDef.el.classList.add('wrong');
+        showMsg('✗ Inténtalo de nuevo', 'msg-err', 1000);
+        updateStats();
+        setTimeout(() => {
+          selCon.el.classList.remove('selected', 'wrong');
+          selDef.el.classList.remove('selected', 'wrong');
+          selCon = null; selDef = null;
+        }, 900);
+      }
+    }
+  }
+
+  function loadJSON(data) {
+    if (!Array.isArray(data)) { showMsg('El JSON debe ser un array de objetos', 'msg-err', 3000); return; }
+    const normalized = data.map((item, i) => {
+      const c = item.concepto || item.concept || item.term || item.palabra || item.nombre || Object.values(item)[0];
+      const d = item.definicion || item.definition || item.desc || item.descripcion || item.significado || Object.values(item)[1];
+      return { id: String(i), concepto: String(c || ''), definicion: String(d || ''), _matched: false };
+    }).filter(x => x.concepto && x.definicion);
+    if (normalized.length < 2) { showMsg('Se necesitan al menos 2 pares válidos', 'msg-err', 3000); return; }
+    startRound(normalized);
+  }
+
+  function getDataFromParsedJSON(parsed) {
+    return Array.isArray(parsed) ? parsed : (parsed.conceptos || parsed.data || parsed.items || Object.values(parsed)[0]);
+  }
+
+  async function cargarListaJsonServidor() {
+    const selector = document.getElementById('json-selector');
+    selector.innerHTML = '<option value="">Cargando JSON...</option>';
+
+    try {
+      const respuesta = await fetch(GITHUB_API_URL + '?ts=' + Date.now());
+      if (!respuesta.ok) throw new Error('No se pudo leer la carpeta de JSON en GitHub');
+
+      const archivos = await respuesta.json();
+
+      const jsons = archivos
+        .filter(archivo =>
+          archivo.type === 'file' &&
+          archivo.name.toLowerCase().endsWith('.json')
+        )
+        .sort((a, b) => a.name.localeCompare(b.name, 'es'));
+
+      selector.innerHTML = '<option value="">Selecciona un JSON...</option>';
+
+      if (jsons.length === 0) {
+        selector.innerHTML = '<option value="">No hay JSON en json/relacionar/</option>';
+        return;
+      }
+
+      jsons.forEach(archivo => {
+        const option = document.createElement('option');
+        option.value = archivo.download_url;
+        option.textContent = archivo.name.replace(/\.json$/i, '').replaceAll('-', ' ');
+        selector.appendChild(option);
+      });
+    } catch (error) {
+      console.error(error);
+      selector.innerHTML = '<option value="">Error cargando lista</option>';
+      showMsg('No se pudieron cargar los JSON desde GitHub. Revisa que exista la carpeta json/relacionar/.', 'msg-err', 4000);
+    }
+  }
+
+  async function cargarJsonServidor() {
+    const selector = document.getElementById('json-selector');
+    const ruta = selector.value;
+
+    if (!ruta) {
+      showMsg('Selecciona primero un JSON de la lista', 'msg-err', 2000);
+      return;
+    }
+
+    try {
+      const respuesta = await fetch(ruta + '?ts=' + Date.now());
+      if (!respuesta.ok) throw new Error('No se pudo abrir ' + ruta);
+
+      const parsed = await respuesta.json();
+      const data = getDataFromParsedJSON(parsed);
+
+      document.getElementById('file-name-text').textContent = selector.options[selector.selectedIndex].textContent;
+      document.getElementById('pair-count').textContent = `· ${data.length} pares`;
+      document.getElementById('file-label').style.display = 'flex';
+
+      loadJSON(data);
+    } catch (error) {
+      console.error(error);
+      showMsg('Error al cargar el JSON desde GitHub. Revisa el formato del archivo.', 'msg-err', 3000);
+    }
+  }
+
+  document.getElementById('btn-load-server').addEventListener('click', cargarJsonServidor);
+  document.getElementById('btn-refresh-list').addEventListener('click', cargarListaJsonServidor);
+
+  document.getElementById('btn-new').addEventListener('click', () => {
+    allData.forEach(d => d._matched = false);
+    correctas = 0; intentos = 0;
+    updateStats();
+    document.getElementById('message').style.display = 'none';
+    loadBatch();
+  });
+
+  document.getElementById('btn-demo').addEventListener('click', () => {
+    document.getElementById('file-name-text').textContent = 'Datos de ejemplo';
+    document.getElementById('pair-count').textContent = '· 10 pares';
+    document.getElementById('file-label').style.display = 'flex';
+    const demo = [
+      { concepto: 'Fotosíntesis',  definicion: 'Proceso por el que las plantas convierten luz solar en glucosa' },
+      { concepto: 'Mitosis',       definicion: 'División celular que produce dos células hijas genéticamente idénticas' },
+      { concepto: 'Osmosis',       definicion: 'Difusión del agua a través de una membrana semipermeable' },
+      { concepto: 'ADN',           definicion: 'Molécula que contiene la información genética de los seres vivos' },
+      { concepto: 'Ecosistema',    definicion: 'Conjunto de seres vivos y el ambiente físico que los rodea' },
+      { concepto: 'Homeostasis',   definicion: 'Capacidad del organismo de mantener un equilibrio interno estable' },
+      { concepto: 'Ribosoma',      definicion: 'Orgánulo celular responsable de la síntesis de proteínas' },
+      { concepto: 'Evolución',     definicion: 'Cambio en las características hereditarias de una población a lo largo del tiempo' },
+      { concepto: 'Enzima',        definicion: 'Proteína que actúa como catalizador acelerando reacciones químicas' },
+      { concepto: 'Neurona',       definicion: 'Célula especializada en transmitir impulsos nerviosos' },
+    ];
+    loadJSON(demo);
+  });
+
+  cargarListaJsonServidor();
+</script>
+</body>
+</html>
