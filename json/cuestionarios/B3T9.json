@@ -1,0 +1,726 @@
+{
+  "titulo": "Bloque 3 - Tema 9: Accesibilidad, Diseño Universal, Usabilidad y Seguridad en el Desarrollo",
+  "descripcion": "Test de 60 preguntas sobre las pautas WCAG 2.2, WAI-ARIA, normativa legal (RD 1112/2018), estándares de usabilidad ISO, métricas biométricas y conceptos esenciales de desarrollo seguro basado en el material oficial de examen.",
+  "preguntas": [
+    {
+      "id": 1,
+      "enunciado": "¿Qué pauta definida por el WAI NO es de accesibilidad?",
+      "opciones": {
+        "a": "ATAG.",
+        "b": "UAAG.",
+        "c": "WCAG.",
+        "d": "ACAG."
+      },
+      "correcta": "d",
+      "explicacion": "ACAG no corresponde a ninguna especificación oficial del WAI (Web Accessibility Initiative). Las pautas reales del consorcio son WCAG (para contenidos web), ATAG (para herramientas de autor) y UAAG (para agentes de usuario)."
+    },
+    {
+      "id": 2,
+      "enunciado": "¿Cuántas pautas se definen en WCAG 2.2?",
+      "opciones": {
+        "a": "11.",
+        "b": "12.",
+        "c": "13.",
+        "d": "14."
+      },
+      "correcta": "c",
+      "explicacion": "Las pautas WCAG en su especificación 2.2 mantienen la estructura organizativa de 13 pautas distribuidas de forma transversal bajo los 4 principios fundamentales de accesibilidad web."
+    },
+    {
+      "id": 3,
+      "enunciado": "¿A quién NO se dirige principalmente WCAG 2.2?",
+      "opciones": {
+        "a": "A usuarios de aplicaciones.",
+        "b": "A desarrolladores de contenidos web.",
+        "c": "A desarrolladores de herramientas para la evaluación de la accesibilidad web.",
+        "d": "A desarrolladores de navegadores."
+      },
+      "correcta": "a",
+      "explicacion": "Las directrices WCAG están redactadas explícitamente para servir de guía técnica a creadores de contenido, desarrolladores de software, diseñadores web y evaluadores de herramientas, no para ser consumidas directamente por los usuarios finales de las aplicaciones."
+    },
+    {
+      "id": 4,
+      "enunciado": "¿Qué principio de WCAG 2.2 se corresponde \"la información y los componentes de la interfaz de usuario deben ser mostrados a los usuarios en formas que ellos puedan entender\"?",
+      "opciones": {
+        "a": "Perceptible.",
+        "b": "Operable.",
+        "c": "Comprensible.",
+        "d": "Robusto."
+      },
+      "correcta": "a",
+      "explicacion": "Nota aclaratoria sobre la plantilla: Aunque textualmente la frase alude a que los usuarios puedan 'entender' (que recuerda conceptualmente a Comprensible), el redactado formal de este simulacro y su plantilla oficial asocian esta definición de interfaz visualizada al principio 'Perceptible'."
+    },
+    {
+      "id": 5,
+      "enunciado": "El criterio de conformidad \"Orientación\" se encuadra en la pauta de WCAG 2.2:",
+      "opciones": {
+        "a": "Distinguible.",
+        "b": "Operable.",
+        "c": "Adaptable.",
+        "d": "Visible."
+      },
+      "correcta": "c",
+      "explicacion": "El criterio de conformidad 1.3.4 (Orientación), que prohíbe restringir la visualización de la pantalla a un único modo estricto vertical u horizontal, pertenece formalmente a la pauta 1.3 (Adaptable) del principio Perceptible."
+    },
+    {
+      "id": 6,
+      "enunciado": "En WCAG 2.2, el criterio de conformidad Contraste de contenido no textual de al menos 3:1 en elementos como botones, campos de formulario, gráficos iconos... es de:",
+      "opciones": {
+        "a": "Nivel A.",
+        "b": "Nivel AA.",
+        "c": "Nivel AAA.",
+        "d": "Nivel AAAA."
+      },
+      "correcta": "b",
+      "explicacion": "El criterio de conformidad 1.4.11 (Contraste no textual) exige una relación de contraste mínima de 3:1 frente a colores adyacentes para componentes de interfaz de usuario y objetos gráficos, estando catalogado como un requisito de Nivel AA."
+    },
+    {
+      "id": 7,
+      "enunciado": "La pauta \"Ataques epilépticos\" de WCAG 2.2 pertenece al principio:",
+      "opciones": {
+        "a": "Perceptible.",
+        "b": "Operable.",
+        "c": "Comprensible.",
+        "d": "Robusto."
+      },
+      "correcta": "b",
+      "explicacion": "La pauta 2.3, orientada a evitar el diseño de contenidos parpadeantes que puedan provocar convulsiones o ataques epilépticos (\"Ataques epilépticos y reacciones físicas\"), forma parte del principio Operable."
+    },
+    {
+      "id": 8,
+      "enunciado": "En WCAG 2.2, el criterio de conformidad \"Tres destellos\" es de:",
+      "opciones": {
+        "a": "Nivel A.",
+        "b": "Nivel AA.",
+        "c": "Nivel AAA.",
+        "d": "Nivel AAAA."
+      },
+      "correcta": "c",
+      "explicacion": "El criterio de destellos generales se divide en dos niveles de exigencia. Mientras que el umbral ordinario (2.3.1) es Nivel A, la restricción estricta de 'Tres destellos sin excepciones' (criterio 2.3.2) asciende al rango de Nivel AAA."
+    },
+    {
+      "id": 9,
+      "enunciado": "En WCAG 2.2, el criterio de conformidad \"Titulado de páginas\" es de:",
+      "opciones": {
+        "a": "Nivel A.",
+        "b": "Nivel AA.",
+        "c": "Nivel AAA.",
+        "d": "Nivel AAAA."
+      },
+      "correcta": "a",
+      "explicacion": "El criterio de conformidad 2.4.2 (Páginas tituladas), que obliga a dotar a cada documento web de un título descriptivo y con sentido que identifique su propósito, constituye un requisito básico de Nivel A."
+    },
+    {
+      "id": 10,
+      "enunciado": "En WCAG 2.2, el criterio de conformidad \"Idioma de la página\" es de:",
+      "opciones": {
+        "a": "Nivel A.",
+        "b": "Nivel AA.",
+        "c": "Nivel AAA.",
+        "d": "Nivel AAAA."
+      },
+      "correcta": "a",
+      "explicacion": "El criterio 3.1.1 (Idioma de la página) impone la obligación de definir el atributo de idioma predeterminado del documento (vía tag HTML `<html lang=\"...\">`) para que los lectores de pantalla lo interpreten correctamente, catalogándose como Nivel A."
+    },
+    {
+      "id": 11,
+      "enunciado": "En WCAG 2.2, el criterio de conformidad \"Abreviaturas\" es de:",
+      "opciones": {
+        "a": "Nivel A.",
+        "b": "Nivel AA.",
+        "c": "Nivel AAA.",
+        "d": "Nivel AAAA."
+      },
+      "correcta": "c",
+      "explicacion": "El criterio 3.1.4 (Abreviaturas) requiere proveer mecanismos para localizar la definición extendida de abreviaturas o siglas del texto, clasificándose dentro de las directrices avanzadas de Nivel AAA."
+    },
+    {
+      "id": 12,
+      "enunciado": "En WCAG 2.2, en relación al Nivel AAA señale la respuesta INCORRECTA:",
+      "opciones": {
+        "a": "Son los criterios de menor importancia.",
+        "b": "Si se cumplen confieren a la página web un buen nivel de accesibilidad.",
+        "c": "Se deben satisfacer los criterios de Nivel A, Nivel AA y Nivel AAA.",
+        "d": "Eliminan importantes barreras de acceso."
+      },
+      "correcta": "d",
+      "explicacion": "Nota técnica sobre la solución oficial: El test califica a 'd' como la respuesta incorrecta en base al redactado literal de la prioridad de los niveles. El nivel AAA es el peldaño de cumplimiento más estricto y de implementación compleja; elimina barreras muy específicas, pero no es obligatorio con carácter general en las normativas del sector público."
+    },
+    {
+      "id": 13,
+      "enunciado": "Señale la respuesta INCORRECTA sobre WAI-ARIA:",
+      "opciones": {
+        "a": "Su significado es Aplicaciones de Internet Enriquecidas Accesibles.",
+        "b": "Permite transmitir comportamientos de la IU a las tecnologías de apoyo.",
+        "c": "Establece ontologías de roles, estados y propiedades.",
+        "d": "No pertenece a WAI, es una biblioteca para la Web Semántica."
+      },
+      "correcta": "d",
+      "explicacion": "WAI-ARIA (Accessible Rich Internet Applications) es una especificación técnica madura desarrollada formalmente por el WAI dentro del W3C, lo que hace rotundamente falsa la afirmación de que no pertenece al consorcio."
+    },
+    {
+      "id": 14,
+      "enunciado": "Indique un criterio de conformidad nuevo incluido en el borrador de WCAG 2.2:",
+      "opciones": {
+        "a": "Entrada redundante.",
+        "b": "Tamaño del objetivo.",
+        "c": "Gestor del puntero.",
+        "d": "Reajuste."
+      },
+      "correcta": "a",
+      "explicacion": "El criterio de conformidad 3.3.7 (Redundant Input - Entrada redundante) es una de las incorporaciones características introducidas de forma oficial en la versión WCAG 2.2 para evitar que el usuario deba reintroducir datos ya aportados en el mismo proceso."
+    },
+    {
+      "id": 15,
+      "enunciado": "¿Cuál de las siguientes NO es una herramienta de evaluación de la accesibilidad?",
+      "opciones": {
+        "a": "TAW.",
+        "b": "HERA.",
+        "c": "examinator.",
+        "d": "Wave."
+      },
+      "correcta": "b",
+      "explicacion": "Nota sobre la evolución de herramientas: TAW, Wave y Examinator son validadores automatizados en línea de accesibilidad. HERA fue una herramienta mítica en España, pero la plantilla oficial del bloque la descarta o posiciona como la opción correcta de exclusión frente al resto de suites operativas estándar."
+    },
+    {
+      "id": 16,
+      "enunciado": "Una herramienta de evaluación de la accesibilidad:",
+      "opciones": {
+        "a": "Realiza siempre un chequeo automático de todos los criterios de conformidad.",
+        "b": "Solo puede comprobar de forma automática una parte de los criterios de conformidad.",
+        "c": "Es de uso opcional en la Administración General del Estado.",
+        "d": "Es un servicio de pago en línea."
+      },
+      "correcta": "b",
+      "explicacion": "Ninguna herramienta de software puede evaluar el 100% de la accesibilidad por sí sola. Los algoritmos automatizados validan aspectos sintácticos concretos, pero obligatoriamente se requiere una revisión manual pericial para evaluar la semántica y usabilidad real."
+    },
+    {
+      "id": 17,
+      "enunciado": "¿Qué norma española legisla sobre accesibilidad de los sitios web y aplicaciones para dispositivos móviles del sector público?",
+      "opciones": {
+        "a": "Real Decreto 1112/2018.",
+        "b": "Real Decreto 1112/2019.",
+        "c": "Real Decreto 1121/2018.",
+        "d": "Real Decreto 1121/2019."
+      },
+      "correcta": "a",
+      "explicacion": "El Real Decreto 1112/2018, de 7 de septiembre, es la transposición obligatoria de la Directiva Europea (UE) 2016/2102 que regula de forma estricta los requisitos de accesibilidad digital en el sector público español."
+    },
+    {
+      "id": 18,
+      "enunciado": "¿En qué fecha las aplicaciones móviles desarrolladas por las Administraciones Públicas deberán ser accesibles?",
+      "opciones": {
+        "a": "Antes de 2021.",
+        "b": "Antes del 23 de diciembre de 2020.",
+        "c": "Antes del 23 de junio de 2021.",
+        "d": "Antes del 23 de septiembre de 2020."
+      },
+      "correcta": "c",
+      "explicacion": "De acuerdo con el calendario de plazos de aplicación fijado por el Real Decreto 1112/2018, el horizonte máximo de obligado cumplimiento fijado para las aplicaciones para dispositivos móviles se estableció el 23 de junio de 2021."
+    },
+    {
+      "id": 19,
+      "enunciado": "En relación con el diseño universal o diseño para todos, ¿qué principio tiene como objetivo que el diseño minimice los riesgos y las consecuencias adversas de acciones involuntarias o accidentales?",
+      "opciones": {
+        "a": "Uso flexible.",
+        "b": "Uso equiparable.",
+        "c": "Con tolerancia al error.",
+        "d": "Simple e intuitivo."
+      },
+      "correcta": "c",
+      "explicacion": "El principio de 'Tolerancia al error' (Tolerance for Error) dentro de los 7 principios del Diseño Universal dictados por Mace busca de forma explícita reducir el peligro frente a acciones accidentales del usuario mediante avisos de confirmación o salvaguardas."
+    },
+    {
+      "id": 20,
+      "enunciado": "¿En qué norma ISO se define la usabilidad como la capacidad de un software de ser comprendido, aprendido, usado y ser atractivo para el usuario, en condiciones específicas de uso?",
+      "opciones": {
+        "a": "ISO/IEC 9126.",
+        "b": "ISO/IEC 9216.",
+        "c": "ISO/IEC 9241.",
+        "d": "ISO/IEC 9421."
+      },
+      "correcta": "a",
+      "explicacion": "El estándar histórico de calidad del producto software ISO/IEC 9126 estructuraba la usabilidad a través de las subcaracterísticas métricas primitivas de comprensibilidad, aprendizaje, operabilidad y atractividad."
+    },
+    {
+      "id": 21,
+      "enunciado": "¿Qué norma de AENOR trata sobre accesibilidad hardware?",
+      "opciones": {
+        "a": "UNE 139801:2003.",
+        "b": "UNE 139802:2009.",
+        "c": "UNE 139803:2012.",
+        "d": "UNE 139804:2015."
+      },
+      "correcta": "a",
+      "explicacion": "La norma UNE 139801 de la familia AENOR aborda formalmente los requisitos y directrices de accesibilidad específicos aplicables al hardware y equipamiento informático físico, mientras que la UNE 139803 se enfoca de forma exclusiva al software y contenidos web."
+    },
+    {
+      "id": 22,
+      "enunciado": "Respecto a los esquemas de autenticación de usuarios, señale la respuesta correcta:",
+      "opciones": {
+        "a": "Un SMS que recibe el usuario es algo que sabe.",
+        "b": "El reconocimiento ocular es algo que tiene el usuario.",
+        "c": "Un PIN es algo que posee el usuario.",
+        "d": "El reconocimiento facial es algo que es del usuario."
+      },
+      "correcta": "d",
+      "explicacion": "Los factores de autenticación clásicos se dividen en: algo que sabes (conocimiento, como un PIN), algo que tienes (posesión, como un token físico) y algo que eres (biometría inherente, como el reconocimiento facial, de huella o iris)."
+    },
+    {
+      "id": 23,
+      "enunciado": "¿Cuál de los siguientes NO es un principio de seguridad en el desarrollo de sistemas?",
+      "opciones": {
+        "a": "Mínima funcionalidad.",
+        "b": "Máximo privilegio.",
+        "c": "Defensa en profundidad.",
+        "d": "Resiliencia."
+      },
+      "correcta": "b",
+      "explicacion": "El principio correcto de seguridad es el del **Mínimo privilegio** (Least privilege), el cual prescribe otorgar los menores permisos estrictamente indispensables para cumplir la tarea. Hablar de 'Máximo privilegio' representa un fallo crítico y el antipatrón opuesto."
+    },
+    {
+      "id": 24,
+      "enunciado": "Cuando varios procesos acceden al mismo tiempo a un recurso compartido cambiando su estado y obtenido un valor no esperado, es una vulnerabilidad de:",
+      "opciones": {
+        "a": "Desbordamiento de buffer.",
+        "b": "Condición de carrera.",
+        "c": "Error de formato de cadena.",
+        "d": "Cross-Site Scripting."
+      },
+      "correcta": "b",
+      "explicacion": "Una condición de carrera (Race Condition) se produce cuando la salida o consistencia de un sistema distribuido o multihilo depende impredeciblemente de la secuencia u orden de ejecución de procesos concurrentes sobre una variable o recurso crítico compartido."
+    },
+    {
+      "id": 25,
+      "enunciado": "Para el desarrollo seguro de aplicaciones web se recomienda:",
+      "opciones": {
+        "a": "Uso del método POST para consulta de información.",
+        "b": "Uso del método GET para envío de información.",
+        "c": "El cifrado de las comunicaciones entre las partes.",
+        "d": "El uso de cabeceras HTTP como método de validación."
+      },
+      "correcta": "c",
+      "explicacion": "Establecer canales TLS cifrados seguros (HTTPS) constituye la recomendación indispensable de desarrollo seguro para salvaguardar la confidencialidad e integridad de la información sensible transmitida en tránsito sobre la red."
+    },
+    {
+      "id": 26,
+      "enunciado": "En relación a los estándares de documentación, ¿cuál está relacionado con la usabilidad?",
+      "opciones": {
+        "a": "ISO 9241.",
+        "b": "ISO 9127.",
+        "c": "BS 7649.",
+        "d": "ISO 9240."
+      },
+      "correcta": "a",
+      "explicacion": "La norma de referencia internacional omnipresente en usabilidad y ergonomía de sistemas interactivos es la familia ISO 9241 (específicamente la ISO 9241-11 define formalmente eficacia, eficiencia y satisfacción)."
+    },
+    {
+      "id": 27,
+      "enunciado": "Según el Real Decreto 1112/2018, ¿cada cuánto tiempo hay que revisar la exactitud de toda la información contenida en la Declaración de accesibilidad?",
+      "opciones": {
+        "a": "Como mínimo cada tres años.",
+        "b": "Como mínimo una vez al año, pero solo hay que actualizar la fecha...",
+        "c": "Como mínimo una vez al año.",
+        "d": "Como mínimo cada dos años."
+      },
+      "correcta": "c",
+      "explicacion": "El artículo 15 del Real Decreto 1112/2018 estipula de forma taxativa que la declaración de accesibilidad web gubernamental debe ser revisada y actualizada periódicamente, con una periodicidad obligatoria de **al menos una vez al año**."
+    },
+    {
+      "id": 28,
+      "enunciado": "¿Qué significa ARIA?",
+      "opciones": {
+        "a": "Accessible Rich Internet Applications.",
+        "b": "Augmented Real Interface for Accessibility.",
+        "c": "Application Rapid Interface for Accessibility.",
+        "d": "Ninguna de las respuestas anteriores es correcta."
+      },
+      "correcta": "a",
+      "explicacion": "ARIA responde exactamente a las siglas de 'Accessible Rich Internet Applications' (Aplicaciones de Internet Enriquecidas Accesibles), extendiendo las capacidades semánticas de HTML5 mediante atributos."
+    },
+    {
+      "id": 29,
+      "enunciado": "TAW es:",
+      "opciones": {
+        "a": "Un lector de pantalla.",
+        "b": "Un magnificador de pantalla.",
+        "c": "Un teclado virtual en pantalla.",
+        "d": "Una herramienta de revisión automática de la accesibilidad web."
+      },
+      "correcta": "d",
+      "explicacion": "TAW (Test de Accesibilidad Web) es la suite de software española de referencia histórica de análisis automático para auditar y diagnosticar el grado de cumplimiento de las pautas WCAG en un portal de internet."
+    },
+    {
+      "id": 30,
+      "enunciado": "¿Cuáles son los cuatro principios de accesibilidad en los que se basa el estándar WCAG (Web Content Accessibility Guidelines)?",
+      "opciones": {
+        "a": "Perceptible, comprensible, único y seguro.",
+        "b": "Perceptible, operable, comprensible y robusto.",
+        "c": "Perceptible, operable, seguro y robusto.",
+        "d": "Perceptible, operable, seguro y estético."
+      },
+      "correcta": "b",
+      "explicacion": "Establece el acrónimo core universal de accesibilidad web (POUR): Perceptible (Perceivable), Operable (Operable), Comprensible (Understandable) y Robusto (Robust)."
+    },
+    {
+      "id": 31,
+      "enunciado": "La norma UNE 139803:2012 regula:",
+      "opciones": {
+        "a": "Los requisitos de accesibilidad para los sistemas informáticos.",
+        "b": "Los requisitos de seguridad para contenidos en la web.",
+        "c": "Los requisitos de accesibilidad y seguridad para contenidos en la web.",
+        "d": "Los requisitos de accesibilidad para contenidos en la web."
+      },
+      "correcta": "d",
+      "explicacion": "La norma UNE 139803:2012 es el estándar técnico formal nacional que establece de forma estricta las especificaciones técnicas y requisitos oficiales de accesibilidad para los contenidos web en España."
+    },
+    {
+      "id": 32,
+      "enunciado": "La pauta WCAG 2.2 de Asistencia a la entrada de datos se relaciona con el principio:",
+      "opciones": {
+        "a": "Perceptible.",
+        "b": "Operable.",
+        "c": "Comprensible.",
+        "d": "Robusto."
+      },
+      "correcta": "c",
+      "explicacion": "La pauta 3.3, enfocada a ayudar a los usuarios a evitar errores de introducción de información y corregirlos de forma ágil (\"Asistencia a la entrada de datos\"), pertenece al principio Comprensible."
+    },
+    {
+      "id": 33,
+      "enunciado": "La pauta WCAG 2.2 de Tiempo suficiente se relaciona con el principio:",
+      "opciones": {
+        "a": "Perceptible.",
+        "b": "Operable.",
+        "c": "Comprensible.",
+        "d": "Robusto."
+      },
+      "correcta": "b",
+      "explicacion": "La pauta 2.1 (\"Tiempo suficiente\"), ideada para garantizar que los usuarios dispongan del margen cronológico necesario para leer e interactuar con los datos de las pantallas, reside bajo el principio Operable."
+    },
+    {
+      "id": 34,
+      "enunciado": "El Real Decreto 1112/2018 sobre accesibilidad de los sitios web... aplica a los contenidos siguientes (señale la respuesta INCORRECTA):",
+      "opciones": {
+        "a": "Información textual y no textual.",
+        "b": "Documentos y formularios que se puedan descargar.",
+        "c": "Formas de interacción entre la persona interesada y el sitio web...",
+        "d": "Contenido multimedia en directo (que se emite en directo) de base temporal."
+      },
+      "correcta": "d",
+      "explicacion": "El artículo 3 del Real Decreto 1112/2018 excluye de forma explícita de su ámbito de aplicación obligatorio a las emisiones de contenidos multimedia multimedia en directo basados en el tiempo, dado el reto de sincronización inmediata que conllevan."
+    },
+    {
+      "id": 35,
+      "enunciado": "En los enlaces de hipertexto, ¿qué recomiendan las normas de accesibilidad del W3C?",
+      "opciones": {
+        "a": "No dar al usuario el control sobre los cambios de vista.",
+        "b": "Utilizar el literal \"Pinche aquí\".",
+        "c": "Repetir el enlace cada vez que el texto de ese enlace aparezca dentro del documento.",
+        "d": "Usar texto para identificar el propósito del enlace que tenga sentido leído fuera de contexto."
+      },
+      "correcta": "d",
+      "explicacion": "Para asegurar la navegación de usuarios invidentes que saltan secuencialmente entre links, los literales de los hipervínculos deben ser descriptivos por sí mismos e identificar el destino inequívoco, evitando expresiones mudas como 'haga clic aquí'."
+    },
+    {
+      "id": 36,
+      "enunciado": "En HTML y en relación con la accesibilidad Web, ¿qué atributo debe utilizar para describir la función de cada elemento visual?",
+      "opciones": {
+        "a": "attrib.",
+        "b": "image.",
+        "c": "alt.",
+        "d": "vision."
+      },
+      "correcta": "c",
+      "explicacion": "El atributo `alt` (texto alternativo) dentro de la etiqueta `<img src=\"...\" alt=\"descripción\">` es el canal estándar fundamental para dotar de una alternativa textual inteligible a los elementos gráficos, indispensable para los lectores de pantalla."
+    },
+    {
+      "id": 37,
+      "enunciado": "¿Cuál de los siguientes ejemplos es una barrera de accesibilidad en páginas web?",
+      "opciones": {
+        "a": "Imágenes con texto alternativo.",
+        "b": "Ubicación de las páginas mediante \"migas de pan\".",
+        "c": "Colocar información importante en una ventana emergente.",
+        "d": "Creación de páginas web haciendo uso de media queries."
+      },
+      "correcta": "c",
+      "explicacion": "Inyectar avisos críticos o datos obligatorios en ventanas emergentes flotantes (pop-ups) altera bruscamente el enfoque de los lectores de pantalla y desorienta la navegación de usuarios con deficiencias cognitivas o motoras, operando como una barrera clásica."
+    },
+    {
+      "id": 38,
+      "enunciado": "El Real Decreto 1112/2018, de 7 de septiembre, sobre accesibilidad de los sitios web y aplicaciones para dispositivos móviles del sector público:",
+      "opciones": {
+        "a": "Tiene por objeto garantizar los requisitos de accesibilidad de los sitios web y aplicaciones para dispositivos móviles de los organismos del sector público.",
+        "b": "Se aplica a todo el sector público estatal, autonómico y local con la excepción de la Administración de Justicia.",
+        "c": "Define accesibilidad como el conjunto de principios y técnicas que se deben respetar al diseñar, construir y mantener los sitios web exclusivamente.",
+        "d": "No incluye como contenido accesible de los sitios web los procesos de identificación, autenticación, firma y pago."
+      },
+      "correcta": "a",
+      "explicacion": "La opción 'a' resume a la perfección el objeto del Real Decreto regulado en su artículo 1. La Administración de Justicia está completamente sujeta y obligada (haciendo falsa la opción b) y los procesos de firma y pago sí están incluidos obligatoriamente (haciendo falsa la d)."
+    },
+    {
+      "id": 39,
+      "enunciado": "Según el artículo 15 del Real Decreto 1112/2018, indique la respuesta correcta sobre la declaración de accesibilidad:",
+      "opciones": {
+        "a": "Será actualizada periódicamente, como mínimo una vez cada dos años...",
+        "b": "Será revisada periódicamente por la Red de Contactos...",
+        "c": "Será actualizada periódicamente, como mínimo una vez al año, o cada vez que se realice una revisión de accesibilidad.",
+        "d": "Será actualizada periódicamente, como mínimo una vez cada tres años..."
+      },
+      "correcta": "c",
+      "explicacion": "El redactado literal e imperativo de la ley dictamina que la declaración de accesibilidad debe actualizarse con carácter anual de manera fija u obligatoriamente tras la finalización de cada revisión o auditoría formal de accesibilidad realizada."
+    },
+    {
+      "id": 40,
+      "enunciado": "El artículo 3.1 del Real Decreto 1112/2018, sobre accesibilidad de los sitios web..., indica como ámbito objetivo de aplicación:",
+      "opciones": {
+        "a": "Sitios web, independientemente del dispositivo empleado para acceder a ellos, y las aplicaciones para dispositivos móviles de los organismos del sector público y otros obligados.",
+        "b": "Sitios web, únicamente cuando se accede a ellos desde dispositivos móviles...",
+        "c": "Solo a sitios web para dispositivos móviles del sector público...",
+        "d": "Solo a las aplicaciones para dispositivos móviles del sector público..."
+      },
+      "correcta": "a",
+      "explicacion": "El RD 1112/2018 aplica universalmente de forma global a la totalidad de los portales de internet corporativos (sin importar si la consulta es de escritorio o móvil) y a todas las apps del ecosistema móvil público."
+    },
+    {
+      "id": 41,
+      "enunciado": "¿Cuál de las siguientes características de una web NO se ajusta a los principios de accesibilidad del W3C?",
+      "opciones": {
+        "a": "Toda la funcionalidad que está disponible con ratón también está disponible con teclado.",
+        "b": "Contiene breves descripciones del contenido no textual, como archivos de audio y vídeo.",
+        "c": "Sólo hay un camino para encontrar las páginas relevantes en un conjunto de páginas web.",
+        "d": "El color no se utiliza como única forma de transmitir información o identificar el contenido."
+      },
+      "correcta": "c",
+      "explicacion": "La opción 'c' incumple las directrices de accesibilidad. El criterio de conformidad 2.4.5 (Múltiples vías) impone de forma explícita que debe proporcionarse **más de un camino** (e.g., buscador interno junto a mapa web y menú estructurado) para localizar páginas, salvo contadas excepciones."
+    },
+    {
+      "id": 42,
+      "enunciado": "De acuerdo con el Real Decreto 1112/2018, en relación a los mecanismos de comunicación relativos a las solicitudes de información accesible y quejas en sitios webs ya publicados, ¿cuál es la fecha de entrada en vigor?",
+      "opciones": {
+        "a": "En el momento de publicación en el BOE del Real Decreto 1112/2018.",
+        "b": "Al año de la entrada en vigor del Real Decreto 1112/2018.",
+        "c": "A los dos años de la entrada en vigor del Real Decreto 1112/2018.",
+        "d": "A los dos años de la entrada en vigor del Real Decreto 1112/2018."
+      },
+      "correcta": "c",
+      "explicacion": "La disposición transitoria única del RD 1112/2018 fijó el horizonte del 20 de septiembre de 2020 (exactamente dos años tras su entrada en vigor general) como la fecha obligatoria límite para el despliegue del canal de solicitudes informativas accesibles y tramitación de quejas de portales antiguos."
+    },
+    {
+      "id": 43,
+      "enunciado": "De acuerdo con el artículo 10 del Real Decreto 1112/2018, recibidas las solicitudes de información accesible y quejas, la entidad obligada deberá responder en el plazo de:",
+      "opciones": {
+        "a": "10 días naturales.",
+        "b": "20 días naturales.",
+        "c": "10 días hábiles.",
+        "d": "20 días hábiles."
+      },
+      "correcta": "d",
+      "explicacion": "El órgano administrativo competente ante el que se registre la queja o solicitud de información accesible dispone de un margen máximo de actuación y respuesta de **20 días hábiles** contados desde su recepción."
+    },
+    {
+      "id": 44,
+      "enunciado": "En relación con el Real Decreto 1112/2018, indique qué respuesta es INCORRECTA:",
+      "opciones": {
+        "a": "Los criterios de accesibilidad recogidos en el presente real decreto no serán de aplicación a los sitios web y aplicaciones para dispositivos móviles del Banco de España.",
+        "b": "Las entidades obligadas deberán ofrecer un mecanismo de comunicación para presentar sugerencias y quejas.",
+        "c": "La primera revisión de accesibilidad deberá haberse realizado en el caso de los sitios web antes de dos años...",
+        "d": "La primera revisión de accesibilidad deberá haberse realizado en el caso de las aplicaciones móviles, antes de tres años..."
+      },
+      "correcta": "a",
+      "explicacion": "La opción 'a' es falsa e incorrecta. El Banco de España, en su condición de entidad de derecho público regulada y organismo institucional, se encuentra plenamente integrado dentro del sector público institucional estatal y, por tanto, totalmente supeditado al cumplimiento normativo del decreto."
+    },
+    {
+      "id": 45,
+      "enunciado": "Según las Pautas de Accesibilidad para el Contenido Web 2.2, ¿cuál es el objetivo de que un contenido sea Distinguible?",
+      "opciones": {
+        "a": "Crear contenido que pueda presentarse de diferentes formas sin perder información...",
+        "b": "Facilitar a los usuarios ver y oír el contenido, incluyendo la separación entre el primer plano y el fondo.",
+        "c": "Proporcionar alternativas textuales para todo contenido no textual...",
+        "d": "Proporcionar alternativas para los medios tempodependientes."
+      },
+      "correcta": "b",
+      "explicacion": "La pauta 1.4 establece textualmente que el objetivo de hacer el contenido web 'Distinguible' es facilitar de forma activa a los usuarios la percepción auditiva y visual de los datos, separando los elementos de primer plano de sus fondos."
+    },
+    {
+      "id": 46,
+      "enunciado": "El principio de la accesibilidad web que exige que la información y los componentes de la IU deben ser mostrados a los usuarios en formas que ellos puedan entender es:",
+      "opciones": {
+        "a": "La perceptibilidad.",
+        "b": "La comprensibilidad.",
+        "c": "La robustez.",
+        "d": "La operabilidad."
+      },
+      "correcta": "a",
+      "explicacion": "Nota aclaratoria sobre la plantilla: Reiteración literal de la pregunta 4 de este examen simulado. El test consolida en su tabla de soluciones que esta especificación de mostrar la información de forma asimilable se cataloga bajo el principio de 'Perceptibilidad'."
+    },
+    {
+      "id": 47,
+      "enunciado": "Según el artículo 3 del Real Decreto 1112/2018, el contenido accesible de los sitios web... incluye (señale la respuesta INCORRECTA):",
+      "opciones": {
+        "a": "Las formas de interacción bidireccional.",
+        "b": "El tratamiento de formularios digitales.",
+        "c": "La cumplimentación de los procesos de identificación, autenticación... con independencia de la plataforma tecnológica...",
+        "d": "Los documentos y formularios que no se pueden descargar."
+      },
+      "correcta": "d",
+      "explicacion": "La opción 'd' plantea un absurdo y es la incorrecta. El decreto obliga de forma explícita a que **todos los documentos, expedientes y formularios descargables** puestos a disposición de los ciudadanos cumplan estrictamente con las pautas formales de accesibilidad."
+    },
+    {
+      "id": 48,
+      "enunciado": "Según el artículo 7 del Real Decreto 1112/2018, relacionado con la carga desproporcionada, señale la respuesta INCORRECTA:",
+      "opciones": {
+        "a": "La excepción al cumplimiento de los requisitos de accesibilidad deberá ser motivada...",
+        "b": "La carga desproporcionada es aquella carga que impone una carga financiera y organizativa excesiva...",
+        "c": "Se consideran motivos que permitan apreciar la excepción de la carga desproporcionada la falta de prioridad, de tiempo o de conocimientos.",
+        "d": "En todo caso, en la declaración de accesibilidad se hará constar las partes de los requisitos que no puede cumplir..."
+      },
+      "correcta": "c",
+      "explicacion": "La ley explicita taxativamente en su articulado que **la escasez de tiempo, la falta de conocimientos técnicos o la ausencia de prioridad presupuestaria no se considerarán en ningún caso motivos legítimos** ni admisibles para justificar una exención por carga desproporcionada."
+    },
+    {
+      "id": 49,
+      "enunciado": "Según el artículo 4 del Real Decreto 1112/2018, el principio de la accesibilidad que exige que los contenidos sean suficientemente sólidos para poder ser interpretados de forma fiable por una gran variedad de agentes de usuario se corresponde con la:",
+      "opciones": {
+        "a": "Perceptibilidad.",
+        "b": "Operabilidad.",
+        "c": "Compresibilidad.",
+        "d": "Robustez."
+      },
+      "correcta": "d",
+      "explicacion": "La capacidad intrínseca del software de mantener la compatibilidad y estabilidad técnica con el abanico evolutivo de navegadores actuales, futuros y tecnologías de asistencia especializadas es la definición legal del principio de 'Robustez'."
+    },
+    {
+      "id": 50,
+      "enunciado": "Establece el artículo 15 del Real Decreto 1112/2018, que la declaración de accesibilidad comprenderá, como mínimo, la siguiente información (señale la respuesta INCORRECTA):",
+      "opciones": {
+        "a": "La Unidad responsable de accesibilidad.",
+        "b": "Un enlace y descripción del mecanismo de comunicación.",
+        "c": "Una explicación sobre aquellas partes del contenido que no sean accesibles...",
+        "d": "Un enlace al procedimiento de reclamación al que cualquier persona interesada pueda recurrir..."
+      },
+      "correcta": "a",
+      "explicacion": "Nota legal: Aunque la designación de la URA (Unidad Responsable de Accesibilidad) es de obligado cumplimiento para cada ministerio u organismo, los contenidos mínimos fijos normativos tasados que debe lucir el texto público de la declaración web son la situación de conformidad, las partes no accesibles, los canales de sugerencias/quejas y el procedimiento de reclamación de amparo posterior. La designación orgánica interna del nombre específico de la unidad se excluye de este redactado de mínimos en la plantilla."
+    },
+    {
+      "id": 51,
+      "enunciado": "¿Cuál de las siguientes es una herramienta relacionada con la accesibilidad en dispositivos móviles con sistema operativo iOS?",
+      "opciones": {
+        "a": "A11yUITests.",
+        "b": "Lint.",
+        "c": "Accessibility Scanner.",
+        "d": "UI Automator Viewer."
+      },
+      "correcta": "a",
+      "explicacion": "A11yUITests es una biblioteca y herramienta automatizada diseñada de manera específica para integrarse en las pruebas de interfaz gráfica de aplicaciones nativas sobre el entorno iOS de Apple. Accessibility Scanner y UI Automator son del ecosistema de Android."
+    },
+    {
+      "id": 52,
+      "enunciado": "La pauta WCAG 2.2 Legible se relaciona con el principio:",
+      "opciones": {
+        "a": "Perceptible.",
+        "b": "Operable.",
+        "c": "Compresible.",
+        "d": "Robusto."
+      },
+      "correcta": "c",
+      "explicacion": "La pauta 3.1 (\"Legible\"), cuyo fin es velar por que los contenidos textuales de las pantallas sean claros, legibles y asimilables por los usuarios, forma parte estructural del principio Comprensible."
+    },
+    {
+      "id": 53,
+      "enunciado": "WCAG 2.2 se compone de:",
+      "opciones": {
+        "a": "4 principios, 13 pautas y 86 criterios de conformidad.",
+        "b": "4 principios, 12 pautas y 85 criterios de conformidad.",
+        "c": "3 principios, 14 pautas y 84 criterios de conformidad.",
+        "d": "5 principios, 12 pautas y 87 criterios de conformidad."
+      },
+      "correcta": "a",
+      "explicacion": "La versión formal definitiva de las directrices WCAG 2.2 consolida un esqueleto técnico integrado exactamente por los 4 principios clásicos, las 13 pautas de diseño y un total de 86 criterios de conformidad verificables."
+    },
+    {
+      "id": 54,
+      "enunciado": "¿Cómo se denomina la guía para aplicar WCAG a las tecnologías de la información y comunicaciones no web?",
+      "opciones": {
+        "a": "WCAGNOTIC.",
+        "b": "WCAG2ICT.",
+        "c": "WCAG2TIC.",
+        "d": "WCAGCIT2."
+      },
+      "correcta": "b",
+      "explicacion": "WCAG2ICT (\"Guidance on Applying WCAG to Non-Web Information and Communications Technologies\") es el documento e informe técnico oficial del W3C desarrollado para guiar la traslación de los criterios de accesibilidad web hacia productos de software tradicional, aplicaciones locales y sistemas de hardware cerrado."
+    },
+    {
+      "id": 55,
+      "enunciado": "¿Cuál de las siguientes herramientas relacionadas con la accesibilidad para aplicaciones móviles en sistemas Android está orientada a la exploración de componentes gráficos?",
+      "opciones": {
+        "a": "Espresso.",
+        "b": "Accessibility Insights.",
+        "c": "Accessibility Snapshot.",
+        "d": "Accessibility Inspector."
+      },
+      "correcta": "b",
+      "explicacion": "Accessibility Insights es una potente suite desarrollada por Microsoft que, en sus componentes de inspección para Android, facilita de forma visual y guiada la exploración y análisis estático de árboles de componentes y contrastes gráficos en dispositivos móviles."
+    },
+    {
+      "id": 56,
+      "enunciado": "En los sistemas biométricos, ¿qué parámetro hace referencia a la tasa de fallos positivos?",
+      "opciones": {
+        "a": "FRR.",
+        "b": "EER.",
+        "c": "EAR.",
+        "d": "FAR."
+      },
+      "correcta": "d",
+      "explicacion": "La métrica FAR (False Acceptance Rate - Tasa de Falsa Aceptación) evalúa el porcentaje de ocasiones en que un motor biométrico comete el fallo de validar erróneamente la identidad de un impostor no autorizado, representando los falsos positivos del sistema."
+    },
+    {
+      "id": 57,
+      "enunciado": "Cuál de los siguientes rasgos biométricos NO cumple con la característica de la distintividad?",
+      "opciones": {
+        "a": "La geometría de la mano.",
+        "b": "La firma.",
+        "c": "El rostro.",
+        "d": "La huella dactilar."
+      },
+      "correcta": "a",
+      "explicacion": "La 'Geometría de la mano' presenta una baja distintividad biológica intrínseca en la población, dado que las estructuras tridimensionales óseas de las manos son morfológicamente muy similares entre sí, al contrario que los patrones matemáticos infinitos del iris o la huella dactilar."
+    },
+    {
+      "id": 58,
+      "enunciado": "En relación con el desarrollo seguro de aplicaciones web, ¿qué técnica de validación NO es una recomendación para la validación de los datos de entrada?",
+      "opciones": {
+        "a": "La sanitización de consultas.",
+        "b": "El formato.",
+        "c": "El tipo de datos.",
+        "d": "Los valores mínimos y máximos."
+      },
+      "correcta": "a",
+      "explicacion": "La 'Sanitización de consultas' (como escapar caracteres para evitar inyecciones SQL) es un mecanismo indispensable de mitigación que se ejecuta en la **capa de persistencia o datos** antes de interactuar con la base de datos. No constituye una técnica atómica propia de la validación inicial de tipado o formato de los inputs en la capa de entrada de datos."
+    },
+    {
+      "id": 59,
+      "enunciado": "El ataque que fuerza al navegador validado de una víctima a enviar una petición a una aplicación web vulnerable, la cual entonces realiza la acción elegida por el atacante a través de la víctima, se denomina:",
+      "opciones": {
+        "a": "XSS.",
+        "b": "CSRF.",
+        "c": "Inyección SQL.",
+        "d": "RFI."
+      },
+      "correcta": "b",
+      "explicacion": "Se trata de la definición canónica del ataque CSRF (Cross-Site Request Forgery - Falsificación de Petición en Sitios Cruzados), el cual aprovecha la confianza y las cookies de sesión activas almacenadas en el navegador del usuario para ejecutar acciones ilícitas en su nombre sin su consentimiento."
+    },
+    {
+      "id": 60,
+      "enunciado": "Para detectar, eliminar y/o mitigar las debilidades de una aplicación se pueden realizar diferentes análisis de seguridad durante el ciclo de vida del desarrollo de software, entre los que NO se encuentra:",
+      "opciones": {
+        "a": "SAST (Static Application Security Testing).",
+        "b": "S-SDLC (Secure Software Development Liability Control).",
+        "c": "DAST (Dynamic Application Security Testing).",
+        "d": "SCA (Software Composition Analysis)."
+      },
+      "correcta": "b",
+      "explicacion": "El término 'S-SDLC' suele traducirse de forma legítima como 'Secure Software Development Life Cycle' (Ciclo de Vida de Desarrollo de Software Seguro). La variante inventada en el enunciado ('Liability Control') es completamente errónea y no se corresponde con ningún framework de análisis de seguridad."
+    }
+  ]
+}

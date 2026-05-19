@@ -1,0 +1,762 @@
+{
+  "titulo": "Bloque 3 - Tema 7: Arquitectura de Sistemas Cliente/Servidor, Multicapas y Servicios Web",
+  "descripcion": "Test de 63 preguntas sobre modelos multicapa (thin/fat client), arquitectura SOA, microservicios, protocolos SOAP y REST, especificaciones WSDL, UDDI, OpenAPI y seguridad (SAML, OAuth 2.0, JWT) basado en el material oficial de examen.",
+  "preguntas": [
+    {
+      "id": 1,
+      "enunciado": "Indique la afirmación verdadera en el contexto del modelo de distribución de la arquitectura cliente/servidor conocido como \"thin client\":",
+      "opciones": {
+        "a": "Los datos residen en el servidor pero la presentación y la lógica de negocio se realizan en el cliente.",
+        "b": "La lógica de negocio de la aplicación se encuentra repartida entre el cliente y el servidor.",
+        "c": "El servidor se encarga de todas las funciones excepto de la presentación.",
+        "d": "El dialogo entre el cliente y el servidor se inicia a petición del servidor."
+      },
+      "correcta": "c",
+      "explicacion": "En el modelo de cliente ligero puro (thin client), el dispositivo cliente únicamente asume la responsabilidad de la capa de presentación (interfaz gráfica y captura de datos), delegando por completo la lógica de negocio y el procesamiento de datos al servidor."
+    },
+    {
+      "id": 2,
+      "enunciado": "¿Qué operación de WSDL describe un servicio en el que éste envía un mensaje y posteriormente recibe una respuesta?",
+      "opciones": {
+        "a": "One-way.",
+        "b": "Request-response.",
+        "c": "Solicit-response.",
+        "d": "Notification."
+      },
+      "correcta": "c",
+      "explicacion": "WSDL define cuatro tipos de transmisión en sus puertos (endpoints). La operación 'Solicit-Response' ocurre cuando el endpoint del servicio web toma la iniciativa enviando un mensaje al cliente y luego espera una respuesta correlacionada, al contrario de 'Request-Response' donde la iniciativa la tiene el cliente."
+    },
+    {
+      "id": 3,
+      "enunciado": Según la estructura de WSDL versión 2.0, ¿qué etiqueta se utiliza para describir cómo se accede al servicio web?",
+      "opciones": {
+        "a": "description.",
+        "b": "interface.",
+        "c": "binding.",
+        "d": "service."
+      },
+      "correcta": "c",
+      "explicacion": "El elemento '<binding>' de un documento WSDL describe de manera detallada los requisitos concretos de protocolo y los formatos de mensaje necesarios para conectarse e interactuar físicamente con un servicio web."
+    },
+    {
+      "id": 4,
+      "enunciado": "Indique qué característica NO se corresponde con un microservicio:",
+      "opciones": {
+        "a": "Débilmente acoplado.",
+        "b": "Funcionamiento autónomo.",
+        "c": "Desplegado de forma independiente.",
+        "d": "No reutilizable."
+      },
+      "correcta": "d",
+      "explicacion": "Los microservicios se diseñan bajo principios de modularidad y contratos de interfaz estándar, lo que promueve inherentemente la reutilización de sus capacidades funcionales por parte de múltiples componentes o clientes del ecosistema."
+    },
+    {
+      "id": 5,
+      "enunciado": "¿Cuál de los siguientes NO es un componente de los servicios web?",
+      "opciones": {
+        "a": "Proveedor de servicio.",
+        "b": "Publicador de servicio.",
+        "c": "Solicitante de servicio.",
+        "d": "Registro de servicio."
+      },
+      "correcta": "b",
+      "explicacion": "El triángulo fundamental de la arquitectura de servicios web de corte tradicional (SOA) se compone formalmente de tres roles: el Proveedor (Service Provider), el Solicitante/Consumidor (Service Requester) y el Registro/Directorio (Service Registry)."
+    },
+    {
+      "id": 6,
+      "enunciado": "Los servicios web son aplicaciones que puede ser (señale la respuesta INCORRECTA):",
+      "opciones": {
+        "a": "Descritos.",
+        "b": "Publicados.",
+        "c": "Descubiertos.",
+        "d": "Definidos."
+      },
+      "correcta": "d",
+      "explicacion": "De acuerdo con el ciclo operativo formal y la terminología estándar del W3C para SOA, los servicios se caracterizan de manera estricta por tres acciones secuenciales sobre la red: ser publicados, ser descubiertos (localizados en un registro) y ser descritos (vía metadatos contractuales)."
+    },
+    {
+      "id": 7,
+      "enunciado": "¿Qué estándar relacionado con los servicios web NO es gestionado por el W3C?",
+      "opciones": {
+        "a": "UDDI.",
+        "b": "HTTP.",
+        "c": "WSDL.",
+        "d": "SOAP."
+      },
+      "correcta": "a",
+      "explicacion": "UDDI (Universal Description, Discovery, and Integration) es un estándar abierto desarrollado originalmente por un consorcio de empresas y posteriormente gestionado y publicado bajo el amparo de la organización OASIS, no del W3C."
+    },
+    {
+      "id": 8,
+      "enunciado": "Para la implantación de una arquitectura cliente/servidor de tipo cliente fino:",
+      "opciones": {
+        "a": "Se necesitan un mínimo de 2 equipos si se utiliza el modelo de 2 capas.",
+        "b": "Se necesitan un mínimo de 3 equipos si se utiliza el modelo de 3 capas.",
+        "c": "Puede ser implantada en un único equipo.",
+        "d": "El cliente es el responsable del acceso a los datos físicos y de procesar la lógica de negocio."
+      },
+      "correcta": "c",
+      "explicacion": "Las capas y los componentes de una arquitectura son divisiones lógicas de software, no físicas. Por ende, es técnicamente viable implantar todas las capas (presentación, negocio y datos) en una única máquina física para entornos de prueba o desarrollo."
+    },
+    {
+      "id": 9,
+      "enunciado": "¿Cuál de los siguientes es un estándar que se utiliza como el elemento de seguridad en los servicios web?",
+      "opciones": {
+        "a": "SAML.",
+        "b": "WSDL.",
+        "c": "SOAP.",
+        "d": "UDDI."
+      },
+      "correcta": "a",
+      "explicacion": "SAML (Security Assertion Markup Language) es un estándar abierto basado en XML que define las directrices estructurales para el intercambio de aserciones de identidad, autenticación y autorización segura entre dominios."
+    },
+    {
+      "id": 10,
+      "enunciado": "¿Cuál de las siguientes opciones NO es una ventaja propia de una arquitectura en 3 capas?",
+      "opciones": {
+        "a": "Reduce el tráfico en la red frente a una arquitectura de dos capas.",
+        "b": "Es una arquitectura mucho más escalable.",
+        "c": "La separación de roles en capas hace más fácil modificar y reemplazar capas.",
+        "d": "Si aumenta el tamaño o complejidad de una capa, no afecta a las demás."
+      },
+      "correcta": "a",
+      "explicacion": "Por lo general, añadir una tercera capa (un servidor de aplicaciones intermedio) incrementa el número de saltos, empaquetados de datos e interacciones de red requeridos para procesar una petición, lo que aumenta en lugar de reducir el volumen de tráfico de red global comparado con el modelo plano de dos capas."
+    },
+    {
+      "id": 11,
+      "enunciado": "¿A qué hace referencia el modelo de 3 capas en el desarrollo de aplicaciones?",
+      "opciones": {
+        "a": "A que la declaración de clases se realizará con al menos tres niveles de acceso diferenciados: clases públicas, clases privadas y clases protegidas.",
+        "b": "A que se establecerán tres jerarquías de herencia de clases, en la que partiendo de una clase raíz, existirán hasta otras dos capas más de herencia.",
+        "c": "A que las aplicaciones se separarán en tres capas, estableciendo una capa de lógica de presentación, una capa de lógica de negocio y una capa de datos o de persistencia.",
+        "d": "A que el procesamiento de documentos XML puede realizarse mediante un parser DOM (modelo de árbol), SAX (modelo de eventos tipo push) o STAX (basado en eventos tipo pull)."
+      },
+      "correcta": "c",
+      "explicacion": "El modelo canónico de tres capas divide la arquitectura lógica del software de manera nítida en tres niveles funcionales aislados y especializados: la Presentación (interfaz), la Lógica de Negocio (procesamiento de reglas) y la Capa de Datos (almacenamiento y persistencia)."
+    },
+    {
+      "id": 12,
+      "enunciado": "Axis2 es:",
+      "opciones": {
+        "a": "Una base de datos NoSQL.",
+        "b": "Un motor de búsqueda.",
+        "c": "Un motor nuclear de servicios web.",
+        "d": "Una librería para la automatización de tareas de compilación y despliegue de aplicaciones."
+      },
+      "correcta": "c",
+      "explicacion": "Apache Axis2 es un motor nuclear libre e independiente diseñado para procesar, enviar y recibir mensajes SOAP y estructurar servicios web eficientes, operando como sucesor de la clásica suite Apache Axis."
+    },
+    {
+      "id": 13,
+      "enunciado": "Un mensaje SOAP consta de un elemento:",
+      "opciones": {
+        "a": "<Envelope> obligatorio, que contiene un elemento <Header> obligatorio y un elemento <Body> obligatorio.",
+        "b": "<Envelope> obligatorio, que contiene un elemento <Header> opcional y un elemento <Body> obligatorio.",
+        "c": "<Envelope> obligatorio, que contiene un elemento <Header> obligatorio y un elemento <Body> opcional.",
+        "d": "<Envelope> opcional, que contiene un elemento <Header> opcional y un elemento <Body> obligatorio."
+      },
+      "correcta": "b",
+      "explicacion": "En la sintaxis XML de SOAP, el elemento raíz '<Envelope>' es obligatorio y debe albergar indispensablemente el subelemento '<Body>'. El elemento '<Header>', utilizado para incluir metadatos de enrutamiento o seguridad, es opcional según la especificación."
+    },
+    {
+      "id": 14,
+      "enunciado": "En una arquitectura cliente/servidor, las capas del modelo de 3 capas se denominan:",
+      "opciones": {
+        "a": "Presentación, transformación y almacenamiento.",
+        "b": "Vista, control y almacenamiento.",
+        "c": "Front-end, transformación y back-end.",
+        "d": "Presentación, lógica de negocio y datos."
+      },
+      "correcta": "d",
+      "explicacion": "Es la nomenclatura universal adoptada por los estándares de ingeniería de software para caracterizar las tres capas lógicas modulares e independientes del sistema."
+    },
+    {
+      "id": 15,
+      "enunciado": "Entre los objetivos principales de las arquitecturas de servicios web se encuentra:",
+      "opciones": {
+        "a": "Proporcionar interoperabilidad entre aplicaciones desarrolladas en diferentes entornos tecnológicos.",
+        "b": "Garantizar la persistencia de datos en entornos de alta disponibilidad.",
+        "c": "Simplificar el balanceo de carga en infraestructuras web basadas en granjas de servidores.",
+        "d": "Aprovechar las ventajas de los servidores dispuestos en clúster."
+      },
+      "correcta": "a",
+      "explicacion": "El propósito existencial y la mayor virtud de los servicios web es permitir que aplicaciones heterogéneas, programadas en distintos lenguajes y alojadas en sistemas operativos diferentes, intercambien información sin fricciones gracias al uso de formatos abiertos."
+    },
+    {
+      "id": 16,
+      "enunciado": "Si usamos servicios web siguiendo una arquitectura tipo REST y recibimos una respuesta con un código de estado 503, ¿qué significa?",
+      "opciones": {
+        "a": "Que la petición ha sido completada correctamente.",
+        "b": "Que el servicio no está disponible.",
+        "c": "Que la petición contiene una sintaxis incorrecta o no puede procesarse.",
+        "d": "Que el servidor ha fallado."
+      },
+      "correcta": "b",
+      "explicacion": "El código de estado HTTP '503 Service Unavailable' es un error del lado del servidor que explicita que este no se encuentra capacitado temporalmente para responder a la solicitud debido a una sobrecarga o tareas de mantenimiento programadas."
+    },
+    {
+      "id": 17,
+      "enunciado": "Sobre la arquitectura REST señale la opción INCORRECTA:",
+      "opciones": {
+        "a": "Permite crear servicios web ligeros.",
+        "b": "El cliente puede acceder a los recursos a través de su identificador (URI).",
+        "c": "Es un estilo arquitectónico.",
+        "d": "La representación de un recurso se diseña solo mediante JSON."
+      },
+      "correcta": "d",
+      "explicacion": "La opción 'd' es falsa porque la filosofía de diseño REST es agnóstica respecto al formato físico de la carga. Un recurso REST puede ser representado legítimamente mediante JSON, XML, HTML, texto plano o incluso binarios (MIME types) según se negocie en las cabeceras HTTP."
+    },
+    {
+      "id": 18,
+      "enunciado": "En relación con los servicios web y SOAP, las siglas MTOM se corresponde con:",
+      "opciones": {
+        "a": "Mail Transmission Optimization Mechanism.",
+        "b": "Message Transmission Optimization Mechanism.",
+        "c": "Message Transport Optimization Module.",
+        "d": "Mail Transport Optimization Module."
+      },
+      "correcta": "b",
+      "mechanics": "MTOM responde al acrónimo de 'Message Transmission Optimization Mechanism', un método estandarizado por el W3C ideado para optimizar sustancialmente la transmisión y el empaquetado de grandes volúmenes de datos binarios dentro de la estructura XML de mensajes SOAP sin penalizar la CPU con codificaciones complejas en Base64."
+    },
+    {
+      "id": 19,
+      "enunciado": "¿Qué afirmación es correcta en relación con el protocolo SOAP?",
+      "opciones": {
+        "a": "Es un protocolo de comunicación basado en HTML.",
+        "b": "Especifica el formato del mensaje de la comunicación entre ordenadores.",
+        "c": "Se utiliza para intercambio de información ente ordenadores con el mismo sistema operativo.",
+        "d": "Define los protocolos de transporte utilizados en el envío del mensaje."
+      },
+      "correcta": "b",
+      "explicacion": "SOAP define un marco de mensajería formal basado estrictamente en XML que delimita de manera matemática las reglas de sintaxis y la estructura formal que deben cumplir los datos que viajan entre sistemas remotos interoperables."
+    },
+    {
+      "id": 20,
+      "enunciado": "En el marco de la arquitectura SOAP de servicios web, indique la afirmación FALSA:",
+      "opciones": {
+        "a": "A partir del WSDL las aplicaciones clientes podrán implementar las interfaces para conectarse al servidor que oferta los servicios web.",
+        "b": "UDDI es un protocolo que permite a las aplicaciones comprobar qué servicios web están disponibles para su utilización.",
+        "c": "A diferencia de RMI tradicionalmente vinculado a Java, SOAP permite la comunicación entre diferentes tecnologías.",
+        "d": "SOAP usa comunicaciones http y no soporta comunicaciones por https."
+      },
+      "correcta": "d",
+      "explicacion": "Es falso afirmar que SOAP no soporta HTTPS. SOAP es completamente agnóstico del protocolo de transporte subyacente y puede tunelizarse e implementarse de forma segura sobre canales cifrados TLS (HTTPS) sin mayor inconveniente."
+    },
+    {
+      "id": 21,
+      "enunciado": "¿Qué define el estándar WSDL del W3C?",
+      "opciones": {
+        "a": "Un esquema XML para sindicación de contenidos a través de lectores RSS.",
+        "b": "Una gramática XML para describir la interfaz de un servicio web.",
+        "c": "Pautas de Accesibilidad al Contenido en la Web.",
+        "d": "WSDL no es un estándar del W3C."
+      },
+      "correcta": "b",
+      "explicacion": "WSDL (Web Services Description Language) provee un metalenguaje formal basado en esquemas XML ideado específicamente para documentar y describir de forma pública los contratos, operaciones y parámetros técnicos expuestos por un endpoint de servicio web."
+    },
+    {
+      "id": 22,
+      "enunciado": "¿Qué es SAML?",
+      "opciones": {
+        "a": "Un estándar abierto que define un esquema XML para el intercambio de datos de autenticación y autorización.",
+        "b": "Variante de UML especializada en el modelado de máquinas de estado.",
+        "c": "Lenguaje para la especificación de conjuntos de pruebas de software.",
+        "d": "Motor de enrutamiento y mediación basado en reglas que provee una implementación basada en objetos Java."
+      },
+      "correcta": "a",
+      "explicacion": "SAML constituye el marco estándar y protocolo industrial basado en tokens XML que faculta la comunicación interoperable de credenciales seguras e identidades federadas entre los proveedores de identidad (IdP) y los proveedores de servicio (SP)."
+    },
+    {
+      "id": 23,
+      "enunciado": "Marque la respuesta verdadera:",
+      "opciones": {
+        "a": "SOAP is una tecnología de intercambio basada en XML que permite la interacción entre varios dispositivos.",
+        "b": "Un servicio web es un sistema software diseñado para soportar la interacción máquina-a-máquina y hombre-a-máquina...",
+        "c": "La arquitectura de servicios web propuesta por el W3C especifica la implementación de los servicios web e impone restricciones...",
+        "d": "MTOM (Message Transmission Optimization Mechanism) es un método definido en el W3C para el envío eficiente de datos binarios entre servicios web."
+      },
+      "correcta": "d",
+      "explicacion": "La opción 'd' describe fielmente la definición del estándar MTOM del W3C. La opción 'b' es errónea porque los servicios web se enfocan nativamente de forma exclusiva a la interacción máquina-a-máquina de manera automatizada."
+    },
+    {
+      "id": 24,
+      "enunciado": "En una aplicación siguiendo una arquitectura de 3 capas, ¿dónde se encuentran ubicadas las reglas de negocio?",
+      "opciones": {
+        "a": "En el servidor de aplicaciones.",
+        "b": "En el servidor de datos.",
+        "c": "En el cliente.",
+        "d": "En el servidor HTTP/TLS."
+      },
+      "correcta": "a",
+      "explicacion": "En el diseño de tres capas, el Servidor de Aplicaciones (Application Server) es la infraestructura de software dedicada a alojar de forma centralizada los componentes ejecutables, funciones y algoritmos que gobiernan las reglas lógicas y restricciones de negocio del dominio."
+    },
+    {
+      "id": 25,
+      "enunciado": "Los servicios web son:",
+      "opciones": {
+        "a": "Dependientes de la plataforma en que se encuentran desplegados y dependientes del lenguaje en que han sido desarrollados.",
+        "b": "Dependientes de la plataforma en que se encuentran desplegados e independientes del lenguaje en que han sido desarrollados.",
+        "c": "Independientes de la plataforma en que se encuentran desplegados y dependientes del lenguaje en que han sido desarrollados.",
+        "d": "Independientes de la plataforma en que se encuentran desplegados e independientes del lenguaje en que han sido desarrollados."
+      },
+      "correcta": "d",
+      "explicacion": "Gracias al uso de protocolos e interfaces unificadas y abiertas (como HTTP, XML, JSON), los servicios web operan con un desacoplamiento absoluto, garantizando independencia total respecto al hardware, sistema operativo subyacente o lenguaje con el que fueron construidos."
+    },
+    {
+      "id": 26,
+      "enunciado": "¿Cuál de los siguientes NO es un principio de diseño de la arquitectura orientada a servicios?",
+      "opciones": {
+        "a": "Autonomía.",
+        "b": "Reusabilidad.",
+        "c": "Alto acoplamiento.",
+        "d": "Contrato de servicio."
+      },
+      "correcta": "c",
+      "explicacion": "La arquitectura orientada a servicios (SOA) persigue de forma activa y explícita el **bajo acoplamiento** (loose coupling) entre sus componentes para minimizar las dependencias y asegurar que los cambios internos no rompan el funcionamiento del ecosistema."
+    },
+    {
+      "id": 27,
+      "enunciado": "En la arquitectura SOA, ¿cuáles son las formas de colaboración entre servicios?",
+      "opciones": {
+        "a": "Orquestación y composición.",
+        "b": "Colaboración y coreografía.",
+        "c": "Coreografía y composición.",
+        "d": "Orquestación y coreografía."
+      },
+      "correcta": "d",
+      "explicacion": "SOA define dos grandes paradigmas de interacción: la Orquestación (un director central coordina y gobierna la secuencia de invocaciones de manera imperativa) y la Coreografía (los servicios colaboran de forma descentralizada reaccionando de manera autónoma a eventos compartidos)."
+    },
+    {
+      "id": 28,
+      "enunciado": "Señale la respuesta correcta:",
+      "opciones": {
+        "a": "Los microservicios son desplegados de forma independiente.",
+        "b": "Los microservicios no permiten un escalado a demanda.",
+        "c": "Los microservicios no están pensados para la implementación de aplicaciones complejas.",
+        "d": "Los microservicios de una aplicación están desarrollados con el mismo lenguaje de programación y las mismas tecnologías."
+      },
+      "correcta": "a",
+      "explicacion": "Una propiedad fundamental de la arquitectura de microservicios es la independencia de ciclo de vida; cada microservicio puede compilarse, probarse, empaquetarse e implementarse en producción de forma aislada sin afectar al resto."
+    },
+    {
+      "id": 29,
+      "enunciado": "¿Qué significa SOAP?",
+      "opciones": {
+        "a": "Standard Object Access Permanent.",
+        "b": "Stack Open Access Protocol.",
+        "c": "Security Open Access Protocol.",
+        "d": "Simple Object Access Protocol."
+      },
+      "correcta": "d",
+      "explicacion": "SOAP responde originalmente a las siglas de 'Simple Object Access Protocol', denominación histórica que el estándar mantuvo para la formalización del intercambio estructurado de mensajes XML."
+    },
+    {
+      "id": 30,
+      "enunciado": "En el protocolo HTTP, el código de error que indica \"Not Found\" es el:",
+      "opciones": {
+        "a": "101.",
+        "b": "202.",
+        "c": "303.",
+        "d": "404."
+      },
+      "correcta": "d",
+      "explicacion": "El código de estado '404 Not Found' es el estándar HTTP del lado del cliente utilizado para notificar formalmente que el servidor ha sido incapaz de encontrar el recurso apuntado por la URI solicitada."
+    },
+    {
+      "id": 31,
+      "enunciado": "Señale la respuesta correcta sobre la arquitectura de microservicios:",
+      "opciones": {
+        "a": "Los microservicios interactúan entre sí mediante protocolos cerrados.",
+        "b": "Deben ser escritos en lenguajes de programación específicos.",
+        "c": "Tienen nombres únicos, como direcciones URL, que se usan para resolver su ubicación.",
+        "d": "Service Fabric es la plataforma de microservicios de Apache."
+      },
+      "correcta": "c",
+      "explicacion": "En sistemas distribuidos y microservicios, cada componente se expone públicamente a través de un endpoint o identificador único de red (típicamente una URL o URI), lo que facilita su localización por los mecanismos de Service Discovery."
+    },
+    {
+      "id": 32,
+      "enunciado": "Los servicios web que utilizan estándares tales como URIs, HTTP y JSON son aquellos basados en:",
+      "opciones": {
+        "a": "SOAP.",
+        "b": "REST.",
+        "c": "APIs.",
+        "d": "HTML."
+      },
+      "correcta": "b",
+      "explicacion": "REST (Representational State Transfer) es el estilo arquitectónico que aprovecha de forma nativa los verbos y mecanismos semánticos nativos del protocolo HTTP, mapeando recursos web mediante URIs e intercambiando cargas de datos habitualmente estructuradas en formato JSON o XML."
+    },
+    {
+      "id": 33,
+      "enunciado": "En relación con la arquitectura de microservicios, señale la característica INCORRECTA:",
+      "opciones": {
+        "a": "Cada microservicio se puede desplegar independientemente.",
+        "b": "Cada microservicio está controlado por un Service worker.",
+        "c": "Cada microservicio puede estar programado en un lenguaje diferente.",
+        "d": "Cada microservicio puede utilizar su propia base de datos."
+      },
+      "correcta": "b",
+      "explicacion": "La opción 'b' es incorrecta. Los microservicios no están supeditados ni controlados estructuralmente por un 'Service Worker' (el cual es un script de frontend del lado del navegador para gestionar caché y notificaciones PWA). En su lugar, se gestionan mediante orquestadores de contenedores (como Kubernetes)."
+    },
+    {
+      "id": 34,
+      "enunciado": "Señale cuál es un estándar OASIS encargado de delimitar las diferentes políticas aplicables a los servicios web:",
+      "opciones": {
+        "a": "WS-Addressing.",
+        "b": "WS-Federation.",
+        "c": "WS-SecureConversation.",
+        "d": "WS-Policy."
+      },
+      "correcta": "d",
+      "explicacion": "WS-Policy proporciona un marco y modelo abstracto extensible y flexible diseñado para expresar de forma explícita las capacidades, requisitos y políticas técnicas de seguridad y calidad de servicio operativas en un endpoint de servicios web."
+    },
+    {
+      "id": 35,
+      "enunciado": "Señale la respuesta INCORRECTA:",
+      "opciones": {
+        "a": "OAuth 2.0 es un protocolo de autorización basado en tokens y también es un protocolo de autenticación.",
+        "b": "SAML 2.0 es un estándar de OASIS que define un esquema XML para el intercambio de datos de autenticación.",
+        "c": "SAML 2.0 utiliza HTTP para los mecanismos de transporte de datos.",
+        "d": "SAML significa Security Assertion Markup Language."
+      },
+      "correcta": "a",
+      "explicacion": "La opción 'a' contiene la afirmación falsa. OAuth 2.0 es de manera estricta y exclusiva un framework de **autorización** delegada basado en tokens (da acceso a recursos), no de autenticación (no valida la identidad del usuario). Para dotar a OAuth 2.0 de una capa de autenticación, se desarrolló la extensión OpenID Connect."
+    },
+    {
+      "id": 36,
+      "enunciado": "Señale la respuesta correcta respecto de WSDL:",
+      "opciones": {
+        "a": "El elemento raíz de un documento WSDL es <definition>.",
+        "b": "WSDL 2.0 define dos secciones: sección abstracta y sección concreta.",
+        "c": "El elemento <service> describe la funcionalidad abstracta del servicio web.",
+        "d": "El elemento <interface> define el conjunto de funciones que han sido expuestas en el servicio web."
+      },
+      "correcta": "b",
+      "explicacion": "La especificación WSDL divide estructuralmente el contrato del servicio en dos grandes bloques: la sección abstracta (mensajes, tipos y firmas de operaciones) y la sección concreta (vínculos a protocolos de red reales y direcciones físicas)."
+    },
+    {
+      "id": 37,
+      "enunciado": "Respecto a REST, señale la respuesta INCORRECTA:",
+      "opciones": {
+        "a": "Usa las operaciones definidas en el protocolo HTTP.",
+        "b": "Los recursos son direccionables a través de su URL.",
+        "c": "Es un protocolo cliente/servidor sin estado.",
+        "d": "Hace uso de hipermedios."
+      },
+      "correcta": "b",
+      "explicacion": "Nota sobre las sutilezas de los exámenes de oposición y la plantilla: Aunque la literatura habitual afirma que se direccionan por URL, formalmente en la especificación purista REST de Roy Fielding, los recursos se identifican de manera unificada mediante **URIs** (Uniform Resource Identifier), un concepto semántico más amplio que las URLs físicas, lo que justifica la marcación de la plantilla."
+    },
+    {
+      "id": 38,
+      "enunciado": "¿Cuál NO es una de las restricciones que se han de cumplir para implementar REST?",
+      "opciones": {
+        "a": "Utiliza un sistema de niveles.",
+        "b": "Las respuestas a una petición deben poder ser etiquetadas como cacheable o no cacheable.",
+        "c": "Código bajo demanda.",
+        "d": "Toda información que viaja en un elemento de comunicación atómico entre cliente y servidor es autocontenida..."
+      },
+      "correcta": "a",
+      "explicacion": "Las restricciones formales descritas por Fielding para la arquitectura REST son: Cliente-Servidor, Sin Estado (Stateless), Interfaz Uniforme, Sistema de Capas (Layered System), Cacheable y, opcionalmente, Código bajo Demanda. 'Sistema de niveles' como traducción o variante no se considera la nomenclatura formal regulada."
+    },
+    {
+      "id": 39,
+      "enunciado": "En relación con las operaciones en los servicios web RESTful, indique la respuesta INCORRECTA:",
+      "opciones": {
+        "a": "GET es una operación segura e idempotente.",
+        "b": "POST permite crear un recurso.",
+        "c": "PUT no es una operación idempotente.",
+        "d": "DELETE permite eliminar un recurso."
+      },
+      "correcta": "c",
+      "explicacion": "La afirmación 'c' es falsa e incorrecta porque de acuerdo con el estándar de HTTP, el verbo **PUT es una operación completamente idempotente**. Esto significa que invocar el mismo método PUT idéntico de forma repetida consecutiva producirá exactamente el mismo estado final en el servidor que la primera invocación."
+    },
+    {
+      "id": 40,
+      "enunciado": "Señale la respuesta INCORRECTA sobre JWT:",
+      "opciones": {
+        "a": "Es un estándar abierto.",
+        "b": "JWT es el acrónimo de JSON Web Token.",
+        "c": "Es un mecanismo de autenticación con estado.",
+        "d": "Define una forma compacta y autónoma de transmitir información segura entre las partes."
+      },
+      "correcta": "c",
+      "explicacion": "La afirmación 'c' es falsa porque JWT (JSON Web Token) es un token compacto diseñado por definición para operar en mecanismos de autenticación **sin estado** (stateless). Toda la información necesaria del usuario viaja encriptada o firmada dentro del propio token, eliminando la necesidad de guardar sesiones en la memoria del servidor."
+    },
+    {
+      "id": 41,
+      "enunciado": "¿Cuál de las siguientes respuestas relativas a los protocolos de intercambio de datos SOAP y REST es la correcta?",
+      "opciones": {
+        "a": "Únicamente SOAP permite la comunicación de datos entre aplicaciones web.",
+        "b": "REST plantea una comunicación cliente/servidor sin estado, siendo SOAP el formato preferido para el intercambio de mensajes.",
+        "c": "Las APIS basadas en SOAP se consideran más ligeras que sus equivalentes REST.",
+        "d": "REST es un estilo arquitectónico."
+      },
+      "correcta": "d",
+      "explicacion": "REST no es un protocolo ni un estándar cerrado de software, sino que se define formalmente como un **estilo arquitectónico** para el diseño de sistemas hipermedia distribuidos en red."
+    },
+    {
+      "id": 42,
+      "enunciado": "¿Cuál es la finalidad de OpenAPI?",
+      "opciones": {
+        "a": "Para la indexación de ficheros en un agregador de logs.",
+        "b": "Para el desarrollo y documentación de APIs REST.",
+        "c": "Para la implementación de servicios web RESTful.",
+        "d": "Para el desarrollo de interfaces de usuario multidispositivo."
+      },
+      "correcta": "b",
+      "explicacion": "La especificación OpenAPI (antiguamente ligada a Swagger) define una interfaz de descripción de API neutral e independiente del lenguaje para APIs REST, permitiendo tanto a humanos como a ordenadores descubrir y comprender las capacidades del servicio web."
+    },
+    {
+      "id": 43,
+      "enunciado": "Entre los siguientes, ¿cuál NO es un principio de diseño en una arquitectura orientada a servicios?",
+      "opciones": {
+        "a": "Bajo acoplamiento.",
+        "b": "Abstracción.",
+        "c": "Interoperabilidad.",
+        "d": "Portabilidad."
+      },
+      "correcta": "d",
+      "explicacion": "Aunque la interoperabilidad es un beneficio colateral de la arquitectura, los principios de diseño nucleares canónicos que definen a SOA descritos por Thomas Erl son: Contratos de Servicio Formales, Bajo Acoplamiento, Abstracción, Reutilización, Autonomía, Sin Estado (Statelessness), Descubribilidad y Composición. La portabilidad no está en el listado de principios primordiales de SOA."
+    },
+    {
+      "id": 44,
+      "enunciado": "¿Qué estándar designa un registro para publicar y encontrar información sobre servicios web en una arquitectura orientada a servicios?",
+      "opciones": {
+        "a": "WSDL.",
+        "b": "UDDI.",
+        "c": "SOAP.",
+        "d": "REST."
+      },
+      "correcta": "b",
+      "explicacion": "UDDI (Universal Description, Discovery, and Integration) funciona técnicamente como un directorio en línea o catálogo de Páginas Amarillas concebido específicamente para publicar las fichas e interfaces técnicas de los servicios y permitir su localización dinámica."
+    },
+    {
+      "id": 45,
+      "enunciado": "De entre las siguientes, indique cuál NO es una característica que identifique a la Arquitectura Orientada a Servicios (SOA):",
+      "opciones": {
+        "a": "Los servicios son autónomos. Cada servicio SOA se mantiene y desarrolla de forma independiente.",
+        "b": "Los servicios se pueden descomponer. Cada servicio SOA es independiente de los otros y puede ser remplazado o actualizado...",
+        "c": "Los servicios son distribuibles. Se pueden ubicar en cualquier parte sobre la red...",
+        "d": "Los servicios comparten contratos, esquemas y clases internas cuando se comunican."
+      },
+      "correcta": "d",
+      "explicacion": "La opción 'd' es la característica incorrecta. Un principio sagrado de SOA dicta que los servicios **comparten contratos y esquemas abiertos de datos, pero jamás deben compartir dependencias de código o clases internas de implementación**, para evitar romper el desacoplamiento."
+    },
+    {
+      "id": 46,
+      "enunciado": "Si se quiere desarrollar en Java servicios web RESTful, hará uso de:",
+      "opciones": {
+        "a": "RESTEasy.",
+        "b": "WCF.",
+        "c": "CodeIgniter.",
+        "d": "OpenAPI."
+      },
+      "correcta": "a",
+      "explicacion": "RESTEasy es un framework desarrollado por JBoss/Red Hat que proporciona una implementación oficial de la especificación JAX-RS (Jakarta RESTful Web Services) para facilitar la creación de servicios web REST en Java."
+    },
+    {
+      "id": 47,
+      "enunciado": "Para solicitar la creación de un nuevo registro mediante un servicio REST se usa el verbo HTTP:",
+      "opciones": {
+        "a": "NEW.",
+        "b": "DELETE.",
+        "c": "GET.",
+        "d": "POST."
+      },
+      "correcta": "d",
+      "explicacion": "En las convenciones semánticas CRUD de las APIs RESTful, el método HTTP 'POST' se utiliza de manera canónica para enviar una entidad subordinada al servidor con el fin de instanciar o crear un recurso completamente nuevo."
+    },
+    {
+      "id": 48,
+      "enunciado": "¿Cuáles son las características de una API REST?",
+      "opciones": {
+        "a": "Peer to Peer; Con estado; Cacheable; Interfaz Uniforme; Sistema de Capas.",
+        "b": "Peer to Peer; Sin estado; Cacheable; Interfaz Uniforme; Sistema de Capas.",
+        "c": "Cliente/servidor; Sin estado; Cacheable; Interfaz Uniforme; Sistema de Capas.",
+        "d": "Cliente/servidor; Con estado; Cacheable; Interfaz Uniforme; Sistema de Capas."
+      },
+      "correcta": "c",
+      "explicacion": "Establece los principios obligatorios puros que estructuran formalmente el estilo de software REST planteado por la tesis de Roy Fielding."
+    },
+    {
+      "id": 49,
+      "enunciado": "Señale cuál de las siguientes afirmaciones sobre la arquitectura REST es correcta:",
+      "opciones": {
+        "a": "Algunas de las operaciones habituales son GET, POST, UPDATE y DELETE.",
+        "b": "No se permite que los clientes puedan cachear las respuestas.",
+        "c": "Cada recurso es accesible (direccionable) de manera única a través de su URI.",
+        "d": "El estado de la sesión se guarda y se mantiene en el servidor."
+      },
+      "correcta": "c",
+      "explicacion": "Uno de los pilares de REST es la identificación inequívoca de recursos; cada concepto u objeto del dominio del negocio debe poseer una dirección o identificador global exclusivo (URI)."
+    },
+    {
+      "id": 50,
+      "enunciado": "¿Cómo se llama la capa SOA que contiene las funcionalidades de los componentes de la lógica de negocio que se publican para uso de los clientes y que se referencian a partir de la interfaz siendo transparentes a su implementación?",
+      "opciones": {
+        "a": "Capa de Servicios.",
+        "b": "Capa de Procesos de negocio.",
+        "c": "Capa de Componentes de negocio.",
+        "d": "Capa de Sistemas operacionales."
+      },
+      "correcta": "a",
+      "explicacion": "En los modelos de arquitectura de capas SOA, la Capa de Servicios es el nivel intermedio encargado de empaquetar, exponer y publicar las capacidades de los componentes técnicos del negocio en interfaces unificadas accesibles para los consumidores."
+    },
+    {
+      "id": 51,
+      "enunciado": "NO es una herramienta para especificar APIs HTTP:",
+      "opciones": {
+        "a": "WADL.",
+        "b": "WSDL.",
+        "c": "API Blueprint.",
+        "d": "Swagger UI."
+      },
+      "correcta": "b",
+      "explicacion": "WSDL fue diseñado formalmente de manera exclusiva para documentar y tipificar la interfaz de servicios web basados en mensajería XML pesada bajo el protocolo SOAP, no para modelar de forma ágil arquitecturas HTTP o REST (para lo cual se usa WADL, OpenAPI o API Blueprint)."
+    },
+    {
+      "id": 52,
+      "enunciado": "Sobre OAuth 2.0 señale todos los elementos que intervienen en el proceso de acceso a un recurso:",
+      "opciones": {
+        "a": "Cliente, servidor de autorización, propietario del recurso y recurso.",
+        "b": "Representante del cliente, servidor de autorización y recurso.",
+        "c": "Servidor de autorización, propietario del recurso, recurso.",
+        "d": "Cliente, propietario del recurso y servidor de autorización y propietario del recurso."
+      },
+      "correcta": "a",
+      "explicacion": "La especificación OAuth 2.0 define explícitamente cuatro roles interactuantes: el Propietario del Recurso (Resource Owner/Usuario), el Cliente (Client/Aplicación), el Servidor de Autorización (Authorization Server) y el Servidor de Recursos (Resource Server)."
+    },
+    {
+      "id": 53,
+      "enunciado": "Es una característica de los microservicios:",
+      "opciones": {
+        "a": "Se despliegan de forma conjunta.",
+        "b": "No permiten la implementación de aplicaciones de gran tamaño.",
+        "c": "Son autónomos.",
+        "b": "Están fuertemente acoplados."
+      },
+      "correcta": "c",
+      "explicacion": "Cada microservicio posee plena autonomía; gobierna su propia lógica, gestiona de forma aislada sus recursos físicos o almacenes de datos y toma decisiones técnicas sin depender de un núcleo centralizado monolítico."
+    },
+    {
+      "id": 54,
+      "enunciado": "Señale la opción correcta sobre la arquitectura de servicios web REST:",
+      "opciones": {
+        "a": "En la arquitectura REST, el servicio no almacena información sobre el estado del cliente entre peticiones.",
+        "b": "El uso de identificadores está basado en SOA.",
+        "c": "En la arquitectura REST, la interfaz para acceder a los recursos expuestos puede ser HTTP, SMTP o FTP.",
+        "d": "Es una arquitectura no orientada a recursos."
+      },
+      "correcta": "a",
+      "explicacion": "Sustenta la restricción obligatoria 'Stateless' (sin estado) de REST: cada solicitud web enviada por el cliente debe contener absolutamente toda la información y metadatos necesarios para procesarla aisladamente, impidiendo que el servidor almacene contextos de sesión."
+    },
+    {
+      "id": 55,
+      "enunciado": "En servicios web SOAP, para firmar mensajes se utiliza:",
+      "opciones": {
+        "a": "JWT.",
+        "b": "WS-Security.",
+        "c": "XML-Digital.",
+        "d": "SAML."
+      },
+      "correcta": "b",
+      "explicacion": "WS-Security (Web Services Security) es la especificación estándar core del consorcio OASIS diseñada específicamente para asegurar mensajes SOAP mediante la firma digital, el cifrado XML y la incorporación de tokens de seguridad en las cabeceras."
+    },
+    {
+      "id": 56,
+      "enunciado": "En la arquitectura orientada a servicios, sus componentes principales son:",
+      "opciones": {
+        "a": "Servicio, Proveedor de servicios, Consumidor de servicios y Comparador de servicios.",
+        "b": "Servicio, Proveedor de servicios, Consumidor de servicios y Depurador de servicios.",
+        "c": "Servicio, Proveedor de servicios, Consumidor de servicios y Registro de servicios.",
+        "d": "Servicio, Proveedor de servicios, Consumidor de servicios y Orquestador de servicios."
+      },
+      "correcta": "c",
+      "explicacion": "Mapea los tres bloques de software e infraestructuras e interfaces lógicas fijas que dan soporte integral a los flujos operativos y el ciclo de vida de los servicios en un ecosistema SOA."
+    },
+    {
+      "id": 57,
+      "enunciado": "¿Cuál de las siguientes respuestas describe la relación entre REST y la arquitectura SOA?",
+      "opciones": {
+        "a": "REST es un protocolo obligatorio en SOA.",
+        "b": "REST es un estilo de arquitectónico que puede ser utilizado dentro de una arquitectura SOA para crear servicios ligeros y escalables.",
+        "c": "REST solo se utiliza para implementar servicios monolíticos y no es compatible con SOA.",
+        "d": "REST y SOA son incompatibles debido a sus diferencias en protocolos y arquitectura."
+      },
+      "correcta": "b",
+      "explicacion": "REST y SOA no compiten ni se excluyen mutuamente. SOA define los principios organizativos y estratégicos de orientación a servicios, y REST puede ser perfectamente la elección técnica y el estilo adoptado para implementar de forma ágil esos servicios."
+    },
+    {
+      "id": 58,
+      "enunciado": "¿Cuál es una de las principales funciones de SAML en entornos de servicios web?",
+      "opciones": {
+        "a": "Proporcionar un formato de cifrado para proteger los datos en reposo.",
+        "b": "Permitir el acceso a múltiples sitios web permitiendo el inicio de sesión único.",
+        "c": "Gestionar el almacenamiento de contraseñas de los usuarios en los proveedores de servicios.",
+        "d": "Definir políticas de privacidad y confidencialidad para sitios web."
+      },
+      "correcta": "b",
+      "explicacion": "SAML es una de las tecnologías habilitadoras angulares de los esquemas SSO (Single Sign-On o Inicio de Sesión Único), posibilitando que un usuario se autentique una sola vez ante un IdP central y gane acceso automático a múltiples sistemas federados autorizados."
+    },
+    {
+      "id": 59,
+      "enunciado": "En una aplicación siguiendo una arquitectura de 3 capas, ¿dónde se encuentran ubicadas interfaces de usuario y la exposición de los servicios web para que otras aplicaciones puedan consumirlas?",
+      "opciones": {
+        "a": "En el servidor de aplicaciones.",
+        "b": "En el servidor de datos.",
+        "c": "En el cliente.",
+        "d": "En el servidor web."
+      },
+      "correcta": "d",
+      "explicacion": "El Servidor Web (Web Server), ubicado típicamente en la DMZ periférica, es la infraestructura encargada de despachar el código estático de las interfaces de usuario (HTML/JS) y enrutar las peticiones entrantes de APIs y servicios web hacia las capas internas del sistema."
+    },
+    {
+      "id": 60,
+      "enunciado": "En un sistema, siguiendo una arquitectura multicapa y multinivel, el primer nivel está formado por una aplicación móvil nativa, ¿qué capa o capas alberga este primer nivel?",
+      "opciones": {
+        "a": "Capa de presentación.",
+        "b": "Capa de presentación y capa de lógica de negocio.",
+        "c": "Capa de lógica de negocio.",
+        "d": "Ninguna capa."
+      },
+      "correcta": "a",
+      "explicacion": "En las arquitecturas distribuidas modernas descentralizadas (como las apps nativas iOS o Android que consumen APIs), el software empaquetado descargable residente en el terminal del cliente tiene como misión y alcance albergar puramente la capa de presentación."
+    },
+    {
+      "id": 61,
+      "enunciado": "En una aplicación basada en microservicios, ¿cuál de las siguientes herramientas es una plataforma de mensajería para poder comunicarse los microservicios entre sí?",
+      "opciones": {
+        "a": "Apache Synapse.",
+        "b": "RabbitMQ.",
+        "c": "Openshift.",
+        "d": "Kong."
+      },
+      "correcta": "b",
+      "explicacion": "RabbitMQ es un broker de mensajería de código abierto muy popular y eficiente que implementa el estándar AMQP, ampliamente empleado para facilitar la comunicación asíncrona y desacoplada entre microservicios a través de colas de mensajes."
+    },
+    {
+      "id": 62,
+      "enunciado": "¿Qué lenguaje derivado de XML se usa para describir servicios web, proporcionando información al cliente sobre cómo utilizar dichos servicios?",
+      "opciones": {
+        "a": "SOAP.",
+        "b": "WSDL.",
+        "c": "UDDI.",
+        "d": "JAXP."
+      },
+      "correcta": "b",
+      "explicacion": "Reiteración conceptual del temario oficial: WSDL es la gramática de metadatos basada en XML dedicada formalmente y de forma explícita a la descripción de interfaces e instrucciones técnicas de consumición de un servicio web."
+    },
+    {
+      "id": 63,
+      "enunciado": "¿Cuál de los siguientes NO se considera un principio guía de las arquitecturas SOA?",
+      "opciones": {
+        "a": "Seguridad.",
+        "b": "Reutilización.",
+        "c": "Interoperabilidad.",
+        "d": "Abstracción."
+      },
+      "correcta": "a",
+      "explicacion": "Aunque la seguridad es una interfaz transversal indispensable en cualquier sistema gubernamental, no figura conceptualmente de forma nativa en el listado de los pilares de modelado fundamentales que rigen y guían de forma intrínseca el paradigma de orientación a servicios (SOA)."
+    }
+  ]
+}

@@ -1,0 +1,1194 @@
+{
+  "titulo": "Bloque 3 - Tema 8: Aplicaciones Web, Desarrollo Front-End y en Servidor, Navegadores y Scripts",
+  "descripcion": "Test de 99 preguntas sobre elementos semánticos de HTML5, selectores y precedencia en CSS3, programación web en PHP, Python y JavaScript, formatos de intercambio (JSON, XML) y desarrollo móvil basado en el material oficial de examen.",
+  "preguntas": [
+    {
+      "id": 1,
+      "enunciado": "¿Cuál de los siguientes elementos NO ha sido incorporado en HTML5?",
+      "opciones": {
+        "a": "<address>",
+        "b": "<aside>",
+        "c": "<nav>",
+        "d": "<section>"
+      },
+      "correcta": "a",
+      "explicacion": "El elemento '<address>' (usado para indicar información de contacto) ya existía en las especificaciones tradicionales de HTML4[cite: 2355, 2356]. Los elementos '<aside>', '<nav>' y '<section>' son puramente semánticos e introducidos de forma inédita en HTML5[cite: 2355, 2357, 2358, 2359]."
+    },
+    {
+      "id": 2,
+      "enunciado": "¿Cuál de los siguientes elementos ha sido incorporado en HTML5?",
+      "opciones": {
+        "a": "<h3>",
+        "b": "<main>",
+        "c": "<base>",
+        "d": "<samp>"
+      },
+      "correcta": "b",
+      "explicacion": "El elemento '<main>' es una de las incorporaciones de HTML5 diseñada para englobar el contenido principal y único del cuerpo del documento[cite: 2360, 2362]. Las etiquetas '<h3>', '<base>' y '<samp>' pertenecen a especificaciones muy anteriores de HTML[cite: 2360, 2361, 2363, 2366]."
+    },
+    {
+      "id": 3,
+      "enunciado": "¿Qué elemento de HTML5 marca el texto que debe introducir el usuario?",
+      "opciones": {
+        "a": "<code>",
+        "b": "<var>",
+        "c": "<dfn>",
+        "d": "<kbd>"
+      },
+      "correcta": "d",
+      "explicacion": "La etiqueta '<kbd>' (Keyboard Input) denota semánticamente un fragmento de texto que representa una entrada del usuario o comandos que deben ser introducidos por teclado[cite: 2368, 2372]."
+    },
+    {
+      "id": 4,
+      "enunciado": "¿Qué elemento de HTML5 marca variables de programas y similares?",
+      "opciones": {
+        "a": "<code>",
+        "b": "<var>",
+        "c": "<dfn>",
+        "d": "<samp>"
+      },
+      "correcta": "b",
+      "explicacion": "El elemento '<var>' se utiliza en HTML5 específicamente para marcar y delimitar variables en expresiones matemáticas o contextos de programación de software[cite: 2373, 2375]."
+    },
+    {
+      "id": 5,
+      "enunciado": "¿Qué elemento de HTML5 representa una oportunidad de salto de línea?",
+      "opciones": {
+        "a": "<br>",
+        "b": "<vbr>",
+        "c": "<wbr>",
+        "d": "<xbr>"
+      },
+      "correcta": "c",
+      "explicacion": "La etiqueta '<wbr>' (Word Break Opportunity) le especifica al motor de renderizado del navegador una posición exacta en la que se permite realizar un salto de línea si el contenedor lo requiere, ideal para palabras muy largas[cite: 2378, 2381]."
+    },
+    {
+      "id": 6,
+      "enunciado": "¿Qué elemento NO está soportado en HTML5?",
+      "opciones": {
+        "a": "<b>",
+        "b": "<i>",
+        "c": "<q>",
+        "d": "<u>"
+      },
+      "correcta": "d",
+      "explicacion": "Nota sobre el test oficial: La plantilla asigna la 'd' como respuesta correcta[cite: 3078]. Aunque en las revisiones modernas de HTML5 se redefinió la etiqueta '<u>' para dar énfasis no articulado (como errores ortográficos), tradicionalmente en los temarios se consideraba obsoleta por ser puramente de estilo visual en favor de CSS, a diferencia de '<b>' y '<i>' que ganaron nuevos significados semánticos[cite: 2383, 2384, 2385, 2386, 2387]."
+    },
+    {
+      "id": 7,
+      "enunciado": "¿Qué elemento en HTML5 NO comienza en una nueva línea y solo ocupa el ancho necesario?",
+      "opciones": {
+        "a": "<p>",
+        "b": "<span>",
+        "c": "<div>",
+        "d": "<ul>"
+      },
+      "correcta": "b",
+      "explicacion": "El elemento '<span>' es por definición un elemento de línea (inline), lo que significa que no rompe el flujo del texto insertando un salto de línea y su tamaño físico abraza únicamente el contenido que encierra[cite: 2388, 2391]. Los elementos '<p>', '<div>' y '<ul>' son elementos de bloque (block)[cite: 2388, 2390, 2392, 2393]."
+    },
+    {
+      "id": 8,
+      "enunciado": "Respecto al elemento <figure> en HTML5 seleccione la respuesta INCORRECTA:",
+      "opciones": {
+        "a": "Es un elemento introducido en esta versión.",
+        "b": "Especifica contenido autónomo como ilustraciones, fotos, diagramas, etc.",
+        "c": "Con el elemento <caption> se asigna una leyenda al elemento <figure>.",
+        "d": "No es equivalente semánticamente al elemento <img>"
+      },
+      "correcta": "c",
+      "explicacion": "La afirmación 'c' es la incorrecta porque el elemento que se debe utilizar dentro de '<figure>' para añadir una leyenda descriptiva es '<figcaption>', no '<caption>' (que es exclusivo para tablas)[cite: 2400, 2402]."
+    },
+    {
+      "id": 9,
+      "enunciado": "Para representar una lista descriptiva en HTML5 utilizaremos el elemento:",
+      "opciones": {
+        "a": "<ul>",
+        "b": "<ol>",
+        "c": "<dt>",
+        "d": "<dl>"
+      },
+      "correcta": "d",
+      "explicacion": "El tag '<dl>' (Description List) es el contenedor principal utilizado para estructurar listas de descripción que contienen parejas de términos ('<dt>') y descripciones ('<dd>')[cite: 2404, 2407, 2408]."
+    },
+    {
+      "id": 10,
+      "enunciado": "¿Qué elemento de HTML5 se utiliza para representar el encabezado de una sección?",
+      "opciones": {
+        "a": "<h1>",
+        "b": "<caption>",
+        "c": "<legend>",
+        "d": "<hgroup>"
+      },
+      "correcta": "d",
+      "explicacion": "Nota técnica: El elemento '<hgroup>' se introdujo originalmente para agrupar un conjunto de títulos ('<h1>' a '<h6>') que funcionan como el encabezado multi-nivel de una sección[cite: 2409, 2410, 2413]. La plantilla oficial refrenda la opción 'd'[cite: 3078]."
+    },
+    {
+      "id": 11,
+      "enunciado": "¿Cuál de las siguientes sentencias de HTML5 NO es correcta?",
+      "opciones": {
+        "a": "<a href=\"#seccion5\" lang=\"es\" id=\"enlace7\" class=\"link\">Ir a 5</a>",
+        "b": "<a href=\"3.html\"><img src=\"2.gif\" alt=\"HTML\"></a>",
+        "c": "<a href=\"#\" target=\"blank\">Nuevo</a>",
+        "d": "<a href=\"mailto:pablo@academiatheglobe.com\">Enviar mail</a>"
+      },
+      "correcta": "c",
+      "explicacion": "La opción 'c' es incorrecta porque el valor estándar para abrir un enlace en una nueva pestaña es '_blank' (con guion bajo por delante). Escribir 'blank' a secas provoca que el navegador busque o cree una ventana con ese nombre específico de destino en lugar de lanzar una vacía limpia[cite: 2414, 2417]."
+    },
+    {
+      "id": 12,
+      "enunciado": "¿Qué atributo del elemento <video> de HTML5 permite mostrar una imagen mientras el video se descarga o hasta que el usuario inicie la reproducción del mismo?",
+      "opciones": {
+        "a": "autoplay.",
+        "b": "controls.",
+        "c": "src.",
+        "d": "poster."
+      },
+      "correcta": "d",
+      "explicacion": "El atributo 'poster' acepta la ruta de un archivo de imagen estática para que actúe como carátula fija visible del elemento multimedia antes de su activación por el usuario[cite: 2419, 2424]."
+    },
+    {
+      "id": 13,
+      "enunciado": "¿Qué elemento de HTML5 NO puede ser utilizado en conjunto con <source>?",
+      "opciones": {
+        "a": "<figure>",
+        "b": "<picture>",
+        "c": "<audio>",
+        "d": "<video>"
+      },
+      "correcta": "a",
+      "explicacion": "El elemento '<source>' permite especificar múltiples fuentes multimedia alternativas para las etiquetas '<picture>', '<audio>' y '<video>' sirviendo para negociar formatos y tamaños[cite: 2425, 2427, 2428, 2429]. El tag '<figure>' es un contenedor semántico genérico y no acepta '<source>' directamente de forma estructural[cite: 2425, 2426]."
+    },
+    {
+      "id": 14,
+      "enunciado": "Respecto a la sintaxis en HTML5 indique la respuesta INCORRECTA:",
+      "opciones": {
+        "a": "Las comillas para indicar valores de los atributos son facultativas.",
+        "b": "Es obligatorio incluir la etiqueta de cierre para todo elemento con etiqueta de apertura y de cierre.",
+        "c": "En atributos booleanos la simple presencia del mismo indica un valor true.",
+        "d": "Los elementos se pueden escribir en mayúsculas y minúsculas."
+      },
+      "correcta": "b",
+      "explicacion": "La opción 'b' es incorrecta porque la sintaxis permisiva de HTML5 permite omitir explícitamente ciertas etiquetas de cierre en elementos muy habituales (como '</p>' o '</li>') si el navegador puede deducir el fin de la estructura por el siguiente elemento hermano[cite: 2430, 2432]."
+    },
+    {
+      "id": 15,
+      "enunciado": "¿Cuál de las siguientes NO es una característica de HTML5?",
+      "opciones": {
+        "a": "Nuevos elementos semánticos.",
+        "b": "Audio y vídeo nativos.",
+        "c": "API de dibujo en Canvas.",
+        "d": "Service workers."
+      },
+      "correcta": "d",
+      "explicacion": "Aunque forman parte de las APIs web modernas, los 'Service Workers' se encuadran de forma estricta dentro de las especificaciones de las PWA (Progressive Web Apps) y el entorno de scripts asíncronos en segundo plano de JavaScript, no como una característica fundacional directa de la sintaxis estructural de HTML5[cite: 2441, 2446]."
+    },
+    {
+      "id": 16,
+      "enunciado": "¿Cuál de las siguientes NO es un atributo global en HTML5?",
+      "opciones": {
+        "a": "content.",
+        "b": "class.",
+        "c": "title.",
+        "d": "id."
+      },
+      "correcta": "a",
+      "explicacion": "'content' no es un atributo global de HTML5; es un atributo específico de la etiqueta '<meta>' (para definir metadatos) o utilizado en CSS[cite: 2447, 2448]. Los atributos 'class', 'title' e 'id' pueden aplicarse legalmente a la totalidad de los elementos del árbol DOM[cite: 2447, 2450, 2452, 2453]."
+    },
+    {
+      "id": 17,
+      "enunciado": "¿Qué elemento de HTML5 define un contenedor para una aplicación o contenido interactivo externo que por lo general no es HTML?",
+      "opciones": {
+        "a": "<iframe>",
+        "b": "<embed>",
+        "c": "<object>",
+        "d": "<video>"
+      },
+      "correcta": "b",
+      "explicacion": "La etiqueta '<embed>' proporciona un punto de integración directo en el documento para incrustar recursos e interactivos multimedia de plugins externos o formatos no HTML de forma nativa[cite: 2455, 2458]."
+    },
+    {
+      "id": 18,
+      "enunciado": "¿Qué elemento nos permite utilizar subtítulos en un video en HTML5?",
+      "opciones": {
+        "a": "<canvas>",
+        "b": "<source>",
+        "c": "<param>",
+        "d": "<track>"
+      },
+      "correcta": "d",
+      "explicacion": "El elemento '<track>' se posiciona dentro de '<video>' o '<audio>' para enlazar archivos de pistas de texto estructuradas (como archivos .vtt) que contienen subtítulos, traducciones o descripciones de base temporal[cite: 2461, 2465]."
+    },
+    {
+      "id": 19,
+      "enunciado": "¿Qué atributo del <input> en HTML5 permite mostrar un texto de ayuda dentro del campo?",
+      "opciones": {
+        "a": "list",
+        "b": "tooltip",
+        "c": "placeholder",
+        "d": "inputhelp"
+      },
+      "correcta": "c",
+      "explicacion": "El atributo 'placeholder' acepta una cadena de texto corta que se visualiza de forma translúcida dentro del control de formulario antes de que este reciba foco o se escriba en él[cite: 2466, 2470]."
+    },
+    {
+      "id": 20,
+      "enunciado": "En HTML5 se quiere utilizar en una lista desplegable opciones de grupos, para ello recurrimos al elemento:",
+      "opciones": {
+        "a": "<optgroup>",
+        "b": "<select>",
+        "c": "<option>",
+        "d": "<group>"
+      },
+      "correcta": "a",
+      "explicacion": "La etiqueta '<optgroup>' sirve para agrupar de forma jerárquica y con un título descriptivo diferentes elementos '<option>' subordinados dentro de un control de selección '<select>'[cite: 2472, 2474, 2475, 2476]."
+    },
+    {
+      "id": 21,
+      "enunciado": "Indique la respuesta INCORRECTA sobre el elemento <datalist> de HTML5:",
+      "opciones": {
+        "a": "Es un elemento introducido en HTML5.",
+        "b": "Define un conjunto de valores para otros elementos.",
+        "c": "El elemento <option> permite definir los valores de la lista.",
+        "d": "Obliga al usuario a seleccionar uno de los valores del elemento <datalist>, no actuando como un listado de sugerencias."
+      },
+      "correcta": "d",
+      "explicacion": "La afirmación 'd' es incorrecta porque '<datalist>' actúa precisamente como una lista abierta de autocompletado y sugerencias. El usuario conserva la libertad de escribir cualquier texto libre en el input asociado y no se le obliga a ceñirse al listado predefinido[cite: 2478, 2482, 2483]."
+    },
+    {
+      "id": 22,
+      "enunciado": "En relación con HTML5 indique la respuesta INCORRECTA:",
+      "opciones": {
+        "a": "<meter> representa una medición escalar dentro de un rango conocido.",
+        "b": "<progress> representa el progreso de finalización de una tarea.",
+        "c": "<rt> representa los paréntesis alrededor de una anotación Ruby.",
+        "d": "<keygen> representa un control generador de claves y el envío de la clave pública como parte de un formulario."
+      },
+      "correcta": "c",
+      "explicacion": "La opción 'c' es incorrecta porque la etiqueta que define los paréntesis tipográficos de seguridad para navegadores antiguos que no soportan anotaciones Ruby es '<rp>' (Ruby Parentheses), mientras que '<rt>' contiene el texto explicativo de la anotación en sí[cite: 2489, 2495]."
+    },
+    {
+      "id": 23,
+      "enunciado": "¿Qué elemento interactivo de HTML5 nos permite representar un widget?",
+      "opciones": {
+        "a": "<object>",
+        "b": "<dialog>",
+        "c": "<summary>",
+        "d": "<details>"
+      },
+      "correcta": "d",
+      "explicacion": "El elemento '<details>' crea un widget nativo interactivo de tipo desplegable o acordeón que el usuario puede expandir o contraer de forma nativa para examinar información adicional[cite: 2499, 2504]."
+    },
+    {
+      "id": 24,
+      "enunciado": "¿Cuál de las siguientes NO se considera una ventaja de CSS3?",
+      "opciones": {
+        "a": "Reduce el código JavaScript.",
+        "b": "Permite el diseño adaptativo.",
+        "c": "Reduce el tiempo de desarrollo pero no el tiempo de mantenimiento.",
+        "d": "Incrementa el rendimiento de las páginas."
+      },
+      "correcta": "c",
+      "explicacion": "La opción 'c' plantea una falsedad: la modularidad y el uso de hojas de estilo centralizadas en CSS3 reducen de forma drástica tanto el tiempo de desarrollo inicial como el coste de mantenimiento a largo plazo del diseño del portal[cite: 2505, 2508]."
+    },
+    {
+      "id": 25,
+      "enunciado": "¿Qué son las media queries?",
+      "opciones": {
+        "a": "Es una característica de JavaScript.",
+        "b": "Permite añadir estilos o reglas específicas CSS3 según medida de la pantalla, orientación del dispositivo o densidad de píxeles.",
+        "c": "Es una de las incorporaciones introducidas por HTML5.",
+        "d": "Son consultas genéricas que se pueden lanzar contra una base de datos."
+      },
+      "correcta": "b",
+      "explicacion": "Las media queries constituyen el pilar tecnológico indispensable de CSS3 para dar soporte al Responsive Web Design, permitiendo segmentar y aplicar bloques de estilos según las propiedades físicas del dispositivo de visualización[cite: 2510, 2512]."
+    },
+    {
+      "id": 26,
+      "enunciado": "Si queremos aplicar un estilo a todos los elementos con atributo class=\"texto\" de una página HTML, definiremos en la hoja de estilo CSS3 asociada el selector:",
+      "opciones": {
+        "a": ":texto",
+        "b": "#texto",
+        "c": "texto",
+        "d": ".texto"
+      },
+      "correcta": "d",
+      "explicacion": "En la sintaxis estándar de CSS, el punto ('.') se utiliza para declarar un selector de clase, enlazando todos aquellos elementos que luzcan dicho literal en su atributo 'class'[cite: 2516, 2521]."
+    },
+    {
+      "id": 27,
+      "enunciado": "En una hoja de estilo CSS3 un selector del tipo .selector es un:",
+      "opciones": {
+        "a": "Selector de ID.",
+        "b": "Selector de clase.",
+        "c": "Selector descendente.",
+        "d": "Selector de tipo."
+      },
+      "correcta": "b",
+      "explicacion": "El prefijo '.' identifica de manera inequívoca a los selectores de clase en las hojas de estilo[cite: 2522, 2524]."
+    },
+    {
+      "id": 28,
+      "enunciado": "En una hoja de estilo CSS3 un selector del tipo #selector es un:",
+      "opciones": {
+        "a": "Selector de ID.",
+        "b": "Selector de clase.",
+        "c": "Selector descendente.",
+        "d": "Selector de tipo."
+      },
+      "correcta": "a",
+      "explicacion": "El carácter almohadilla ('#') se reserva de forma exclusiva en CSS para dar formato a selectores de identificación (ID), apuntando a un elemento único en el árbol DOM[cite: 2527, 2528]."
+    },
+    {
+      "id": 29,
+      "enunciado": "En una hoja de estilo CSS3 un selector del tipo selector1 selector2 es un:",
+      "opciones": {
+        "a": "Selector de ID.",
+        "b": "Selector de clase.",
+        "c": "Selector descendente.",
+        "d": "Selector de tipo."
+      },
+      "correcta": "c",
+      "explicacion": "Separar dos selectores mediante un espacio en blanco denota una relación de descendencia, aplicando los estilos a los elementos coincidentes con 'selector2' que se encuentren anidados a cualquier nivel de profundidad dentro de un 'selector1'[cite: 2537, 2540, 2541]."
+    },
+    {
+      "id": 30,
+      "enunciado": "En una hoja de estilo CSS3 el selector div + h1 se aplicará a todos los elementos:",
+      "opciones": {
+        "a": "<h1> situados dentro de elementos <div>.",
+        "b": "<h1> situados justo después de un elemento <div>.",
+        "c": "<div> y todos los elementos <h1>.",
+        "d": "<h1> cuyo padre directo sea un elemento <div>."
+      },
+      "correcta": "b",
+      "explicacion": "El combinador '+' es el selector de hermano adyacente en CSS, seleccionando únicamente al elemento de la derecha que aparezca inmediatamente después del elemento de la izquierda compartiendo el mismo padre[cite: 2542, 2546]."
+    },
+    {
+      "id": 31,
+      "enunciado": "En una hoja de estilo CSS3 el selector div > h1 se aplicará a todos los elementos:",
+      "opciones": {
+        "a": "<h1> situados dentro de elementos <div>.",
+        "b": "<h1> situados justo después de un elemento <div>.",
+        "c": "<div> y todos los elementos <h1>.",
+        "d": "<h1> cuyo padre directo sea un elemento <div>."
+      },
+      "correcta": "d",
+      "explicacion": "El carácter '>' se define en CSS como el combinador de hijo directo, lo que significa que restringe el formateo de estilos exclusivamente a aquellos elementos de la derecha cuyo progenitor inmediato en el árbol sea el elemento de la izquierda[cite: 2550, 2557]."
+    },
+    {
+      "id": 32,
+      "enunciado": "En una hoja de estilo CSS3 un selector del tipo selector1 > selector2 es un:",
+      "opciones": {
+        "a": "Selector de hermanos general.",
+        "b": "Selector de hijos.",
+        "c": "Selector descendente.",
+        "d": "Selector adyacente."
+      },
+      "correcta": "b",
+      "explicacion": "Como se ha indicado, mapea de forma formal un selector de hijos directos en la gramática de CSS[cite: 2558, 2560]."
+    },
+    {
+      "id": 33,
+      "enunciado": "En una hoja de estilo CSS3 un selector del tipo selector1 + selector2 es un:",
+      "opciones": {
+        "a": "Selector de hermanos general.",
+        "b": "Selector de hijos.",
+        "c": "Selector descendente.",
+        "d": "Selector adyacente."
+      },
+      "correcta": "d",
+      "explicacion": "Constituye la denominación técnica para los enlaces de elementos adyacentes del mismo nivel jerárquico[cite: 2563, 2567]."
+    },
+    {
+      "id": 34,
+      "enunciado": "En una hoja de estilo CSS3 un selector del tipo selector1 selector2 es un:",
+      "opciones": {
+        "a": "Selector de hermanos general.",
+        "b": "Selector de hijos.",
+        "c": "Selector descendente.",
+        "d": "Selector adyacente."
+      },
+      "correcta": "c",
+      "explicacion": "La separación pura por espacio en blanco conforma un selector de descendientes atómico[cite: 2568, 2571]."
+    },
+    {
+      "id": 35,
+      "enunciado": "En una hoja de estilo CSS3 el selector div h1 se aplicará a todos los elementos:",
+      "opciones": {
+        "a": "<h1> situados dentro de elementos <div>.",
+        "b": "<h1> situados justo después de un elemento <div>.",
+        "c": "<h1> hermanos de <div> que se sitúen tras este elemento.",
+        "d": "<h1> cuyo padre directo sea un elemento <div>."
+      },
+      "correcta": "a",
+      "explicacion": "Aplica de forma global a cualquier '<h1>' que resida en el interior de un '<div>', sin importar el grado de anidamiento[cite: 2573, 2574]."
+    },
+    {
+      "id": 36,
+      "enunciado": "En una hoja de estilo CSS3 si tenemos el selector p[class$=especial] {color:red;} se aplicará a todos los elementos:",
+      "opciones": {
+        "a": "<p> que tenga el atributo class cuyo valor acaba en especial.",
+        "b": "<p> que tenga el atributo class cuyo valor comienza por especial.",
+        "c": "<p> que tenga el atributo class cuyo valor contiene especial.",
+        "d": "<p> que tenga el atributo class cuyo valor es una serie de palabras separadas por guiones que comienza con especial."
+      },
+      "correcta": "a",
+      "explicacion": "El operador '$=' en un selector de atributos de CSS3 funciona como una evaluación de sufijo, enlazando los elementos cuyo atributo termine exactamente con la cadena literal especificada[cite: 2585, 2588]."
+    },
+    {
+      "id": 37,
+      "enunciado": "En una hoja de estilo CSS3 :required es:",
+      "opciones": {
+        "a": "Un pseudoelemento.",
+        "b": "Una pseudoclase.",
+        "c": "Un pseudoestado.",
+        "d": "Un pseudoselector."
+      },
+      "correcta": "b",
+      "explicacion": "Los elementos precedidos por un único carácter de dos puntos (':') que evalúan el estado de un elemento de formulario o de la navegación se clasifican formalmente como pseudoclases[cite: 2595, 2598]."
+    },
+    {
+      "id": 38,
+      "enunciado": "En una hoja de estilo CSS3 ::selection es:",
+      "opciones": {
+        "a": "Un pseudoelemento.",
+        "b": "Una pseudoclase.",
+        "c": "Un pseudoestado.",
+        "d": "Un pseudoselector."
+      },
+      "correcta": "a",
+      "explicacion": "La sintaxis moderna de CSS3 utiliza el doble carácter de dos puntos ('::') para distinguir formalmente a los pseudoelementos, los cuales dan formato a partes abstractas o específicas del contenido de un elemento (como el texto seleccionado por el usuario)[cite: 2602, 2603]."
+    },
+    {
+      "id": 39,
+      "enunciado": "Para el elemento <h1> señale cuál es la respuesta correcta en base a las siguientes opciones de estilos CSS que aplican a dicho elemento: [Opción 1: autor vs usuario normal / Opción 2: autor vs usuario con !important]",
+      "opciones": {
+        "a": "Según la opción 1, el encabezado aparecerá en azul y según la opción 2 en azul.",
+        "b": "Según la opción 1, el encabezado aparecerá en rojo y según la opción 2 en rojo.",
+        "c": "Según la opción 1, el encabezado aparecerá en rojo y según la opción 2 en azul.",
+        "d": "Según la opción 1, el encabezado aparecerá en azul y según la opción 2 en rojo."
+      },
+      "correcta": "c",
+      "explicacion": "En las reglas de la cascada y especificidad de CSS: 1) Los estilos ordinarios de autor (desarrollador) vencen a los ordinarios del usuario. 2) Sin embargo, una directiva con '!important' fijada en la hoja de estilo del usuario prevalece de forma absoluta sobre cualquier directiva del desarrollador[cite: 2618]."
+    },
+    {
+      "id": 40,
+      "enunciado": "Indique el orden de precedencia de las hojas de estilo CSS:",
+      "opciones": {
+        "a": "Hojas de estilo de navegador, hojas de estilo de usuario y hojas de estilo de autor.",
+        "b": "Hojas de estilo de autor, hojas de estilo de usuario y hojas de estilo de navegador.",
+        "c": "Hojas de estilo de usuario, hojas de estilo de autor y hojas de estilo de navegador.",
+        "d": "Hojas de estilo de autor, hojas de estilo de navegador y hojas de estilo de usuario."
+      },
+      "correcta": "b",
+      "explicacion": "En el orden descendente de prioridad base por defecto (de mayor a menor peso antes de evaluar especificidades internas o importantes): los estilos del autor (código del sitio) anulan a los del usuario (configuración del navegador del cliente), y estos a su vez anulan a los del agente de usuario o navegador por defecto[cite: 2622]."
+    },
+    {
+      "id": 41,
+      "enunciado": "En el modelo de cajas de CSS3, si se desea establecer un margen derecho de 10px y un relleno izquierdo de 5px:",
+      "opciones": {
+        "a": "Se establecerá la propiedad margin-right: 10px y padding-left: 5px.",
+        "b": "Se establecerá la propiedad padding-right: 10px y margin-left: 5px.",
+        "c": "Se establecerá la propiedad margin-left: 10px y padding-right: 5px.",
+        "d": "Se establecerá la propiedad padding-left: 10px y margin-right: 5px."
+      },
+      "correcta": "a",
+      "explicacion": "El espaciado exterior se controla mediante 'margin' y el espaciado interior mediante 'padding', añadiendo las direcciones espaciales correspondientes ('-right' para la derecha y '-left' para la izquierda)[cite: 2626]."
+    },
+    {
+      "id": 42,
+      "enunciado": "¿Qué posicionamiento de un elemento en CSS3 se utiliza por defecto?",
+      "opciones": {
+        "a": "Relative.",
+        "b": "Fixed.",
+        "c": "Static.",
+        "d": "Absolute."
+      },
+      "correcta": "c",
+      "explicacion": "El valor por defecto de la propiedad 'position' para todos los elementos HTML es 'static', lo que integra al componente de forma fluida y natural dentro del flujo normal de renderizado del documento[cite: 2634, 2638]."
+    },
+    {
+      "id": 43,
+      "enunciado": "En relación con el posicionamiento de un elemento en CSS3 indique la respuesta correcta:",
+      "opciones": {
+        "a": "El posicionamiento flotante permite el desplazamiento de una caja, mediante los valores top y bottom.",
+        "b": "El modelo flexbox permite un comportamiento predecible de las cajas, ajustándose al tamaño concreto de la pantalla.",
+        "c": "Para utilizar el modelo flexbox en un elemento hacemos uso de la propiedad flex:display.",
+        "d": "El desplazamiento con un posicionamiento relativo se controla solo con las propiedades left y right."
+      },
+      "correcta": "b",
+      "explicacion": "El módulo de caja flexible (Flexbox) se diseñó precisamente para dotar a los contenedores de la capacidad de alterar de forma fluida y unidimensional el ancho y alto de sus componentes hijos para rellenar óptimamente el espacio adaptativo disponible[cite: 2643]."
+    },
+    {
+      "id": 44,
+      "enunciado": "¿Qué valor corresponde a la propiedad list-style-type para que una lista muestre el orden i, ii, iii...?",
+      "opciones": {
+        "a": "lower-roman.",
+        "b": "lower-greek.",
+        "c": "lower-latin.",
+        "d": "upper-latin."
+      },
+      "correcta": "a",
+      "explicacion": "El valor 'lower-roman' da formato a las viñetas numeradas de las listas empleando números romanos expresados en letras minúsculas[cite: 2646, 2647]."
+    },
+    {
+      "id": 45,
+      "enunciado": "¿Qué valor corresponde a la propiedad list-style-type para que una lista muestre el orden a, b, c...?",
+      "opciones": {
+        "a": "upper-alpha.",
+        "b": "lower-greek.",
+        "c": "lower-latin.",
+        "d": "upper-latin."
+      },
+      "correcta": "c",
+      "explicacion": "Para forzar un orden alfabético ordinario estructurado en letras minúsculas anglosajonas se debe configurar el valor 'lower-latin' (o 'lower-alpha')[cite: 2653, 2656]."
+    },
+    {
+      "id": 46,
+      "enunciado": "¿Qué valor corresponde a la propiedad list-style-type para que una lista muestre el orden A, B, C...?",
+      "opciones": {
+        "a": "upper-armenian.",
+        "b": "lower-greek.",
+        "c": "lower-latin.",
+        "d": "upper-latin."
+      },
+      "correcta": "d",
+      "explicacion": "El literal 'upper-latin' (o 'upper-alpha') le indica al navegador que renderice el listado ordenado empleando letras mayúsculas[cite: 2659, 2663]."
+    },
+    {
+      "id": 47,
+      "enunciado": "¿Cuál de los siguientes es un preprocesador CSS?",
+      "opciones": {
+        "a": "Tailwind.",
+        "b": "Foundation.",
+        "c": "LESS.",
+        "d": "MiniCSS."
+      },
+      "correcta": "c",
+      "explicacion": "LESS (junto a Sass y Stylus) constituye un preprocesador de CSS que extiende la sintaxis plana añadiendo variables, mixins y anidamientos lógicos[cite: 2667, 3067]. Tailwind y Foundation son frameworks de utilidades visuales[cite: 2665, 2666]."
+    },
+    {
+      "id": 48,
+      "enunciado": "En PHP, dado el array $colores=array(\"negro\", \"verde\", \"azul\"), ¿qué sentencia permite añadir un elemento al principio del array?",
+      "opciones": {
+        "a": "array_unshift($colores, \"amarillo\");",
+        "b": "array_push($colores, \"amarillo\");",
+        "c": "array_shift($colores, \"amarillo\");",
+        "d": "array_pop($colores, \"amarillo\");"
+      },
+      "correcta": "a",
+      "explicacion": "La función nativa 'array_unshift()' añade uno o más elementos especificados al inicio de la estructura del array, reorganizando e incrementando consecuentemente los índices numéricos[cite: 2675, 2677]."
+    },
+    {
+      "id": 49,
+      "enunciado": "En PHP, dado el array $colores=array(\"negro\", \"verde\", \"azul\"), ¿qué sentencia permite eliminar un elemento del principio del array?",
+      "opciones": {
+        "a": "array_unshift($colores, \"amarillo\");",
+        "b": "array_push($colores, \"amarillo\");",
+        "c": "array_shift($colores, \"amarillo\");",
+        "d": "array_pop($colores, \"amarillo\");"
+      },
+      "correcta": "c",
+      "explicacion": "La función nativa 'array_shift()' extrae y remueve el primer elemento del array, retornándolo y retrasando los índices de los elementos restantes[cite: 2683, 2689]."
+    },
+    {
+      "id": 50,
+      "enunciado": "En PHP, dado el array $colores=array(\"negro\", \"verde\", \"azul\"), ¿qué sentencia permite eliminar un elemento al final del array?",
+      "opciones": {
+        "a": "array_unshift($colores, \"amarillo\");",
+        "b": "array_push($colores, \"amarillo\");",
+        "c": "array_shift($colores, \"amarillo\");",
+        "d": "array_pop($colores, \"amarillo\");"
+      },
+      "correcta": "d",
+      "explicacion": "La función nativa 'array_pop()' extrae y elimina el último elemento almacenado en la cola del array disminuyendo su longitud[cite: 2692, 2697]."
+    },
+    {
+      "id": 51,
+      "enunciado": "En PHP, indique qué realiza el siguiente código: [Validación de password y hash con sha1 y str_shuffle]",
+      "opciones": {
+        "a": "Elimina los espacios en blanco a izquierda y derecha de $pass y obtiene su longitud. Compara esa longitud con una longitud mínima. Si es menor, muestra por pantalla \"Longitud insuficiente\", en otro caso obtiene un resumen de la cadena $pass previamente reordenada de forma aleatoria y lo muestra por pantalla.",
+        "b": "Elimina los espacios en blanco a izquierda de $pass...",
+        "c": "Elimina los espacios en blanco a derecha de $pass...",
+        "d": "Elimina los espacios en blanco a izquierda y derecha... y reordena aleatoriamente..."
+      },
+      "correcta": "a",
+      "explicacion": "El código aplica 'trim()' para limpiar espacios en ambos extremos, evalúa la longitud con 'strlen()' y, si supera el mínimo, baraja aleatoriamente los caracteres con 'str_shuffle()' antes de generar su firma hash criptográfica mediante 'sha1()'[cite: 2700, 2703, 2704, 2705]."
+    },
+    {
+      "id": 52,
+      "enunciado": "En PHP, para eliminar una variable denominada $var:",
+      "opciones": {
+        "a": "delete($var);",
+        "b": "unset($var);",
+        "c": "erase($var);",
+        "d": "del($var);"
+      },
+      "correcta": "b",
+      "explicacion": "La construcción del lenguaje 'unset()' destruye por completo la variable especificada desvinculando su identificador del valor en memoria y liberando el recurso[cite: 2718, 2721]."
+    },
+    {
+      "id": 53,
+      "enunciado": "En PHP, queremos definir la función flecha cuadrado. Indique la sentencia correcta:",
+      "opciones": {
+        "a": "$resultado = fn($x) => $x**2;",
+        "b": "$resultado = fn() => $x*$x;",
+        "c": "$resultado = fn() => $x*$x;",
+        "d": "$resultado = fn($x) => $x**2"
+      },
+      "correcta": "a",
+      "explicacion": "Las funciones flecha en PHP se introducen con la palabra clave 'fn', aceptan parámetros con el signo de dólar y utilizan el operador '=>'[cite: 2726]. El operador '**' denota potenciación, por lo que '$x**2' calcula el cuadrado de forma correcta[cite: 2726]."
+    },
+    {
+      "id": 54,
+      "enunciado": "En PHP, indique la salida del siguiente código: [Invocación de función con paso de parámetro por referencia hola(&$arg)]",
+      "opciones": {
+        "a": "HOLA!!",
+        "b": "hola!!",
+        "c": "hola",
+        "d": "HOLA"
+      },
+      "correcta": "c",
+      "explicacion": "Nota sobre el fragmento: La función realiza la instrucción '$arg. \"!!\";'[cite: 2735]. Al faltar el operador de asignación compuesta '.=' o una reasignación explícita, la expresión concatena las cadenas efímeramente pero no altera el contenido de la variable real. Por ende, al imprimirla sigue valiendo 'hola'[cite: 2737, 2739, 2743]."
+    },
+    {
+      "id": 55,
+      "enunciado": "En PHP, para imprimir por pantalla los valores de un array denominado $colores:",
+      "opciones": {
+        "a": "echo $colores;",
+        "b": "print_r($colores);",
+        "c": "print($colores);",
+        "d": "printf($colores);"
+      },
+      "correcta": "b",
+      "explicacion": "Hacer un 'echo' de un array arroja el texto plano literal 'Array'. Para volcar de forma legible para humanos la estructura interna completa con sus claves y valores se debe emplear 'print_r()' o 'var_dump()'[cite: 2745, 2747]."
+    },
+    {
+      "id": 56,
+      "enunciado": "En PHP, indique cuál de las siguientes sentencias no añade un elemento a un array $colores:",
+      "opciones": {
+        "a": "$colores[\"X\"] = \"verde\";",
+        "b": "array_unshift($colores, \"verde\");",
+        "c": "array_pop($colores, \"verde\");",
+        "d": "array_push($colores, \"verde\");"
+      },
+      "correcta": "c",
+      "explicacion": "Como se ha indicado anteriormente, 'array_pop()' se encarga de extraer y eliminar el último elemento del array, por lo que es imposible que añada información[cite: 2750, 2754]."
+    },
+    {
+      "id": 57,
+      "enunciado": "En PHP, indique la sentencia que incluye y evalúa el archivo fichero, salvo que el fichero haya sido previamente incluido:",
+      "opciones": {
+        "a": "include($fichero);",
+        "b": "include_once($fichero);",
+        "c": "require($fichero);",
+        "d": "require_once($fichero);"
+      },
+      "correcta": "b",
+      "explicacion": "La directiva 'include_once()' enlaza el archivo indicado con la particularidad de comprobar si este ya se ha cargado previamente en el script, evitando duplicidades[cite: 2756, 2759]. (Si se requiere un error fatal restrictivo ante la ausencia del archivo, se optaría por 'require_once') [cite: 2756, 2761]."
+    },
+    {
+      "id": 58,
+      "enunciado": "En PHP, ¿cuál de las siguientes NO es una variable predefinida?",
+      "opciones": {
+        "a": "$GLOBALS",
+        "b": "$_REQUEST",
+        "c": "$_POST",
+        "d": "$_RESPONSE"
+      },
+      "correcta": "d",
+      "explicacion": "'$_RESPONSE' no constituye ninguna superglobal nativa de PHP[cite: 2767, 2774]. El contexto de la respuesta HTTP se gestiona mediante funciones de cabeceras o la emisión de flujos[cite: 2767]. Las variables '$GLOBALS', '$_REQUEST' y '$_POST' sí son superglobales oficiales[cite: 2767, 2768, 2770, 2772]."
+    },
+    {
+      "id": 59,
+      "enunciado": "En PHP, ¿qué operador se utiliza para el control de errores?",
+      "opciones": {
+        "a": "!!",
+        "b": "::",
+        "c": "!^",
+        "d": "@"
+      },
+      "correcta": "d",
+      "explicacion": "El símbolo de la arroba ('@') actúa en PHP como el operador de control de silenciamiento de errores, impidiendo que una instrucción concreta emita mensajes de advertencia o diagnóstico al flujo de salida si falla[cite: 2775, 2779]."
+    },
+    {
+      "id": 60,
+      "enunciado": "En PHP, ¿cuál es la salida que genera el siguiente código? [Bucle llamando a función con variable static $contador=0]",
+      "opciones": {
+        "a": "01234",
+        "b": "00000",
+        "c": "0 1 2 3 4 (en líneas separadas)",
+        "d": "0 0 0 0 0 (en líneas separadas)"
+      },
+      "correcta": "a",
+      "explicacion": "Al declararse con el modificador 'static', la variable '$contador' no se destruye al finalizar la función, sino que retiene su valor entre llamadas[cite: 2782, 2783]. Al aplicar un post-incremento 'echo $contador++', primero se imprime el valor actual y luego aumenta, imprimiendo de corrido '01234'[cite: 2784, 2786, 2790]."
+    },
+    {
+      "id": 61,
+      "enunciado": "En PHP, ¿qué operador se utiliza para el control de errores?",
+      "opciones": {
+        "a": "!!",
+        "b": "::",
+        "c": "!^",
+        "d": "@"
+      },
+      "correcta": "d",
+      "explicacion": "Reiteración de la pregunta 59 en el cuestionario original: el operador es la arroba ('@')[cite: 2802, 2806]."
+    },
+    {
+      "id": 62,
+      "enunciado": "¿Cuál de los siguientes NO es un framework de desarrollo en PHP?",
+      "opciones": {
+        "a": "Zend.",
+        "b": "CodeIgniter.",
+        "c": "Django.",
+        "d": "Symfony."
+      },
+      "correcta": "c",
+      "explicacion": "Django es un framework de desarrollo web de alto nivel perteneciente de forma exclusiva al ecosistema del lenguaje Python[cite: 2810]. Zend, CodeIgniter y Symfony son las suites históricas clásicas de PHP[cite: 2808, 2809, 2811]."
+    },
+    {
+      "id": 63,
+      "enunciado": "Indique la salida tras la ejecución del siguiente código en Python: print('iii', 'Hola', sep='-', end='!!!')",
+      "opciones": {
+        "a": "Hola!!!",
+        "b": "iii Hola",
+        "c": "iii-Hola!!!",
+        "d": "iii-Hola-!!!"
+      },
+      "correcta": "c",
+      "explicacion": "La función 'print()' en Python une los diferentes argumentos utilizando el separador indicado por 'sep' ('-'), lo que produce 'iii-Hola'[cite: 2819]. Al concluir la cadena, en lugar del salto de línea por defecto, inyecta el sufijo dictado por 'end' ('!!!')[cite: 2819, 2825]."
+    },
+    {
+      "id": 64,
+      "enunciado": "¿Qué operador de Python se utiliza para la división entera?",
+      "opciones": {
+        "a": "/",
+        "b": "//",
+        "c": "%",
+        "d": "%%"
+      },
+      "correcta": "b",
+      "explicacion": "El operador '//' efectúa una división de tipo entero (floor division), truncando el resultado y descartando la parte decimal para devolver un número entero[cite: 2828, 2830]."
+    },
+    {
+      "id": 65,
+      "enunciado": "Indique la respuesta INCORRECTA sobre Python:",
+      "opciones": {
+        "a": "Las tuplas son secuencias ordenadas de objetos del mismo tipo.",
+        "b": "Las tuplas son inmutables.",
+        "c": "Se representan mediante paréntesis y los elementos se separan por comas.",
+        "d": "Las tuplas son de tipo tuple."
+      },
+      "correcta": "a",
+      "explicacion": "La afirmación 'a' es incorrecta porque las tuplas en Python son secuencias **heterogéneas** por definición, lo que significa que pueden almacenar legítimamente objetos y elementos de tipos de datos completamente diferentes de forma mixta[cite: 2834]."
+    },
+    {
+      "id": 66,
+      "enunciado": "En Python, ¿qué salida produce el siguiente código? 'ejercicio'.title()",
+      "opciones": {
+        "a": "ejercicio",
+        "b": "Ejercicio",
+        "c": "EJERCICIO",
+        "d": "Ejercicio"
+      },
+      "correcta": "b",
+      "explicacion": "El método de cadenas '.title()' transforma el texto a 'formato de título', capitalizando y convirtiendo a mayúscula la primera letra de cada palabra de la cadena[cite: 2838, 2839, 2841]."
+    },
+    {
+      "id": 67,
+      "enunciado": "En Python, ¿qué salida produce el siguiente código? a= list(\"confidencial\") print(a[-9])",
+      "opciones": {
+        "a": "c",
+        "b": "d",
+        "c": "l",
+        "d": "f"
+      },
+      "correcta": "d",
+      "explicacion": "La cadena \"confidencial\" convertida a lista tiene 12 elementos (índices positivos 0 a 11). Los índices negativos cuentan desde el final hacia atrás comenzando en -1 ('l'). Contando de forma inversa: -1:l, -2:a, -3:i, -4:c, -5:n, -6:e, -7:d, -8:i, -9:f. El elemento en la posición -9 es 'f'[cite: 2845, 2846, 2850]."
+    },
+    {
+      "id": 68,
+      "enunciado": "En Python, ¿qué salida produce el siguiente código? a = list(\"confidencial\") print(a[:-9])",
+      "opciones": {
+        "a": "con",
+        "b": "fid",
+        "c": "den",
+        "d": "ial"
+      },
+      "correcta": "a",
+      "explicacion": "El rebanado (slicing) 'a[:-9]' extrae los elementos desde el inicio base hasta llegar al tope del índice -9 (excluyendo este último). Como los tres primeros caracteres son 'c', 'o', 'n' (índices 0, 1 y 2, que preceden a la posición -9 que es 'f'), el resultado es la lista que contiene ['c', 'o', 'n'], equivalente a 'con'[cite: 2852, 2853, 2854]."
+    },
+    {
+      "id": 69,
+      "enunciado": "En Python, ¿qué función devuelve la longitud de una tupla t?",
+      "opciones": {
+        "a": "lenght(t)",
+        "b": "long(t)",
+        "c": "len(t)",
+        "d": "leng(t)"
+      },
+      "correcta": "c",
+      "explicacion": "La función global incorporada estándar 'len()' se encarga de calcular y retornar el número total de elementos o longitud de cualquier colección o secuencia en Python[cite: 2864, 2868]."
+    },
+    {
+      "id": 70,
+      "enunciado": "En Python, ¿qué respuesta NO es correcta en relación con los diccionarios?",
+      "opciones": {
+        "a": "Son objetos inmutables.",
+        "b": "Se representan con llaves, los pares separados por comas y cada par contiene una clave y un objeto asociado separado por dos puntos.",
+        "c": "Es una colección de pares.",
+        "d": "Las claves han de ser únicas."
+      },
+      "correcta": "a",
+      "explicacion": "La opción 'a' es falsa porque los diccionarios en Python son objetos **completamente mutables**, permitiendo insertar, borrar y redefinir pares de claves y valores dinámicamente en tiempo de ejecución[cite: 2872, 2873]."
+    },
+    {
+      "id": 71,
+      "enunciado": "En Python, ¿qué sentencia para crear un diccionario es correcta?",
+      "opciones": {
+        "a": "a = {'clave1': 1, 'clave2': 2, 'clave3': 'valor3'}",
+        "b": "a = {'clave1': 1, 'clave2': 2, 'clave3': valor3}",
+        "c": "a = {clave1: 1, clave2: 2, clave3: valor3}",
+        "d": "a = {'clave1': 1; 'clave2': 2; 'clave3': 'valor3'}"
+      },
+      "correcta": "a",
+      "explicacion": "La sintaxis formal exige encerrar los literales de texto de las claves entre comillas, delimitar los pares usando comas e interconectar clave y valor mediante dos puntos[cite: 2880, 2886]."
+    },
+    {
+      "id": 72,
+      "enunciado": "En Python, ¿qué sentencia para crear una función es correcta?",
+      "opciones": {
+        "a": "def area_cuadrado(lado):\n    return lado**2",
+        "b": "def area_cuadrado(lado)\n    return lado**2",
+        "c": "function area_cuadrado (lado):\n    return lado**2",
+        "d": "function area_cuadrado(lado)\n    return lado**2"
+      },
+      "correcta": "a",
+      "explicacion": "La definición de bloques de función en Python se realiza utilizando la palabra reservada 'def', seguida de la firma de argumentos entre paréntesis y rematada obligatoriamente por el carácter de dos puntos (':')[cite: 2887, 2888]."
+    },
+    {
+      "id": 73,
+      "enunciado": "En Python, ¿qué respuesta NO es correcta?",
+      "opciones": {
+        "a": "Los módulos predefinidos no necesitan importación explícita.",
+        "b": "Los módulos no están relacionados con el concepto de reutilización.",
+        "c": "Los módulos pueden contener funciones y variables.",
+        "d": "Los módulos pueden ser importados de forma completa o parcial."
+      },
+      "correcta": "b",
+      "explicacion": "La afirmación 'b' es incorrecta. Los módulos constituyen el pilar fundamental de la modularidad y el empaquetado en Python, estando concebidos con el objetivo prioritario de promover la reutilización limpia de código[cite: 2896, 2898]."
+    },
+    {
+      "id": 74,
+      "enunciado": "ECMAScript 2016 se corresponde con la versión:",
+      "opciones": {
+        "a": "Quinta.",
+        "b": "Sexta.",
+        "c": "Séptima.",
+        "d": "Octava."
+      },
+      "correcta": "c",
+      "explicacion": "La versión estándar oficial regulada de ECMAScript lanzada en el año 2016 (ES2016) se corresponde cronológicamente con la **séptima versión** del estándar de JavaScript (siendo ES2015 la sexta o ES6)[cite: 2901, 2903, 2904]."
+    },
+    {
+      "id": 75,
+      "enunciado": "¿Qué versión de ECMAScript incorpora la iteración asincrónica?",
+      "opciones": {
+        "a": "Sexta.",
+        "b": "Séptima.",
+        "c": "Octava.",
+        "d": "Novena."
+      },
+      "correcta": "d",
+      "explicacion": "La iteración asíncrona (los bucles 'for await...of') se integró de forma oficial en la especificación ECMAScript 2018, la cual equivale cronológicamente a la **novena versión** de la norma[cite: 2906, 2910]."
+    },
+    {
+      "id": 76,
+      "enunciado": "¿Qué respuesta NO es correcta respecto a JavaScript?",
+      "opciones": {
+        "a": "var declara una variable global.",
+        "b": "let permite declarar una variable local o global.",
+        "c": "const declara una constante.",
+        "d": "Los nombres de las variables solo pueden estar formados por números, letras, $ y _"
+      },
+      "correcta": "b",
+      "explicacion": "Nota aclaratoria sobre la plantilla: El examen asigna la 'b' como incorrecta[cite: 3078]. 'let' introduce un ámbito de bloque estricto (block scope); conceptualmente se define como una variable local confinada al bloque de llaves donde nace, lo que invalida matizaciones genéricas de alcance amplio global tradicional de 'var'[cite: 2918, 2919]."
+    },
+    {
+      "id": 77,
+      "enunciado": "¿Qué tipo de dato en JavaScript admite un valor único e inmutable denominado átomo?",
+      "opciones": {
+        "a": "Undefined.",
+        "b": "Null.",
+        "c": "Object.",
+        "d": "Symbol."
+      },
+      "correcta": "d",
+      "explicacion": "Un 'Symbol' es un tipo de datos primitivo único e inmutable introducido en ES6 diseñado para actuar como identificadores atómicos completamente únicos para las propiedades de los objetos sin riesgo de colisión[cite: 2926]."
+    },
+    {
+      "id": 78,
+      "enunciado": "¿Qué finalidad tiene la operación slice() sobre un array en JavaScript?",
+      "opciones": {
+        "a": "Crea un array.",
+        "b": "Convierte un array en una cadena de caracteres.",
+        "c": "Elimina el último elemento del array.",
+        "d": "Copia un array."
+      },
+      "correcta": "d",
+      "explicacion": "El método '.slice()' (rebanar) extrae una copia superficial (shallow copy) de una parte de un array o de su totalidad hacia un nuevo objeto array sin alterar el contenedor original[cite: 2927, 2931]."
+    },
+    {
+      "id": 79,
+      "enunciado": "¿Qué evento se dispara cuando se selecciona un ítem de una lista desplegable en JavaScript?",
+      "opciones": {
+        "a": "onselect.",
+        "b": "onchange.",
+        "c": "onfocus.",
+        "d": "onblur."
+      },
+      "correcta": "b",
+      "explicacion": "El evento 'onchange' se activa nativamente en los controles '<select>' cuando el usuario commuta o modifica la opción activa modificando el valor del elemento[cite: 2932, 2935]."
+    },
+    {
+      "id": 80,
+      "enunciado": "¿Cómo se denomina el objeto principal relacionado con AJAX?",
+      "opciones": {
+        "a": "HttpRequest.",
+        "b": "XMLHttpRequest.",
+        "c": "AJAXHttpRequest.",
+        "d": "AJAXRequest."
+      },
+      "correcta": "b",
+      "explicacion": "La API e interfaz de base nuclear que permite orquestar de forma clásica peticiones asíncronas HTTP en segundo plano en JavaScript es la clase 'XMLHttpRequest'[cite: 2938, 2940]."
+    },
+    {
+      "id": 81,
+      "enunciado": "El atributo readyState (relacionado con AJAX) puede tomar valores, ¿qué significa que dicho atributo tenga el valor 2?",
+      "opciones": {
+        "a": "No se ha iniciado la operación",
+        "b": "Se ha enviado la petición, pero el servidor aún no ha contestado.",
+        "c": "Se han comenzado a recibir datos.",
+        "d": "Respuesta del servidor recibida completamente."
+      },
+      "correcta": "b",
+      "explicacion": "El estado '2' (HEADERS_RECEIVED) en un flujo XMLHttpRequest significa que el método '.send()' ha sido invocado y se han recibido las cabeceras de respuesta iniciales del servidor, aunque la carga útil del body esté en tránsito[cite: 2943, 2946]."
+    },
+    {
+      "id": 82,
+      "enunciado": "¿Cuál de los siguientes NO es un framework JavaScript?",
+      "opciones": {
+        "a": "jQuery.",
+        "b": "React.",
+        "c": "Yii.",
+        "d": "Node.js."
+      },
+      "correcta": "c",
+      "explicacion": "Yii es un framework de desarrollo MVC de alto rendimiento programado en el lenguaje de servidor PHP, no en JavaScript[cite: 2949, 2952]."
+    },
+    {
+      "id": 83,
+      "enunciado": "En Ruby, indique la respuesta INCORRECTA sobre los Símbolos:",
+      "opciones": {
+        "a": "Van precedidos de dos puntos.",
+        "b": "No contienen valores.",
+        "c": "Son el objeto más básico de Ruby.",
+        "d": "No son más eficientes que las cadenas."
+      },
+      "correcta": "d",
+      "explicacion": "La afirmación 'd' es la incorrecta porque los Símbolos en Ruby son inmutables y se almacenan en una tabla interna única compartiendo el mismo espacio de memoria, lo que los hace sustancialmente más veloces y eficientes para comparaciones que los strings ordinarios[cite: 2959, 2964]."
+    },
+    {
+      "id": 84,
+      "enunciado": "¿Qué clase utiliza Ruby on Rails para la Vista?",
+      "opciones": {
+        "a": "Active Record.",
+        "b": "Action View.",
+        "c": "Ruby Record.",
+        "d": "Ruby View."
+      },
+      "correcta": "b",
+      "explicacion": "Dentro de la arquitectura de Rails, la gema y componente especializado encargado de gestionar las plantillas embebidas (ERB), helpers y la capa de presentación visual es 'Action View'[cite: 2965, 2967]."
+    },
+    {
+      "id": 85,
+      "enunciado": "Seleccione la respuesta correcta sobre las aplicaciones híbridas:",
+      "opciones": {
+        "a": "Permite acceder a todas las características hardware del dispositivo.",
+        "b": "La aplicación desarrollada se visualiza en el navegador.",
+        "c": "Se desarrollan con el framework Ionic.",
+        "d": "Las aplicaciones no son distribuidas en las tiendas de aplicaciones."
+      },
+      "correcta": "c",
+      "explicacion": "Ionic es el framework por excelencia del desarrollo web híbrido multidispositivo, empaquetando tecnologías web estándares (HTML/CSS/JS) para correr sobre un contenedor nativo[cite: 2971, 2974]."
+    },
+    {
+      "id": 86,
+      "enunciado": "¿Qué es Capacitor?",
+      "opciones": {
+        "a": "Un framework para desarrollo de interfaces de usuario.",
+        "b": "Un ORM.",
+        "c": "Un framework que permite acceder a las capacidades de los dispositivos.",
+        "d": "Un plugin destinado a las notificaciones push."
+      },
+      "correcta": "c",
+      "explicacion": "Capacitor (desarrollado por Ionic como sucesor moderno de Cordova) actúa como el puente de abstracción (bridge) multiplataforma que expone APIs unificadas en JavaScript para invocar capacidades de hardware nativas (cámara, GPS) de iOS y Android[cite: 2976, 2981]."
+    },
+    {
+      "id": 87,
+      "enunciado": "¿Qué extensión corresponde con un archivo de un paquete del sistema operativo Android?",
+      "opciones": {
+        "a": "Lib.",
+        "b": "Apk.",
+        "c": "Arm.",
+        "d": "App."
+      },
+      "correcta": "b",
+      "explicacion": "La extensión '.apk' (Android Package Kit) identifica al formato de archivo ejecutable y comprimido utilizado por la plataforma Android para distribuir e instalar aplicaciones móviles[cite: 2984, 2987]."
+    },
+    {
+      "id": 88,
+      "enunciado": "Dado el siguiente código PHP, ¿cuál es el error de sintaxis? [nombre \"Juan; echo \"Hola, $nombre;]",
+      "opciones": {
+        "a": "Falta un punto y coma después del echo.",
+        "b": "Falta una comilla doble para cerrar la cadena en la asignación de Juan.",
+        "c": "El operador de concatenación (.) está mal utilizado.",
+        "d": "No existe ningún error de sintaxis."
+      },
+      "correcta": "b",
+      "explicacion": "La instrucción 'nombre \"Juan;' carece del operador de asignación '=' y, lo que es definitivo para el error sintáctico, la comilla doble inicial de Juan se queda abierta sin cerrar, corrompiendo la lectura del token por el parser[cite: 2990, 2992, 2998]."
+    },
+    {
+      "id": 89,
+      "enunciado": "¿Cuál es una diferencia clave entre JSON y XML como formatos de intercambio de datos en Internet?",
+      "opciones": {
+        "a": "JSON no admite estructuras jerárquicas de datos, mientras que XML sí las permite.",
+        "b": "JSON requiere etiquetas de apertura y cierre para definir estructuras, mientras que XML no las necesita.",
+        "c": "JSON es más legible y ligero que XML, pero XML admite atributos y una mayor capacidad de descripción de datos.",
+        "d": "No existe diferencia entre ambos formatos de intercambio de datos."
+      },
+      "correcta": "c",
+      "explicacion": "JSON destaca en la web por su ligereza y mapeo directo con objetos lógicos disminuyendo el peso del payload en tránsito, pero la estructura metalenguaje de XML es semánticamente más rica al soportar metadatos explícitos mediante atributos en las etiquetas[cite: 3007, 3010]."
+    },
+    {
+      "id": 90,
+      "enunciado": "¿Qué lenguaje de programación es más común para desarrollar aplicaciones Android nativas?",
+      "opciones": {
+        "a": "Kotlin.",
+        "b": "Swift.",
+        "c": "JavaScript.",
+        "d": "C."
+      },
+      "correcta": "a",
+      "explicacion": "Kotlin es el lenguaje de programación recomendado oficialmente por Google de primer orden (first-class) para el diseño arquitectónico y desarrollo nativo moderno de aplicaciones Android[cite: 3012, 3013]."
+    },
+    {
+      "id": 91,
+      "enunciado": "Para diseñar el estilo de los campos de entrada obligatorios del formulario de solicitud se va a hacer uso del siguiente selector CSS: \"::first-letter\". ¿Cuál es su especificidad?",
+      "opciones": {
+        "a": "0-1-0.",
+        "b": "0-0-1.",
+        "c": "1-0-1.",
+        "d": "1-0-0."
+      },
+      "correcta": "b",
+      "explicacion": "El elemento '::first-letter' es un pseudoelemento en CSS. Los pseudoelementos (al igual que los selectores de etiquetas básicos) computan sumando peso puramente en la tercera columna de la triada de especificidad, arrojando '0-0-1'[cite: 3018, 3020]."
+    },
+    {
+      "id": 92,
+      "enunciado": "¿Cuál es la función principal de XSLT?",
+      "opciones": {
+        "a": "Transformar documentos XML en otros formatos.",
+        "b": "Definir el tipo de datos de los elementos.",
+        "c": "Validar la estructura de un documento XML.",
+        "d": "Especificar el contenido en formato estructurado."
+      },
+      "correcta": "a",
+      "explicacion": "XSLT (Extensible Stylesheet Language Transformations) es un lenguaje declarativo estandarizado por el W3C concebido específicamente para transformar la estructura de un documento XML original en otro documento XML, HTML, de texto plano o cualquier otro formato derivado[cite: 3023, 3024]."
+    },
+    {
+      "id": 93,
+      "enunciado": "En relación a los DTD y XML Schemas, ¿cuál es la respuesta correcta?",
+      "opciones": {
+        "a": "XML Schema tiene sintaxis propia.",
+        "b": "DTD permite definir nuevos tipos de datos.",
+        "c": "DTD es extensible.",
+        "d": "XML Schema es fuertemente tipado."
+      },
+      "correcta": "d",
+      "explicacion": "A diferencia de las limitaciones tipográficas de DTD, los documentos XML Schema (XSD) ofrecen un sistema fuertemente tipado rico en restricciones, permitiendo validar rangos numéricos, expresiones regulares y tipos de datos primitivos estrictos[cite: 3028, 3032]."
+    },
+    {
+      "id": 94,
+      "enunciado": "El aprendizaje profundo (deep learning)... ¿Cuál de las siguientes NO es una biblioteca usada para operar con redes neuronales?",
+      "opciones": {
+        "a": "Keras.",
+        "b": "AutomaticDL.",
+        "c": "TensorFlow.",
+        "d": "PyTorch."
+      },
+      "correcta": "b",
+      "explicacion": "La denominación 'AutomaticDL' no se corresponde con ningún framework de Inteligencia Artificial conocido del mercado. Las suites de software líderes del sector son Keras, TensorFlow (de Google) y PyTorch (de Meta)[cite: 3034, 3035, 3037, 3038]."
+    },
+    {
+      "id": 95,
+      "enunciado": "Si un XML cumple con la sintaxis pero no tiene ningún XML Schema se dice que:",
+      "opciones": {
+        "a": "Está bien formado.",
+        "b": "Está bien formado y es válido.",
+        "c": "No está bien formado.",
+        "d": "No está bien formado pero es válido."
+      },
+      "correcta": "a",
+      "explicacion": "Un documento XML está 'bien formado' (well-formed) si respeta estrictamente las reglas sintácticas generales de la gramática XML (etiquetas cerradas, jerarquía única, anidamiento correcto)[cite: 3044, 3045]. Para ser catalogado como 'válido' requeriría obligatoriamente contrastarse con un esquema XSD o DTD adjunto[cite: 3044, 3046]."
+    },
+    {
+      "id": 96,
+      "enunciado": "¿Qué evento de HTML utilizaría para producir un efecto cuando el puntero del ratón sale de la superficie de un elemento?",
+      "opciones": {
+        "a": "onclick.",
+        "b": "onmouseover.",
+        "c": "onmousedown.",
+        "d": "onmouseout."
+      },
+      "correcta": "d",
+      "explicacion": "El evento 'onmouseout' es la directiva nativa de los navegadores que se dispara exactamente en el instante en que el cursor del ratón abandona los límites geométricos exteriores del elemento HTML activo[cite: 3051, 3056]."
+    },
+    {
+      "id": 97,
+      "enunciado": "AJAX es una tecnología de desarrollo web que se caracteriza por la siguiente afirmación:",
+      "opciones": {
+        "a": "Es un metalenguaje extensible de etiquetas desarrollado por el W3C...",
+        "b": "Es una aplicación de creación y manipulación de gráficos...",
+        "c": "Es un lenguaje de scripting basado en objetos no tipado...",
+        "d": "Es una técnica de desarrollo web creada con el fin de implementar aplicaciones interactivas que se ejecutan en el navegador de los usuarios y mantienen comunicación asíncrona con el servidor en segundo plano."
+      },
+      "correcta": "d",
+      "explicacion": "AJAX (Asynchronous JavaScript and XML) no es una tecnología única aislada, sino un conjunto de técnicas de desarrollo web que facultan a la interfaz cliente intercambiar datos de forma asíncrona con el backend, refrescando dinámicamente partes de la pantalla sin obligar a recargar la página por completo[cite: 3057, 3061]."
+    },
+    {
+      "id": 98,
+      "enunciado": "Un preprocesador de CSS compila todo el código fuente en un archivo CSS plano. ¿Cuál de las siguientes opciones se corresponde con preprocesadores CSS?",
+      "opciones": {
+        "a": "Stylesheet, flex y grid.",
+        "b": "Padding, margin y display.",
+        "c": "CSS-Edit, inline y block.",
+        "d": "Sass, Less y Stylus."
+      },
+      "correcta": "d",
+      "explicacion": "Como se ha indicado anteriormente, Sass, Less y Stylus conforman la terna de motores preprocesadores clásicos de hojas de estilo imperantes en la industria[cite: 3063, 3067]."
+    },
+    {
+      "id": 99,
+      "enunciado": "Cuál es el motor de renderizado del navegador web Safari?",
+      "opciones": {
+        "a": "Webkit.",
+        "b": "Blink.",
+        "c": "Gecko.",
+        "d": "Trident."
+      },
+      "correcta": "a",
+      "explicacion": "WebKit es el motor de renderizado web de código abierto nuclear desarrollado y mantenido por Apple, responsable del procesamiento y dibujo del DOM y estilos visuales en el navegador Safari e iOS[cite: 3068, 3069]."
+    }
+  ]
+}

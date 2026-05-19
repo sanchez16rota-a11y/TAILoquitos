@@ -1,0 +1,486 @@
+{
+  "titulo": "Bloque 3 - Tema 4: Lenguajes de Interrogación de Bases de Datos. Estándar ANSI SQL",
+  "descripcion": "Test de 40 preguntas sobre el estándar ANSI SQL, DDL, DML, DCL, cláusulas de agrupación, restricciones de integridad, joins y PL/SQL basado en el material proporcionado.",
+  "preguntas": [
+    {
+      "id": 1,
+      "enunciado": "En un Sistema Gestor de Base de Datos (SGBD), el lenguaje DDL proporciona una serie de facilidades, las cuales son:",
+      "opciones": {
+        "a": "Suministra facilidades para poder consultar y actualizar los datos existentes en la Base de Datos.",
+        "b": "Brinda facilidades para poder gestionar permisos sobre los objetos de la base de datos.",
+        "c": "Proporciona facilidades para poder crear tablas o columnas.",
+        "d": "Aporta facilidades para hacer SELECT sobre las tablas de la base de datos."
+      },
+      "correcta": "c",
+      "explicacion": "El lenguaje DDL (Data Definition Language o Lenguaje de Definición de Datos) se utiliza para definir, modificar y alterar la estructura de los objetos de la base de datos. Comandos como CREATE TABLE o ALTER TABLE corresponden a esta categoría, permitiendo la creación de tablas o columnas. Las opciones 'a' y 'd' corresponden al DML, mientras que la 'b' pertenece al DCL."
+    },
+    {
+      "id": 2,
+      "enunciado": "El lenguaje SQL posee una serie de operadores de agregación, cuál de los siguientes NO es uno de ellos:",
+      "opciones": {
+        "a": "LIKE.",
+        "b": "AVG.",
+        "c": "MIN.",
+        "d": "COUNT."
+      },
+      "correcta": "a",
+      "explicacion": "Las funciones o operadores de agregación de SQL (como AVG, MIN, MAX, SUM y COUNT) operan sobre un conjunto de valores para devolver un único valor resumido. Por el contrario, LIKE es un operador de comparación de cadenas utilizado junto con comodines dentro de la cláusula WHERE para la búsqueda de patrones."
+    },
+    {
+      "id": 3,
+      "enunciado": "En SQL, las cláusulas para, respectivamente, consultar datos, introducirlos, modificarlos y borrarlos, son:",
+      "opciones": {
+        "a": "SELECT, APPEND, UPDATE, DELETE.",
+        "b": "SELECT, INSERT, UPDATE, ERASE.",
+        "c": "SELECT, APPEND, UPDATE, ERASE.",
+        "d": "SELECT, INSERT, UPDATE, DELETE."
+      },
+      "correcta": "d",
+      "explicacion": "Se trata de las cuatro sentencias fundamentales del sublenguaje DML (Data Manipulation Language) de SQL de acuerdo al estándar ANSI. SELECT se emplea para consultar, INSERT para introducir o insertar nuevos registros, UPDATE para modificar datos existentes y DELETE para eliminar filas de una tabla."
+    },
+    {
+      "id": 4,
+      "enunciado": "La sentencia TRUNCATE del lenguaje SQL pertenece al:",
+      "opciones": {
+        "a": "DDL.",
+        "b": "DCL.",
+        "c": "DCU.",
+        "d": "DML."
+      },
+      "correcta": "a",
+      "explicacion": "Aunque la sentencia TRUNCATE elimina el contenido de una tabla de manera similar a un DELETE sin WHERE, se clasifica bajo el lenguaje DDL (Data Definition Language). Esto se debe a que opera desasignando el almacenamiento de datos a nivel de estructura física del SGBD, no dispara triggers de borrado y realiza un commit implícito de forma instantánea."
+    },
+    {
+      "id": 5,
+      "enunciado": "Sean dos tablas relacionadas, A y B, en un SGBD relacional. En A la clave primaria es el campo llamado \"primaria\" y, en B, la clave foránea (referenciada con A) es el campo \"foránea\". Si queremos obtener mediante un JOIN las filas de A junto con las filas de B correspondientes, y además también las filas de A que no tengan correspondencias en B, ¿qué usaríamos?",
+      "opciones": {
+        "a": "A LEFT JOIN B ON A.primaria = B.foranea.",
+        "b": "A INNER JOIN B ON A.primaria = B.foranea.",
+        "c": "A RIGHT JOIN B ON A.primaria = B.foranea.",
+        "d": "A OUTER JOIN B ON A.primaria = B.foranea."
+      },
+      "correcta": "a",
+      "explicacion": "La operación LEFT OUTER JOIN (o simplemente LEFT JOIN) devuelve todas las filas de la tabla de la izquierda (Tabla A), junto con las filas coincidentes de la tabla de la derecha (Tabla B). Si no existe correspondencia en la tabla B, el resultado mantendrá la fila de A y rellenará los campos de B con valores NULL."
+    },
+    {
+      "id": 6,
+      "enunciado": "En SQL, para especifica una condición que debe cumplir un grupo de agregación, usamos:",
+      "opciones": {
+        "a": "GROUP BY.",
+        "b": "COUNT.",
+        "c": "SELECT.",
+        "d": "HAVING."
+      },
+      "correcta": "d",
+      "explicacion": "La cláusula HAVING se utiliza en SQL para filtrar los resultados devueltos por una agregación o por la cláusula GROUP BY, evaluando condiciones sobre funciones de grupo (como SUM, COUNT, etc.). La diferencia fundamental con WHERE es que esta última actúa sobre registros individuales antes de la agrupación."
+    },
+    {
+      "id": 7,
+      "enunciado": "La sentencia SQL que nos permite generar una vista de una tabla es:",
+      "opciones": {
+        "a": "DEFINE VIEW.",
+        "b": "DROP VIEW.",
+        "c": "CREATE VIEW.",
+        "d": "NEW VIEW."
+      },
+      "correcta": "c",
+      "explicacion": "En el estándar SQL, la sintaxis DDL para crear o generar una vista (una tabla lógica o consulta almacenada en el diccionario de datos) es mediante la instrucción CREATE VIEW seguida del nombre que se le asignará y de la consulta SELECT correspondiente."
+    },
+    {
+      "id": 8,
+      "enunciado": "Señale la opción INCORRECTA con respecto de las restricciones de integridad (CONSTRAINTS) en SQL:",
+      "opciones": {
+        "a": "Pueden definirse en la creación de la tabla.",
+        "b": "Pueden definirse después de que la tabla haya sido creada.",
+        "c": "Se definen mediante la sentencia CREATE RESTRICTION.",
+        "d": "FOREIGN KEY y NOT NULL son dos tipos de restricciones."
+      },
+      "correcta": "c",
+      "explicacion": "No existe la sentencia 'CREATE RESTRICTION' en el estándar SQL. Las restricciones de integridad se especifican directamente dentro de la sentencia CREATE TABLE (al construir la tabla) o a posteriori mediante la sentencia ALTER TABLE empleando la cláusula ADD CONSTRAINT."
+    },
+    {
+      "id": 9,
+      "enunciado": "El estándar ANSI SQL especifica estos tipos de cláusulas JOIN:",
+      "opciones": {
+        "a": "JOIN, LEFT/RIGHT [INNER], COMPLETE y CROSS.",
+        "b": "INNER, LEFT/RIGHT/FULL [OUTER] y CROSS.",
+        "c": "INNER, LEFT/RIGHT/BOTH [OUTER] y ACROSS.",
+        "d": "INSIDE, OUTSIDE y LEFT/RIGHT/FULL [OUTER]."
+      },
+      "correcta": "b",
+      "explicacion": "De acuerdo con la especificación formal de ANSI SQL, las operaciones de unión válidas e implementadas son el INNER JOIN (unión interna), las tres variantes de uniones externas: LEFT OUTER JOIN, RIGHT OUTER JOIN y FULL OUTER JOIN (donde la palabra OUTER es opcional), y el producto cartesiano explícito CROSS JOIN."
+    },
+    {
+      "id": 10,
+      "enunciado": "En una base de datos relacional se quiere añadir una nueva columna en una tabla ya existente. ¿Qué sentencia SQL habría que utilizar?",
+      "opciones": {
+        "a": "Add column.",
+        "b": "Alter table.",
+        "c": "Insert column.",
+        "d": "Modify column."
+      },
+      "correcta": "b",
+      "explicacion": "Para modificar la estructura de un objeto ya existente, como añadir, eliminar o modificar columnas de una tabla, se debe emplear la sentencia DDL ALTER TABLE. La sintaxis habitual para esta acción concreta es: ALTER TABLE nombre_tabla ADD nombre_columna tipo_datos;"
+    },
+    {
+      "id": 11,
+      "enunciado": "En cuanto al lenguaje de interrogación de bases de datos SQL:",
+      "opciones": {
+        "a": "Es un estándar de facto cuando hablamos de lenguajes de interrogación de bases de datos y su base es el álgebra relacional.",
+        "b": "Es un lenguaje de interrogación de bases de datos utilizado para hacer consultas sobre bases de datos estructuradas, relacionales, jerárquicas o en red.",
+        "c": "Es un lenguaje de consulta, pero para realizar otras operaciones sobre bases de datos como la definición/creación de las mismas se utiliza otro tipo de lenguajes.",
+        "d": "No está implementado en gestores de bases de datos menores como Microsoft Access."
+      },
+      "correcta": "a",
+      "explicacion": "SQL (Structured Query Language) se ha convertido en el estándar indiscutible de la industria para la gestión de bases de datos relacionales, fundamentado teóricamente en el modelo y álgebra relacional de Codd. Abarca tanto consultas como la definición de datos (DDL), control (DCL) y transacciones (TCL), y sí se incluye en motores pequeños como MS Access."
+    },
+    {
+      "id": 12,
+      "enunciado": "¿Cuál de los siguientes términos se relaciona directamente con el control de integridad en SQL?",
+      "opciones": {
+        "a": "ROLLBACK.",
+        "b": "GRANT.",
+        "c": "CREATE INDEX.",
+        "d": "REVOKE."
+      },
+      "correcta": "a",
+      "explicacion": "La sentencia ROLLBACK se utiliza en el lenguaje de control de transacciones (TCL) para deshacer todas las modificaciones realizadas por la transacción actual, restaurando la base de datos a su último estado consistente (COMMIT). Esto garantiza directamente la propiedad de atomicidad y el control de la integridad ante fallos o errores de procesamiento."
+    },
+    {
+      "id": 13,
+      "enunciado": "¿Cuál es el propósito del lenguaje DDL en una base de datos?",
+      "opciones": {
+        "a": "Acceso a la base de datos de lectura pero no de escritura.",
+        "b": "Acceder a la base de datos para leer, escribir o modificar la información.",
+        "c": "Recuperar y eliminar una base de datos.",
+        "d": "Definir la estructura lógica de una base de datos."
+      },
+      "correcta": "d",
+      "explicacion": "El sublenguaje DDL (Data Definition Language) tiene como única finalidad la definición y descripción del esquema o estructura lógica y física de la base de datos, determinando qué tablas, vistas, índices, restricciones y relaciones constituyen el sistema."
+    },
+    {
+      "id": 14,
+      "enunciado": "¿Qué sentencia de las siguientes pertenece a la categoría de DDL?",
+      "opciones": {
+        "a": "CREATE.",
+        "b": "UPDATE.",
+        "c": "SELECT.",
+        "d": "DELETE."
+      },
+      "correcta": "a",
+      "explicacion": "La instrucción CREATE (empleada para crear tablas, índices, esquemas, etc.) es la palabra clave nuclear del lenguaje DDL. Por su parte, UPDATE, SELECT y DELETE son comandos pertenecientes al DML, orientados a la manipulación y explotación de los datos contenidos en dichas estructuras."
+    },
+    {
+      "id": 15,
+      "enunciado": "¿Qué operador de SQL, utilizado junto a la cláusula WHERE, permite buscar según un patrón determinado en una columna?",
+      "opciones": {
+        "a": "LIKE.",
+        "b": "IN.",
+        "c": "BETWEEN.",
+        "d": "HAVING."
+      },
+      "correcta": "a",
+      "explicacion": "El operador LIKE se combina con comodines (como '%' para cadenas de caracteres de cualquier longitud y '_' para un único carácter) para evaluar si un campo de texto coincide con una expresión o patrón específico."
+    },
+    {
+      "id": 16,
+      "enunciado": "Indicar qué resultado se puede esperar de esta consulta SQL sobre una tabla COCHES_VENTA que mantiene el inventario de automóviles en un pequeño concesionario: SELECT Modelo, Color, COUNT(Bastidor) AS Num FROM COCHES_VENTA GROUP BY Modelo, Color HAVING COUNT(Bastidor) <= 1",
+      "opciones": {
+        "a": "Le indica al dueño del concesionario que quizá debe plantearse adquirir más existencias de un cierto modelo y color de automóvil.",
+        "b": "Le indica al dueño del concesionario todos los modelos distintos del concesionario. Es decir, un inventario organizado por modelos.",
+        "c": "Le indica al dueño del concesionario todos los modelos distintos del concesionario. Es decir, un inventario organizado por modelos y color.",
+        "d": "Le indica al dueño todos los modelos cuyo número de bastidor es menor o igual a 1."
+      },
+      "correcta": "a",
+      "explicacion": "La consulta agrupa los vehículos por su modelo y color, calculando la cantidad de unidades que existen de cada combinación a través del número de bastidor. Al aplicar el filtro `HAVING COUNT(Bastidor) <= 1`, la base de datos mostrará únicamente aquellas combinaciones de modelo y color de las que quede una sola unidad en stock o ninguna, alertando al dueño sobre la necesidad de reponer existencias."
+    },
+    {
+      "id": 17,
+      "enunciado": "Indique la cláusula necesaria para crear el esquema de la base de datos museoDB y hacer que todos los objetos creados en el mismo tengan como propietario al usuario museo:",
+      "opciones": {
+        "a": "CREATE SCHEMA museoDB ON ROLE museo.",
+        "b": "CREATE SCHEMA museoDB ON USER museo.",
+        "c": "CREATE SCHEMA museoDB TO USER museo.",
+        "d": "CREATE SCHEMA museoDB AUTHORIZATION museo."
+      },
+      "correcta": "d",
+      "explicacion": "La sintaxis estándar de ANSI SQL para asignar un propietario explícito durante la definición de un esquema es mediante el uso de la palabra clave AUTHORIZATION. La instrucción correcta es `CREATE SCHEMA nombre_esquema AUTHORIZATION nombre_usuario;`"
+    },
+    {
+      "id": 18,
+      "enunciado": "Después de crear el usuario de la BD museo_consulta, se necesita que se le asigne permisos de SELECT en la tabla ENTIDADES_EXTERNAS. La sentencia para ello sería:",
+      "opciones": {
+        "a": "GRANT SELECT IN TABLE ENTIDADES_EXTERNAS TO museo_consulta.",
+        "b": "GRANT SELECT ON ENTIDADES_EXTERNAS TO museo_consulta.",
+        "c": "GRANT USAGE SELECT TO ENTIDADES_EXTERNAS ON museo_consulta.",
+        "d": "GRANT SELECT TO ENTIDADES_EXTERNAS ON museo_consultas."
+      },
+      "correcta": "b",
+      "explicacion": "La estructura formal de una sentencia de concesión de privilegios en el lenguaje DCL (Data Control Language) sigue el patrón: `GRANT privilegio ON objeto TO usuario;`. Por lo tanto, la opción correcta para otorgar permisos de lectura es `GRANT SELECT ON ENTIDADES_EXTERNAS TO museo_consulta;`"
+    },
+    {
+      "id": 19,
+      "enunciado": "Insertar una constraint en la cláusula SQL de creación de la tabla RESERVAS para el campo de clave ajena idcliente, de forma que NO ejecute ninguna acción en la tabla referenciada en los casos de UPDATE y DELETE:",
+      "opciones": {
+        "a": "CONSTRAINT con_fk FOREIGN KEY (idcliente) ON CLIENTES (id) MATCH SIMPLE WITH NO ACTION.",
+        "b": "CONSTRAINT con_fk FOREIGN KEY ON idcliente MATCH SIMPLE WITH CLIENTES (id) ON UPDATE NO ACTION ON DELETE NO ACTION.",
+        "c": "CONSTRAINT con_fk FOREIGN KEY (idcliente) REFERENCES CLIENTES (id) ON UPDATE NO ACTION ON DELETE NO ACTION.",
+        "d": "CONSTRAINT con_fk FOREIGN KEY (idcliente) ON CLIENTES (id) MATCH SIMPLE WITH UPDATE NO ACTION WITH DELETE NO ACTION."
+      },
+      "correcta": "c",
+      "explicacion": "En la declaración de restricciones de clave foránea a nivel de tabla, la sintaxis ANSI SQL correcta requiere especificar el campo local mediante `FOREIGN KEY (campo_local)`, indicar la tabla y campo de origen mediante `REFERENCES tabla_padre(campo_clave)`, y opcionalmente definir el comportamiento referencial usando `ON UPDATE NO ACTION` y `ON DELETE NO ACTION` para impedir acciones en cascada."
+    },
+    {
+      "id": 20,
+      "enunciado": "En SQL, ¿cuál de las siguientes opciones representa la secuencia de parámetros en el orden correcto deberían aparecer en una sentencia?",
+      "opciones": {
+        "a": "SELECT-FROM-WHERE - ORDER BY - GROUP BY - HAVING.",
+        "b": "SELECT-FROM-WHERE - GROUP BY-HAVING - ORDER BY.",
+        "c": "SELECT-FROM-WHERE - GROUP BY - ORDER BY - HAVING.",
+        "d": "SELECT-FROM-WHERE - ORDER BY - HAVING - GROUP BY."
+      },
+      "correcta": "b",
+      "explicacion": "El orden sintáctico estricto y obligatorio de las cláusulas en una instrucción SELECT de SQL según el estándar es: primero la proyección de columnas (`SELECT`), el origen de datos (`FROM`), el filtrado de filas (`WHERE`), la agrupación de registros (`GROUP BY`), el filtrado de grupos (`HAVING`) y, por último, la ordenación de la salida final (`ORDER BY`)."
+    },
+    {
+      "id": 21,
+      "enunciado": "La sintaxis estándar de ANSI SQL que nos permite borrar una vista es:",
+      "opciones": {
+        "a": "ERASE VIEW.",
+        "b": "DELETE VIEW.",
+        "c": "CLEAR VIEW.",
+        "d": "DROP VIEW."
+      },
+      "correcta": "d",
+      "explicacion": "Al ser las vistas objetos estructurales de la base de datos (definidos mediante DDL), su eliminación definitiva del catálogo se realiza mediante la instrucción DROP seguida del tipo de objeto y su nombre: `DROP VIEW nombre_vista;`."
+    },
+    {
+      "id": 22,
+      "enunciado": "Indique qué sentencia ANSI SQL utilizaría para deshacer una transacción:",
+      "opciones": {
+        "a": "ROLLBACK.",
+        "b": "BACKSTEP.",
+        "c": "REVOKE.",
+        "d": "UNDO."
+      },
+      "correcta": "a",
+      "explicacion": "La operación encargada de abortar o revertir de manera explícita los efectos de los comandos DML ejecutados dentro del bloque transaccional activo, devolviendo los datos a su estado anterior, es ROLLBACK."
+    },
+    {
+      "id": 23,
+      "enunciado": "Seleccione la respuesta correcta en relación a las bases de datos relacionales:",
+      "opciones": {
+        "a": "El lenguaje que se usa para manipular datos (seleccionar, borrar, etc.) es diferente que el que se usa para definir datos (crear/modificar tablas, etc.).",
+        "b": "En el lenguaje SQL, el operador BETWEEN no puede estar en una sentencia WHERE.",
+        "c": "En el lenguaje SQL, la sintaxis para borrar una tabla es: DELETE TABLE (NOMBRE_TABLE).",
+        "d": "Las claves ajenas (foreign keys) pueden ser nulas."
+      },
+      "correcta": "d",
+      "explicacion": "Por definición del modelo relacional, las claves ajenas (FOREIGN KEY) pueden aceptar valores NULL siempre que no formen parte simultáneamente de la clave primaria de la tabla o no se les haya aplicado explícitamente la restricción NOT NULL. Esto representa la ausencia de vinculación para ese registro."
+    },
+    {
+      "id": 24,
+      "enunciado": "¿Cuál de las siguientes sentencias forma parte del DDL de SQL?",
+      "opciones": {
+        "a": "INSERT.",
+        "b": "UPDATE.",
+        "c": "ALTER.",
+        "d": "COMMIT."
+      },
+      "correcta": "c",
+      "explicacion": "La palabra clave ALTER (por ejemplo, ALTER TABLE, ALTER VIEW, ALTER INDEX) se engloba dentro de las sentencias DDL ya que modifica el esquema y las propiedades estructurales de un objeto existente en el diccionario de datos."
+    },
+    {
+      "id": 25,
+      "enunciado": "En SQL, la cláusula having:",
+      "opciones": {
+        "a": "Se utiliza específicamente para realizar cálculos con campos tipo Datetime.",
+        "b": "Se usa habitualmente en combinación con la cláusula group by.",
+        "c": "El uso de having impide usar la cláusula where en la misma sentencia.",
+        "d": "Es un comando que se incluye dentro del llamado DDL."
+      },
+      "correcta": "b",
+      "explicacion": "La cláusula HAVING se diseña con el propósito de filtrar los grupos creados por la cláusula GROUP BY. Aunque es posible utilizar HAVING sin GROUP BY en escenarios muy específicos (donde toda la tabla actúa como un único grupo), su uso habitual es complementario a la agrupación."
+    },
+    {
+      "id": 26,
+      "enunciado": "Con la cláusula ORDER BY de SQL, si nos encontramos con la siguiente consulta: SELECT * FROM Empleados ORDER BY Provincia DESC, Municipio. ¿Cuál es el resultado que se obtendría?",
+      "opciones": {
+        "a": "Un listado de empleados ordenado de manera ascendente por la columna Provincia y, dentro de cada provincia ordenado de manera ascendente por la columna Municipio.",
+        "b": "Un listado de empleados ordenado de manera descendente por la columna Provincia y, dentro de cada provincia ordenado de manera ascendente por la columna Municipio.",
+        "c": "Un listado de empleados ordenado de manera ascendente por la columna Provincia y, dentro de cada provincia ordenado de manera descendente por la columna Municipio.",
+        "d": "Da error."
+      },
+      "correcta": "b",
+      "explicacion": "Al indicar `Provincia DESC`, se ordena de forma descendente (Z a la A) por la primera columna señalada. Para la segunda columna (`Municipio`), al no especificarse ningún orden de forma explícita, SQL aplica por defecto el criterio de ordenación ascendente (`ASC`)."
+    },
+    {
+      "id": 27,
+      "enunciado": "¿Cuál de las siguientes sentencias utilizaríamos para permitir al USUARIO1 actualizar la columna SALARIO de la tabla EMPLEADOS sin permitirle dar de alta nuevos empleados?",
+      "opciones": {
+        "a": "GRANT EMPLEADOS ON SELECT, UPDATE (SALARIO) TO USUARIO1.",
+        "b": "GRANT ALL ON SELECT, UPDATE TO USUARIO1.",
+        "c": "GRANT ALL ON EMPLEADOS TO USUARIO1.",
+        "d": "GRANT SELECT, UPDATE(SALARIO) ON EMPLEADOS TO USUARIO1."
+      },
+      "correcta": "d",
+      "explicacion": "El estándar SQL permite granular los permisos de actualización a nivel de columna especificando el nombre de la columna entre paréntesis inmediatamente después del privilegio UPDATE. Al conceder `SELECT, UPDATE(SALARIO) ON EMPLEADOS`, se le habilita a consultar la tabla y modificar exclusivamente el salario, impidiéndole operaciones globales o inserciones (INSERT)."
+    },
+    {
+      "id": 28,
+      "enunciado": "De acuerdo al estándar ANSI SQL, ¿cuál de las siguientes opciones es equivalente a la operación JOIN?",
+      "opciones": {
+        "a": "LEFT JOIN.",
+        "b": "FULL JOIN.",
+        "c": "INNER JOIN.",
+        "d": "OUTER JOIN."
+      },
+      "correcta": "c",
+      "explicacion": "Si en una consulta SQL escribimos únicamente la palabra clave `JOIN` para enlazar dos tablas, el motor del SGBD lo interpreta de forma implícita como un `INNER JOIN` (unión interna convencional) según el estándar de la norma ANSI."
+    },
+    {
+      "id": 29,
+      "enunciado": "¿Cuál de las siguientes sentencias SQL es correcta?",
+      "opciones": {
+        "a": "DROP TABLE t WHERE a=1;",
+        "b": "TRUNCATE TABLE t WHERE a=1;",
+        "c": "DELETE FROM t;",
+        "d": "DELETE FROM t1, t2 WHERE t1.a a=t2.a;"
+      },
+      "correcta": "c",
+      "explicacion": "La instrucción `DELETE FROM t;` es sintácticamente correcta y válida en SQL; su ejecución elimina la totalidad de los registros de la tabla 't' sin restricciones al omitir la cláusula WHERE. DROP y TRUNCATE no admiten condiciones WHERE, y la sintaxis de eliminación sobre múltiples tablas de la opción 'd' es incorrecta en el estándar ANSI básico."
+    },
+    {
+      "id": 30,
+      "enunciado": "¿Cuál de las siguientes consultas en SQL contesta a la pregunta \"Eliminar todos los proveedores que no realicen envíos\"?",
+      "opciones": {
+        "a": "DELETE FROM S WHERE S# NOT IN (SELECT S# FROM SPJ);",
+        "b": "DELETE S# FROM S WHERE S IN (SELECT S# FROM SPJ);",
+        "c": "DELETE S# FROM S WHERE S# NOT IN (SELECT S# FROM SPJ);",
+        "d": "Ninguna de las respuestas anteriores es correcta."
+      },
+      "correcta": "a",
+      "explicacion": "La sintaxis de eliminación requiere la estructura `DELETE FROM nombre_tabla`. No se deben especificar campos individuales después de la palabra DELETE (lo que invalida las opciones b y c). Al utilizar la subconsulta con `NOT IN`, se seleccionan y eliminan aquellos códigos identificativos de la tabla de proveedores (S) que no figuran en la tabla de suministros (SPJ)."
+    },
+    {
+      "id": 31,
+      "enunciado": "¿Qué realiza la siguiente sentencia? DELETE FROM J WHERE J# NOT IN (SELECT J# FROM SPJ);",
+      "opciones": {
+        "a": "Eliminar todos los proyectos para los cuales no existan envíos.",
+        "b": "Eliminar todos los proyectos que tienen algún envío.",
+        "c": "Eliminar todos los proyectos.",
+        "d": "Ninguna de las respuestas anteriores es correcta."
+      },
+      "correcta": "a",
+      "explicacion": "De manera idéntica al ejercicio anterior, la consulta elimina filas de la tabla de proyectos (J) basándose en una condición de exclusión. Borrará únicamente los registros de aquellos identificadores de proyecto (J#) que no se encuentren presentes en la tabla relacional de suministros y envíos (SPJ)."
+    },
+    {
+      "id": 32,
+      "enunciado": "¿Qué permite obtener la siguiente consulta? SELECT DISTINCT J# FROM J WHERE ciudad=\"Madrid\" AND S# IN (SELECT J# FROM j WHERE ciudad = \"Barcelona\");",
+      "opciones": {
+        "a": "Obtener los J# de los proyectos que son de \"Madrid\" o de \"Barcelona\".",
+        "b": "Obtener los J# de los proyectos que son de \"Madrid\" y algunos de \"Barcelona\".",
+        "c": "Obtener los J# de los proyectos que son de \"Madrid\" y de \"Barcelona\".",
+        "d": "Ninguna de las respuestas anteriores es correcta."
+      },
+      "correcta": "d",
+      "explicacion": "La consulta contiene errores insalvables en su lógica y estructura con respecto al esquema: intenta evaluar en la cláusula WHERE un campo `S#` que no pertenece a la tabla de proyectos `J` (según el enunciado, `S#` es de los Proveedores). Adicionalmente, compara un código de proveedor (`S#`) con un conjunto de códigos de proyectos (`J#`) procedentes de la subconsulta, lo que carece de coherencia semántica."
+    },
+    {
+      "id": 33,
+      "enunciado": "¿Qué permite obtener la siguiente consulta? SELECT DISTINCT J# FROM J WHERE ciudad=\"Madrid\" AND J# IN (SELECT J# FROM J WHERE ciudad = \"Barcelona\");",
+      "opciones": {
+        "a": "Obtener los J# de los proyectos que son de \"Madrid\" o de \"Barcelona\".",
+        "b": "Obtener los J# de los proyectos que son de \"Madrid\" y algunos de \"Barcelona\".",
+        "c": "Obtener los J# de los proyectos que son de \"Madrid\" y de \"Barcelona\".",
+        "d": "Ninguna de las respuestas anteriores es correcta."
+      },
+      "correcta": "d",
+      "explicacion": "La consulta devuelve un conjunto vacío en condiciones normales. Filtra las filas de la tabla J que son simultáneamente de \"Madrid\" y cuyo identificador `J#` coincida con un proyecto cuya ciudad sea \"Barcelona\". Dado que en el modelo relacional un atributo atómico (ciudad) para un mismo registro de proyecto solo puede almacenar un único valor a la vez, ningún proyecto puede pertenecer a ambas ciudades a la vez."
+    },
+    {
+      "id": 34,
+      "enunciado": "¿Cuál de las siguientes consultas SQL contesta a la pregunta \"Obtener los S# de los proveedores que suministren por lo menos alguna de las piezas suministradas por alguno de los proveedores que suministran alguna pieza\"?",
+      "opciones": {
+        "a": "SELECT DISTINCT S# FROM SPJ WHERE P# IN (SELECT P# FROM SPJ WHERE S# IN (SELECT S# FROM SPJ WHERE P# IN (SELECT P# FROM P)));",
+        "b": "SELECT DISTINCT S# FROM SPJ WHERE P# IN (SELECT P# FROM P WHERE S# IN (SELECT S# FROM S WHERE P# IN (SELECT P# FROM P)));",
+        "c": "SELECT DISTINCT S# FROM SPJ WHERE P# IN (SELECT P# FROM P);",
+        "d": "Ninguna de las respuestas anteriores es correcta."
+      },
+      "correcta": "a",
+      "explicacion": "La opción 'a' resuelve el requerimiento mediante el anidamiento progresivo de subconsultas sobre la tabla relacional de envíos (SPJ). La subconsulta interna obtiene las piezas existentes, la intermedia determina los proveedores asociados a dichas piezas, la siguiente localiza el universo de piezas servidas por estos últimos, y la consulta principal extrae los códigos de proveedores vinculados."
+    },
+    {
+      "id": 35,
+      "enunciado": "¿Cuál de las siguientes consultas SQL contesta a la pregunta \"Obtener los J# de los proyectos donde se utilice al menos una de las piezas suministrada por los proveedores S#='S1' o SH='S2'?\"",
+      "opciones": {
+        "a": "SELECT DISTINCT SPJ.J# FROM SPJ WHERE EXISTS (SELECT * FROM SPJ WHERE SPJ.P#=P# AND S#='S1' OR S#='S2');",
+        "b": "SELECT DISTINCT SPJX.J# FROM SPJ WHERE S#='S1' OR s#='S2';",
+        "c": "SELECT DISTINCT J# FROM SPJ WHERE EXISTS (SELECT * FROM SPJ WHERE PJ.PH='S1' OR s#='S2');",
+        "d": "SELECT DISTINCT SPJX.J# FROM SPJX WHERE EXISTS (SELECT * FROM SPJ WHERE SPJ.P#=SPJX.Pf AND SPJ.S# t='S1' OR SPJ.S .S#=1S2');"
+      },
+      "correcta": "d",
+      "explicacion": "La plantilla oficial marca la opción 'd' como la respuesta correcta. Se basa en una consulta correlacionada que emplea un alias de tabla (`SPJX`), vinculando mediante la cláusula `EXISTS` la presencia de registros coincidentes en la subconsulta interna a través de los códigos de pieza, evaluando la condición lógica de los proveedores."
+    },
+    {
+      "id": 36,
+      "enunciado": "¿Cuál de las siguientes consultas en SQL contesta a la pregunta \"Obtener los J# de los proyectos para los cuales el proveedor S#='S1' es el único proveedor?\"?",
+      "opciones": {
+        "a": "SELECT DISTINCT J# FROM SPJ SPJX WHERE NOT EXISTS (SELECT * FROM SPJ WHERE SPJ.J#=SPJX.J# AND SPJ.S# <> 'S1');",
+        "b": "SELECT DISTINCT J# FROM SPJ SPJX WHERE EXISTS (SELECT * FROM SPJ WHERE SPJ.J#=SPJX.J# AND SPJ.S# ='S1');",
+        "c": "SELECT DISTINCT J# FROM SPJ SPJX WHERE EXISTS (SELECT * FROM SPJ WHERE SPJ.S#='S1');",
+        "d": "SELECT DISTINCT J# FROM SPJ SPJX WHERE EXISTS (SELECT * FROM SPJ WHERE SPJ.P#=SPJX.P# AND SPJ.S# <>'S1');"
+      },
+      "correcta": "a",
+      "explicacion": "Para asegurar que 'S1' es el *único* proveedor involucrado en un proyecto determinado, la consulta utiliza una doble negación condicional lógica: selecciona los identificadores de proyecto de la instancia externa (`SPJX`) tales que 'NO EXISTA' ningún registro en la tabla de suministros (`SPJ`) para ese mismo proyecto cuya clave de proveedor sea distinta (`<>`) a 'S1'."
+    },
+    {
+      "id": 37,
+      "enunciado": "¿Cuál de las respuestas es contestada por la siguiente consulta SQL? SELECT DISTINCT P# FROM SPJ SPJX WHERE NOT EXISTS (SELECT * FROM J WHERE CIUDAD='Londres' AND NOT EXISTS (SELECT * FROM SPJ SPJY WHERE SPJY.P# = SPJX.P# AND SPJY.J# = J.J#));",
+      "opciones": {
+        "a": "Obtener los P# de las piezas suministradas a todos los proyectos que no son de 'Londres'.",
+        "b": "Obtener los P# de las piezas suministradas solamente a los proyectos de 'Londres'.",
+        "c": "Obtener los P# de las piezas suministradas a todos los proyectos de 'Londres'.",
+        "d": "Ninguna respuesta responde a la cuestión planteada."
+      },
+      "correcta": "c",
+      "explicacion": "Esta estructura de subconsultas con doble `NOT EXISTS` es la forma clásica en SQL para implementar la operación de división del álgebra relacional (el cuantificador universal 'para todo'). Se traduce textualmente como: 'Obtener las piezas para las cuales no existe ningún proyecto en Londres al que dicha pieza no haya sido suministrada', es decir, piezas enviadas a todos los proyectos de Londres."
+    },
+    {
+      "id": 38,
+      "enunciado": "¿Cual de las siguientes consultas en SQL contesta a la pregunta \"Obtener los P# de las piezas suministradas a algún proyecto tales que la cantidad media suministrada en total sea mayor que 320\"?",
+      "opciones": {
+        "a": "SELECT DISTINCT P# FROM SPJ GROUP BY P# WHERE AVG(cantidad) > 320;",
+        "b": "SELECT DISTINCT P# FROM SPJ WHERE AVG(cantidad) > 320; GROUP BY P#",
+        "c": "SELECT DISTINCT P# FROM SPJ GROUP BY P#, J# HAVING AVG(cantidad) >320",
+        "d": "SELECT DISTINCT P# FROM SPJ GROUP BY J# HAVING AVG(cantidad) > 320;"
+      },
+      "correcta": "c",
+      "explicacion": "La opción 'c' plantea de forma correcta el uso de la cláusula `HAVING` acoplada al `GROUP BY` para realizar la restricción basándose en una función agregada (`AVG(cantidad)`). Las opciones 'a' y 'b' son erróneas por intentar usar funciones agregadas dentro de un WHERE o por invertir el orden sintáctico de las instrucciones."
+    },
+    {
+      "id": 39,
+      "enunciado": "En un SGBD Oracle, indique cuál de los siguientes es un lenguaje de procedimiento cuya sintaxis permite insertar sentencias SQL y se almacena compilado dentro de la base de datos:",
+      "opciones": {
+        "a": "TRANSACT SQL.",
+        "b": "PL/SQL.",
+        "c": "FORTRAN.",
+        "d": "COBOL."
+      },
+      "correcta": "b",
+      "explicacion": "PL/SQL (Procedural Language/Structured Query Language) es la extensión procedimental propietaria desarrollada por Oracle Corporation para su motor de bases de datos relacionales. Permite estructurar bloques de código con bucles, condiciones y variables que se ejecutan directamente en el servidor. Transact-SQL es la alternativa homóloga de Microsoft."
+    },
+    {
+      "id": 40,
+      "enunciado": "En SQL, ¿cómo se pueden eliminar los datos en una tabla, pero no la propia definición de la tabla?",
+      "opciones": {
+        "a": "DROP TABLE.",
+        "b": "DELETE.",
+        "c": "REMOVE.",
+        "d": "ERASE."
+      },
+      "correcta": "b",
+      "explicacion": "La sentencia DML `DELETE` borra los registros almacenados en una tabla (todos si no se le añade una cláusula WHERE) pero mantiene intacta la definición, columnas, tipos de datos y restricciones de la estructura de la tabla dentro del catálogo. Por el contrario, DROP TABLE elimina tanto los datos como el objeto estructural por completo."
+    }
+  ]
+}
