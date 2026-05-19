@@ -1,0 +1,606 @@
+{
+  "titulo": "Bloque 3 - Tema 2: Diseño de Bases de Datos. Diseño Lógico y Físico. El Modelo Lógico Relacional. Normalización",
+  "descripcion": "Test de 50 preguntas sobre el modelo relacional, álgebra relacional, la arquitectura ANSI/X3/SPARC, reglas de integridad, normalización y paso del modelo conceptual E/R al modelo relacional basado en el material proporcionado.",
+  "preguntas": [
+    {
+      "id": 1,
+      "enunciado": "¿Cuál de las siguientes NO es un objetivo perseguido por Codd en la presentación de su modelo relacional?",
+      "opciones": {
+        "a": "Independencia lógica.",
+        "b": "Independencia conceptual.",
+        "c": "Independencia física.",
+        "d": "Uniformidad."
+      },
+      "correcta": "b",
+      "explicacion": "Edgar F. Codd diseñó el modelo relacional buscando tres objetivos fundamentales: la independencia física (aislar los programas del almacenamiento físico), la independencia lógica (aislar los programas de las modificaciones en las estructuras lógicas) y la uniformidad (tratar todas las estructuras de datos exclusivamente como relaciones o tablas)[cite: 744, 745, 747, 748]. El concepto 'independencia conceptual' no forma parte de estos objetivos originales[cite: 746]."
+    },
+    {
+      "id": 2,
+      "enunciado": "Según la integridad de los datos en el modelo relacional. ¿A qué regla de integridad le corresponde la siguiente definición: \"Los valores de claves foráneas deben existir en la clave primaria referenciada o bien deben ser valores nulos\"?",
+      "opciones": {
+        "a": "La regla de integridad referencial.",
+        "b": "La regla de integridad de dominio.",
+        "c": "La regla de integridad foránea inversa.",
+        "d": "La regla de integridad de unicidad."
+      },
+      "correcta": "a",
+      "explicacion": "La regla de integridad referencial garantiza la coherencia entre tablas relacionadas[cite: 752]. Determina que si un registro contiene una clave ajena o foránea, el valor de esta debe coincidir obligatoriamente con un valor existente en la clave primaria de la tabla a la que referencia, o bien mantener un valor nulo para indicar la ausencia de relación[cite: 750, 751]."
+    },
+    {
+      "id": 3,
+      "enunciado": "Las consecuencias principales de que una base de datos NO esté normalizada adecuadamente son:",
+      "opciones": {
+        "a": "Errores de inconsistencias, incoherencias, actualización y redundancia de datos.",
+        "b": "Problemas de bloque en las transacciones de las bases de datos.",
+        "c": "Problemas de disponibilidad de la base de datos.",
+        "d": "Dificultad para dimensionar adecuadamente las necesidades de almacenamiento de la base de datos."
+      },
+      "correcta": "a",
+      "explicacion": "Un diseño relacional deficiente o carente de normalización provoca que un mismo dato se duplique innecesariamente (redundancia)[cite: 757]. Esto acarrea graves anomalías en las operaciones de modificación (inserción, actualización y borrado), produciendo registros contradictorios, inconsistencias estructurales e incoherencia de la información[cite: 757]."
+    },
+    {
+      "id": 4,
+      "enunciado": "¿Cuál de las siguientes opciones NO representa uno de los niveles de abstracción de bases de datos?",
+      "opciones": {
+        "a": "Interno.",
+        "b": "Externo.",
+        "c": "Sintáctico.",
+        "d": "Conceptual."
+      },
+      "correcta": "c",
+      "explicacion": "La arquitectura estándar de modelado de datos define exactamente tres niveles de abstracción: el nivel externo (vistas de usuario), el nivel conceptual (estructura lógica global) y el nivel interno (almacenamiento físico)[cite: 762, 763, 765]. El nivel 'sintáctico' no constituye un nivel de abstracción de datos[cite: 764]."
+    },
+    {
+      "id": 5,
+      "enunciado": "¿Cuál de las siguientes operaciones NO se considera fundamental en el álgebra relacional?",
+      "opciones": {
+        "a": "Proyección.",
+        "b": "Intersección.",
+        "c": "Selección.",
+        "d": "Unión."
+      },
+      "correcta": "b",
+      "explicacion": "El álgebra relacional cuenta con operadores fundamentales o primitivos (Selección, Proyección, Producto Cartesiano, Unión y Diferencia) con los cuales se pueden derivar el resto de operaciones[cite: 767, 769, 770]. La intersección es un operador no fundamental (compuesto) porque puede expresarse matemáticamente combinando la unión y la diferencia de conjuntos[cite: 768]."
+    },
+    {
+      "id": 6,
+      "enunciado": "El modelo de datos relacional fue introducido por:",
+      "opciones": {
+        "a": "Codd.",
+        "b": "Hamming.",
+        "c": "Ritchie.",
+        "d": "Adleman."
+      },
+      "correcta": "a",
+      "explicacion": "El matemático e informático británico Edgar Frank Codd concibió e introdujo formalmente el modelo relacional para la gestión de grandes bancos de datos en el año 1970 durante su trayectoria en IBM[cite: 771, 772]."
+    },
+    {
+      "id": 7,
+      "enunciado": "Dentro del modelo relacional, señale la afirmación ERRÓNEA:",
+      "opciones": {
+        "a": "En una relación puede haber varias claves candidatas.",
+        "b": "Una clave primaria es, a su vez, clave candidata.",
+        "c": "Si se elimina un atributo de una clave candidata, ésta deja de serlo.",
+        "d": "Una relación puede no tener clave candidata."
+      },
+      "correcta": "d",
+      "explicacion": "Esta afirmación es errónea porque en el modelo relacional puro es obligatorio que toda relación posea al menos una clave candidata (y por ende, una clave primaria), debido a que las relaciones se definen matemáticamente como conjuntos de tuplas y los conjuntos no admiten elementos duplicados[cite: 786]."
+    },
+    {
+      "id": 8,
+      "enunciado": "Según la teoría de la normalización, para pasar una relación de 1FN a 2FN hay que eliminar:",
+      "opciones": {
+        "a": "De ella los grupos repetitivos.",
+        "b": "Las dependencias parciales de la clave externas.",
+        "c": "Las dependencias parciales de las claves candidatas.",
+        "d": "Las dependencias transitivas de la clave primaria."
+      },
+      "correcta": "c",
+      "explicacion": "Para que una tabla alcance la Segunda Forma Normal (2FN) debe estar previamente en 1FN y, además, se deben suprimir las dependencias funcionales parciales[cite: 787, 792]. Esto significa que ningún atributo no principal (que no forma parte de una clave) puede depender de solo una parte de una clave candidata cuando esta es compuesta[cite: 792]."
+    },
+    {
+      "id": 9,
+      "enunciado": "¿Cuál de los siguientes es un operador fundamental del álgebra relacional?",
+      "opciones": {
+        "a": "Intersección.",
+        "b": "Producto cartesiano.",
+        "c": "Agrupación.",
+        "d": "Cociente."
+      },
+      "correcta": "b",
+      "explicacion": "El producto cartesiano es una de las cinco operaciones primitivas o fundamentales de la teoría del álgebra relacional de Codd[cite: 794, 796]. Los operadores como la intersección o el cociente son derivados o compuestos[cite: 795, 798]."
+    },
+    {
+      "id": 10,
+      "enunciado": "¿Cuál de las siguientes afirmaciones sobre la Tercera Forma Normal (3FN) es correcta?",
+      "opciones": {
+        "a": "Una entidad está en 3FN si está en 2FN y todos sus atributos no principales dependen directamente de la clave primaria, es decir, no hay dependencias funcionales transitivas de atributos no principales respecto de las claves.",
+        "b": "Una entidad está en 3FN si está en 2FN y todos sus atributos que no forman parte de las claves candidatas (atributos no principales) tienen dependencia funcional completa respecto de éstas.",
+        "c": "La 3FN es el nivel más elevado de normalización de una tabla.",
+        "d": "Una tabla está en 3FN cuando está en 2FN and además todos los atributos, tanto principales como no principales, son atómicos."
+      },
+      "correcta": "a",
+      "explicacion": "La regla canónica de la 3FN exige como condición estar en 2FN y erradicar cualquier dependencia funcional transitiva de los atributos secundarios[cite: 800]. En otras palabras, un atributo no principal no puede ser determinado por otro atributo no principal, sino que debe depender directamente de la clave primaria de forma exclusiva[cite: 800]."
+    },
+    {
+      "id": 11,
+      "enunciado": "¿Qué nivel de la arquitectura ANSI/X3/SPARC contiene las vistas externas de la base de datos?",
+      "opciones": {
+        "a": "Nivel físico.",
+        "b": "Nivel conceptual.",
+        "c": "Nivel lógico.",
+        "d": "Las vistas están fuera del modelo de base de datos, ya que son externas."
+      },
+      "correcta": "c",
+      "explicacion": "En la jerarquía formal de corrección del examen, el nivel lógico o externo engloba el conjunto de subesquemas y vistas personalizadas con las que interactúan las distintas aplicaciones o perfiles de usuario, aislando la estructura global[cite: 804, 807]."
+    },
+    {
+      "id": 12,
+      "enunciado": "¿Cuál de las siguientes tareas NO corresponde a una tarea del diseño físico de una base de datos?",
+      "opciones": {
+        "a": "Traducir el esquema lógico para el SGBD específico.",
+        "b": "Diseñar los mecanismos de seguridad.",
+        "c": "Transformación de entidades.",
+        "d": "Seleccionar los índices secundarios."
+      },
+      "correcta": "c",
+      "explicacion": "La 'transformación de entidades' (como el paso de conjuntos de entidades E/R a tablas lógicas relacionales) se ejecuta por completo durante la fase de diseño lógico del sistema[cite: 812]. El diseño físico se enfoca en la eficiencia interna: estructurar ficheros, traducción al SGBD concreto, seguridad de acceso e índices secundarios[cite: 810, 811, 813]."
+    },
+    {
+      "id": 13,
+      "enunciado": "¿Cuál de los siguientes NO es un objetivo de la normalización de base de datos?",
+      "opciones": {
+        "a": "Proporcionar una estructura más regular para la representación de tablas.",
+        "b": "Optimizar la base de datos.",
+        "c": "Evitar anomalías en las operaciones de manipulación de datos.",
+        "d": "La eliminación de dependencias entre atributos."
+      },
+      "correcta": "b",
+      "explicacion": "Aunque la normalización ayuda a sanear la estructura de datos, paradójicamente puede perjudicar el rendimiento de las lecturas masivas al requerir múltiples JOINS[cite: 821]. Su fin primordial no es la 'optimización' de rendimiento de la máquina, sino evitar anomalías de inserción/borrado, dar regularidad formal y eliminar dependencias transitivas/parciales nocivas[cite: 820, 822, 823]."
+    },
+    {
+      "id": 14,
+      "enunciado": "Una relación, si los atributos que no forman parte de ninguna clave dependen de forma completa de la clave principal se dice que está en:",
+      "opciones": {
+        "a": "Tercera Forma Normal.",
+        "b": "Cuarta Forma Normal.",
+        "c": "Quinta Forma Normal.",
+        "d": "Segunda Forma Normal."
+      },
+      "correcta": "d",
+      "explicacion": "Esta es exactamente la definición técnica de la Segunda Forma Normal (2FN): requiere la existencia de una dependencia funcional completa de todos los atributos secundarios respecto de la clave de la tabla, garantizando que no existan dependencias parciales de porciones de la clave[cite: 825, 826, 830]."
+    },
+    {
+      "id": 15,
+      "enunciado": "En una tabla, si cada determinante, atributo que determina completamente a otro, es clave candidata se dice que está en:",
+      "opciones": {
+        "a": "Primera Forma Normal.",
+        "b": "Segunda Forma Normal.",
+        "c": "Forma Normal de Boyce-Codd.",
+        "d": "Quinta Forma Normal."
+      },
+      "correcta": "c",
+      "explicacion": "La Forma Normal de Boyce-Codd (FNBC) constituye una variante más estricta de la 3FN[cite: 835]. Su enunciado determina de manera absoluta que para cualquier dependencia funcional de la forma $X \rightarrow Y$, el determinante $X$ debe ser obligatoriamente una superclave o clave candidata de la relación[cite: 831, 832, 835]."
+    },
+    {
+      "id": 16,
+      "enunciado": "Si en una base de datos relacional tenemos una tabla que contiene una tupla cuya única clave ajena tiene un valor nulo:",
+      "opciones": {
+        "a": "Estaremos incumpliendo la regla de integridad de entidad.",
+        "b": "Estaremos incumpliendo la regla de integridad referencial.",
+        "c": "Dicha tupla no está relacionada con ninguna otra tupla de la entidad a la que hace referencia la clave ajena.",
+        "d": "Existirá una tupla en la entidad a la que hace referencia la clave ajena, con la que estará relacionada."
+      },
+      "correcta": "c",
+      "explicacion": "Dado que la integridad referencial permite de forma nativa la existencia de valores nulos en claves ajenas (siempre que no sean parte de la clave primaria propia), un valor nulo en dicho campo simplemente significa que ese registro específico no posee ninguna vinculación o relación con las filas de la tabla de origen en ese momento[cite: 837, 840]."
+    },
+    {
+      "id": 17,
+      "enunciado": "¿Cuál es una restricción inherente al modelo relacional de los sistemas gestores de bases de datos?",
+      "opciones": {
+        "a": "El atributo que forma parte de la clave tiene que ser numérico.",
+        "b": "El atributo que forma parte de la clave no puede ser numérico.",
+        "c": "El atributo que forma parte de la clave no puede tomar el valor cero.",
+        "d": "El atributo que forma parte de la clave no puede tomar valore nulos (por nulo se interpreta valores desconocidos)."
+      },
+      "correcta": "d",
+      "explicacion": "Se trata de la regla de integridad de entidad, una restricción intrínseca e inherente al modelo relacional que prohíbe de forma absoluta que cualquier atributo constituyente de la clave primaria adopte un valor nulo ($NULL$)[cite: 842, 846], asegurando que cada tupla sea siempre identificable de forma unívoca."
+    },
+    {
+      "id": 18,
+      "enunciado": "¿Cómo se llama el operador del álgebra relacional que aplicado sobre una relación permite obtener un subconjunto de sus atributos manteniendo el mismo número de tuplas?",
+      "opciones": {
+        "a": "Unión de conjuntos.",
+        "b": "Producto cartesiano.",
+        "c": "Selección.",
+        "d": "Proyección."
+      },
+      "correcta": "d",
+      "explicacion": "La proyección (denotada por la letra griega $\pi$) es la operación unaria del álgebra relacional que realiza un corte vertical sobre la tabla[cite: 847, 851]. Selecciona un subconjunto de columnas deseadas y descarta el resto, eliminando las tuplas duplicadas resultantes si las hubiera[cite: 847]."
+    },
+    {
+      "id": 19,
+      "enunciado": "¿Cuál de las siguientes afirmaciones NO es correcta?",
+      "opciones": {
+        "a": "Las bases de datos relacionales se normalizan para evitar la redundancia de datos.",
+        "b": "Ningún atributo que compone una clave primara puede ser nulo.",
+        "c": "Un atributo nulo representa el valor cero o una cadena vacía.",
+        "d": "Uno de los objetivos de la normalización es facilitar el mantenimiento de datos y programas."
+      },
+      "correcta": "c",
+      "explicacion": "Esta afirmación es incorrecta porque, en la lógica trivalente de bases de datos, un valor nulo ($NULL$) denota la ausencia de valor o un valor desconocido/no aplicable[cite: 861]. No debe confundirse en ningún caso con el valor numérico cero o con un texto de cadena vacía, los cuales son valores conocidos y válidos."
+    },
+    {
+      "id": 20,
+      "enunciado": "Una tabla se dice que está en Tercera Forma Normal si se encuentra en Segunda Forma Normal y:",
+      "opciones": {
+        "a": "Las únicas dependencias funcionales elementales son aquellas en las que la clave principal (y claves secundarias) determinan un atributo.",
+        "b": "Todo atributo secundario depende totalmente de la clave completa.",
+        "c": "Los valores que componen los atributos son elementales y únicos.",
+        "d": "No existen atributos no primarios que son transitivamente dependientes de cada posible clave de la tabla."
+      },
+      "correcta": "d",
+      "explicacion": "Es la definición inversa de la 3FN [cite: 863]: una relación está en 3FN si cumple la 2FN y ningún atributo no primario (secundario) posee una dependencia funcional no directa o transitiva con respecto a las claves candidatas de la relación[cite: 863, 867]."
+    },
+    {
+      "id": 21,
+      "enunciado": "En una tabla de una base de datos relacional, si no existen grupos repetitivos, y todos los elementos son independientes entre sí y dependen solamente de la clave primaria de forma plena, ¿ante qué forma normal nos encontramos?",
+      "opciones": {
+        "a": "1FN.",
+        "b": "2FN.",
+        "c": "3FN.",
+        "d": "No se encuentra en ninguna forma normal."
+      },
+      "correcta": "c",
+      "explicacion": "Al enunciar que no hay grupos repetitivos (está en 1FN), dependen de la clave de forma plena (está en 2FN) y además 'todos los elementos son independientes entre sí' (se han eliminado dependencias transitivas entre atributos secundarios), la tabla se encuentra plenamente consolidada en la Tercera Forma Normal (3FN)[cite: 868, 871]."
+    },
+    {
+      "id": 22,
+      "enunciado": "En el modelo relacional, una relación R, decimos que está en Segunda Forma Normal (2FN) si:",
+      "opciones": {
+        "a": "Está en Primera Forma Normal (1FN) y todos los atributos que no forman parte de las claves candidatas tienen dependencia funcional completa respecto de éstas.",
+        "b": "Todos los atributos que no forman parte de las claves candidatas tienen dependencia funcional completa respecto de éstas.",
+        "c": "Todos sus atributos no principales dependen directamente de la clave primaria.",
+        "d": "No tiene grupos repetitivos, es decir, un atributo solo puede tomar un único valor de un dominio simple."
+      },
+      "correcta": "a",
+      "explicacion": "Definición rigurosa de la 2FN: exige imperativamente la condición previa de cumplimiento de la 1FN y que todos los atributos que no pertenezcan al conjunto de claves candidatas muestren una dependencia funcional completa y total de la clave, desterrando dependencias de partes de claves compuestas[cite: 873, 874]."
+    },
+    {
+      "id": 23,
+      "enunciado": "La tabla siguiente EMPLEADOS (COD_EMPLEADO, COD_DEPARTAMENTO, TIPO, EDAD, PLANTA_DEPARTAMENTO) donde la clave principal es COD_EMPLEADO Y COD_DEPARTAMENTO.",
+      "opciones": {
+        "a": "Cumple la 2FN.",
+        "b": "No cumple la 3FN, pero cumple la segunda.",
+        "c": "No cumple la 2FN.",
+        "d": "No cumple la 4FN, pero cumple la tercera."
+      },
+      "correcta": "c",
+      "explicacion": "La tabla viola la 2FN debido a que presenta dependencias parciales de una clave primaria compuesta `(COD_EMPLEADO, COD_DEPARTAMENTO)`[cite: 878, 881]. El atributo `PLANTA_DEPARTAMENTO` depende funcionalmente de manera exclusiva de `COD_DEPARTAMENTO`, sin guardar relación con `COD_EMPLEADO`, rompiendo la exigencia de dependencia completa."
+    },
+    {
+      "id": 24,
+      "enunciado": "Partiendo del diagrama Entidad/Relación de la figura. ¿Cuántas tablas generaría la transformación de este diagrama al modelo relacional?",
+      "opciones": {
+        "a": "Dos.",
+        "b": "Tres.",
+        "c": "Cuatro.",
+        "d": "Cinco."
+      },
+      "correcta": "a",
+      "explicacion": "El diagrama muestra dos entidades regulares (`EMPLEADOS` y `DEPARTAMENTOS`) vinculadas mediante una relación binaria de tipo `1:N` (`TRABAJA_EN`)[cite: 889, 894, 895, 896]. En el paso al modelo relacional, las relaciones de tipo 1:N no generan una tabla independiente, sino que se resuelven mediante la propagación de la clave del lado '1' (`DEPARTAMENTOS`) hacia el lado 'N' (`EMPLEADOS`) como clave ajena, resultando en un total de únicamente 2 tablas[cite: 900]."
+    },
+    {
+      "id": 25,
+      "enunciado": "Se pretende obtener el modelo lógico de datos a partir de este modelo entidad/relación, ¿cómo se reflejará la relación entre las tablas BECAS y ASPIRANTES?",
+      "opciones": {
+        "a": "En una nueva tabla cuya clave primaria será la concatenación de los atributos claves de las tablas BECAS y ASPIRANTES.",
+        "b": "Se propaga la clave primaria BECAS y los atributos de la relación de la entidad ASPIRANTES.",
+        "c": "En una nueva tabla cuya clave primaria será la concatenación de cuatro valores: los atributos clave de las tablas BECAS, ASPIRANTES y los atributos de la relación (\"otorgada\" y \"año_otorgamiento\").",
+        "d": "Se propaga la clave primaria de cualquier de las dos tablas a la otra, y el atributo de la relación también, pero ninguno de estos será clave primaria en la relación dónde se propaguen."
+      },
+      "correcta": "a",
+      "explicacion": "Aunque la imagen contiene ruido tipográfico, se interpreta que la relación `solicita` entre `Becas` y `Aspirantes` es de tipo muchos a muchos (`N:M`)[cite: 904, 911, 912, 913]. La regla estándar de transformación lógica indica que toda relación N:M se transforma obligatoriamente en una nueva tabla independiente en el modelo relacional, cuya clave primaria se compone de la concatenación de las claves primarias de las tablas que conecta[cite: 916]."
+    },
+    {
+      "id": 26,
+      "enunciado": "En álgebra relacional la operación que, a partir de dos relaciones del mismo tipo, obtiene una nueva relación formada por las tuplas que pertenecen a las dos relaciones de partida, se llama:",
+      "opciones": {
+        "a": "Unión.",
+        "b": "Intersección.",
+        "c": "Diferencia.",
+        "d": "Producto cartesiano."
+      },
+      "correcta": "b",
+      "explicacion": "Se trata de la definición de la operación de intersección de conjuntos aplicada a bases de datos relacionales[cite: 920, 922]. Requiere de forma obligatoria que ambas relaciones de origen sean compatibles o 'del mismo tipo' (mismo esquema de atributos) y devuelve las tuplas comunes presentes simultáneamente en ambas[cite: 920]."
+    },
+    {
+      "id": 27,
+      "enunciado": "Una relación (una tabla) se compone de los campos o atributos A, B, C y D. Solo existe una clave candidata, y es la clave compuesta (A, B). Además, se cumple que (A, B) determina funcionalmente a C, y C determina funcionalmente a D. Indique la respuesta correcta:",
+      "opciones": {
+        "a": "La tabla no cumple ninguna forma normal.",
+        "b": "La tabla está en 1FN, pero no en 2FN, ni en 3FN.",
+        "c": "La tabla está en 1FN y en 2FN, pero no en 3FN.",
+        "d": "La tabla está en 1FN, en 2FN y en 3FN."
+      },
+      "correcta": "c",
+      "explicacion": "La tabla está en 1FN (atributos atómicos) y está en 2FN porque el atributo secundario $C$ depende de forma completa de toda la clave compuesta $(A,B)$[cite: 931, 932, 937]. Sin embargo, no alcanza la 3FN debido a que existe una dependencia funcional transitiva: la clave $(A,B)$ determina a $C$ y este a su vez determina al atributo no principal $D$ ($A,B \rightarrow C \rightarrow D$)[cite: 932, 937]."
+    },
+    {
+      "id": 28,
+      "enunciado": "Tal y como se muestra en el diagrama de Entidad/Relación, ¿cuál de las siguientes afirmaciones sobre la realidad que representa el diagrama NO es cierta?",
+      "opciones": {
+        "a": "Un Departamento está compuesto por una o varias Unidades y toda Unidad pertenece a un y sólo un Departamento.",
+        "b": "Un Departamento puede ser dirigido por un Titular y todo Titular debe dirigir a un Departamento.",
+        "c": "Cada Unidad puede ser dirigida por un Titular y un Titular dirige siempre una Unidad.",
+        "d": "Un Departamento puede participar en varias Comisiones interministeriales."
+      },
+      "correcta": "d",
+      "explicacion": "Al analizar las cardinalidades del diagrama, la relación `participa en` muestra una cardinalidad de `(1,n)` en el lado de `Departamento` y de `(0,n)` en el lado de `Comisión interministerial`[cite: 947, 954, 955]. Esto se lee al revés de como afirma la opción 'd': 'Una Comisión puede contar con la participación de uno o varios Departamentos, mientras que un Departamento puede participar en cero o más Comisiones' (por tanto, la frase está construida de forma incorrecta respecto al flujo del gráfico)[cite: 939, 959]."
+    },
+    {
+      "id": 29,
+      "enunciado": "Tomando como referencia el modelo E/R anterior, se pretende obtener el modelo lógico de datos, ¿cómo se reflejará la relación entre las tablas DEPARTAMENTO y COMISIÓN MINISTERIAL?",
+      "opciones": {
+        "a": "Se propaga el identificador de la Comisión Ministerial, así como los posibles atributos de la relación a la tabla de DEPARTAMENTOS.",
+        "b": "Se propaga el identificador del Departamento, así como los posibles atributos de la relación a la tabla de COMISIONES MINISTERIALES.",
+        "c": "Se crea una tabla nueva en la que se incluyen los atributos que forman clave primaria de las tablas DEPARTAMENTOS y COMISIONES MINISTERIALES, y los atributos que tiene la relación, siendo estos últimos la clave primaria de esta nueva tabla.",
+        "d": "Se crea una tabla nueva en la que se incluyen los atributos que forman clave primaria de las tablas DEPARTAMENTOS y COMISIONES MINISTERIALES y que, a su vez, formarán la clave primaria de la nueva tabla. Así como los atributos que pueda tener la relación."
+      },
+      "correcta": "d",
+      "explicacion": "La relación `participa en` es de tipo muchos a muchos (`N:M`) dado que posee cardinalidades máximas `n` en ambos extremos (`1,n` y `0,n`)[cite: 952, 953, 954]. Al mapear al modelo relacional, las relaciones N:M se transforman inexorablemente en una nueva tabla independiente que hereda las claves primarias de las dos tablas participantes para constituir su propia clave primaria compuesta [cite: 970], además de albergar los atributos propios de la relación[cite: 971]."
+    },
+    {
+      "id": 30,
+      "enunciado": "En una base de datos relacional en la que se tiene información guardada en una tabla de provincias y además se dispone de una tabla de municipios donde parte de la clave es la provincia, ¿se puede borrar un elemento de la tabla de provincias manteniendo la integridad del sistema?",
+      "opciones": {
+        "a": "Si, una vez que los municipios ya existen no hay ningún problema.",
+        "b": "Si, aunque no podría dar de alta nuevos municipios de esa provincia.",
+        "c": "Sólo si no hay ninguna población perteneciente a esa provincia.",
+        "d": "No, la tabla de provincias no puede cambiar ya que son un elemento estable."
+      },
+      "correcta": "c",
+      "explicacion": "Para no quebrantar la regla de integridad referencial, el SGBD impedirá el borrado de una provincia si existen registros vinculados en la tabla de municipios (claves ajenas apuntando a esa provincia)[cite: 972]. Por tanto, la eliminación solo es factible y segura si previamente se han borrado o desvinculado todos los municipios adscritos a dicha provincia[cite: 975]."
+    },
+    {
+      "id": 31,
+      "enunciado": "En la teoría de bases de datos relacionales, cuanto más alta sea la forma normal aplicable a una tabla:",
+      "opciones": {
+        "a": "Menor será la cohesión relacional.",
+        "b": "Menor será el acoplamiento relacional.",
+        "c": "Menos vulnerable será a inconsistencias y anomalías.",
+        "d": "Más vulnerable será a inconsistencias y anomalías, pero será más eficiente."
+      },
+      "correcta": "c",
+      "explicacion": "La meta primordial y el beneficio directo de avanzar escalonadamente en los niveles de normalización (1FN, 2FN, 3FN, BCFN...) es blindar la estructura relacional frente a redundancias de datos, minimizando drásticamente la vulnerabilidad del sistema ante anomalías e inconsistencias durante la manipulación de datos[cite: 977, 980]."
+    },
+    {
+      "id": 32,
+      "enunciado": "Señale cuál de las siguientes afirmaciones sobre la arquitectura ANSI/X3/SPARC es correcta:",
+      "opciones": {
+        "a": "El nivel externo también recibe el nombre de nivel físico.",
+        "b": "El nivel interno también recibe el nombre de nivel lógico.",
+        "c": "El nivel externo define los datos que se almacenan en la base de datos y las relaciones entre ellos.",
+        "d": "El nivel externo contiene las vistas externas de la base de datos y permite ver a cada tipo de usuario solo aquella parte del esquema que es de su interés."
+      },
+      "correcta": "d",
+      "explicacion": "El nivel externo o de vistas de la arquitectura ANSI-SPARC actúa como la interfaz directa para los usuarios y aplicaciones[cite: 982, 986]. Proporciona esquemas lógicos parciales a medida, de manera que cada perfil visualiza únicamente los datos que le competen, abstrayendo por completo el resto del diseño lógico y físico global[cite: 986]."
+    },
+    {
+      "id": 33,
+      "enunciado": "En relación al proceso de normalización del modelo relacional es cierta?",
+      "opciones": {
+        "a": "Existen solo un total de 3 Formas Normales: 1FN, 2FN y 3FN.",
+        "b": "Una tabla está en 2FN cuando se demuestra que existe dependencia funcional del resto de columnas de la tabla con respecto a las claves candidatas.",
+        "c": "Una tabla está en 1FN cuando se demuestra que existe dependencia funcional completa del resto de columnas de la tabla con respecto a la clave primaria.",
+        "d": "Una tabla que está en 1FN tiene el máximo grado de normalización y, por tanto, cumple también la Segunda y Tercer Forma Normal."
+      },
+      "correcta": "b",
+      "explicacion": "La Segunda Forma Normal (2FN) vigila la validez de los atributos no principales analizando su dependencia funcional respecto de las claves candidatas de la relación[cite: 993, 995]. (Nota: Aunque formalmente exige dependencia funcional *completa*, la plantilla oficial convalida la opción 'b' como la única cierta frente al resto de opciones manifiestamente falsas) [cite: 1129]."
+    },
+    {
+      "id": 34,
+      "enunciado": "En relación al esquema conceptual en los niveles ANSI/X3/SPARC, ¿qué afirmación de las siguientes NO es correcta?",
+      "opciones": {
+        "a": "Representa el modelo de datos de forma independiente del sistema gestor de bases que se utilizará.",
+        "b": "Refleja la representación de los datos que se van a guardar y sus relaciones a partir del modelo ER.",
+        "c": "Corresponde a la visión de la base de datos que ofrece cada aplicación.",
+        "d": "Debe ser absolutamente independiente del esquema físico."
+      },
+      "correcta": "c",
+      "explicacion": "Esta afirmación no es correcta porque la descripción que realiza se corresponde con el *nivel externo o de subesquemas*[cite: 1001]. El nivel conceptual de la arquitectura ANSI-SPARC es único para toda la organización y ofrece una representación lógica global y centralizada de toda la información del negocio, no visiones individuales por aplicación[cite: 998, 1001]."
+    },
+    {
+      "id": 35,
+      "enunciado": "El operador JOIN del álgebra relacional es un operador compuesto de otros operadores fundamentales, que son:",
+      "opciones": {
+        "a": "Selección, proyección y unión.",
+        "b": "Selección, producto cartesiano y proyección.",
+        "c": "Diferencia de conjuntos, unión y producto cartesiano.",
+        "d": "Unión, proyección y producto cartesiano."
+      },
+      "correcta": "b",
+      "explicacion": "La operación de unión interna o JOIN ($\bowtie$) es una operación compuesta derivada[cite: 1003]. Se ejecuta matemáticamente realizando en primer lugar un producto cartesiano ($\times$) entre las dos relaciones de origen, aplicando seguidamente una selección ($\sigma$) bajo la condición de emparejamiento y una proyección ($\pi$) para limpiar los atributos redundantes[cite: 1005]."
+    },
+    {
+      "id": 36,
+      "enunciado": "¿Qué esquema de bases de datos incluye la descripción de todos los datos e interrelaciones entre éstos, así como las restricciones de integridad?",
+      "opciones": {
+        "a": "Esquema interno.",
+        "b": "Esquema conceptual.",
+        "c": "Esquema externo.",
+        "d": "Esquema físico."
+      },
+      "correcta": "b",
+      "explicacion": "El esquema conceptual representa la estructura semántica y el plano lógico integral de la base de datos completa[cite: 1008]. En él se especifican de forma agnóstica al hardware el total de entidades, sus atributos, interrelaciones de negocio y todas las restricciones de integridad semántica globales[cite: 1008]."
+    },
+    {
+      "id": 37,
+      "enunciado": "En un diagrama entidad/relación:",
+      "opciones": {
+        "a": "Una alta redundancia es buena ya que permite alcanzar la información a través de distintas relaciones.",
+        "b": "Una baja redundancia es buena ya que no aporta información adicional y complica la gestión de la información.",
+        "c": "Si aparece un ciclo entre relaciones y entidades, debemos eliminar una relación para evitar la redundancia.",
+        "d": "Si aparece un ciclo entre relaciones y entidades, no es conveniente romperlo si cada una de las relaciones aporta una información distinta al resto."
+      },
+      "correcta": "d",
+      "explicacion": "La aparición de estructuras cíclicas o bucles cerrados entre entidades y relaciones no constituye un defecto de diseño per se[cite: 1016]. No debe romperse ni eliminarse ninguna vía de conexión si cada relación del ciclo modela una semántica o una regla de negocio diferente e independiente de las demás[cite: 1017]."
+    },
+    {
+      "id": 38,
+      "enunciado": "Dada una relación ternaria en un diagrama E/R, ¿en cuántas relaciones se transformará en el modelo relacional?",
+      "opciones": {
+        "a": "1.",
+        "b": "2.",
+        "c": "3.",
+        "d": "4."
+      },
+      "correcta": "d",
+      "explicacion": "De acuerdo con el criterio explícito fijado por la plantilla de este test, la transformación de una relación ternaria pura (grado 3) genera un total de 4 tablas o relaciones lógicas[cite: 1024, 1139]: una tabla para cada una de las 3 entidades participantes independientes y una 4ª tabla adicional creada de forma específica para soportar la relación ternaria en sí misma con las claves correspondientes."
+    },
+    {
+      "id": 39,
+      "enunciado": "La normalización se aplica en:",
+      "opciones": {
+        "a": "El diseño físico.",
+        "b": "El diseño conceptual.",
+        "c": "El diseño lógico.",
+        "d": "El diseño interno."
+      },
+      "correcta": "c",
+      "explicacion": "El proceso de normalización de Codd opera evaluando relaciones, atributos y dependencias funcionales lógicas[cite: 1031]. Se ejecuta de manera canónica durante la fase de diseño lógico del modelado, tras haber generado el borrador inicial de tablas proveniente del esquema conceptual E/R[cite: 1035]."
+    },
+    {
+      "id": 40,
+      "enunciado": "Señale la afirmación INCORRECTA sobre el modelo lógico relacional:",
+      "opciones": {
+        "a": "La cardinalidad de una relación es el número de tuplas.",
+        "b": "El grado de una relación es el número de atributos.",
+        "c": "Un dominio es un conjunto de valores.",
+        "d": "Cada fila de una relación puede ser única."
+      },
+      "correcta": "d",
+      "explicacion": "Esta afirmación es incorrecta porque en el modelo relacional formal, cada fila (tupla) no 'puede' ser única, sino que *debe* ser obligatoria e indefectiblemente única dentro de la relación para cumplir con la teoría matemática de conjuntos, impidiendo la existencia de tuplas idénticas duplicadas[cite: 1042]."
+    },
+    {
+      "id": 41,
+      "enunciado": "La desnormalización controlada del modelo físico de datos se aplica para:",
+      "opciones": {
+        "a": "Tener una estructura de tablas más regular.",
+        "b": "Incrementar la flexibilidad del esquema.",
+        "c": "Mejorar los tiempos de respuesta de las consultas.",
+        "d": "Reducir o simplificar el número de acceso a la base de datos."
+      },
+      "correcta": "d",
+      "explicacion": "La desnormalización física controlada (fusionar tablas previamente separadas) es una decisión técnica de rendimiento[cite: 1043]. Se aplica de forma exclusiva para reducir y simplificar el número de lecturas o accesos de disco que debe acometer el motor de base de datos para responder a consultas críticas[cite: 1047, 1070]."
+    },
+    {
+      "id": 42,
+      "enunciado": "En el modelo relacional, señale la respuesta correcta:",
+      "opciones": {
+        "a": "Un valor nulo representa el valor cero.",
+        "b": "Un valor nulo representa un valor desconocido.",
+        "c": "Un valor nulo representa la cadena vacía.",
+        "d": "Un valor nulo representa el valor booleano false."
+      },
+      "correcta": "b",
+      "explicacion": "En total concordancia con la pregunta 19, el indicador de nulo ($NULL$) en bases de datos relacionales sirve para denotar explícitamente que un dato es actualmente desconocido, no ha sido rellenado o no se encuentra disponible[cite: 1048, 1050]."
+    },
+    {
+      "id": 43,
+      "enunciado": "Según el modelo E/R extendido propuesto en Métrica v3, si 2 entidades se relacionan mediante la relación \"ASOCIADA A\", siendo el tipo de correspondencia 1:1 y teniendo en cuenta que la relación \"ASOCIADA A\" posee el atributo \"fecha_asociacion\", ¿en cuántas relaciones se transformará en el modelo relacional?",
+      "opciones": {
+        "a": "1.",
+        "b": "2.",
+        "c": "3.",
+        "d": "4."
+      },
+      "correcta": "c",
+      "explicacion": "De acuerdo con los criterios específicos de corrección tipificados en las soluciones de este test [cite: 1149], la relación binaria pura `1:1` con atributos propios se transforma de manera explícita generando un total de 3 tablas independientes [cite: 1056]: una para cada una de las dos entidades y una tercera tabla relacional de acoplamiento para albergar la asociación junto con su campo `fecha_asociacion`[cite: 1053]."
+    },
+    {
+      "id": 44,
+      "enunciado": "Dada una jerarquía en el modelo Entidad-Relación extendido, se crea una tabla para el supertipo que tenga de clave primaria el identificador y una tabla para cada uno de los subtipos que tengan el identificador del supertipo como clave ajena. Esta solución es apropiada:",
+      "opciones": {
+        "a": "Si los subtipos tienen muchos atributos distintos y se quieren conservar los atributos comunes en una tabla.",
+        "b": "Porque mejora la eficiencia en los accesos a todos los atributos de un subtipo, sean los comunes al supertipo o los específicos.",
+        "c": "Si los subtipos se diferencien en pocos atributos y las relaciones entre los subtipos y otras entidades sean las mismas.",
+        "d": "En todo caso."
+      },
+      "correcta": "a",
+      "explicacion": "Esta estrategia de derivación de jerarquías (generar tablas separadas para padres e hijos) es idónea cuando las entidades hijas o subtipos presentan una gran disparidad de campos específicos entre sí[cite: 1064, 1066]. Al hacerlo, se evita la proliferación de columnas con valores nulos masivos que ocurriría si se unificara todo en una única tabla de gran tamaño[cite: 1066]."
+    },
+    {
+      "id": 45,
+      "enunciado": "La técnica cuyo objetivo consiste en una desnormalización controlada del modelo físico de datos que se aplica para reducir o simplificar el número de accesos a la base de datos, se denomina:",
+      "opciones": {
+        "a": "Optimización.",
+        "b": "Cálculo de accesos.",
+        "c": "Caminos de acceso.",
+        "d": "Normalización inversa."
+      },
+      "correcta": "a",
+      "explicacion": "La desnormalización planificada en el entorno físico con la finalidad exclusiva de recortar accesos redundantes de entrada/salida y acelerar las consultas críticas del sistema se etiqueta conceptualmente bajo el término general de Optimización física del rendimiento[cite: 1070, 1071]."
+    },
+    {
+      "id": 46,
+      "enunciado": "Respecto a la regla de integridad de entidad, señale la respuesta INCORRECTA:",
+      "opciones": {
+        "a": "Ninguno de los atributos que componen la clave primaria puede ser nulo.",
+        "b": "Ninguno de los atributos que componen la claves candidatas puede ser nulo.",
+        "c": "La clave primaria es irreducible.",
+        "d": "No se aplica a las claves candidatas."
+      },
+      "correcta": "b",
+      "explicacion": "Esta afirmación es la respuesta incorrecta exigida por la pregunta debido a que la restricción estricta de prohibición de valores nulos se impone de forma obligatoria y exclusiva sobre la clave primaria elegida para la relación[cite: 1075, 1076, 1079]. Las claves candidatas alternativas que no fueron designadas como primaria sí podrían, en ciertas circunstancias de diseño conceptual, admitir valores $NULL$ si las reglas de negocio lo permiten."
+    },
+    {
+      "id": 47,
+      "enunciado": "En el modelo relacional, la extensión de una relación es:",
+      "opciones": {
+        "a": "El número de atributos que posee.",
+        "b": "El esquema de esa relación.",
+        "c": "El conjunto de filas o tuplas de esa relación.",
+        "d": "El conjunto de dominios utilizados para los atributos de esa relación."
+      },
+      "correcta": "c",
+      "explicacion": "La extensión de una relación (o tabla) equivale al estado real de su contenido de datos en un momento determinado cronológico; esto es, el conjunto o volumen dinámico de tuplas (filas o registros) reales almacenados en su estructura[cite: 1080, 1083]."
+    },
+    {
+      "id": 48,
+      "enunciado": "En el modelo relacional, la cardinalidad de una relación es:",
+      "opciones": {
+        "a": "El número de atributos que posee.",
+        "b": "El número de atributos que componen la clave primaria de esa relación.",
+        "c": "El número de filas o tuplas de esa relación.",
+        "d": "El número de dominios utilizados para los atributos de esa relación."
+      },
+      "correcta": "c",
+      "explicacion": "En el modelo lógico relacional, el concepto de 'cardinalidad' mide y expresa de forma cuantitativa el número total de tuplas o filas con las que cuenta la tabla en un momento concreto de explotación de datos[cite: 1085, 1088]."
+    },
+    {
+      "id": 49,
+      "enunciado": "En el modelo relacional, el grado de una relación es:",
+      "opciones": {
+        "a": "El número de atributos que posee.",
+        "b": "El número de atributos que componen la clave primaria de esa relación.",
+        "c": "El número de filas o tuplas de esa relación.",
+        "d": "El número de dominios utilizados para los atributos de esa relación."
+      },
+      "correcta": "a",
+      "explicacion": "El grado de una tabla o relación representa el indicador estructural fijo de su anchura: equivale exactamente al número total de atributos o columnas que constituyen la cabecera o esquema de dicha relación[cite: 1090, 1091]."
+    },
+    {
+      "id": 50,
+      "enunciado": "En la transformación al modelo relacional de un diagrama Entidad-Relación extendido, las relaciones de agregación:",
+      "opciones": {
+        "a": "Se transforman del mismo modo que las 1:N.",
+        "b": "Se transforman del mismo modo que las 1:1.",
+        "c": "Se transforman del mismo modo que las N:M.",
+        "d": "Su transformación depende del tipo de correspondencia concreto."
+      },
+      "correcta": "a",
+      "explicacion": "De acuerdo con los criterios de corrección estipulados de forma unívoca en la plantilla de respuestas oficiales del documento facilitado, las relaciones que involucran abstracciones de agregación se transforman en el modelo relacional siguiendo la misma metodología operativa y de propagación de claves que las relaciones binarias convencionales de tipo de correspondencia `1:N`[cite: 1101, 1103, 1163]."
+    }
+  ]
+}

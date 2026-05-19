@@ -1,0 +1,230 @@
+[
+  {
+    "concepto": "ABAP",
+    "categoria": "Lenguajes de Programación",
+    "definicion": "Lenguaje de programación interpretado y multiparadigma de cuarta generación (4GL), tipificado específicamente para el desarrollo en entornos de gestión empresarial.",
+    "que_resuelve": "Facilita la programación de lógicas de negocio complejas y la extensión de módulos dentro de grandes sistemas de planificación de recursos empresariales (como SAP).",
+    "notacion_simple": {
+      "tipo_traduccion": "Interpretado",
+      "paradigma": "Multiparadigma",
+      "uso_principal": "Gestión empresarial (entornos SAP)"
+    },
+    "palabras_clave_examen": ["ABAP", "Interpretado", "Multiparadigma", "Gestión empresarial"]
+  },
+  {
+    "concepto": "AspectJ",
+    "categoria": "Lenguajes de Programación",
+    "definicion": "Extensión compilada y orientada a aspectos adaptada para el lenguaje Java, diseñada para una explotación de propósito general.",
+    "que_resuelve": "Permite modularizar de manera concisa conceptos o intereses transversales a toda la aplicación (como el control de seguridad o logs) evitando la duplicación de código en la jerarquía OO.",
+    "notacion_simple": {
+      "tipo_traduccion": "Compilado",
+      "paradigma": "Orientado a aspectos",
+      "uso_principal": "General (Ecosistema Java)"
+    },
+    "palabras_clave_examen": ["AspectJ", "Compilado", "Orientado a aspectos", "Transversales"]
+  },
+  {
+    "concepto": "C",
+    "categoria": "Lenguajes de Programación",
+    "definicion": "Lenguaje de programación de propósito general, compilado y estructurado bajo el paradigma imperativo.",
+    "que_resuelve": "Proporciona una sintaxis eficiente y compacta con control absoluto sobre los recursos de hardware y la memoria, ideal para sistemas operativos, controladores o software de bajo nivel.",
+    "notacion_simple": {
+      "tipo_traduccion": "Compilado",
+      "paradigma": "Imperativo",
+      "uso_principal": "General y de sistemas"
+    },
+    "palabras_clave_examen": ["Lenguaje C", "Compilado", "Imperativo", "Sistemas/General"]
+  },
+  {
+    "concepto": "C++",
+    "categoria": "Lenguajes de Programación",
+    "definicion": "Evolución compilada y multiparadigma del lenguaje C que unifica las prestaciones de la programación imperativa clásica con la programación orientada a objetos.",
+    "que_resuelve": "Aporta abstracciones avanzadas de software sin penalizar el rendimiento del sistema, combinando la velocidad nativa de ejecución con los beneficios estructurales de la POO.",
+    "notacion_simple": {
+      "tipo_traduccion": "Compilado",
+      "paradigma": "Multiparadigma (Imperativo y OO)",
+      "uso_principal": "General y de alto rendimiento"
+    },
+    "palabras_clave_examen": ["C++", "Compilado", "Imperativo y OO", "Multiparadigma"]
+  },
+  {
+    "concepto": "C#",
+    "categoria": "Lenguajes de Programación",
+    "definicion": "Lenguaje de propósito general, compilado y fuertemente multiparadigma que fusiona los principios imperativos, orientales a objetos, funcionales y reflexivos.",
+    "que_resuelve": "Actúa como el pilar técnico versátil del ecosistema de software moderno de Microsoft, proporcionando seguridad de tipos avanzada, recolección de basura y metaprogramación en un solo entorno.",
+    "notacion_simple": {
+      "tipo_traduccion": "Compilado",
+      "paradigma": "Multiparadigma (Imperativo, OO, funcional, reflexivo)",
+      "uso_principal": "General (Plataforma .NET)"
+    },
+    "palabras_clave_examen": ["C#", "Compilado", "Multiparadigma avanzado", "General (.NET)"]
+  },
+  {
+    "concepto": "Erlang",
+    "categoria": "Lenguajes de Programación",
+    "definicion": "Lenguaje interpretado y multiparadigma estructurado bajo enfoques orientados a objetos, funcionales y altamente concurrentes.",
+    "que_resuelve": "Diseñado específicamente para soportar sistemas distribuidos de alta concurrencia, tolerancia a fallos masiva y disponibilidad permanente (como telecomunicaciones o servidores de mensajería).",
+    "notacion_simple": {
+      "tipo_traduccion": "Interpretado",
+      "paradigma": "Multiparadigma (OO, funcional, concurrente)",
+      "uso_principal": "Programación concurrente y distribuida"
+    },
+    "palabras_clave_examen": ["Erlang", "Interpretado", "Concurrente", "Tolerancia a fallos"]
+  },
+  {
+    "concepto": "F#",
+    "categoria": "Lenguajes de Programación",
+    "definicion": "Lenguaje de programación multiparadigma orientado a la programación funcional dentro de la plataforma .NET de Microsoft.",
+    "que_resuelve": "Optimiza y simplifica la resolución de problemas matemáticos, algorítmicos complejos y de análisis de datos masivos utilizando un fuerte tipado estático y construcciones funcionales inmutables.",
+    "notacion_simple": {
+      "tipo_traduccion": "Compilador (Compilado)",
+      "paradigma": "Multiparadigma (Imperativo, OO, funcional)",
+      "uso_principal": "General (.NET) / Enfocado a funcional"
+    },
+    "palabras_clave_examen": ["F#", "Compilador", "Funcional", "General (.NET)"]
+  },
+  {
+    "concepto": "GO",
+    "categoria": "Lenguajes de Programación",
+    "definicion": "Lenguaje de programación de propósito general, compilado y multiparadigma que unifica la programación imperativa, la POO y características concurrentes nativas.",
+    "que_resuelve": "Desarrollado por Google para sustituir lógicas de backend complejas, optimizando drásticamente la compilación rápida y el procesamiento concurrente ligero (goroutines) en arquitecturas de red a gran escala.",
+    "notacion_simple": {
+      "tipo_traduccion": "Compilado",
+      "paradigma": "Multiparadigma (Imperativo, OO, concurrente)",
+      "uso_principal": "Web (Google) y servicios de red"
+    },
+    "palabras_clave_examen": ["GO", "Compilado", "Concurrente", "Web (Google)"]
+  },
+  {
+    "concepto": "Haskell",
+    "categoria": "Lenguajes de Programación",
+    "definicion": "Lenguaje de programación compilado adscrito estrictamente de manera pura al paradigma de programación funcional.",
+    "que_resuelve": "Elimina por completo los efectos colaterales de las aplicaciones mediante la transparencia referencial y funciones puras, utilizándose ampliamente en la investigación académica, criptografía e Inteligencia Artificial.",
+    "notacion_simple": {
+      "tipo_traduccion": "Compilado",
+      "paradigma": "Funcional (Puro)",
+      "uso_principal": "Inteligencia Artificial (IA)"
+    },
+    "palabras_clave_examen": ["Haskell", "Compilado", "Funcional puro", "Inteligencia Artificial"]
+  },
+  {
+    "concepto": "Java",
+    "categoria": "Lenguajes de Programación",
+    "definicion": "Lenguaje de propósito general, fuertemente orientado a objetos, diseñado originalmente para compilarse a un código binario intermedio (bytecode).",
+    "que_resuelve": "Resuelve la portabilidad multiplataforma bajo el lema 'escríbelo una vez, ejecútalo en cualquier parte', aislando el código del hardware nativo a través de una Máquina Virtual (JVM).",
+    "notacion_simple": {
+      "tipo_traduccion": "Compilado (a bytecode/Mixto)",
+      "paradigma": "Orientado a Objetos (OO)",
+      "uso_principal": "General y de gran empresa"
+    },
+    "palabras_clave_examen": ["Java", "Compilado", "Orientado a objetos", "General (JVM)"]
+  },
+  {
+    "concepto": "JavaScript",
+    "categoria": "Lenguajes de Programación",
+    "definicion": "Lenguaje interpretado y multiparadigma de corte imperativo, funcional y con herencia basada en prototipos.",
+    "que_resuelve": "Es el estándar universal nativo para dotar de dinamismo, interactividad y control dirigido por eventos a las interfaces y páginas dentro de los navegadores web.",
+    "notacion_simple": {
+      "tipo_traduccion": "Interpretado",
+      "paradigma": "Multiparadigma (Imperativo, OO con prototipos, funcional)",
+      "uso_principal": "Web (Frontend y Node.js)"
+    },
+    "palabras_clave_examen": ["JavaScript", "Interpretado", "Prototipos", "Web"]
+  },
+  {
+    "concepto": "Kotlin",
+    "categoria": "Lenguajes de Programación",
+    "definicion": "Lenguaje de programación compilado y orientado a objetos, diseñado con total interoperabilidad con la máquina virtual de Java.",
+    "que_resuelve": "Moderniza la sintaxis de desarrollo reduciendo el código repetitivo y eliminando por completo los errores de puntero nulo (*NullPointerException*), consolidándose como el estándar oficial para aplicaciones Android.",
+    "notacion_simple": {
+      "tipo_traduccion": "Compilado (a bytecode de JVM o JS)",
+      "paradigma": "Orientado a Objetos (OO)",
+      "uso_principal": "Aplicaciones para Android"
+    },
+    "palabras_clave_examen": ["Kotlin", "Compilado", "Orientado a objetos", "Android"]
+  },
+  {
+    "concepto": "PHP",
+    "categoria": "Lenguajes de Programación",
+    "definicion": "Lenguaje interpretado y multiparadigma (imperativo, OO, funcional y reflexivo) diseñado específicamente para el entorno de red.",
+    "que_resuelve": "Facilita la creación ágil de páginas y aplicaciones dinámicas embebidas en el servidor web, gestionando de forma nativa conexiones a bases de datos relacionales y peticiones HTTP.",
+    "notacion_simple": {
+      "tipo_traduccion": "Interpretado",
+      "paradigma": "Multiparadigma (Imperativo, OO, funcional, reflexivo)",
+      "uso_principal": "Web (Servidor)"
+    },
+    "palabras_clave_examen": ["PHP", "Interpretado", "Multiparadigma", "Web"]
+  },
+  {
+    "concepto": "Prolog",
+    "categoria": "Lenguajes de Programación",
+    "definicion": "Lenguaje de programación interpretado basado de forma estricta en el paradigma lógico y la lógica de predicados de primer orden.",
+    "que_resuelve": "Permite resolver problemas lógicos complejos, sistemas expertos e IA especificando una base de datos de 'hechos' y 'reglas', dejando que el motor deductivo infiera de forma autónoma los resultados.",
+    "notacion_simple": {
+      "tipo_traduccion": "Interpretado",
+      "paradigma": "Lógico",
+      "uso_principal": "Inteligencia Artificial (IA)"
+    },
+    "palabras_clave_examen": ["Prolog", "Interpretado", "Lógico", "Inteligencia Artificial"]
+  },
+  {
+    "concepto": "Python",
+    "categoria": "Lenguajes de Programación",
+    "definicion": "Lenguaje de propósito general, interpretado y con un potente ecosistema multiparadigma (imperativo, OO, funcional y reflexivo).",
+    "que_resuelve": "Maximiza la legibilidad del código y la velocidad de desarrollo gracias a su sintaxis limpia y tipado dinámico, utilizándose masivamente tanto en desarrollo general como en scripts, ciencia de datos e Inteligencia Artificial.",
+    "notacion_simple": {
+      "tipo_traduccion": "Interpretado",
+      "paradigma": "Multiparadigma (Imperativo, OO, funcional, reflexivo)",
+      "uso_principal": "General / Inteligencia Artificial"
+    },
+    "palabras_clave_examen": ["Python", "Interpretado", "Multiparadigma", "General"]
+  },
+  {
+    "concepto": "Ruby",
+    "categoria": "Lenguajes de Programación",
+    "definicion": "Lenguaje de propósito general, interpretado y enfocado de forma pura en un entorno multiparadigma con un altísimo grado de orientación a objetos.",
+    "que_resuelve": "Busca la felicidad del desarrollador proporcionando una sintaxis elegante y natural donde absolutamente todo es un objeto, facilitando la metaprogramación dinámica en sistemas web y scripts de automatización.",
+    "notacion_simple": {
+      "tipo_traduccion": "Interpretado",
+      "paradigma": "Multiparadigma (Imperativo, OO, funcional, reflexivo)",
+      "uso_principal": "General"
+    },
+    "palabras_clave_examen": ["Ruby", "Interpretado", "Multiparadigma (OO)", "General"]
+  },
+  {
+    "concepto": "Scala",
+    "categoria": "Lenguajes de Programación",
+    "definicion": "Lenguaje de programación de propósito general, compilado y multiparadigma, ejecutado sobre la infraestructura de la Máquina Virtual de Java.",
+    "que_resuelve": "Integra de forma fluida y nativa la programación orientada a objetos clásica y los conceptos puros de la programación funcional dentro de entornos corporativos escalables de alta concurrencia.",
+    "notacion_simple": {
+      "tipo_traduccion": "Compilado",
+      "paradigma": "Multiparadigma (Imperativo, OO y funcional)",
+      "uso_principal": "General (WS / Web Services)"
+    },
+    "palabras_clave_examen": ["Scala", "Compilado", "Imperativo, OO y funcional", "General"]
+  },
+  {
+    "concepto": "Smalltalk",
+    "categoria": "Lenguajes de Programación",
+    "definicion": "Lenguaje de propósito general y compilado, considerado el estándar histórico de referencia puramente dedicado al paradigma orientado a objetos.",
+    "que_resuelve": "Aplica de forma estricta el aislamiento de responsabilidades donde todo elemento de software de forma inflexible es un objeto que interactúa exclusivamente a través del envío de mensajes lógicos.",
+    "notacion_simple": {
+      "tipo_traduccion": "Compilado",
+      "paradigma": "Orientado a Objetos (OO puro)",
+      "uso_principal": "General"
+    },
+    "palabras_clave_examen": ["Smalltalk", "Compilado", "Orientado a objetos puro", "General"]
+  },
+  {
+    "concepto": "TypeScript",
+    "categoria": "Lenguajes de Programación",
+    "definicion": "Lenguaje multiparadigma (imperativo, OO, funcional y declarativo) desarrollado por Microsoft que funciona como un superconjunto tipado de JavaScript.",
+    "que_resuelve": "Añade tipado estático opcional e interfaces al desarrollo web, permitiendo detectar errores semánticos en tiempo de compilación antes de transpilar el código final a JavaScript regular para el navegador.",
+    "notacion_simple": {
+      "tipo_traduccion": "Compilado (Transpilado a JavaScript)",
+      "paradigma": "Multiparadigma (Imperativo, OO, funcional, declarativo)",
+      "uso_principal": "Web (Desarrollado por Microsoft)"
+    },
+    "palabras_clave_examen": ["TypeScript", "Compilado", "Compila a JavaScript", "Web (Microsoft)"]
+  }
+]

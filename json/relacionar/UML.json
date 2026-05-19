@@ -1,0 +1,110 @@
+[
+  {
+    "diagrama": "Diagrama de Clases",
+    "tipo": "Estructura (Estático)",
+    "definicion": "Describe la estructura estática de un sistema mostrando sus clases, atributos, operaciones o métodos y las relaciones que las vinculan.",
+    "que_resuelve": "Define el modelo de datos y las reglas de negocio estructurales de forma abstracta, sirviendo de molde conceptual antes de picar el código.",
+    "notacion_simple": {
+      "figura_principal": "Rectángulo dividido en tres secciones (Nombre, Atributos, Métodos).",
+      "visibilidad": "+ (público), - (privado), # (protegido), ~ (paquete).",
+      "conectores": "Flecha con triángulo hueco (Herencia), línea con rombo hueco (Agregación), línea con rombo relleno (Composición)."
+    },
+    "palabras_clave_examen": ["rectángulo con tres secciones", "visión estática", "molde estructural", "visibilidad"]
+  },
+  {
+    "diagrama": "Diagrama de Objetos",
+    "tipo": "Estructura (Estático)",
+    "definicion": "Muestra una instantánea o congelado de los objetos del sistema y sus relaciones en un momento determinado del tiempo de ejecución.",
+    "que_resuelve": "Ilustra ejemplos complejos de estructuras de datos reales en runtime y verifica la coherencia del diagrama de clases con datos concretos.",
+    "notacion_simple": {
+      "figura_principal": "Rectángulo con el nombre del objeto y su clase subrayados (NombreObjeto : NombreClase).",
+      "visibilidad": "Muestra las variables con sus valores asignados directamente.",
+      "conectores": "Líneas continuas simples llamadas enlaces (links), sin flechas ni rombos."
+    },
+    "palabras_clave_examen": ["instantánea", "tiempo de ejecución", "valores concretos", "nombre subrayado", "enlaces"]
+  },
+  {
+    "diagrama": "Diagrama de Componentes",
+    "tipo": "Estructura (Estático)",
+    "definicion": "Muestra la organización de los componentes de software físicos, sus dependencias lógicas y las interfaces que los comunican.",
+    "que_resuelve": "Organiza los módulos lógicos, librerías y APIs del sistema, permitiendo modelar de forma macro cómo encajan las piezas para construir el software completo.",
+    "notacion_simple": {
+      "figura_principal": "Rectángulo con la etiqueta <<component>> o un icono con dos pequeños rectángulos salientes en el lado izquierdo.",
+      "visibilidad": "Define puntos de acceso públicos mediante interfaces lógicas.",
+      "conectores": "Línea con círculo completo (interfaz proporcionada) y línea con semicírculo o gancho (interfaz requerida)."
+    },
+    "palabras_clave_examen": ["módulo de software", "interfaces proporcionadas y requeridas", "visión estática de la construcción", "librerías"]
+  },
+  {
+    "diagrama": "Diagrama de Despliegue",
+    "tipo": "Estructura (Estático)",
+    "definicion": "Describe los nodos físicos que participan en la ejecución del sistema y los componentes o artefactos de software que residen en ellos.",
+    "que_resuelve": "Mapea la arquitectura de hardware del entorno de ejecución, mostrando cómo se distribuyen físicamente las aplicaciones, servicios y bases de datos.",
+    "notacion_simple": {
+      "figura_principal": "Cubo tridimensional que representa un Nodo (hardware o entorno de ejecución).",
+      "visibilidad": "Muestra los archivos físicos (artefactos) alojados dentro de los cubos de hardware.",
+      "conectores": "Líneas continuas simples que representan las vías de comunicación física (protocolos de red)."
+    },
+    "palabras_clave_examen": ["particiones físicas", "nodos de hardware", "infraestructura física", "topología", "artefactos"]
+  },
+  {
+    "diagrama": "Diagrama de Casos de Uso",
+    "tipo": "Comportamiento (Dinámico)",
+    "definicion": "Captura los requisitos funcionales del sistema de información y los expresa visualmente desde el punto de vista del usuario externo.",
+    "que_resuelve": "Acota de forma clara el alcance y los servicios del sistema en las fases de análisis, detallando qué debe hacer el software sin entrar en cómo lo implementará.",
+    "notacion_simple": {
+      "figura_principal": "Muñeco de palitos (Actor) y óvalos/elipses con verbos en infinitivo (Caso de Uso).",
+      "visibilidad": "Delimita la frontera del sistema mediante un gran rectángulo contenedor.",
+      "conectores": "Línea continua simple para asociaciones, y flechas discontinuas con etiquetas <<include>> (obligatorio) o <<extend>> (condicional)."
+    },
+    "palabras_clave_examen": ["requisitos funcionales", "punto de vista del usuario", "actores", "óvalos", "include/extend"]
+  },
+  {
+    "diagrama": "Diagrama de Actividad",
+    "tipo": "Comportamiento (Dinámico)",
+    "definicion": "Describe el flujo de trabajo paso a paso, modelando la secuencia lógica de acciones, bifurcaciones de control y flujos concurrentes.",
+    "que_resuelve": "Modela procesos de negocio, casos de uso detallados y algoritmos paralelos complejas, actuando como un diagrama de flujo avanzado.",
+    "notacion_simple": {
+      "figura_principal": "Rectángulos con esquinas redondeadas (Acciones) y rombos vacíos (Decisión / Reunión).",
+      "visibilidad": "Muestra la dirección del flujo de control de principio a fin.",
+      "conectores": "Flechas continuas de flujo y barras negras macizas rígidas (Fork/Join) para dividir o sincronizar flujos paralelos."
+    },
+    "palabras_clave_examen": ["flujo de acciones", "sincronización de flujos", "concurrencia", "Fork/Join", "esquinas redondeadas"]
+  },
+  {
+    "diagrama": "Diagrama de Máquina de Estados",
+    "tipo": "Comportamiento (Dinámico)",
+    "definicion": "Muestra el ciclo de vida de un único objeto reactivo, detallando los estados válidos por los que pasa ante la llegada de eventos del sistema.",
+    "que_resuelve": "Controla el comportamiento de entidades complejas dependientes del tiempo o de eventos, impidiendo estados inconsistentes o transiciones prohibidas en el negocio.",
+    "notacion_simple": {
+      "figura_principal": "Rectángulos con esquinas redondeadas (Estados) que pueden contener acciones internas (entry/, exit/, do/).",
+      "visibilidad": "Restringe las acciones posibles a un único estado activo a la vez por región.",
+      "conectores": "Flechas continuas (Transiciones) etiquetadas con el formato: Evento [Condición] / Acción."
+    },
+    "palabras_clave_examen": ["ciclo de vida de un objeto", "dependiente del tiempo/eventos", "un único estado inicial", "transiciones"]
+  },
+  {
+    "diagrama": "Diagrama de Secuencia",
+    "tipo": "Interacción (Subfamilia de Comportamiento)",
+    "definicion": "Modeliza la interacción entre objetos del sistema organizando los mensajes que intercambian en un estricto orden cronológico o temporal.",
+    "que_resuelve": "Documenta al detalle el paso a paso de los escenarios de un caso de uso, mostrando de arriba a abajo la cronología exacta de llamadas entre componentes.",
+    "notacion_simple": {
+      "figura_principal": "Rectángulo superior con el nombre del objeto y una línea vertical discontinua hacia abajo (Línea de vida).",
+      "visibilidad": "Rectángulos verticales finos (Focos de control) que indican que el objeto está ocupado ejecutando una tarea.",
+      "conectores": "Flechas horizontales: continuas con punta maciza (síncronas), punta abierta (asíncronas) y discontinuas (retornos)."
+    },
+    "palabras_clave_examen": ["orden cronológico/temporal", "fragmentos combinados", "líneas de vida", "mensajes síncronos/asíncronos"]
+  },
+  {
+    "diagrama": "Diagrama de Comunicación",
+    "tipo": "Interacción (Subfamilia de Comportamiento)",
+    "definicion": "Modeliza la interacción entre objetos enfocándose en la organización estructural de los participantes que intercambian mensajes, dejando el tiempo en segundo plano.",
+    "que_resuelve": "Muestra de forma compacta qué objetos necesitan estar enlazados o comunicados directamente entre sí para cumplir una tarea concreta del sistema.",
+    "notacion_simple": {
+      "figura_principal": "Rectángulos colocados libremente por el plano representando las instancias de los objetos.",
+      "visibilidad": "Prioriza la visibilidad de los caminos lógicos de comunicación sobre la línea temporal.",
+      "conectores": "Líneas continuas simples (Enlaces) acompañadas de pequeñas flechas paralelas que llevan un número de secuencia (e.g., 1.1: validar())."
+    },
+    "palabras_clave_examen": ["organización estructural de objetos", "mensajes numerados", "enlaces", "número de secuencia"]
+  }
+]

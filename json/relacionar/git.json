@@ -1,0 +1,134 @@
+[
+  {
+    "comando": "git init",
+    "categoria": "Configuración y Creación",
+    "definicion": "Inicializa un nuevo repositorio Git local en el directorio actual, creando la carpeta oculta '.git' donde se almacenará todo el historial y metadatos.",
+    "que_resuelve": "Permite comenzar a trackear y controlar las versiones de un proyecto existente en local que antes era solo una carpeta común de archivos.",
+    "notacion_simple": {
+      "sintaxis": "git init",
+      "efecto_local": "Crea la estructura del repositorio (.git) en la raíz del proyecto.",
+      "fase_flujo": "Punto de partida absoluto para proyectos nuevos en local."
+    },
+    "palabras_clave_examen": ["inicializar repositorio", "carpeta .git", "comenzar seguimiento", "local"]
+  },
+  {
+    "comando": "git clone",
+    "categoria": "Configuración y Creación",
+    "definicion": "Descarga una copia completa de un repositorio remoto (incluyendo todo su historial de commits, ramas y archivos) a una nueva carpeta en la máquina local.",
+    "que_resuelve": "Evita tener que configurar manualmente la conexión con el servidor remoto. Descarga todo el proyecto de golpe y configura automáticamente el enlace 'origin'.",
+    "notacion_simple": {
+      "sintaxis": "git clone <url_repositorio>",
+      "efecto_local": "Crea un directorio, descarga los archivos y configura la rama remota tracking.",
+      "fase_flujo": "Copia inicial desde servidores como GitHub o GitLab hacia local."
+    },
+    "palabras_clave_examen": ["descargar copia", "repositorio remoto", "origin", "historial completo"]
+  },
+  {
+    "comando": "git add",
+    "categoria": "Flujo de Trabajo Básico",
+    "definicion": "Añade los cambios de los archivos del directorio de trabajo (Working Directory) al área de preparación (Staging Area o Índice).",
+    "que_resuelve": "Actúa como un filtro intermedio. Permite seleccionar con precisión quirúrgica qué archivos modificados formarán parte del próximo commit y cuáles se quedan fuera temporalmente.",
+    "notacion_simple": {
+      "sintaxis": "git add <nombre_archivo>  o  git add . (para añadir todo)",
+      "efecto_local": "Mueve los archivos del Working Directory al Staging Area.",
+      "fase_flujo": "Preparación previa y obligatoria antes de realizar un commit."
+    },
+    "palabras_clave_examen": ["Staging Area", "área de preparación", "índice", "seleccionar cambios"]
+  },
+  {
+    "comando": "git commit",
+    "categoria": "Flujo de Trabajo Básico",
+    "definicion": "Captura una instantánea (snapshot) de los cambios que están actualmente en el Staging Area y los graba de forma permanente en el historial del repositorio local.",
+    "que_resuelve": "Crea un punto de restauración seguro en la historia del proyecto, identificado por un código hash SHA-1 unívoco, asociado a un mensaje descriptivo.",
+    "notacion_simple": {
+      "sintaxis": "git commit -m \"Mensaje descriptivo del cambio\"",
+      "efecto_local": "Asienta los cambios en el repositorio local. Limpia el Staging Area.",
+      "fase_flujo": "Confirmación y guardado definitivo de cambios en local."
+    },
+    "palabras_clave_examen": ["instantánea", "snapshot", "guardar local", "hash SHA-1", "historial"]
+  },
+  {
+    "comando": "git status",
+    "categoria": "Inspección y Comparación",
+    "definicion": "Muestra el estado actual del directorio de trabajo y del área de preparación, listando qué archivos están modificados, cuáles están en el Staging Area y cuáles no están siendo trackeados (untracked).",
+    "que_resuelve": "La falta de visibilidad. Permite al desarrollador saber exactamente qué ha cambiado en su entorno de trabajo antes de hacer un add o un commit, evitando errores.",
+    "notacion_simple": {
+      "sintaxis": "git status",
+      "efecto_local": "Informativo. Muestra código de colores (típicamente rojo para modificado y verde para staged).",
+      "fase_flujo": "Uso constante durante todo el ciclo de desarrollo para comprobar el estado."
+    },
+    "palabras_clave_examen": ["estado del directorio", "untracked", "comprobar cambios", "visibilidad"]
+  },
+  {
+    "comando": "git branch",
+    "categoria": "Ramas y Sincronización",
+    "definicion": "Permite listar, crear, renombrar o borrar ramas locales. Una rama en Git es simplemente un apuntador móvil ligero hacia un commit específico.",
+    "que_resuelve": "Permite el desarrollo en paralelo. Facilita que un programador cree una línea de trabajo aislada para diseñar una funcionalidad sin alterar la estabilidad de la rama principal (main/master).",
+    "notacion_simple": {
+      "sintaxis": "git branch <nombre_rama> (crear)  o  git branch -d <nombre_rama> (borrar)",
+      "efecto_local": "Modifica los apuntadores de ramas del repositorio local.",
+      "fase_flujo": "Gestión estructural de las líneas de tiempo del proyecto."
+    },
+    "palabras_clave_examen": ["apuntador ligero", "crear rama", "paralelo", "línea de trabajo aislada"]
+  },
+  {
+    "comando": "git checkout / git switch",
+    "categoria": "Ramas y Sincronización",
+    "definicion": "Cambia el entorno de trabajo actual a una rama específica, actualizando los archivos del directorio de trabajo para que coincidan con el estado de esa rama.",
+    "que_resuelve": "Permite saltar de una línea de tiempo a otra de forma instantánea en local para revisar código o continuar programando en funciones diferentes.",
+    "notacion_simple": {
+      "sintaxis": "git checkout <nombre_rama>  o  git switch <nombre_rama>",
+      "efecto_local": "Mueve el apuntador HEAD hacia la rama seleccionada y reescribe los archivos físicos de la carpeta.",
+      "fase_flujo": "Navegación entre las ramas del repositorio local."
+    },
+    "palabras_clave_examen": ["cambiar de rama", "apuntador HEAD", "actualizar directorio", "switch"]
+  },
+  {
+    "comando": "git merge",
+    "categoria": "Ramas y Sincronización",
+    "definicion": "Fusiona las líneas de tiempo de dos ramas distintas, integrando el historial y los cambios de una rama secundaria dentro de la rama actual.",
+    "que_resuelve": "Une el trabajo desarrollado en paralelo. Puede resolver la fusión de forma automática (Fast-forward o commit de merge) o pausar el proceso si detecta un conflicto de líneas duplicadas.",
+    "notacion_simple": {
+      "sintaxis": "git merge <nombre_rama_secundaria>",
+      "efecto_local": "Une las historias. Si hay éxito, genera un nuevo commit de fusión (Merge Commit).",
+      "fase_flujo": "Integración final de funcionalidades una vez terminadas y probadas."
+    },
+    "palabras_clave_examen": ["fusionar ramas", "integrar cambios", "Fast-forward", "conflictos de líneas"]
+  },
+  {
+    "comando": "git fetch",
+    "categoria": "Trabajo con Remotos",
+    "definicion": "Descarga los metadatos, objetos e historial de cambios del repositorio remoto hacia el repositorio local, pero **no modifica ni altera** los archivos del directorio de trabajo actual.",
+    "que_resuelve": "Permite espiar o comprobar qué cambios han subido otros compañeros al servidor central de forma totalmente segura, sin riesgo de romper o pisar el código en el que se está trabajando activamente.",
+    "notacion_simple": {
+      "sintaxis": "git fetch origin",
+      "efecto_local": "Actualiza las ramas de seguimiento remoto (e.g., origin/main), pero no toca las ramas locales.",
+      "fase_flujo": "Sincronización pasiva e informativa desde el servidor."
+    },
+    "palabras_clave_examen": ["descargar metadatos", "sin modificar directorio", "ramas de seguimiento remoto", "seguro"]
+  },
+  {
+    "comando": "git pull",
+    "categoria": "Trabajo con Remotos",
+    "definicion": "Descarga los cambios del repositorio remoto e inmediatamente los fusiona con la rama local actual. Es la combinación exacta y secuencial de ejecutar un 'git fetch' seguido de un 'git merge'.",
+    "que_resuelve": "Mantiene el entorno local actualizado con el servidor central en un solo paso, trayendo el código nuevo que hayan subido otros miembros del equipo.",
+    "notacion_simple": {
+      "sintaxis": "git pull origin <nombre_rama>",
+      "efecto_local": "Descarga datos y altera los archivos locales al aplicar la fusión de inmediato.",
+      "fase_flujo": "Sincronización activa obligatoria antes de empezar a programar cada día."
+    },
+    "palabras_clave_examen": ["fetch más merge", "descargar y fusionar", "actualizar rama local", "origin"]
+  },
+  {
+    "comando": "git push",
+    "categoria": "Trabajo con Remotos",
+    "definicion": "Sube y transfiere los commits realizados en el repositorio local hacia la rama correspondiente en el repositorio remoto del servidor.",
+    "que_resuelve": "Publica y comparte el trabajo local con el resto del mundo, asegurando que los cambios queden respaldados en el servidor central (como GitHub).",
+    "notacion_simple": {
+      "sintaxis": "git push origin <nombre_rama>",
+      "efecto_local": "Sube los nuevos commits locales. Modifica el estado del servidor remoto.",
+      "fase_flujo": "Punto final del flujo de trabajo para entregar las tareas terminadas."
+    },
+    "palabras_clave_examen": ["subir commits", "enviar al remoto", "publicar cambios", "origin"]
+  }
+]

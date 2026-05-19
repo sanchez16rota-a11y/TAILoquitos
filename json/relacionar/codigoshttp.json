@@ -1,0 +1,170 @@
+[
+  {
+    "codigo": "100 Continue",
+    "categoria": "1xx - Respuestas Informativas",
+    "definicion": "Indica que el servidor ha recibido la parte inicial de la petición (las cabeceras) y que el cliente puede continuar enviando el resto de los datos (el cuerpo del mensaje).",
+    "que_resuelve": "Optimiza el ancho de banda. Permite al cliente comprobar si el servidor va a aceptar una petición pesada antes de gastar recursos enviando un cuerpo de datos gigante.",
+    "notacion_simple": {
+      "tipo_estado": "Informativo / Transitorio.",
+      "accion_cliente": "El cliente debe proceder a enviar el cuerpo de la solicitud.",
+      "frecuencia_examen": "Media. Es el ejemplo canónico para preguntar por la utilidad de la familia 1xx."
+    },
+    "palabras_clave_examen": ["petición inicial recibida", "continuar enviando", "optimizar ancho de banda"]
+  },
+  {
+    "codigo": "200 OK",
+    "categoria": "2xx - Peticiones Concluidas con Éxito",
+    "definicion": "Indica que la petición del cliente ha sido recibida, entendida, aceptada y procesada correctamente por el servidor.",
+    "que_resuelve": "Confirma el éxito de operaciones estándar. Dependiendo del método (GET, POST, PUT), el servidor devuelve los datos solicitados o el resultado de la acción en el cuerpo de la respuesta.",
+    "notacion_simple": {
+      "tipo_estado": "Éxito absoluto.",
+      "accion_cliente": "Procesar y renderizar los datos o confirmar la acción al usuario.",
+      "frecuencia_examen": "Obligatoria. El código más común e indispensable en desarrollo web."
+    },
+    "palabras_clave_examen": ["petición correcta", "procesado con éxito", "respuesta estándar", "OK"]
+  },
+  {
+    "codigo": "201 Created",
+    "categoria": "2xx - Peticiones Concluidas con Éxito",
+    "definicion": "Indica que la petición ha tenido éxito y, como resultado, se ha creado un nuevo recurso en el servidor.",
+    "que_resuelve": "Confirma la creación inequívoca de entidades. Se utiliza sistemáticamente como respuesta a peticiones de tipo POST o PUT, incluyendo habitualmente la URL del nuevo recurso en la cabecera 'Location'.",
+    "notacion_simple": {
+      "tipo_estado": "Éxito con creación de recurso.",
+      "accion_cliente": "Leer la cabecera Location si se necesita acceder de inmediato al nuevo recurso.",
+      "frecuencia_examen": "Altísima. Pregunta fija en exámenes sobre diseño de APIs REST."
+    },
+    "palabras_clave_examen": ["recurso creado", "respuesta a POST/PUT", "cabecera Location", "éxito"]
+  },
+  {
+    "codigo": "204 No Content",
+    "categoria": "2xx - Peticiones Concluidas con Éxito",
+    "definicion": "Indica que la petición se ha procesado con éxito, pero el servidor no necesita devolver ningún contenido en el cuerpo de la respuesta.",
+    "que_resuelve": "Ahorra recursos de red. Es ideal para confirmar acciones donde el cliente no necesita actualizar su pantalla con datos nuevos, como tras una petición DELETE exitosa o una actualización PUT menor.",
+    "notacion_simple": {
+      "tipo_estado": "Éxito sin cuerpo de respuesta.",
+      "accion_cliente": "Confirmar la operación sin esperar datos de vuelta (el cuerpo de la respuesta está vacío).",
+      "frecuencia_examen": "Muy alta. El tribunal suele usarlo para pillar con códigos que no llevan cuerpo."
+    },
+    "palabras_clave_examen": ["sin contenido", "cuerpo vacío", "petición DELETE exitosa", "ahorro de red"]
+  },
+  {
+    "codigo": "301 Moved Permanently",
+    "categoria": "3xx - Redirecciones",
+    "definicion": "Indica que el recurso solicitado ha sido cambiado de localización de forma permanente a una nueva URL especificada en la cabecera 'Location'.",
+    "que_resuelve": "Garantiza la persistencia de enlaces antiguos y el SEO. Informa a los navegadores y robots de búsqueda que deben actualizar sus marcadores e indexar la nueva URL definitiva.",
+    "notacion_simple": {
+      "tipo_estado": "Redirección permanente.",
+      "accion_cliente": "El navegador redirige automáticamente a la nueva URL y actualiza sus cachés.",
+      "frecuencia_examen": "Altísima. Se contrasta directamente en los tests con el código 302."
+    },
+    "palabras_clave_examen": ["movido permanentemente", "cambio definitivo", "cabecera Location", "actualizar caché/SEO"]
+  },
+  {
+    "codigo": "302 Found (Moved Temporarily)",
+    "categoria": "3xx - Redirecciones",
+    "definicion": "Indica que el recurso solicitado reside temporalmente bajo una URL diferente, pero que en el futuro volverá a su localización original.",
+    "que_resuelve": "Permite realizar mantenimientos temporales, redirecciones de campañas o flujos de autenticación sin que los motores de búsqueda descarten o desindexen la URL principal.",
+    "notacion_simple": {
+      "tipo_estado": "Redirección temporal.",
+      "accion_cliente": "El navegador redirige automáticamente a la URL temporal, pero no la guarda en caché.",
+      "frecuencia_examen": "Muy alta. Clave memorizar que es temporal frente al 301."
+    },
+    "palabras_clave_examen": ["recurso encontrado", "redirección temporal", "mantenimiento", "no cachear URL"]
+  },
+  {
+    "codigo": "304 Not Modified",
+    "categoria": "3xx - Redirecciones",
+    "definicion": "Indica al navegador que el recurso solicitado no ha sufrido ninguna modificación desde la última vez que se descargó.",
+    "que_resuelve": "Gestión de caché eficiente. Evita que el servidor vuelva a empaquetar y transferir un archivo idéntico (como imágenes o CSS), indicándole al cliente que reutilice la copia que ya tiene guardada localmente.",
+    "notacion_simple": {
+      "tipo_estado": "Redirección implícita a caché.",
+      "accion_cliente": "Cargar el recurso directamente desde la caché local del navegador.",
+      "frecuencia_examen": "Altísima. Clave en temas de rendimiento web, optimización y cabeceras como If-Modified-Since."
+    },
+    "palabras_clave_examen": ["no modificado", "reutilizar caché", "ahorro de transferencia", "If-Modified-Since"]
+  },
+  {
+    "codigo": "400 Bad Request",
+    "categoria": "4xx - Errores del Cliente",
+    "definicion": "Indica que el servidor no puede procesar la petición porque esta contiene una sintaxis inválida, está mal formulada o los datos están corruptos.",
+    "que_resuelve": "Protección del servidor. Actúa como un muro ante peticiones mal formadas, JSONs mal estructurados o llamadas que violan las reglas de la API antes de intentar procesarlas.",
+    "notacion_simple": {
+      "tipo_estado": "Error de sintaxis del cliente.",
+      "accion_cliente": "Corregir el formato de la petición (parámetros, cabeceras o cuerpo) antes de reintentar.",
+      "frecuencia_examen": "Alta. Es el error genérico para peticiones de cliente mal construidas."
+    },
+    "palabras_clave_examen": ["petición deformada", "sintaxis inválida", "JSON corrupto", "error del cliente"]
+  },
+  {
+    "codigo": "401 Unauthorized",
+    "categoria": "4xx - Errores del Cliente",
+    "definicion": "Indica que la petición no ha sido procesada porque carece de credenciales válidas de autenticación para el recurso solicitado.",
+    "que_resuelve": "Control de acceso primario. Exige que el usuario demuestre quién es (mediante login, tokens JWT o cabeceras de autorización) antes de permitirle continuar.",
+    "notacion_simple": {
+      "tipo_estado": "Error de falta de autenticación.",
+      "accion_cliente": "Introducir credenciales válidas o iniciar sesión en el sistema.",
+      "frecuencia_examen": "Crítica. Siempre se pone en los exámenes para confundirlo con el código 403."
+    },
+    "palabras_clave_examen": ["falta autenticación", "no identificado", "credenciales requeridas", "WWW-Authenticate"]
+  },
+  {
+    "codigo": "403 Forbidden",
+    "categoria": "4xx - Errores del Cliente",
+    "definicion": "Indica que el servidor entiende quién es el cliente (está autenticado), pero este **no tiene los permisos lógicos o privilegios** necesarios para acceder al recurso.",
+    "que_resuelve": "Control de autorización y roles. Deniega de forma tajante el acceso a usuarios que intentan entrar en zonas prohibidas (por ejemplo, un usuario con rol 'Empleado' intentando acceder a un panel de 'Administrador').",
+    "notacion_simple": {
+      "tipo_estado": "Error de falta de autorización / permisos.",
+      "accion_cliente": "No reintentar. El acceso está explícitamente denegado para su nivel de permisos.",
+      "frecuencia_examen": "Crítica. Clave memorizar la diferencia: 401 es 'no sé quién eres'; 403 es 'sé quién eres pero no te dejo entrar'."
+    },
+    "palabras_clave_examen": ["acceso prohibido", "autenticado sin permisos", "roles/privilegios", "Forbidden"]
+  },
+  {
+    "codigo": "404 Not Found",
+    "categoria": "4xx - Errores del Cliente",
+    "definicion": "Indica que el servidor no puede encontrar el recurso solicitado en la ruta o URL especificada.",
+    "que_resuelve": "Gestión de rutas inexistentes. Comunica de forma estándar que el endpoint o archivo ha sido borrado, ha cambiado de nombre o la URL se ha escrito de manera incorrecta.",
+    "notacion_simple": {
+      "tipo_estado": "Recurso no encontrado.",
+      "accion_cliente": "Verificar la exactitud de la URL o el identificador del recurso buscado.",
+      "frecuencia_examen": "Obligatoria. El código de error más famoso e identificable de internet."
+    },
+    "palabras_clave_examen": ["no encontrado", "URL inexistente", "ruta errónea", "Not Found"]
+  },
+  {
+    "codigo": "405 Method Not Allowed",
+    "categoria": "4xx - Errores del Cliente",
+    "definicion": "Indica que el recurso existe en esa URL, pero el método HTTP utilizado (GET, POST, PUT, DELETE) no está permitido para esa ruta específica.",
+    "que_resuelve": "Restricción de verbos HTTP. Por ejemplo, si una ruta `/usuarios` está configurada solo para consultas (GET), e intentas borrarla con un DELETE, el sistema deniega la acción de forma clara.",
+    "notacion_simple": {
+      "tipo_estado": "Método HTTP no permitido.",
+      "accion_cliente": "Cambiar el método de la llamada al verbo adecuado (el servidor suele devolver los permitidos en la cabecera 'Allow').",
+      "frecuencia_examen": "Alta. Muy vinculado al diseño estricto de APIs REST."
+    },
+    "palabras_clave_examen": ["método no permitido", "verbo HTTP inválido", "cabecera Allow", "REST"]
+  },
+  {
+    "codigo": "500 Internal Server Error",
+    "categoria": "5xx - Errores del Servidor",
+    "definicion": "Código de error genérico que indica que el servidor encontró una condición inesperada o un fallo imprevisto que le impidió procesar la petición.",
+    "que_resuelve": "Manejo de excepciones graves. Indica que el fallo está en el código del backend (una excepción no capturada, un puntero nulo, fallo de sintaxis en el script del servidor, etc.) y no en la llamada del cliente.",
+    "notacion_simple": {
+      "tipo_estado": "Fallo interno de programación en el servidor.",
+      "accion_cliente": "Esperar o contactar con el administrador. El error está en el código del servidor.",
+      "frecuencia_examen": "Altísima. Es el error por excelencia cuando explota el backend."
+    },
+    "palabras_clave_examen": ["error interno", "excepción de software", "fallo del backend", "inesperado"]
+  },
+  {
+    "codigo": "503 Service Unavailable",
+    "categoria": "5xx - Errores del Servidor",
+    "definicion": "Indica que el servidor no está listo ni disponible para procesar la petición en este momento, habitualmente debido a una sobrecarga temporal de tráfico o a labores de mantenimiento programado.",
+    "que_resuelve": "Evita el colapso definitivo del sistema. Avisa de forma elegante que el servidor está vivo pero saturado, permitiendo al cliente esperar un tiempo prudencial antes de reintentar.",
+    "notacion_simple": {
+      "tipo_estado": "Servicio temporalmente no disponible.",
+      "accion_cliente": "Reintentar más tarde (el servidor puede sugerir cuándo hacerlo mediante la cabecera 'Retry-After').",
+      "frecuencia_examen": "Alta. Ligado a conceptos de alta disponibilidad, balanceo de carga y mantenimiento."
+    },
+    "palabras_clave_examen": ["servicio no disponible", "sobrecarga temporal", "mantenimiento", "Retry-After"]
+  }
+]

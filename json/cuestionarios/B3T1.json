@@ -1,0 +1,582 @@
+{
+  "titulo": "Bloque 3 - Tema 1: Modelado de Datos, Metodologías y Reglas. Entidades, Atributos y Relaciones",
+  "descripcion": "Test de 48 preguntas sobre el modelo Entidad-Relación (ER) y sus extensiones, incluyendo jerarquías, cardinalidades, tipos de dependencias y la metodología MÉTRICA v3 basado en el material proporcionado.",
+  "preguntas": [
+    {
+      "id": 1,
+      "enunciado": "En el modelo Entidad-Relación, el conjunto nominado de valores homogéneos que puede tomar una cierta característica, se denomina:",
+      "opciones": {
+        "a": "Atributo.",
+        "b": "Dominio.",
+        "c": "Entidad.",
+        "d": "Diccionario de datos."
+      },
+      "correcta": "b",
+      "explicacion": "El dominio representa el conjunto de valores válidos y homogéneos que un atributo puede adoptar (por ejemplo, el dominio 'fechas' o 'números enteros'). El atributo en sí es la característica concreta aplicable a la entidad que se nutre de dicho dominio."
+    },
+    {
+      "id": 2,
+      "enunciado": "En el modelo Entidad-Relación extendido:",
+      "opciones": {
+        "a": "Una entidad regular es aquella cuya existencia depende de otra entidad.",
+        "b": "Una entidad débil es aquella que tiene existencia por sí misma.",
+        "c": "Todas las ocurrencias de un tipo de entidad deben tener los mismos atributos.",
+        "d": "Una relación es regular si asocia una entidad regular y una entidad fuerte."
+      },
+      "correcta": "c",
+      "explicacion": "Por definición de tipo de entidad en el modelo formal, este actúa como una plantilla o molde estructural, lo que obliga a que todas sus ocurrencias o instancias compartan exactamente el mismo conjunto de atributos, variando únicamente el valor de los mismos."
+    },
+    {
+      "id": 3,
+      "enunciado": "Una relación del modelo Entidad-Relación extendido según Métrica v3, NO se caracteriza por:",
+      "opciones": {
+        "a": "Nombre.",
+        "b": "Tipo de Correspondencia.",
+        "c": "Cardinalidad.",
+        "d": "Dominio."
+      },
+      "correcta": "d",
+      "explicacion": "Bajo la metodología MÉTRICA v3, una relación se caracteriza formalmente por su nombre, su tipo de correspondencia (1:1, 1:N, N:M) y sus razones de cardinalidad. El 'dominio' es una característica exclusiva y propia de los atributos, no de las relaciones estructuradas."
+    },
+    {
+      "id": 4,
+      "enunciado": "¿Cuál de los siguientes enunciados NO es un objetivo en la elaboración del modelo conceptual de datos?",
+      "opciones": {
+        "a": "Identificar y definir las entidades que quedan dentro del ámbito del sistema.",
+        "b": "Identificar y definir los métodos asociados a cada una de las entidades del sistema.",
+        "c": "Identificar y definir los atributos de cada entidad y sus dominios correspondientes.",
+        "d": "Identificar y definir las relaciones existentes entre las entidades."
+      },
+      "correcta": "b",
+      "explicacion": "El modelo conceptual de datos (como el Entidad-Relación) es puramente estático y estructural, enfocado de manera exclusiva en la información y sus reglas de negocio. La identificación de 'métodos' o comportamientos dinámicos pertenece al paradigma del diseño orientado a objetos (UML), no al modelado conceptual de datos tradicionales."
+    },
+    {
+      "id": 5,
+      "enunciado": "Señale cómo se denomina, en el modelo Entidad-Relación extendido, al número máximo de ocurrencias de cada tipo de entidad que pueden intervenir en una ocurrencia de la relación que se está tratando:",
+      "opciones": {
+        "a": "Tipo de correspondencia de la asociación.",
+        "b": "Cardinalidad de la entidad.",
+        "c": "Grado de la asociación.",
+        "d": "Dominio de las entidades de la asociación."
+      },
+      "correcta": "a",
+      "explicacion": "El tipo de correspondencia (también conocido en la literatura de algunas plantillas como la razón de cardinalidad máxima de la relación) define la conectividad estructural máxima (`1` o `N`) con la que interactúan las entidades participantes en el tipo de relación."
+    },
+    {
+      "id": 6,
+      "enunciado": "Señale cómo se denomina, en el modelo Entidad-Relación extendido, la relación por la que un supertipo se descompone en uno o varios subtipos, los cuales heredan todos los atributos y relaciones del supertipo, además de tener los suyos propios:",
+      "opciones": {
+        "a": "Generalización.",
+        "b": "Asociación.",
+        "c": "Especialización.",
+        "d": "Agregación."
+      },
+      "correcta": "c",
+      "explicacion": "La especialización es el proceso de diseño descendente (top-down) que consiste en desglosar una entidad genérica (supertipo) en subgrupos más específicos (subtipos) basándose en características diferenciadoras, heredando de forma automática los elementos de la entidad padre."
+    },
+    {
+      "id": 7,
+      "enunciado": "El modelo entidad-relación está formado por:",
+      "opciones": {
+        "a": "Clases, objetos e instancias.",
+        "b": "Variables y métodos.",
+        "c": "Entidades, atributos y relaciones.",
+        "d": "Entidades, objetos y clases."
+      },
+      "correcta": "c",
+      "explicacion": "Se trata de los tres componentes semánticos fundamentales e históricos definidos por Peter Chen en 1976 para la representación de esquemas conceptuales de datos: Entidades (objetos del mundo real), Atributos (propiedades de los mismos) y Relaciones (vínculos entre ellos)."
+    },
+    {
+      "id": 8,
+      "enunciado": "En un modelo de datos Entidad-Relación, ¿qué se entiende por \"entidad débil\"?",
+      "opciones": {
+        "a": "Una entidad que no se encuentra relacionada con otra.",
+        "b": "Una entidad que hereda todos sus atributos de otra.",
+        "c": "Una entidad cuya existencia depende de la existencia de otra.",
+        "d": "Ninguna de las respuestas anteriores define una entidad débil."
+      },
+      "correcta": "c",
+      "explicacion": "Una entidad débil es aquella que carece de significado o viabilidad operativa dentro del modelo de datos si desaparece la entidad fuerte (entidad regular u obligatoria) de la cual depende lógicamente (por ejemplo, las 'Líneas de factura' respecto a una 'Factura')."
+    },
+    {
+      "id": 9,
+      "enunciado": "Qué esquema de bases de datos incluye la descripción de todos los datos e interrelaciones entre éstos, así como las restricciones de integridad y de confidencialidad:",
+      "opciones": {
+        "a": "Esquema interno.",
+        "b": "Esquema conceptual.",
+        "c": "Esquema externo.",
+        "d": "Esquema físico."
+      },
+      "correcta": "b",
+      "explicacion": "De acuerdo con la arquitectura de tres niveles de la organización ANSI-SPARC, el nivel o esquema conceptual proporciona una visión global, unificada y puramente lógica del negocio de la base de datos completa, integrando todas las entidades, relaciones, restricciones semánticas y de seguridad sin descender a detalles físicos."
+    },
+    {
+      "id": 10,
+      "enunciado": "Señale la respuesta INCORRECTA sobre las relaciones en el modelo Entidad-Relación Extendido:",
+      "opciones": {
+        "a": "Una relación se caracteriza por el nombre, tipo de correspondencia y la cardinalidad.",
+        "b": "La relación puede ser regular, si asocia tipos de entidad regulares, o débil, si asocia un tipo de entidad débil con un tipo de entidad regular.",
+        "c": "Dentro de las relaciones débiles se distinguen la dependencia en existencia y la dependencia en identificación.",
+        "d": "Se dice que una relación es exclusiva cuando la existencia de una relación entre dos tipos de entidades implica la existencia de las otras relaciones."
+      },
+      "correcta": "d",
+      "explicacion": "La definición es incorrecta porque describe una relación inclusiva. En cambio, una restricción de exclusividad entre relaciones determina justamente el escenario opuesto: si una ocurrencia de una entidad participa en una relación concreta, tiene estrictamente prohibido participar simultáneamente en las otras relaciones afectadas por dicha restricción."
+    },
+    {
+      "id": 11,
+      "enunciado": "Señale la respuesta correcta de las siguientes afirmaciones sobre el modelo Entidad-Relación Extendido:",
+      "opciones": {
+        "a": "Es un requisito el conocer el SGDB en el que se va a implementar.",
+        "b": "Es dependiente del entorno físico.",
+        "c": "Se centra en los datos, independientemente del procesamiento que los transforma.",
+        "d": "Deve proporcionar a los usuarios toda la información que necesiten garantizando la eficiencia del proceso."
+      },
+      "correcta": "c",
+      "explicacion": "El modelado conceptual de datos se rige bajo el principio de independencia de datos: se enfoca exclusivamente en representar la estructura semántica de la información del negocio de manera completamente agnóstica a los procesos, algoritmos o al software SGBD específico que se seleccionará posteriormente para su implementación."
+    },
+    {
+      "id": 12,
+      "enunciado": "Tenemos las entidades \"opositor\" y \"oposición\" y sabemos que a los opositores se les permite apuntase a varias oposiciones distintas. Si quisiera crear el modelo conceptual de base de datos, ¿qué relación crearía?",
+      "opciones": {
+        "a": "Una relación N:M.",
+        "b": "Una relación 1:N.",
+        "c": "Una relación 1:1.",
+        "d": "El modelo conceptual no admite relaciones, sólo el modelo relacional lo permite."
+      },
+      "correcta": "a",
+      "explicacion": "Dado que un 'opositor' puede inscribirse en múltiples 'oposiciones' diferentes, y de forma recíproca, una 'oposición' concreta alberga a una multitud de 'opositores' inscritos, la relación resultante presenta una conectividad de muchos a muchos o N:M."
+    },
+    {
+      "id": 13,
+      "enunciado": "¿Cuál de las siguientes afirmaciones sobre el modelo Entidad-Relación es correcta?",
+      "opciones": {
+        "a": "En la especialización un supertipo se descompone en uno o varios subtipos, los cuales heredan todos los atributos y relaciones del supertipo.",
+        "b": "La generalización consiste en relacionar dos tipos de entidades que normalmente son de dominios independientes, pero coyunturalmente se asocian.",
+        "c": "La agregación permite abstraer un tipo de entidad de nivel superior (supertipo) a partir de varios tipos de entidad (subtipos).",
+        "d": "La asociación consiste en construir un nuevo tipo de entidad como composición de otros."
+      },
+      "correcta": "a",
+      "explicacion": "Esta es la definición formal y exacta de la especialización. Los subtipos creados heredan de forma obligatoria e implícita la clave primaria, los atributos ordinarios y todas las relaciones en las que el supertipo participe, añadiendo además los suyos propios particulares."
+    },
+    {
+      "id": 14,
+      "enunciado": "En una relación del modelo Entidad-Relación:",
+      "opciones": {
+        "a": "La cardinalidad es igual que el tipo de correspondencia.",
+        "b": "La cardinalidad máxima es igual que el tipo de correspondencia.",
+        "c": "La cardinalidad mínima es igual con el tipo de correspondencia.",
+        "d": "Todas las respuestas son falsas."
+      },
+      "correcta": "b",
+      "explicacion": "El tipo de correspondencia de una relación binaria (1:1, 1:N, N:M) se extrae directamente combinando los valores de las cardinalidades máximas con las que cada entidad puede participar en dicha relación."
+    },
+    {
+      "id": 15,
+      "enunciado": "Un atributo puede ser:",
+      "opciones": {
+        "a": "Derivado, compuesto o significado.",
+        "b": "Obligatorio, derivado o compuesto.",
+        "c": "Obligatorio, derivado o significado.",
+        "d": "Obligatorio, compuesto o significado."
+      },
+      "correcta": "b",
+      "explicacion": "De acuerdo con las clasificaciones formales de atributos en el modelo ER, un atributo puede ser obligatorio (requiere valor obligatorio), derivado (su valor se calcula a partir de otros datos existentes, como la edad calculada desde la fecha de nacimiento) o compuesto (subdividido en partes más pequeñas con significado propio, como una dirección)."
+    },
+    {
+      "id": 16,
+      "enunciado": "En el modelo Entidad-Relación Extendido, a la abstracción de un tipo de entidad superior (supertipo) a partir de varios tipos de entidad (subtipos) se le denomina:",
+      "opciones": {
+        "a": "Generalización.",
+        "b": "Especialización.",
+        "c": "Agregación.",
+        "d": "Asociación."
+      },
+      "correcta": "a",
+      "explicacion": "La generalización es el proceso ascendente (bottom-up) que consiste en identificar características comunes e idénticas en múltiples entidades independientes para agruparlas y consolidarlas bajo una única entidad genérica de nivel superior o supertipo."
+    },
+    {
+      "id": 17,
+      "enunciado": "En el modelo Entidad-Relación podemos definir entidad como:",
+      "opciones": {
+        "a": "Cualquier objeto u elemento (real o abstracto) acerca del cual se puede almacenar información en la base de datos.",
+        "b": "Cualquier asociación entre elementos.",
+        "c": "El número de relaciones en las que un elemento puede aparecer.",
+        "d": "Una propiedad concreta de una relación."
+      },
+      "correcta": "a",
+      "explicacion": "Definición canónica del modelo: una entidad es cualquier cosa, objeto, persona, concepto o evento distinguible del mundo real o conceptual del cual el sistema de información tiene interés en capturar y persistir datos."
+    },
+    {
+      "id": 18,
+      "enunciado": "En el modelo Entidad-Relación, ¿qué se entiende por \"tipo de correspondencia\"?",
+      "opciones": {
+        "a": "El número máximo de ocurrencias de cada entidad que pueden intervenir en la relación.",
+        "b": "El número de entidades que participan en una relación.",
+        "c": "El número mínimo y máximo de ocurrencias de una entidad que pueden estar relacionadas con una ocurrencia de otra entidad participante en la relación.",
+        "d": "Es el número de elementos con características comunes que componen una entidad."
+      },
+      "correcta": "a",
+      "explicacion": "Alineado con la pregunta 5, el tipo de correspondencia (1:1, 1:N, N:M) plasma el techo o límite superior de ocurrencias de una entidad que pueden enlazarse lógicamente con un único registro de la otra entidad en el contexto de la relación."
+    },
+    {
+      "id": 19,
+      "enunciado": "En el modelo Entidad-Relación extendido, se tiene la siguiente jerarquía: empleado público es el supertipo y funcionario de carrera, funcionario interino y personal laboral, son los subtipos. Teniendo en cuenta que todo empleado público será un funcionario de carrera, un funcionario interino o personal laboral y que todo empleado público solo estar un uno de los subtipos. La jerarquía es:",
+      "opciones": {
+        "a": "Total y solapada.",
+        "b": "Parcial y solapada.",
+        "c": "Total y disjunta.",
+        "d": "Parcial y disjunta."
+      },
+      "correcta": "c",
+      "explicacion": "Es 'Total' porque todo empleado público pertenece obligatoriamente a algún subtipo (no hay otras opciones permitidas). Es 'Disjunta' porque un empleado puede pertenecer de forma exclusiva a un único subtipo a la vez, impidiendo la coexistencia de estados (un empleado no puede ser simultáneamente personal laboral e interino)."
+    },
+    {
+      "id": 20,
+      "enunciado": "En el modelo Entidad-Relación extendido, se tiene la siguiente jerarquía: documento es el supertipo y documento público, documento privado y documento mixto, son los subtipos. Teniendo en cuenta que un documento puede ser o no un documento público, privado o mixto, y que todo documento puede estar clasificado en más de un subtipo. La jerarquía es:",
+      "opciones": {
+        "a": "Total y solapada.",
+        "b": "Parcial y solapada.",
+        "c": "Total y disjunta.",
+        "d": "Parcial y disjunta."
+      },
+      "correcta": "b",
+      "explicacion": "Es 'Parcial' debido a la cláusula 'puede ser o no' (existen documentos que podrían no encajar en ninguna de esas tres categorías del negocio). Es 'Solapada' porque un mismo documento puede participar y estar catalogado bajo múltiples subtipos simultáneamente de acuerdo al enunciado."
+    },
+    {
+      "id": 21,
+      "enunciado": "Teniendo en cuenta la jerarquía anterior (sobre tipos de documentos), la descomposición del supertipo documento en los subtipos descritos, se conoce como:",
+      "opciones": {
+        "a": "Asociación.",
+        "b": "Exclusividad.",
+        "c": "Especialización.",
+        "d": "Generalización."
+      },
+      "correcta": "c",
+      "explicacion": "Al partir del concepto general de nivel superior ('Documento') para ramificarlo y descomponerlo en ramificaciones específicas ('público', 'privado', 'mixto'), se está aplicando un diseño de especialización (descendente)."
+    },
+    {
+      "id": 22,
+      "enunciado": "En el modelo Entidad-Relación extendido, si la entidad Aspirante se relaciona con la entidad Empresa a través de la relación Entrevista y se necesita modelar una relación entre la relación entrevista y la entidad Oferta de trabajo, ¿qué extensión se debería utilizar?",
+      "opciones": {
+        "a": "Asociación.",
+        "b": "Categorías.",
+        "c": "Agregación.",
+        "d": "Generalización."
+      },
+      "correcta": "c",
+      "explicacion": "El modelo Chen estándar prohíbe que una relación se vincule directamente con otra relación. Para solventar esto, la extensión de 'Agregación' permite abstraer la relación original 'Entrevista' junto con sus entidades participantes y tratar todo el conjunto como si fuera una entidad de nivel superior, permitiéndole así asociarse con 'Oferta de trabajo'."
+    },
+    {
+      "id": 23,
+      "enunciado": "En el modelo Entidad-Relación extendido, NO es una restricción sobre atributo:",
+      "opciones": {
+        "a": "Derivado.",
+        "b": "Compuesto.",
+        "c": "Exclusivo.",
+        "d": "Simple."
+      },
+      "correcta": "c",
+      "explicacion": "El término 'Exclusivo' se aplica conceptualmente en el modelo ER extendido como una restricción lógica entre relaciones (inter-relación) o en la definición de descomposiciones de jerarquías disjuntas, pero no constituye una tipología o restricción estructural propia aplicable a un atributo individual."
+    },
+    {
+      "id": 24,
+      "enunciado": "En el modelo Entidad-Relación extendido, las entidades pueden ser:",
+      "opciones": {
+        "a": "Normales o específicas.",
+        "b": "Regulares o débiles.",
+        "c": "Generales o dependientes.",
+        "d": "Reales o abstractas."
+      },
+      "correcta": "b",
+      "explicacion": "Clasificación taxonómica oficial: las entidades se dividen de manera dicotómica en entidades regulares (también llamadas fuertes o principales, con existencia independiente) y entidades débiles (las cuales precisan obligatoriamente de una entidad fuerte para existir en el sistema)."
+    },
+    {
+      "id": 25,
+      "enunciado": "La intensión es:",
+      "opciones": {
+        "a": "El número ocurrencias de una entidad.",
+        "b": "La capacidad que tienen los modelos conceptuales de datos para representar entidades abstractas del mundo real.",
+        "c": "Una ocurrencia concreta de una entidad.",
+        "d": "El conjunto de entidades que poseen la misma estructura."
+      },
+      "correcta": "d",
+      "explicacion": "La intensión (o esquema) hace referencia a la definición estructural y abstracta permanente de la base de datos (las definiciones de las entidades y sus metadatos), dictando las propiedades que deben cumplir todos los elementos pertenecientes a ese conjunto."
+    },
+    {
+      "id": 26,
+      "enunciado": "La extensión es:",
+      "opciones": {
+        "a": "El número de entidades representadas en un modelo de datos concreto.",
+        "b": "El número de relaciones de un modelo de datos concreto.",
+        "c": "El conjunto de ocurrencias de una entidad concreta.",
+        "d": "Una ocurrencia concreta de una entidad."
+      },
+      "correcta": "c",
+      "explicacion": "La extensión hace referencia al estado dinámico de la base de datos en un instante concreto de tiempo, es decir, al conjunto real de datos u ocurrencias (filas/instancias) que rellenan la estructura definida por la intensión."
+    },
+    {
+      "id": 27,
+      "enunciado": "Sobre el modelo Entidad-Relación extendido, señale la respuesta correcta:",
+      "opciones": {
+        "a": "Permite representar parte de los datos de un sistema.",
+        "b": "Está ligado a una tecnología concreta.",
+        "c": "Una de las extensiones permite modelas la funcionalidad de un sistema.",
+        "d": "Es independiente del entorno físico."
+      },
+      "correcta": "d",
+      "explicacion": "Al tratarse de una metodología puramente conceptual de modelado abstracto de la información, el diseño resultante es totalmente inmune e independiente de los condicionantes físicos del hardware, almacenamiento en disco o arquitecturas de red."
+    },
+    {
+      "id": 28,
+      "enunciado": "En el modelo Entidad-Relación extendido, las relaciones reflexivas:",
+      "opciones": {
+        "a": "Son aquellas entre dos entidades independientes.",
+        "b": "Se denominan también recursivas o exclusivas.",
+        "c": "Son las llamadas relaciones ternarias.",
+        "d": "Son aquellas en las que entidad se relaciona consigo misma."
+      },
+      "correcta": "d",
+      "explicacion": "Una relación reflexiva (también catalogada formalmente como relación recursiva o unaria) ocurre cuando un único tipo de entidad se vincula con él mismo, forzando a que las ocurrencias que interactúan adopten diferentes roles (por ejemplo, un 'Empleado' que supervisa a otros 'Empleados')."
+    },
+    {
+      "id": 29,
+      "enunciado": "En los modelos Entidad-Relación que se usan para modelar conceptualmente un esquema relacional:",
+      "opciones": {
+        "a": "Se produce dependencia por existencia cuando una entidad fuerte no puede existir sin otra entidad débil.",
+        "b": "Se produce dependencia por identificación cuando las ocurrencias de la entidad fuerte no se pueden identificar solo mediante sus propios atributos, si no que se tiene que añadir la clave de la ocurrencia de otra entidad débil.",
+        "c": "La cardinalidad es el número de entidades con la cual otra entidad se puede asociar mediante una relación binaria.",
+        "d": "El grado es el número de valores que puede tomar el atributo de una entidad."
+      },
+      "correcta": "c",
+      "explicacion": "La cardinalidad representa el indicador numérico (expresado en intervalos como `0..1`, `1..1`, `0..N`) que cuantifica cuántas ocurrencias de una entidad destino pueden enlazarse válidamente con una ocurrencia individual de la entidad origen de la relación."
+    },
+    {
+      "id": 30,
+      "enunciado": "De entre los siguientes, ¿cuál NO es una técnica para crear modelos conceptuales de bases de datos?",
+      "opciones": {
+        "a": "Diagramas de estructura.",
+        "b": "Diagramas ORM.",
+        "c": "Diagramas UML.",
+        "d": "Diagramas IDEF1X."
+      },
+      "correcta": "a",
+      "explicacion": "Los diagramas de estructura (como los empleados en el diseño de programación estructurada Jackson o Warnier-Orr) modelan flujo de control o jerarquías de módulos lógicos. ORM (Object-Role Modeling), los diagramas de clases UML y el estándar de modelado de datos federal IDEF1X sí son metodologías reconocidas para modelado conceptual/lógico de bases de datos."
+    },
+    {
+      "id": 31,
+      "enunciado": "¿Cuál de las siguientes características relacionadas con los modelos conceptuales de datos es FALSA?",
+      "opciones": {
+        "a": "Representan la visión estática del dominio de la información del Sistema de información a modelar.",
+        "b": "Ayudan a representar las necesidades de usuario.",
+        "c": "Representan toda la información que va a tratar el Sistema de Información objeto del análisis.",
+        "d": "Representan también el dominio de negocio del sistema de información."
+      },
+      "correcta": "d",
+      "explicacion": "De acuerdo con el criterio específico de corrección de la plantilla del test facilitado, la opción se marca como falsa bajo el prisma estricto de que los modelos conceptuales de datos representan el *dominio de los datos estructurales del sistema*, mientras que el término amplio 'dominio de negocio' abarca también procesos funcionales, flujos de trabajo e interacciones temporales ajenas al mero dato estático."
+    },
+    {
+      "id": 32,
+      "enunciado": "¿Cómo se representa en el modelo Entidad-Relación extendido una relación?",
+      "opciones": {
+        "a": "Rectángulo simple.",
+        "b": "Rectángulo doble.",
+        "c": "Arco.",
+        "d": "Rombo."
+      },
+      "correcta": "d",
+      "explicacion": "En la notación clásica de Peter Chen para el modelo ER, las entidades se dibujan como rectángulos, los atributos como óvalos/elipses y las relaciones o asociaciones lógicas se representan mediante la figura de un rombo interconectado por líneas."
+    },
+    {
+      "id": 33,
+      "enunciado": "En el modelo Entidad-Relación extendido, señale la respuesta correcta:",
+      "opciones": {
+        "a": "Una relación no puede tener atributos propios.",
+        "b": "Las relaciones unarias se conocen también como relaciones exclusivas.",
+        "c": "La razón de cardinalidad es el número máximo de ocurrencias de cada tipo de entidad que pueden intervenir en una ocurrencia de la relación que se está tratando.",
+        "d": "No hay obligación en que una relación tenga un nombre."
+      },
+      "correcta": "c",
+      "explicacion": "La razón de cardinalidad máxima representa el techo operativo estructural. En relaciones binarias determina de manera taxativa la política de conectividad global de las instancias dentro del modelo."
+    },
+    {
+      "id": 34,
+      "enunciado": "En el modelo Entidad-Relación extendido, construir un nuevo tipo de entidad como composición de otros y su tipo de relación y así poder manejarlo en un nivel de abstracción mayor se conoce como:",
+      "opciones": {
+        "a": "Categorías.",
+        "b": "Agregación.",
+        "c": "Desagregación.",
+        "d": "Generalización."
+      },
+      "correcta": "b",
+      "explicacion": "Es la definición técnica exacta de la abstracción de Agregación, la cual trata una estructura compleja relacional (una relación y sus entidades vinculadas) como un único bloque constructivo de datos independiente."
+    },
+    {
+      "id": 35,
+      "enunciado": "¿Cómo se representa en el modelo Entidad-Relación extendido una jerarquía total?",
+      "opciones": {
+        "a": "Con una doble línea entre el supertipo y el triángulo.",
+        "b": "Con una línea simple entre el supertipo y el triángulo.",
+        "c": "Con un círculo o una O en el triángulo invertido.",
+        "d": "Con una letra d en el triángulo invertido."
+      },
+      "correcta": "a",
+      "explicacion": "En la notación gráfica habitual del modelo ER Extendido, la restricción de totalidad (obligatoriedad de pertenencia a un subtipo) se plasma dibujando una línea de trazo doble entre la entidad padre (supertipo) y el símbolo de la jerarquía."
+    },
+    {
+      "id": 36,
+      "enunciado": "En el modelo Entidad-Relación extendido, ¿con qué letra se representa las uniones por categorías?",
+      "opciones": {
+        "a": "d.",
+        "b": "0.",
+        "c": "U.",
+        "d": "C."
+      },
+      "correcta": "c",
+      "explicacion": "Una categoría (o tipo de unión) representa una colección de subtipos que pertenecen a diferentes tipos de entidad madre. Gráficamente, esta abstracción se denota utilizando el símbolo matemático de unión: la letra 'U'."
+    },
+    {
+      "id": 37,
+      "enunciado": "En una jerarquía del modelo Entidad-Relación extendido, si una ocurrencia del supertipo solo puede pertenecer a uno de los subtipos, se denomina:",
+      "opciones": {
+        "a": "Jerarquía total.",
+        "b": "Jerarquía parcial.",
+        "c": "Jerarquía disjunta.",
+        "d": "Jerarquía solapada."
+      },
+      "correcta": "c",
+      "explicacion": "La restricción de disjunción estipula la exclusión mutua absoluta entre las subclases: si una ocurrencia pertenece al Subtipo A, se le veta automáticamente la posibilidad de pertenecer al Subtipo B dentro de la misma especialización."
+    },
+    {
+      "id": 38,
+      "enunciado": "En una jerarquía del modelo Entidad-Relación extendido, si toda ocurrencia del supertipo pertenece siempre a algún subtipo, se denomina:",
+      "opciones": {
+        "a": "Jerarquía total.",
+        "b": "Jerarquía parcial.",
+        "c": "Jerarquía disjunta.",
+        "d": "Jerarquía solapada."
+      },
+      "correcta": "a",
+      "explicacion": "Se trata de una especialización completa o jerarquía total. Significa que el supertipo no posee instancias huérfanas independientes; la unión del conjunto de registros de todos los subtipos equivale exactamente al conjunto total de registros del supertipo."
+    },
+    {
+      "id": 39,
+      "enunciado": "En una jerarquía del modelo Entidad-Relación extendido, si una ocurrencia del supertipo puede pertenecer a varios subtipos, se denomina:",
+      "opciones": {
+        "a": "Jerarquía total.",
+        "b": "Jerarquía parcial.",
+        "c": "Jerarquía disjunta.",
+        "d": "Jerarquía solapada."
+      },
+      "correcta": "d",
+      "explicacion": "Se denomina jerarquía solapada (o superpuesta) cuando se permite explícitamente la convivencia polimórfica: una misma entidad concreta del mundo real puede actuar con los roles de dos o más subtipos de manera simultánea."
+    },
+    {
+      "id": 40,
+      "enunciado": "En una jerarquía del modelo Entidad-Relación extendido, si una ocurrencia del supertipo no pertenece a algún subtipo, se denomina:",
+      "opciones": {
+        "a": "Jerarquía total.",
+        "b": "Jerarquía parcial.",
+        "c": "Jerarquía disjunta.",
+        "d": "Jerarquía solapada."
+      },
+      "correcta": "b",
+      "explicacion": "Se denomina jerarquía parcial cuando el desglose es opcional o incompleto. Existen registros en la entidad padre que tienen características comunes generales pero que no cumplen con los requisitos específicos para descender a ninguno de los subtipos definidos."
+    },
+    {
+      "id": 41,
+      "enunciado": "En el modelo Entidad-Relación extendido, ¿con qué letra se representa una jerarquía disjunta?",
+      "opciones": {
+        "a": "d.",
+        "b": "0.",
+        "c": "U.",
+        "d": "C."
+      },
+      "correcta": "a",
+      "explicacion": "En los diagramas conceptuales extendidos, la condición de exclusión mutua o disjunción se señaliza de manera normativa incorporando una letra 'd' minúscula dentro del círculo o triángulo que articula la jerarquía."
+    },
+    {
+      "id": 42,
+      "enunciado": "En el modelo Entidad-Relación extendido, ¿con qué letra se representa una jerarquía solapada?",
+      "opciones": {
+        "a": "d.",
+        "b": "0.",
+        "c": "U.",
+        "d": "C."
+      },
+      "correcta": "b",
+      "explicacion": "La condición de solapamiento (overlap) se indica gráficamente en las convenciones de modelado conceptual incluyendo una letra 'o' minúscula (o un cero según la tipografía de algunas metodologías de examen) en el nodo central de la especialización."
+    },
+    {
+      "id": 43,
+      "enunciado": "Señale la respuesta correcta relativa al Modelo Entidad/Relación Extendido según establece Métrica v3:",
+      "opciones": {
+        "a": "Un atributo se define sobre diversos dominios.",
+        "b": "El dominio no tiene existencia propia y depende de las entidades, las relaciones o los atributos.",
+        "c": "La entidad es aquel objeto, real o abstracto, acerca del cual se desea almacenar información en la base de datos.",
+        "d": "La clave candidata es el conjunto de atributos que garantizan la unicidad de las ocurrencias e identifican la ocurrencia unívocamente."
+      },
+      "correcta": "c",
+      "explicacion": "Esta es la definición formal exacta adoptada textualmente por la metodología del Ministerio de Administraciones Públicas MÉTRICA v3 en su documentación de técnicas de modelado conceptual de datos."
+    },
+    {
+      "id": 44,
+      "enunciado": "En el el Modelo Entidad/Relación Extendido, al conjunto de valores que puede tomar un atributo se le denomina:",
+      "opciones": {
+        "a": "Entidad.",
+        "b": "Recorrido.",
+        "c": "Cardinalidad.",
+        "d": "Dominio."
+      },
+      "correcta": "d",
+      "explicacion": "Reiterando la doctrina conceptual del modelo (como se vio en la pregunta 1), el dominio actúa como el marco de referencia tipificado que restringe los valores legales e interpretables que un atributo tiene permitido adoptar en las celdas de almacenamiento."
+    },
+    {
+      "id": 45,
+      "enunciado": "En el Entidad-Relación extendido, las relaciones N:M:",
+      "opciones": {
+        "a": "Cada ocurrencia de una entidad puede estar relacionada con cero, una o varias ocurrencias de la otra entidad y cada ocurrencia de la otra entidad puede corresponder a cero, una o varias ocurrencias de la primera.",
+        "b": "Cada ocurrencia de una entidad puede estar relacionada con cero, una o varias ocurrencias de la otra entidad.",
+        "c": "Cada ocurrencia de una entidad se relaciona con una y sólo una ocurrencia de la otra entidad.",
+        "d": "Son las llamadas muchos a uno."
+      },
+      "correcta": "a",
+      "explicacion": "Definición detallada de la conectividad muchos a muchos (N:M). Indica bidireccionalidad en la multiplicidad máxima: un elemento del Conjunto A se empareja con múltiples elementos de B, y a su vez, un elemento de B se asocia con un abanico multiforme de elementos de A."
+    },
+    {
+      "id": 46,
+      "enunciado": "La razón de cardinalidad es:",
+      "opciones": {
+        "a": "Es el número mínimo de ocurrencias de cada tipo de entidad que pueden intervenir en una ocurrencia de la relación que se está tratando.",
+        "b": "Es el número máximo de ocurrencias de cada tipo de entidad que pueden intervenir en una ocurrencia de la relación que se está tratando.",
+        "c": "Es la participación en la relación de cada una de las entidades afectadas.",
+        "d": "Es el número de atributos de una entidad."
+      },
+      "correcta": "b",
+      "explicacion": "Se conoce formalmente como razón de cardinalidad al valor máximo del intervalo de participación de las entidades en la relación, dictaminando si la relación se clasifica estructuralmente como de tipo unívoco (1) o múltiple (N)."
+    },
+    {
+      "id": 47,
+      "enunciado": "El rol de una entidad:",
+      "opciones": {
+        "a": "Se especifica en las relaciones exclusivas.",
+        "b": "Se especifica en las relaciones reflexivas.",
+        "c": "Se especifica en las entidades débiles.",
+        "d": "Se especifica en las relaciones ternarias."
+      },
+      "correcta": "b",
+      "explicacion": "En las relaciones reflexivas o recursivas (donde una entidad se asocia consigo misma), la anotación del 'rol' o etiqueta de papel en la línea de conexión es obligatoria y crítica. Permite diferenciar conceptualmente la función que ejerce cada ocurrencia en el bucle relacional (por ejemplo, saber quién actúa como 'jefe' y quién como 'subordinado')."
+    },
+    {
+      "id": 48,
+      "enunciado": "Una relación se caracteriza por:",
+      "opciones": {
+        "a": "El grado y el tipo de correspondencia.",
+        "b": "El tipo de correspondencia, el nombre y la cardinalidad.",
+        "c": "El nombre, la cardinalidad, la extensión y la intensión.",
+        "d": "El nombre, el grado, el tipo de correspondencia y la cardinalidad."
+      },
+      "correcta": "d",
+      "explicacion": "De acuerdo con la caracterización más exhaustiva del formalismo de bases de datos relacionales y conceptuales, una relación queda completamente definida por su identificador semántico (nombre), el número de entidades que conecta (grado: binaria, ternaria), su conectividad estructural superior (tipo de correspondencia) y los límites de participación exactos de sus instancias (cardinalidad mínima y máxima)."
+    }
+  ]
+}

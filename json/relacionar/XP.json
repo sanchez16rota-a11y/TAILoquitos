@@ -1,0 +1,74 @@
+[
+  {
+    "concepto": "Programación en Parejas (Pair Programming)",
+    "categoria": "Prácticas de XP",
+    "definicion": "Técnica en la que dos desarrolladores trabajan juntos en una única estación de trabajo. Uno asume el rol de 'Conductor' (escribe el código) y el otro el de 'Navegador' (revisa el código en tiempo real, piensa en la estrategia y detecta errores).",
+    "que_resuelve": "Reduce drásticamente la tasa de errores en producción y elimina los silos de conocimiento, garantizando que al menos dos personas entiendan a fondo cada línea del sistema de forma nativa.",
+    "notacion_simple": {
+      "figura_principal": "Dos desarrolladores ante una sola pantalla y teclado.",
+      "responsabilidad_clave": "El Conductor pica el código; el Navegador hace control de calidad continuo.",
+      "interaccion": "Los roles se intercambian de forma periódica a lo largo de la jornada."
+    },
+    "palabras_clave_examen": ["dos desarrolladores", "conductor y navegador", "estación de trabajo única", "revisión continua"]
+  },
+  {
+    "concepto": "Desarrollo Guiado por Pruebas (TDD)",
+    "categoria": "Prácticas de XP",
+    "definicion": "Práctica de ingeniería de software que invierte el ciclo tradicional: se escribe una prueba automatizada antes de implementar el código de producción que debe satisfacer dicha prueba.",
+    "que_resuelve": "El código excesivamente complejo o sin probar. Obliga al desarrollador a entender los requisitos antes de programar y asegura una cobertura de pruebas automatizadas cercana al 100%, facilitando refactorizaciones seguras.",
+    "notacion_simple": {
+      "figura_principal": "Ciclo iterativo continuo: Rojo (Fallo) -> Verde (Acierto) -> Refactorización.",
+      "responsabilidad_clave": "Escribir la prueba mínima, hacerla pasar con el código más simple y limpiar el diseño.",
+      "interaccion": "Los desarrolladores ejecutan las pruebas de forma local antes de subir los cambios."
+    },
+    "palabras_clave_examen": ["prueba antes que código", "ciclo Rojo-Verde-Refactor", "pruebas unitarias", "diseño emergente"]
+  },
+  {
+    "concepto": "Integración Continua (CI)",
+    "categoria": "Prácticas de XP",
+    "definicion": "Práctica que obliga a los miembros del equipo a integrar y mezclar su código en el repositorio principal múltiples veces al día (normalmente cada vez que se completa una tarea pequeña). Cada subida es verificada por una construcción automática.",
+    "que_resuelve": "El antipatrón del 'infierno de la integración' (pasar semanas resolviendo conflictos de código al final del proyecto). Permite detectar fallos de compatibilidad e inconsistencias de forma inmediata.",
+    "notacion_simple": {
+      "figura_principal": "Servidor de compilación automático acoplado al control de versiones (Git).",
+      "responsabilidad_clave": "Compilar el sistema y ejecutar la suite completa de pruebas ante cada 'push'.",
+      "interaccion": "Si la compilación falla, el equipo detiene sus tareas hasta que se repare el tronco común."
+    },
+    "palabras_clave_examen": ["integrar varias veces al día", "construcción automática", "suite de pruebas", "tronco común"]
+  },
+  {
+    "concepto": "Propiedad Colectiva del Código",
+    "categoria": "Prácticas de XP",
+    "definicion": "Regla operativa que establece que todo el código del sistema pertenece a todos los desarrolladores por igual. Cualquier miembro del equipo tiene permiso y autoridad para modificar, refactorizar o mejorar cualquier módulo.",
+    "que_resuelve": "La dependencia de 'héroes' o cuellos de botella humanos (e.g., 'este módulo solo lo puede tocar Juan'). Evita que el proyecto se detenga si un desarrollador clave se pone enfermo o abandona el equipo.",
+    "notacion_simple": {
+      "figura_principal": "Código sin barreras de autoría ni bloqueos de edición por usuario.",
+      "responsabilidad_clave": "Cualquier pareja de programadores puede limpiar o reparar cualquier archivo.",
+      "interaccion": "Se apoya firmemente en el Pair Programming y TDD para mantener la seguridad estructural."
+    },
+    "palabras_clave_examen": ["código de todos", "permiso de modificación global", "eliminar dependencias individuales", "responsabilidad compartida"]
+  },
+  {
+    "concepto": "Cliente In Situ (On-site Customer)",
+    "categoria": "Prácticas de XP",
+    "definicion": "Exigencia metodológica de XP en la que un representante legítimo de los usuarios o del negocio trabaja físicamente en la misma sala que el equipo de desarrollo, estando disponible a tiempo completo.",
+    "que_resuelve": "Los retrasos por falta de especificación y los malentendidos en los requisitos. El equipo puede resolver dudas funcionales o validar interfaces en cuestión de minutos, eliminando bucles de emails.",
+    "notacion_simple": {
+      "figura_principal": "El cliente integrado físicamente en el espacio de trabajo técnico.",
+      "responsabilidad_clave": "Definir las historias de usuario, priorizar las pruebas de aceptación y resolver dudas de negocio.",
+      "interaccion": "Conversaciones cara a cara constantes con los programadores durante el día."
+    },
+    "palabras_clave_examen": ["cliente en la misma sala", "disponibilidad a tiempo completo", "feedback inmediato", "historias de usuario"]
+  },
+  {
+    "concepto": "Ritmo Sostenible (Sustainable Pace)",
+    "categoria": "Prácticas de XP",
+    "definicion": "Regla que establece que el equipo no debe trabajar horas extra de forma sistemática semana tras semana (originalmente fijado en un máximo de 40 horas semanales), buscando mantener la salud física y mental.",
+    "que_resuelve": "El agotamiento profesional ('burnout') y la consecuente caída drástica en la calidad del software. Los programadores cansados cometen más errores lógicos, lo que a la larga ralentiza el proyecto.",
+    "notacion_simple": {
+      "figura_principal": "Jornada laboral fija y equilibrada sin sobreesfuerzos crónicos.",
+      "responsabilidad_clave": "Ajustar el alcance de las iteraciones a la capacidad real del equipo.",
+      "interaccion": "Fomenta que los desarrolladores lleguen frescos y concentrados cada mañana."
+    },
+    "palabras_clave_examen": ["máximo 40 horas", "evitar horas extra", "salud del equipo", "calidad del código"]
+  }
+]

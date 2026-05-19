@@ -1,0 +1,74 @@
+[
+  {
+    "concepto": "Tablero Kanban",
+    "categoria": "Elementos de Kanban",
+    "definicion": "Herramienta visual que mapea el flujo de trabajo de un equipo, dividiendo el proceso en columnas que representan las distintas fases por las que pasa una tarea (típicamente: Por hacer, En proceso, Hecho).",
+    "que_resuelve": "La falta de visibilidad del estado del proyecto. Al hacer transparente el flujo de trabajo en tiempo real, permite que todo el equipo detecte atascos y dependencias de un solo vistazo.",
+    "notacion_simple": {
+      "figura_principal": "Tablero estructurado en columnas con tarjetas móviles (tarjetas Kanban).",
+      "responsabilidad_clave": "Reflejar el estado real del inventario de trabajo y del proceso.",
+      "interaccion": "Las tarjetas se desplazan horizontalmente de izquierda a derecha a medida que avanza el trabajo."
+    },
+    "palabras_clave_examen": ["mapeado visual", "tarjetas", "columnas de estado", "flujo de trabajo continuo"]
+  },
+  {
+    "concepto": "Límite WIP (Work In Progress)",
+    "categoria": "Métricas y Reglas de Kanban",
+    "definicion": "Restricción explícita que fija el número máximo de tareas o tarjetas que pueden coexistir simultáneamente en una columna o fase específica del tablero.",
+    "que_resuelve": "La sobrecarga del equipo y el cambio de contexto constante. Fuerza un modelo de 'sistema Pull' (arrastrar), donde no se puede introducir nuevo trabajo en una fase hasta que se haya completado y liberado el trabajo anterior.",
+    "notacion_simple": {
+      "figura_principal": "Un número asignado en la cabecera de la columna (e.g., 'Desarrollo [Max 3]').",
+      "responsabilidad_clave": "Exponer los cuellos de botella del sistema de forma inmediata.",
+      "interaccion": "Si la columna alcanza su límite, ningún desarrollador puede pasar otra tarea a esa fase."
+    },
+    "palabras_clave_examen": ["trabajo en curso", "sistema Pull", "cuello de botella", "restricción explícita"]
+  },
+  {
+    "concepto": "Lead Time (Tiempo de Entrega Global)",
+    "categoria": "Métricas y Reglas de Kanban",
+    "definicion": "Métrica de rendimiento que mide el ciclo total de vida de una tarea, computando el tiempo transcurrido desde que el cliente plantea la petición hasta que el entregable se completa definitivamente.",
+    "que_resuelve": "La dificultad para dar estimaciones comerciales realistas. Mide la experiencia del cliente final y la velocidad de respuesta global de toda la cadena de valor.",
+    "notacion_simple": {
+      "figura_principal": "Cronómetro global de proceso (Desde la idea o buzón de entrada hasta el fin).",
+      "responsabilidad_clave": "Evaluar la predictibilidad comercial de la organización.",
+      "interaccion": "Engloba tanto el tiempo de espera en cola como el tiempo de ejecución técnica activa."
+    },
+    "palabras_clave_examen": ["petición del cliente", "ciclo total", "experiencia del cliente", "predictibilidad"]
+  },
+  {
+    "concepto": "Cycle Time (Tiempo de Ciclo Técnico)",
+    "categoria": "Métricas y Reglas de Kanban",
+    "definicion": "Métrica de rendimiento que computa el tiempo que el equipo técnico pasa trabajando activamente en una tarea, iniciándose en el momento en que entra en la columna de ejecución (En proceso) y terminando al alcanzar el estado final.",
+    "que_resuelve": "La falta de optimización del proceso técnico interno. Permite medir el rendimiento puro del equipo de desarrollo, aislando los tiempos de espera externos o comerciales.",
+    "notacion_simple": {
+      "figura_principal": "Cronómetro de ejecución interna (Desde que se asume la tarea en desarrollo hasta el fin).",
+      "responsabilidad_clave": "Identificar ineficiencias o bloqueos en las fases de construcción y pruebas.",
+      "interaccion": "Siempre es un subconjunto menor o igual que el Lead Time global."
+    },
+    "palabras_clave_examen": ["trabajo activo", "columna En proceso", "rendimiento interno", "subconjunto del Lead Time"]
+  },
+  {
+    "concepto": "Leyes de Políticas Explícitas",
+    "categoria": "Principios de Kanban",
+    "definicion": "Normas y criterios de funcionamiento del equipo que se redactan y definen de forma consensuada, pública y visible junto al tablero (e.g., criterios para priorizar, definición de bloqueado, etc.).",
+    "que_resuelve": "Las suposiciones erróneas y la inconsistencia operativa. Al formalizar las reglas del juego, se asegura que todos los miembros del equipo operen bajo el mismo estándar de calidad y priorización.",
+    "notacion_simple": {
+      "figura_principal": "Reglas de juego visibles en la base o márgenes del tablero.",
+      "responsabilidad_clave": "Establecer directrices claras sin necesidad de supervisión jerárquica constante.",
+      "interaccion": "Se modifican y adaptan formalmente mediante consenso durante las reuniones de mejora."
+    },
+    "palabras_clave_examen": ["reglas del juego", "criterios consensuados", "visibilidad de normas", "gestión operativa"]
+  },
+  {
+    "concepto": "Kaizen (Mejora Evolutiva)",
+    "categoria": "Principios de Kanban",
+    "definicion": "Principio cultural que aboga por una mejora continua, colaborativa y evolutiva. En Kanban no se revoluciona el sistema desde el primer día, sino que se empieza con el proceso actual y se introducen pequeños cambios paulatinos.",
+    "que_resuelve": "La resistencia al cambio organizacional. Al evitar reestructuraciones drásticas e impositivas de roles al inicio, disminuye la fricción y fomenta el liderazgo en todos los niveles.",
+    "notacion_simple": {
+      "figura_principal": "Filosofía de optimización basada en pequeños pasos empíricos.",
+      "responsabilidad_clave": "Fomentar la adaptación constante basada en datos reales del flujo.",
+      "interaccion": "Se apoya en modelos científicos y métricas de rendimiento (gráficos de flujo acumulado)."
+    },
+    "palabras_clave_examen": ["mejora continua", "cambio evolutivo", "empezar con lo que haces ahora", "resistencia al cambio"]
+  }
+]

@@ -1,0 +1,206 @@
+[
+  {
+    "evento": "click (onclick)",
+    "categoria": "Eventos del Ratón",
+    "definicion": "Se dispara cuando el usuario presiona y suelta un botón del ratón (habitualmente el izquierdo) sobre un mismo elemento de la interfaz.",
+    "que_resuelve": "Es la base de la interactividad web. Permite asociar acciones lógicas directas a elementos visuales, como abrir un menú, desplegar un modal o activar una función de guardado.",
+    "notacion_simple": {
+      "sintaxis": "elemento.addEventListener('click', miFuncion);",
+      "comportamiento": "Burbujea por todo el DOM de forma nativa. Se puede activar también mediante el teclado si el elemento tiene el foco y se pulsa Enter/Espacio.",
+      "frecuencia_examen": "Obligatoria. El evento más básico y utilizado."
+    },
+    "palabras_clave_examen": ["presionar y suelta", "botón izquierdo", "interactividad elemental", "burbujea"]
+  },
+  {
+    "evento": "dblclick (ondblclick)",
+    "categoria": "Eventos del Ratón",
+    "definicion": "Se dispara cuando el usuario hace doble clic rápido con el botón del ratón sobre un único elemento del DOM.",
+    "que_resuelve": "Permite ocultar acciones avanzadas o de edición en la interfaz para no sobrecargar visualmente al usuario (por ejemplo, abrir un archivo, entrar en modo edición sobre un texto plano o hacer zoom en un mapa).",
+    "notacion_simple": {
+      "sintaxis": "elemento.addEventListener('dblclick', miFuncion);",
+      "comportamiento": "Lanza dos eventos 'click' individuales seguidos de un 'dblclick'.",
+      "frecuencia_examen": "Media. Suele ponerse en contraste con el click simple."
+    },
+    "palabras_clave_examen": ["doble clic", "pulsación rápida", "modo edición", "acciones avanzadas"]
+  },
+  {
+    "evento": "mousedown (onmousedown)",
+    "categoria": "Eventos del Ratón",
+    "definicion": "Se dispara en el preciso instante en que el usuario presiona cualquier botón del ratón hacia abajo sobre un elemento, antes de que llegue a soltarlo.",
+    "que_resuelve": "Permite capturar el momento exacto del inicio de interacciones arrastrables (Drag and Drop), juegos mecánicos rápidos o lógicas donde importa saber qué botón físico del ratón (izquierdo, central o derecho) se ha hundido.",
+    "notacion_simple": {
+      "sintaxis": "elemento.addEventListener('mousedown', miFuncion);",
+      "comportamiento": "Aporta información del botón pulsado mediante la propiedad 'event.button' (0: izquierdo, 1: rueda, 2: derecho).",
+      "frecuencia_examen": "Alta. Se combina con mouseup y mousemove para mecánicas de arrastre."
+    },
+    "palabras_clave_examen": ["presionar botón ratón", "hacia abajo", "antes de soltar", "event.button"]
+  },
+  {
+    "evento": "mouseup (onmouseup)",
+    "categoria": "Eventos del Ratón",
+    "definicion": "Se dispara en el momento en que el usuario suelta el botón del ratón que mantenía presionado sobre un elemento.",
+    "que_resuelve": "Indica la finalización de una acción física de pulsación o arrastre. Es crucial para soltar elementos arrastrables (Drop) o para registrar que un proceso de pulsación larga ha terminado.",
+    "notacion_simple": {
+      "sintaxis": "elemento.addEventListener('mouseup', miFuncion);",
+      "comportamiento": "Es la contraparte de mousedown. Si se ejecutan mousedown y mouseup seguidos en el mismo nodo, justo después se lanza el evento 'click'.",
+      "frecuencia_examen": "Alta. Clave para entender la secuencia lógica que compone un click completo."
+    },
+    "palabras_clave_examen": ["suelta botón ratón", "levantar antes de soltar", "finalizar arrastre", "secuencia click"]
+  },
+  {
+    "evento": "mousemove (onmousemove)",
+    "categoria": "Eventos del Ratón",
+    "definicion": "Se dispara de forma continua e inmediata cada vez que el usuario mueve el puntero del ratón aunque sea un único píxel dentro del área de un elemento.",
+    "que_resuelve": "Permite realizar un seguimiento preciso de las coordenadas del cursor en tiempo real para interfaces ultra-dinámicas, como arrastrar elementos por la pantalla, dibujar en un lienzo canvas, o hacer que efectos visuales sigan al puntero.",
+    "notacion_simple": {
+      "sintaxis": "elemento.addEventListener('mousemove', miFuncion);",
+      "comportamiento": "Se ejecuta de manera masiva y repetitiva. Proporciona las coordenadas espaciales a través de 'clientX/clientY' y 'pageX/pageY'.",
+      "frecuencia_examen": "Alta. Al igual que scroll, exige optimización de rendimiento debido a su alta tasa de disparos."
+    },
+    "palabras_clave_examen": ["mover puntero", "coordenadas del cursor", "seguimiento continuo", "clientX/clientY"]
+  },
+  {
+    "evento": "mouseover (onmouseover)",
+    "categoria": "Eventos del Ratón",
+    "definicion": "Se dispara cuando el puntero del ratón entra por primera vez dentro de los límites de un elemento o dentro de cualquiera de sus elementos hijos.",
+    "que_resuelve": "Permite gestionar efectos de interacción visual avanzados (como tooltips dinámicos o menús desplegables). Al contrario que mouseenter, este evento avisa de la entrada en cada uno de los nodos internos del contenedor.",
+    "notacion_simple": {
+      "sintaxis": "elemento.addEventListener('mouseover', miFuncion);",
+      "comportamiento": "Burbujea por el DOM. Se dispara tanto al entrar al elemento padre como al pasar por encima de sus hijos.",
+      "frecuencia_examen": "Altísima. Pregunta trampa fija para evaluar si conoces su diferencia de burbujeo con mouseenter."
+    },
+    "palabras_clave_examen": ["entrar puntero", "burbujea hacia padres", "detecta hijos", "tooltips"]
+  },
+  {
+    "evento": "mouseout (onmouseout)",
+    "categoria": "Eventos del Ratón",
+    "definicion": "Se dispara cuando el puntero del ratón sale de los límites de un elemento o cuando se mueve desde el elemento actual hacia uno de sus elementos hijos.",
+    "que_resuelve": "Permite restaurar o limpiar los cambios visuales aplicados previamente (como cerrar un menú o destruir un tooltip). Avisa de cualquier salida de foco espacial en la jerarquía del nodo.",
+    "notacion_simple": {
+      "sintaxis": "elemento.addEventListener('mouseout', miFuncion);",
+      "comportamiento": "Burbujea por el DOM. Es el opuesto directo de mouseover y sufre su misma reactividad ante elementos hijos.",
+      "frecuencia_examen": "Alta. Vinculado a las trampas de propagación junto con mouseover."
+    },
+    "palabras_clave_examen": ["salir puntero", "burbujea hacia padres", "moverse a hijo", "restaurar interfaz"]
+  },
+  {
+    "evento": "mouseenter (onmouseenter)",
+    "categoria": "Eventos del Ratón",
+    "definicion": "Se dispara únicamente cuando el puntero del ratón entra en el área física de un elemento sobre el que está registrado el escuchador.",
+    "que_resuelve": "Es la alternativa limpia y eficiente a mouseover. Al no burbujear ni dispararse cuando el ratón pasa por encima de los elementos hijos internos, evita ejecuciones repetitivas innecesarias, simulando de forma exacta el comportamiento del :hover de CSS.",
+    "notacion_simple": {
+      "sintaxis": "elemento.addEventListener('mouseenter', miFuncion);",
+      "comportamiento": "No burbujea. Solo se lanza una vez al cruzar la frontera exterior del elemento padre.",
+      "frecuencia_examen": "Muy alta. Se pregunta específicamente para validar soluciones eficientes que eviten fallos de rendimiento."
+    },
+    "palabras_clave_examen": ["entrar elemento padre", "no burbujea", "ignora hijos", "comportamiento hover"]
+  },
+  {
+    "evento": "mouseleave (onmouseleave)",
+    "categoria": "Eventos del Ratón",
+    "definicion": "Se dispara únicamente cuando el puntero del ratón abandona por completo el área física delimitada de un elemento y de todos sus descendientes.",
+    "que_resuelve": "Garantiza un control de salida robusto y limpio de una zona de la interfaz. Al no dispararse de forma accidental al moverse entre los hijos del contenedor, es el evento ideal para cerrar menús desplegables complejos de forma segura.",
+    "notacion_simple": {
+      "sintaxis": "elemento.addEventListener('mouseleave', miFuncion);",
+      "comportamiento": "No burbujea. Es la contraparte exacta de mouseenter y el opuesto eficiente de mouseout.",
+      "frecuencia_examen": "Muy alta. Pareja indispensable de mouseenter en el diseño frontend limpio."
+    },
+    "palabras_clave_examen": ["abandonar por completo", "no burbujea", "limpieza de zona", "opuesto mouseenter"]
+  },
+  {
+    "evento": "contextmenu (oncontextmenu)",
+    "categoria": "Eventos del Ratón",
+    "definicion": "Se dispara cuando el usuario hace clic con el botón derecho del ratón sobre un elemento de la interfaz, justo antes de que aparezca el menú contextual por defecto del sistema operativo.",
+    "que_resuelve": "Permite anular el menú gris genérico del navegador para construir menús contextuales personalizados basados en la lógica de la aplicación web (por ejemplo, menús especiales al hacer clic derecho en una carpeta en Google Drive).",
+    "notacion_simple": {
+      "sintaxis": "elemento.addEventListener('contextmenu', miFuncion);",
+      "comportamiento": "Suele requerir de forma obligatoria la instrucción 'event.preventDefault()' para ocultar el menú del sistema.",
+      "frecuencia_examen": "Media-Alta. Típico escenario práctico para evaluar control de comportamientos nativos."
+    },
+    "palabras_clave_examen": ["clic derecho", "menú contextual", "preventDefault", "menú personalizado"]
+  },
+  {
+    "evento": "blur (onblur)",
+    "categoria": "Eventos de Formulario y Foco",
+    "definicion": "Se dispara cuando un elemento (como un input, textarea o botón) pierde el foco de atención del usuario, ya sea porque este hace clic en otra parte o porque navega usando el tabulador.",
+    "que_resuelve": "Permite realizar validaciones de datos en tiempo real justo cuando el usuario termina de rellenar un campo específico (por ejemplo, comprobar si el formato de un email o teléfono es válido antes del envío global).",
+    "notacion_simple": {
+      "sintaxis": "elemento.addEventListener('blur', miFuncion);",
+      "comportamiento": "No propaga por burbujeo (Bubbling) de forma nativa. Para delegación de eventos se suele usar su homólogo 'focusout'.",
+      "frecuencia_examen": "Altísima. Concepto fijo en pruebas de control de formularios."
+    },
+    "palabras_clave_examen": ["perder el foco", "clic fuera", "validación de campo", "focusout"]
+  },
+  {
+    "evento": "focus (onfocus)",
+    "categoria": "Eventos de Formulario y Foco",
+    "definicion": "Se dispara cuando un elemento interactivo recibe el foco de atención, convirtiéndose en el componente activo para la entrada de datos del usuario.",
+    "que_resuelve": "Mejora la experiencia y accesibilidad web. Permite destacar visualmente el campo que se está editando, desplegar automáticamente menús auxiliares o mostrar textos de ayuda flotantes.",
+    "notacion_simple": {
+      "sintaxis": "elemento.addEventListener('focus', miFuncion);",
+      "comportamiento": "No burbujea nativamente. Su alternativa compatible con la delegación de eventos en contenedores padres es 'focusin'.",
+      "frecuencia_examen": "Muy alta. Pareja indispensable de validación junto con el evento blur."
+    },
+    "palabras_clave_examen": ["recibir el foco", "elemento activo", "resaltado visual", "focusin"]
+  },
+  {
+    "evento": "select (onselect)",
+    "categoria": "Eventos de Formulario y Foco",
+    "definicion": "Se dispara cuando el usuario selecciona o arrastra el cursor para marcar una porción de texto dentro de un campo de entrada, concretamente en etiquetas `<input type=\"text\">` o `<textarea>`.",
+    "que_resuelve": "Permite interactuar con el texto marcado por el usuario de manera inmediata para añadir barras de herramientas contextuales (como botones de copiar, traducir o dar formato de negrita/cursiva a la selección).",
+    "notacion_simple": {
+      "sintaxis": "elemento.addEventListener('select', miFuncion);",
+      "comportamiento": "Se complementa en el script con las propiedades 'selectionStart' y 'selectionEnd' del nodo para conocer la posición exacta de los caracteres destacados.",
+      "frecuencia_examen": "Media. Trampa habitual: en formularios estándar no salta al seleccionar texto plano de un párrafo ordinario."
+    },
+    "palabras_clave_examen": ["seleccionar texto", "input o textarea", "marcar caracteres", "selectionStart"]
+  },
+  {
+    "evento": "change (onchange)",
+    "categoria": "Eventos de Formulario y Foco",
+    "definicion": "Se dispara cuando se consolida y confirma la modificación del valor de un elemento de formulario. En elementos de texto ocurre al perder el foco tras el cambio, mientras que en desplegables (`<select>`), casillas de verificación o botones de radio ocurre inmediatamente tras la selección.",
+    "que_resuelve": "Optimiza el procesamiento del navegador. Evita lanzar lógicas pesadas o peticiones al servidor con cada pulsación de tecla, esperando a que la edición del campo se dé por concluida.",
+    "notacion_simple": {
+      "sintaxis": "elemento.addEventListener('change', miFuncion);",
+      "comportamiento": "Burbujea de forma convencional. No se ejecuta de forma repetitiva mientras el usuario está escribiendo.",
+      "frecuencia_examen": "Altísima. Clave memorizar cuándo salta en un select vs cuándo salta en un input de texto."
+    },
+    "palabras_clave_examen": ["valor modificado", "cambio confirmado", "perder el foco con cambios", "select/checkbox"]
+  },
+  {
+    "evento": "input (oninput)",
+    "categoria": "Eventos de Formulario y Foco",
+    "definicion": "Se dispara de manera síncrona y continua en el instante preciso en que el valor de un elemento `<input>`, `<textarea>` o etiqueta con la propiedad `contenteditable` cambia, ya sea por escribir, borrar o pegar contenido.",
+    "que_resuelve": "Habilita la programación reactiva pura en el cliente, permitiendo desarrollar contadores dinámicos de caracteres (e.g., 'quedan 50 letras'), filtrados inmediatos de tablas mientras se escribe o validaciones de contraseñas sobre la marcha.",
+    "notacion_simple": {
+      "sintaxis": "elemento.addEventListener('input', miFuncion);",
+      "comportamiento": "Ejecución repetitiva e inmediata por cada carácter introducido, modificado o suprimido.",
+      "frecuencia_examen": "Alta. Se utiliza sistemáticamente para contrastar su rendimiento frente a change."
+    },
+    "palabras_clave_examen": ["tiempo real absoluto", "mientras escribe", "pulsación continua", "reactivo"]
+  },
+  {
+    "evento": "submit (onsubmit)",
+    "categoria": "Eventos de Formulario y Foco",
+    "definicion": "Se dispara directamente sobre la etiqueta `<form>` cuando el usuario lanza la orden de envío, bien pulsando un botón de tipo `type=\"submit\"` o presionando la tecla Enter dentro de un campo de texto.",
+    "que_resuelve": "Funciona como la última compuerta de seguridad en la captura de datos. Permite interceptar el envío con JavaScript para validar el estado completo del formulario antes de procesarlo mediante AJAX o delegar en el servidor.",
+    "notacion_simple": {
+      "sintaxis": "formulario.addEventListener('submit', miFuncion);",
+      "comportamiento": "Su acción nativa recarga la página enviando los datos a la URL del atributo 'action'. Se suele anular con 'event.preventDefault()'.",
+      "frecuencia_examen": "Crítica. Concepto básico y central del desarrollo web frontend."
+    },
+    "palabras_clave_examen": ["enviar formulario", "elemento form", "última validación", "action/preventDefault"]
+  },
+  {
+    "evento": "reset (onreset)",
+    "categoria": "Eventos de Formulario y Foco",
+    "definicion": "Se dispara sobre la etiqueta `<form>` cuando el usuario ejecuta la limpieza y restauración del formulario, habitualmente mediante un botón `type=\"reset\"`.",
+    "que_resuelve": "Permite interceptar la acción de borrado masivo de un formulario para solicitar confirmación al usuario mediante un diálogo o para limpiar estados de variables internas de control personalizadas.",
+    "notacion_simple": {
+      "sintaxis": "formulario.addEventListener('reset', miFuncion);",
+      "comportamiento": "Restaura de golpe todos los campos del formulario a sus estados e inputs por defecto del código inicial.",
+      "frecuencia_examen": "Media. Complemento del ciclo de vida operativo de un formulario."
+    },
+    "palabras_clave_examen": ["limpiar formulario", "botón reset", "valores iniciales", "elemento form"]
+  }
+]

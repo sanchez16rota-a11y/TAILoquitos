@@ -1,0 +1,134 @@
+[
+  {
+    "concepto": "Scrum Master",
+    "categoria": "Roles de Scrum",
+    "definicion": "Líder que está al servicio del Equipo Scrum y de la organización en general. Se encarga de eliminar los impedimentos que frenan el progreso del equipo y de asegurar que la teoría y prácticas de Scrum se entiendan y adopten por completo.",
+    "que_resuelve": "Garantiza la efectividad del equipo fomentando la autogestión, actuando como facilitador de los eventos y protegiendo al equipo de interferencias externas.",
+    "notacion_simple": {
+      "figura_principal": "Líder servicial y facilitador del proceso.",
+      "responsabilidad_clave": "Eliminar impedimentos y asegurar la adopción del marco Scrum.",
+      "interaccion": "Ayuda tanto al Product Owner como al Developers y a la propia organización."
+    },
+    "palabras_clave_examen": ["líder servicial", "eliminar impedimentos", "asegurar el proceso", "facilitador"]
+  },
+  {
+    "concepto": "Product Owner",
+    "categoria": "Roles de Scrum",
+    "definicion": "Es la única persona responsable de maximizar el valor del producto resultante del trabajo del Equipo Scrum. Se encarga de la gestión eficaz de la lista de producto (Product Backlog).",
+    "que_resuelve": "Centraliza la toma de decisiones sobre el alcance del producto. Evita contradicciones al priorizar los requisitos según el valor de negocio y las necesidades de los usuarios o stakeholders.",
+    "notacion_simple": {
+      "figura_principal": "Representante del cliente y del negocio.",
+      "responsabilidad_clave": "Maximizar el valor del producto y gestionar el Product Backlog.",
+      "interaccion": "Colabora estrechamente con los Developers para clarificar los objetivos."
+    },
+    "palabras_clave_examen": ["maximizar el valor", "gestionar el Product Backlog", "única persona", "retorno de inversión"]
+  },
+  {
+    "concepto": "Developers (Desarrolladores)",
+    "categoria": "Roles de Scrum",
+    "definicion": "Las personas del Equipo Scrum que se comprometen a crear cualquier aspecto de un Incremento útil en cada Sprint. Son profesionales multidisciplinares y autogestionados.",
+    "que_resuelve": "Elimina los silos de especialización rígidos y la dependencia de aprobaciones externas, ya que cuentan con todas las habilidades necesarias para generar el entregable.",
+    "notacion_simple": {
+      "figura_principal": "Equipo técnico multidisciplinar.",
+      "responsabilidad_clave": "Crear el plan para el Sprint (Sprint Backlog) y realizar el trabajo técnico.",
+      "interaccion": "Se coordinan diariamente de forma interna durante la Daily Scrum."
+    },
+    "palabras_clave_examen": ["multidisciplinar", "autogestionado", "crear el incremento", "estimar el esfuerzo"]
+  },
+  {
+    "concepto": "Sprint",
+    "categoria": "Eventos de Scrum",
+    "definicion": "El contenedor de todos los demás eventos. Es un intervalo de tiempo prefijado y constante de un mes o menos donde se crea un incremento de producto de valor y potencialmente entregable.",
+    "que_resuelve": "La incertidumbre y el riesgo a largo plazo. Al limitar el tiempo, permite recibir feedback rápido del cliente y pivotar si el mercado o los requisitos cambian.",
+    "notacion_simple": {
+      "figura_principal": "Bloque de tiempo fijo (Timebox) de 1 a 4 semanas.",
+      "responsabilidad_clave": "Mantener un ritmo constante de desarrollo sin cambiar los objetivos intermedios.",
+      "interaccion": "Comienza inmediatamente después de la conclusión del Sprint anterior."
+    },
+    "palabras_clave_examen": ["evento contenedor", "duración fija", "timebox", "potencialmente entregable"]
+  },
+  {
+    "concepto": "Sprint Planning",
+    "categoria": "Eventos de Scrum",
+    "definicion": "Evento inicial del Sprint donde se establece el trabajo que se va a realizar. Todo el Equipo Scrum colabora para definir el objetivo del Sprint (Sprint Goal) y seleccionar los elementos del Product Backlog.",
+    "que_resuelve": "La falta de dirección. Responde de forma colaborativa a tres preguntas clave: ¿Por qué es valioso este Sprint?, ¿Qué se puede hacer? y ¿Cómo se logrará?",
+    "notacion_simple": {
+      "figura_principal": "Reunión de planificación con un timebox máximo de 8 horas para Sprints de un mes.",
+      "responsabilidad_clave": "Definir el Sprint Goal y el Sprint Backlog inicial.",
+      "interaccion": "El Product Owner propone el valor y los Developers seleccionan cuánto trabajo comprometer."
+    },
+    "palabras_clave_examen": ["¿Por qué?, ¿Qué?, ¿Cómo?", "Sprint Goal", "planificación inicial", "selección de elementos"]
+  },
+  {
+    "concepto": "Daily Scrum",
+    "categoria": "Eventos de Scrum",
+    "definicion": "Evento de 15 minutos para los Desarrolladores del Equipo Scrum. Su propósito es inspeccionar el progreso hacia el Objetivo del Sprint y adaptar el Sprint Backlog según sea necesario, ajustando el trabajo diario planificado.",
+    "que_resuelve": "Los problemas de comunicación interna y los retrasos. Permite detectar bloqueos de manera inmediata y replanificar el trabajo técnico en ciclos de 24 horas.",
+    "notacion_simple": {
+      "figura_principal": "Reunión diaria de pie con una duración fija de 15 minutos.",
+      "responsabilidad_clave": "Inspeccionar el progreso diario y sincronizar las actividades del día.",
+      "interaccion": "Exclusiva de los Developers, el Scrum Master solo asegura que ocurra."
+    },
+    "palabras_clave_examen": ["15 minutos", "inspeccionar progreso", "Developers", "sincronizar trabajo diario"]
+  },
+  {
+    "concepto": "Sprint Review",
+    "categoria": "Eventos de Scrum",
+    "definicion": "Evento celebrado al final del Sprint para inspeccionar el resultado del mismo (el Incremento) y determinar adaptaciones futuras. El equipo y los interesados revisan lo que se logró y cómo cambió el entorno.",
+    "que_resuelve": "El desfase entre las expectativas del cliente y el software desarrollado. Proporciona un espacio de demostración en vivo para validar el incremento con los stakeholders.",
+    "notacion_simple": {
+      "figura_principal": "Reunión de revisión y demostración con un timebox máximo de 4 horas para Sprints de un mes.",
+      "responsabilidad_clave": "Inspeccionar el Incremento y adaptar el Product Backlog según el feedback.",
+      "interaccion": "Participan el Equipo Scrum al completo y los interesados clave (stakeholders)."
+    },
+    "palabras_clave_examen": ["inspeccionar el Incremento", "stakeholders", "demostración de valor", "feedback"]
+  },
+  {
+    "concepto": "Sprint Retrospective",
+    "categoria": "Eventos de Scrum",
+    "definicion": "Evento final del Sprint cuyo propósito es planificar formas de aumentar la calidad y la efectividad del equipo. Se inspecciona cómo fue el Sprint con respecto a las personas, las relaciones, los procesos y las herramientas.",
+    "que_resuelve": "La falta de mejora continua (kaizen). Permite al propio equipo identificar fricciones internas, analizar fallos metodológicos y comprometerse a implementar mejoras en el siguiente Sprint.",
+    "notacion_simple": {
+      "figura_principal": "Reunión de mejora interna con un timebox máximo de 3 horas para Sprints de un mes.",
+      "responsabilidad_clave": "Identificar mejoras en los procesos y relaciones del equipo.",
+      "interaccion": "Participa estrictamente todo el Equipo Scrum (PO, SM y Developers)."
+    },
+    "palabras_clave_examen": ["calidad y efectividad", "mejora continua", "personas y procesos", "fin del Sprint"]
+  },
+  {
+    "concepto": "Product Backlog (Lista de Producto)",
+    "categoria": "Artefactos de Scrum",
+    "definicion": "Una lista ordenada y emergente de lo que se necesita para mejorar el producto. Es la única fuente de requisitos para cualquier cambio a realizar por el Equipo Scrum.",
+    "que_resuelve": "La dispersión de requisitos. Reemplaza los antiguos documentos extensos de especificaciones por una lista viva, dinámica y priorizada continuamente por valor.",
+    "notacion_simple": {
+      "figura_principal": "Lista centralizada de Historias de Usuario, tareas y mejoras.",
+      "responsabilidad_clave": "Su compromiso asociado es el Objetivo del Producto (Product Goal).",
+      "interaccion": "Es propiedad exclusiva del Product Owner, aunque los Developers pueden ayudar a refinarla."
+    },
+    "palabras_clave_examen": ["lista ordenada", "emergente", "fuente única de requisitos", "Product Goal"]
+  },
+  {
+    "concepto": "Sprint Backlog (Lista del Sprint)",
+    "categoria": "Artefactos de Scrum",
+    "definicion": "Compuesto por el Objetivo del Sprint (Sprint Goal), el conjunto de elementos del Product Backlog seleccionados para el Sprint, así como un plan de acción detallado para entregar el Incremento.",
+    "que_resuelve": "La falta de visibilidad del trabajo técnico diario. Hace visible en tiempo real todo el trabajo que los Desarrolladores identifican como necesario para alcanzar el objetivo.",
+    "notacion_simple": {
+      "figura_principal": "Plan detallado de tareas del Sprint (a menudo visualizado en un tablero de tareas).",
+      "responsabilidad_clave": "Su compromiso asociado es el Objetivo del Sprint (Sprint Goal).",
+      "interaccion": "Es gestionado y modificado exclusivamente por los Developers durante el Sprint."
+    },
+    "palabras_clave_examen": ["plan de acción técnico", "Sprint Goal", "elementos seleccionados", "propiedad de los Developers"]
+  },
+  {
+    "concepto": "Incremento",
+    "categoria": "Artefactos de Scrum",
+    "definicion": "Un paso concreto hacia el Objetivo del Producto. Cada Incremento se añade a todos los Incrementos anteriores y se verifica minuciosamente, asegurando que todos funcionen juntos.",
+    "que_resuelve": "El problema de los entregables parciales que no funcionan. Garantiza que al final del Sprint haya software real, probado y que cumple con los estándares mínimos de calidad.",
+    "notacion_simple": {
+      "figura_principal": "Software o producto real, usable y verificado.",
+      "responsabilidad_clave": "Su compromiso asociado es la Definición de Terminado (Definition of Done).",
+      "interaccion": "Se presenta formalmente en la Sprint Review para la inspección de los clientes."
+    },
+    "palabras_clave_examen": ["Definition of Done", "paso concreto", "potencialmente operativo", "acumulativo"]
+  }
+]
