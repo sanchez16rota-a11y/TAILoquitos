@@ -1,92 +1,362 @@
-{
-  "Jakarta EE": "Especificación estándar para el desarrollo de aplicaciones empresariales en Java. Define un conjunto de APIs y servicios como servlets, JPA, CDI, JAX-RS, EJB, etc.",
-  "Servlet": "Componente Java que maneja peticiones HTTP en el servidor. Es la base de la programación web en Jakarta EE.",
-  "JSP (Jakarta Server Pages)": "Tecnología que permite embeber código Java en páginas HTML para generar contenido dinámico en el servidor. Los archivos .jsp son compilados a servlets por el contenedor web.",
-  "JSF (Jakarta Faces)": "Framework para construir interfaces de usuario basadas en componentes para aplicaciones web Java EE/Jakarta EE. Usa el patrón MVC y soporta gestión de estado.",
-  "EJB (Enterprise JavaBeans)": "Componentes del lado del servidor que encapsulan la lógica de negocio (Session Beans, Message-Driven Beans). Gestionan transacciones, seguridad y concurrencia.",
-  "JPA (Jakarta Persistence API)": "Especificación estándar de Java/Jakarta EE para el mapeo objeto-relacional (ORM). Permite persistir objetos Java en bases de datos relacionales.",
-  "Hibernate": "Implementación más popular de JPA. Framework de mapeo objeto-relacional para Java que gestiona la persistencia de objetos en bases de datos.",
-  "CDI (Contexts and Dependency Injection)": "Especificación de Jakarta EE para la inyección de dependencias y gestión del ciclo de vida de los componentes (beans). Usa @Inject.",
-  "JAX-RS (Jakarta RESTful Web Services)": "API de Jakarta EE para crear servicios web RESTful. Usa anotaciones como @GET, @POST, @Path, @Produces.",
-  "JAX-WS (Jakarta XML Web Services)": "API para crear y consumir servicios web basados en SOAP y WSDL usando @WebService y @WebMethod.",
-  "JMS (Jakarta Messaging)": "API estándar para el intercambio de mensajes asíncronos entre componentes de aplicaciones Java empresariales (colas y tópicos).",
-  "JNDI (Java Naming and Directory Interface)": "API que proporciona servicios de nombres y directorio para localizar recursos como fuentes de datos (DataSource) mediante un nombre lógico.",
-  "JDBC (Java Database Connectivity)": "API estándar de Java para conectar aplicaciones con bases de datos relacionales. Capa de bajo nivel sobre la que se construyen JPA e Hibernate.",
-  "JTA (Jakarta Transactions)": "API que define la interfaz entre el gestor de transacciones y los participantes. Permite gestionar transacciones distribuidas usando @Transactional.",
-  "GlassFish": "Servidor de aplicaciones de referencia para Jakarta EE, mantenido por la Eclipse Foundation. Implementa la especificación completa.",
-  "WildFly": "Servidor de aplicaciones Jakarta EE de código abierto desarrollado por Red Hat (antes llamado JBoss Application Server).",
-  "Payara": "Distribución empresarial de GlassFish con soporte comercial y mejoras de rendimiento. Ofrece versión Server y versión Micro.",
-  "Tomcat (Apache Tomcat)": "Contenedor web ligero que implementa las especificaciones de Servlet y JSP, pero no es un servidor de aplicaciones Jakarta EE completo.",
-  "MicroProfile": "Especificación complementaria a Jakarta EE orientada al desarrollo de microservicios (health checks, métricas, tolerancia a fallos).",
-  "Quarkus": "Framework Java para Kubernetes y microservicios. Destaca por su tiempo de arranque muy rápido gracias a la compilación nativa con GraalVM.",
-  "Open Liberty": "Servidor de aplicaciones ligero y modular de IBM, compatible con Jakarta EE and MicroProfile.",
-  "Helidon": "Framework Java para microservicios desarrollado por Oracle. Ofrece variantes Helidon SE (reactivo) y Helidon MP (MicroProfile).",
-  "EclipseLink": "Implementación de referencia de JPA mantenida por la Eclipse Foundation. Incluida por defecto en GlassFish.",
-  "JAAS (Java Authentication and Authorization Service)": "Framework de seguridad de Java para autenticación y autorización mediante módulos intercambiables (LoginModule).",
-  "JDK (Java Development Kit)": "Conjunto de herramientas necesarias para desarrollar aplicaciones Java: compilador (javac), JVM, bibliotecas estándar (JRE).",
-  "JVM (Java Virtual Machine)": "Motor de ejecución que interpreta el bytecode Java (.class). Proporciona independencia de plataforma y gestión automática de memoria.",
-  "JRE (Java Runtime Environment)": "Subconjunto del JDK que contiene solo lo necesario para ejecutar aplicaciones Java (JVM + bibliotecas estándar). Eliminado en versiones 9+.",
-  "Spring Framework": "Framework de código abierto para el desarrollo de aplicaciones Java empresariales. Ofrece contenedor IoC, DI y soporte MVC.",
-  "Spring Boot": "Extensión de Spring que simplifica la configuración y el arranque mediante convención sobre configuración y servidores embebidos.",
-  "Spring MVC": "Módulo de Spring que implementa el patrón Modelo-Vista-Controlador para aplicaciones web usando @Controller y @GetMapping.",
-  "Spring Data": "Módulo de Spring que simplifica el acceso a datos mediante repositorios genéricos (como JpaRepository para CRUD automáticos).",
-  "Spring Security": "Módulo de Spring para autenticación, autorización y protección contra ataques (CSRF, XSS). Soporta OAuth2 y JWT.",
-  "Spring Cloud": "Conjunto de herramientas de Spring para construir sistemas distribuidos y microservicios (Eureka, Config, Resilience4j).",
-  "Maven": "Herramienta de gestión de proyectos y dependencias para Java basada en XML (pom.xml). Define el ciclo de vida del proyecto.",
-  "Gradle": "Herramienta de automatización de compilación basada en Groovy o Kotlin. Más flexible y rápida que Maven gracias a builds incrementales.",
-  "JUnit": "Framework estándar para pruebas unitarias en Java. JUnit 5 introduce anotaciones como @Test, @BeforeEach y @ParameterizedTest.",
-  "Mockito": "Biblioteca para crear objetos mock (simulados) en pruebas unitarias Java mediante when().thenReturn() y verify().",
-  "Log4j / SLF4J / Logback": "Frameworks de registro de eventos. SLF4J es la fachada (API); Log4j 2 y Logback son las implementaciones de los niveles de log.",
-  "Jackson": "Biblioteca para serialización y deserialización de JSON en Java. Ampliamente usada en APIs REST e integrada en Spring Boot.",
-  "Gson": "Biblioteca de Google para convertir objetos Java a JSON y viceversa. Alternativa más sencilla a Jackson.",
-  "Apache Commons": "Conjunto de bibliotecas de utilidades de la Apache Software Foundation (Commons Lang, Commons IO, Commons Collections).",
-  "Guava": "Biblioteca de utilidades de Google para Java. Proporciona colecciones mejoradas, utilidades de cadenas y caché en memoria.",
-  "Lombok": "Biblioteca que reduce código repetitivo (boilerplate) en Java mediante anotaciones en tiempo de compilación (@Getter, @Setter, @Data).",
-  "MapStruct": "Generador de código para mapeo entre objetos Java (POJOs, DTOs, Entities) en tiempo de compilación mediante interfaces @Mapper.",
-  "Thymeleaf": "Motor de plantillas del lado del servidor para Java, integrado con Spring MVC. Usa atributos especiales (th:text, th:each).",
-  "Flyway": "Herramienta para el control de versiones y migración de esquemas de bases de datos mediante scripts SQL numerados.",
-  "Liquibase": "Herramienta de gestión de migraciones de base de datos donde los cambios se definen en XML, YAML, JSON o SQL.",
-  "Apache Kafka": "Plataforma distribuida de streaming de eventos de alto rendimiento organizada en topics y particiones.",
-  "Apache ActiveMQ": "Broker de mensajes de código abierto que implementa la especificación JMS. Soporta AMQP, MQTT y OpenWire.",
-  "Netty": "Framework asíncrono y orientado a eventos para aplicaciones de red de alto rendimiento en Java. Gestiona I/O no bloqueantes.",
-  "Reactor / Project Reactor": "Biblioteca reactiva para programación asíncrona no bloqueante basada en Reactive Streams (Mono y Flux).",
-  "RxJava": "Implementación de ReactiveX para Java que permite componer operaciones asíncronas basadas en eventos usando observables.",
-  "GraalVM": "Máquina virtual políglota que compila código Java a binarios nativos (native image), reduciendo tiempo de arranque y memoria.",
-  "Micronaut": "Framework moderno para microservicios que procesa la inyección de dependencias en tiempo de compilación (sin reflexión).",
-  ".NET Framework": "Plataforma de desarrollo de Microsoft para Windows (2002). Incluye CLR, BCL y tecnologías como WebForms, WCF y WPF.",
-  ".NET Core": "Reimplementación multiplataforma (Windows, Linux, macOS) y de código abierto de .NET Framework lanzada en 2016.",
-  ".NET (5, 6, 7, 8...)": "Plataforma unificada de Microsoft que fusiona .NET Core y .NET Framework desde 2020. Multiplataforma y de código abierto.",
-  "CLR (Common Language Runtime)": "Máquina virtual de .NET equivalente a la JVM. Gestiona la ejecución de código intermedio (IL), Garbage Collector y JIT.",
-  "CIL / MSIL (Common Intermediate Language)": "Lenguaje de bajo nivel al que se compilan todos los lenguajes .NET (C#, VB, F#). Equivalente al bytecode.",
-  "C#": "Lenguaje de programación orientado a objetos principal del ecosistema .NET. Soporta LINQ, async/await y pattern matching.",
-  "VB.NET (Visual Basic .NET)": "Versión orientada a objetos de Visual Basic para la plataforma .NET. Sintaxis similar al inglés.",
-  "F#": "Lenguaje funcional de la plataforma .NET basado en OCaml. Muy usado para análisis de datos y scripting.",
-  "ASP.NET Core": "Framework multiplataforma para construir aplicaciones web, APIs REST y microservicios. Incluye servidor Kestrel.",
-  "ASP.NET MVC": "Implementación del patrón MVC en ASP.NET Core que separa la lógica de negocio, la interfaz (Razor) y el controlador.",
-  "Razor Pages": "Modelo de programación web en ASP.NET Core basado en páginas (.cshtml) y un archivo de código subyacente PageModel.",
-  "Blazor": "Framework de Microsoft para construir interfaces de usuario web interactivas usando C# en lugar de JavaScript (Server o WebAssembly).",
-  "SignalR": "Biblioteca de ASP.NET Core para comunicación en tiempo real bidireccional entre servidor y clientes (WebSockets).",
-  "Entity Framework Core (EF Core)": "ORM oficial de Microsoft para .NET. Permite trabajar con bases de datos usando objetos C# (Code First).",
-  "Dapper": "Micro-ORM ligero que extiende IDbConnection para mapear resultados de consultas SQL directamente a objetos C#.",
-  "LINQ (Language Integrated Query)": "Sistema de consulta integrado en C# que permite consultar colecciones y bases de datos con sintaxis unificada.",
-  "WCF (Windows Communication Foundation)": "Framework de .NET Framework para construir servicios web orientados a mensajes (SOAP). Reemplazado por gRPC.",
-  "gRPC en .NET": "Implementación de gRPC para .NET. Define contratos en archivos .proto y usa HTTP/2 y Protocol Buffers.",
-  "WPF (Windows Presentation Foundation)": "Framework para construir aplicaciones de escritorio Windows con interfaz gráfica rica usando XAML y el patrón MVVM.",
-  "WinForms (Windows Forms)": "Framework de .NET para crear aplicaciones de escritorio Windows mediante arrastrar y soltar componentes visuales.",
-  "MAUI (.NET Multi-platform App UI)": "Evolución de Xamarin.Forms. Permite crear aplicaciones nativas para Android, iOS, macOS y Windows con un único código base.",
-  "Xamarin": "Framework móvil para desarrollar aplicaciones nativas para iOS y Android usando C#. Reemplazado por .NET MAUI.",
-  "NuGet": "Gestor de paquetes oficial para .NET que permite instalar y gestionar bibliotecas de terceros (nuget.org).",
-  "MSBuild": "Motor de construcción de proyectos de Microsoft integrado con .NET CLI. Usa archivos .csproj (XML).",
-  "xUnit / NUnit / MSTest": "Frameworks de pruebas unitarias para .NET. xUnit es el más moderno y recomendado actualmente.",
-  "Moq": "Biblioteca de mocking para .NET que permite crear objetos simulados de interfaces para pruebas unitarias. Equivalente a Mockito.",
-  "AutoMapper": "Biblioteca para el mapeo automático entre objetos .NET (Modelos de dominio, DTOs y ViewModels).",
-  "Serilog": "Biblioteca de logging estructurado para .NET que registra eventos como objetos, facilitando su análisis.",
-  "Polly": "Biblioteca .NET para implementar patrones de resiliencia y tolerancia a fallos (Retry, Circuit Breaker).",
-  "MediatR": "Implementación del patrón Mediator para .NET. Desacopla emisores y manejadores, muy usado en CQRS.",
-  "FluentValidation": "Biblioteca para definir reglas de validación de objetos .NET mediante una API fluida (AbstractValidator).",
-  "Kestrel": "Servidor web multiplataforma, embebido y de alto rendimiento por defecto para aplicaciones ASP.NET Core.",
-  "IIS (Internet Information Services)": "Servidor web de Microsoft para Windows. Se usa frecuentemente como proxy inverso sobre Kestrel.",
-  "Azure SDK para .NET": "Conjunto de bibliotecas NuGet para interactuar con los servicios de Microsoft Azure (Blob Storage, Cosmos DB).",
-  "OWIN / Katana": "Especificación e implementación que define la interfaz entre servidores web y aplicaciones .NET. Precedente del middleware.",
-  "Minimal APIs": "Modelo introducido en ASP.NET Core 6 para definir APIs REST con el mínimo código directamente en Program.cs."
-}
+[
+  {
+    "termino": "Jakarta EE",
+    "definicion": "Especificación estándar para el desarrollo de aplicaciones empresariales en Java. Define un conjunto de APIs y servicios como servlets, JPA, CDI, JAX-RS, EJB, etc."
+  },
+  {
+    "termino": "Servlet",
+    "definicion": "Componente Java que maneja peticiones HTTP en el servidor. Es la base de la programación web en Jakarta EE."
+  },
+  {
+    "termino": "JSP (Jakarta Server Pages)",
+    "definicion": "Tecnología que permite embeber código Java en páginas HTML para generar contenido dinámico en el servidor. Los archivos .jsp son compilados a servlets por el contenedor web."
+  },
+  {
+    "termino": "JSF (Jakarta Faces)",
+    "definicion": "Framework para construir interfaces de usuario basadas en componentes para aplicaciones web Java EE/Jakarta EE. Usa el patrón MVC y soporta gestión de estado."
+  },
+  {
+    "termino": "EJB (Enterprise JavaBeans)",
+    "definicion": "Componentes del lado del servidor que encapsulan la lógica de negocio (Session Beans, Message-Driven Beans). Gestionan transacciones, seguridad y concurrencia."
+  },
+  {
+    "termino": "JPA (Jakarta Persistence API)",
+    "definicion": "Especificación estándar de Java/Jakarta EE para el mapeo objeto-relacional (ORM). Permite persistir objetos Java en bases de datos relacionales."
+  },
+  {
+    "termino": "Hibernate",
+    "definicion": "Implementación más popular de JPA. Framework de mapeo objeto-relacional para Java que gestiona la persistencia de objetos en bases de datos."
+  },
+  {
+    "termino": "CDI (Contexts and Dependency Injection)",
+    "definicion": "Especificación de Jakarta EE para la inyección de dependencias y gestión del ciclo de vida de los componentes (beans). Usa @Inject."
+  },
+  {
+    "termino": "JAX-RS (Jakarta RESTful Web Services)",
+    "definicion": "API de Jakarta EE para crear servicios web RESTful. Usa anotaciones como @GET, @POST, @Path, @Produces."
+  },
+  {
+    "termino": "JAX-WS (Jakarta XML Web Services)",
+    "definicion": "API para crear y consumir servicios web basados en SOAP y WSDL usando @WebService y @WebMethod."
+  },
+  {
+    "termino": "JMS (Jakarta Messaging)",
+    "definicion": "API estándar para el intercambio de mensajes asíncronos entre componentes de aplicaciones Java empresariales (colas y tópicos)."
+  },
+  {
+    "termino": "JNDI (Java Naming and Directory Interface)",
+    "definicion": "API que proporciona servicios de nombres y directorio para localizar recursos como fuentes de datos (DataSource) mediante un nombre lógico."
+  },
+  {
+    "termino": "JDBC (Java Database Connectivity)",
+    "definicion": "API estándar de Java para conectar aplicaciones con bases de datos relacionales. Capa de bajo nivel sobre la que se construyen JPA e Hibernate."
+  },
+  {
+    "termino": "JTA (Jakarta Transactions)",
+    "definicion": "API que define la interfaz entre el gestor de transacciones y los participantes. Permite gestionar transacciones distribuidas usando @Transactional."
+  },
+  {
+    "termino": "GlassFish",
+    "definicion": "Servidor de aplicaciones de referencia para Jakarta EE, mantenido por la Eclipse Foundation. Implementa la especificación completa."
+  },
+  {
+    "termino": "WildFly",
+    "definicion": "Servidor de aplicaciones Jakarta EE de código abierto desarrollado por Red Hat (antes llamado JBoss Application Server)."
+  },
+  {
+    "termino": "Payara",
+    "definicion": "Distribución empresarial de GlassFish con soporte comercial y mejoras de rendimiento. Ofrece versión Server y versión Micro."
+  },
+  {
+    "termino": "Tomcat (Apache Tomcat)",
+    "definicion": "Contenedor web ligero que implementa las especificaciones de Servlet and JSP, pero no es un servidor de aplicaciones Jakarta EE completo."
+  },
+  {
+    "termino": "MicroProfile",
+    "definicion": "Especificación complementaria a Jakarta EE orientada al desarrollo de microservicios (health checks, métricas, tolerancia a fallos)."
+  },
+  {
+    "termino": "Quarkus",
+    "definicion": "Framework Java para Kubernetes y microservicios. Destaca por su tiempo de arranque muy rápido gracias a la compilación nativa con GraalVM."
+  },
+  {
+    "termino": "Open Liberty",
+    "definicion": "Servidor de aplicaciones ligero y modular de IBM, compatible con Jakarta EE y MicroProfile."
+  },
+  {
+    "termino": "Helidon",
+    "definicion": "Framework Java para microservicios desarrollado por Oracle. Ofrece variantes Helidon SE (reactivo) y Helidon MP (MicroProfile)."
+  },
+  {
+    "termino": "EclipseLink",
+    "definicion": "Implementación de referencia de JPA mantenida por la Eclipse Foundation. Incluida por defecto en GlassFish."
+  },
+  {
+    "termino": "JAAS (Java Authentication and Authorization Service)",
+    "definicion": "Framework de seguridad de Java para autenticación y autorización mediante módulos intercambiables (LoginModule)."
+  },
+  {
+    "termino": "JDK (Java Development Kit)",
+    "definicion": "Conjunto de herramientas necesarias para desarrollar aplicaciones Java: compilador (javac), JVM, bibliotecas estándar (JRE)."
+  },
+  {
+    "termino": "JVM (Java Virtual Machine)",
+    "definicion": "Motor de ejecución que interpreta el bytecode Java (.class). Proporciona independencia de plataforma y gestión automática de memoria."
+  },
+  {
+    "termino": "JRE (Java Runtime Environment)",
+    "definicion": "Subconjunto del JDK que contiene solo lo necesario para ejecutar aplicaciones Java (JVM + bibliotecas estándar). Eliminado en versiones 9+."
+  },
+  {
+    "termino": "Spring Framework",
+    "definicion": "Framework de código abierto para el desarrollo de aplicaciones Java empresariales. Ofrece contenedor IoC, DI y soporte MVC."
+  },
+  {
+    "termino": "Spring Boot",
+    "definicion": "Extensión de Spring que simplifica la configuración y el arranque mediante convención sobre configuración y servidores embebidos."
+  },
+  {
+    "termino": "Spring MVC",
+    "definicion": "Módulo de Spring que implementa el patrón Modelo-Vista-Controlador para aplicaciones web usando @Controller y @GetMapping."
+  },
+  {
+    "termino": "Spring Data",
+    "definicion": "Módulo de Spring que simplifica el acceso a datos mediante repositorios genéricos (como JpaRepository para CRUD automáticos)."
+  },
+  {
+    "termino": "Spring Security",
+    "definicion": "Módulo de Spring para autenticación, autorización y protección contra ataques (CSRF, XSS). Soporta OAuth2 y JWT."
+  },
+  {
+    "termino": "Spring Cloud",
+    "definicion": "Conjunto de herramientas de Spring para construir sistemas distribuidos y microservicios (Eureka, Config, Resilience4j)."
+  },
+  {
+    "termino": "Maven",
+    "definicion": "Herramienta de gestión de proyectos y dependencias para Java basada en XML (pom.xml). Define el ciclo de vida del proyecto."
+  },
+  {
+    "termino": "Gradle",
+    "definicion": "Herramienta de automatización de compilación basada en Groovy o Kotlin. Más flexible y rápida que Maven gracias a builds incrementales."
+  },
+  {
+    "termino": "JUnit",
+    "definicion": "Framework estándar para pruebas unitarias en Java. JUnit 5 introduce anotaciones como @Test, @BeforeEach y @ParameterizedTest."
+  },
+  {
+    "termino": "Mockito",
+    "definicion": "Biblioteca para crear objetos mock (simulados) en pruebas unitarias Java mediante when().thenReturn() y verify()."
+  },
+  {
+    "termino": "Log4j / SLF4J / Logback",
+    "definicion": "Frameworks de registro de eventos. SLF4J es la fachada (API); Log4j 2 y Logback son las implementaciones de los niveles de log."
+  },
+  {
+    "termino": "Jackson",
+    "definicion": "Biblioteca para serialización y deserialización de JSON en Java. Ampliamente usada en APIs REST e integrada en Spring Boot."
+  },
+  {
+    "termino": "Gson",
+    "definicion": "Biblioteca de Google para convertir objetos Java a JSON y viceversa. Alternativa más sencilla a Jackson."
+  },
+  {
+    "termino": "Apache Commons",
+    "definicion": "Conjunto de bibliotecas de utilidades de la Apache Software Foundation (Commons Lang, Commons IO, Commons Collections)."
+  },
+  {
+    "termino": "Guava",
+    "definicion": "Biblioteca de utilidades de Google para Java. Proporciona colecciones mejoradas, utilidades de cadenas y caché en memoria."
+  },
+  {
+    "termino": "Lombok",
+    "definicion": "Biblioteca que reduce código repetitivo (boilerplate) en Java mediante anotaciones en tiempo de compilación (@Getter, @Setter, @Data)."
+  },
+  {
+    "termino": "MapStruct",
+    "definicion": "Generador de código para mapeo entre objetos Java (POJOs, DTOs, Entities) en tiempo de compilación mediante interfaces @Mapper."
+  },
+  {
+    "termino": "Thymeleaf",
+    "definicion": "Motor de plantillas del lado del servidor para Java, integrado con Spring MVC. Usa atributos especiales (th:text, th:each)."
+  },
+  {
+    "termino": "Flyway",
+    "definicion": "Herramienta para el control de versiones y migración de esquemas de bases de datos mediante scripts SQL numerados."
+  },
+  {
+    "termino": "Liquibase",
+    "definicion": "Herramienta de gestión de migraciones de base de datos donde los cambios se definen en XML, YAML, JSON o SQL."
+  },
+  {
+    "termino": "Apache Kafka",
+    "definicion": "Plataforma distribuida de streaming de eventos de alto rendimiento organizada en topics y particiones."
+  },
+  {
+    "termino": "Apache ActiveMQ",
+    "definicion": "Broker de mensajes de código abierto que implementa la especificación JMS. Soporta AMQP, MQTT y OpenWire."
+  },
+  {
+    "termino": "Netty",
+    "definicion": "Framework asíncrono y orientado a eventos para aplicaciones de red de alto rendimiento en Java. Gestiona I/O no bloqueantes."
+  },
+  {
+    "termino": "Reactor / Project Reactor",
+    "definicion": "Biblioteca reactiva para programación asíncrona no bloqueante basada en Reactive Streams (Mono y Flux)."
+  },
+  {
+    "termino": "RxJava",
+    "definicion": "Implementación de ReactiveX para Java que permite componer operaciones asíncronas basadas en eventos usando observables."
+  },
+  {
+    "termino": "GraalVM",
+    "definicion": "Máquina virtual políglota que compila código Java a binarios nativos (native image), reduciendo tiempo de arranque y memoria."
+  },
+  {
+    "termino": "Micronaut",
+    "definicion": "Framework moderno para microservicios que procesa la inyección de dependencias en tiempo de compilación (sin reflexión)."
+  },
+  {
+    "termino": ".NET Framework",
+    "definicion": "Plataforma de desarrollo de Microsoft para Windows (2002). Incluye CLR, BCL y tecnologías como WebForms, WCF y WPF."
+  },
+  {
+    "termino": ".NET Core",
+    "definicion": "Reimplementación multiplataforma (Windows, Linux, macOS) y de código abierto de .NET Framework lanzada en 2016."
+  },
+  {
+    "termino": ".NET (5, 6, 7, 8...)",
+    "definicion": "Plataforma unificada de Microsoft que fusiona .NET Core y .NET Framework desde 2020. Multiplataforma y de código abierto."
+  },
+  {
+    "termino": "CLR (Common Language Runtime)",
+    "definicion": "Máquina virtual de .NET equivalente a la JVM. Gestiona la ejecución de código intermedio (IL), Garbage Collector y JIT."
+  },
+  {
+    "termino": "CIL / MSIL (Common Intermediate Language)",
+    "definicion": "Lenguaje de bajo nivel al que se compilan todos los lenguajes .NET (C#, VB, F#). Equivalente al bytecode."
+  },
+  {
+    "termino": "C#",
+    "definicion": "Lenguaje de programación orientado a objetos principal del ecosistema .NET. Soporta LINQ, async/await y pattern matching."
+  },
+  {
+    "termino": "VB.NET (Visual Basic .NET)",
+    "definicion": "Versión orientada a objetos de Visual Basic para la plataforma .NET. Sintaxis similar al inglés."
+  },
+  {
+    "termino": "F#",
+    "definicion": "Lenguaje funcional de la plataforma .NET basado en OCaml. Muy usado para análisis de datos y scripting."
+  },
+  {
+    "termino": "ASP.NET Core",
+    "definicion": "Framework multiplataforma para construir aplicaciones web, APIs REST y microservicios. Incluye servidor Kestrel."
+  },
+  {
+    "termino": "ASP.NET MVC",
+    "definicion": "Implementación del patrón MVC en ASP.NET Core que separa la lógica de negocio, la interfaz (Razor) y el controlador."
+  },
+  {
+    "termino": "Razor Pages",
+    "definicion": "Modelo de programación web en ASP.NET Core basado en páginas (.cshtml) y un archivo de código subyacente PageModel."
+  },
+  {
+    "termino": "Blazor",
+    "definicion": "Framework de Microsoft para construir interfaces de usuario web interactivas usando C# en lugar de JavaScript (Server o WebAssembly)."
+  },
+  {
+    "termino": "SignalR",
+    "definicion": "Biblioteca de ASP.NET Core para comunicación en tiempo real bidireccional entre servidor y clientes (WebSockets)."
+  },
+  {
+    "termino": "Entity Framework Core (EF Core)",
+    "definicion": "ORM oficial de Microsoft para .NET. Permite trabajar con bases de datos usando objetos C# (Code First)."
+  },
+  {
+    "termino": "Dapper",
+    "definicion": "Micro-ORM ligero que extiende IDbConnection para mapear resultados de consultas SQL directamente a objetos C#."
+  },
+  {
+    "termino": "LINQ (Language Integrated Query)",
+    "definicion": "Sistema de consulta integrado en C# que permite consultar colecciones y bases de datos con sintaxis unificada."
+  },
+  {
+    "termino": "WCF (Windows Communication Foundation)",
+    "definicion": "Framework de .NET Framework para construir servicios web orientados a mensajes (SOAP). Reemplazado por gRPC."
+  },
+  {
+    "termino": "gRPC en .NET",
+    "definicion": "Implementación de gRPC para .NET. Define contratos en archivos .proto y usa HTTP/2 y Protocol Buffers."
+  },
+  {
+    "termino": "WPF (Windows Presentation Foundation)",
+    "definicion": "Framework para construir aplicaciones de escritorio Windows con interfaz gráfica rica usando XAML y el patrón MVVM."
+  },
+  {
+    "termino": "WinForms (Windows Forms)",
+    "definicion": "Framework de .NET para crear aplicaciones de escritorio Windows mediante arrastrar y soltar componentes visuales."
+  },
+  {
+    "termino": "MAUI (.NET Multi-platform App UI)",
+    "definicion": "Evolución de Xamarin.Forms. Permite crear aplicaciones nativas para Android, iOS, macOS y Windows con un único código base."
+  },
+  {
+    "termino": "Xamarin",
+    "definicion": "Framework móvil para desarrollar aplicaciones nativas para iOS y Android usando C#. Reemplazado por .NET MAUI."
+  },
+  {
+    "termino": "NuGet",
+    "definicion": "Gestor de paquetes oficial para .NET que permite instalar y gestionar bibliotecas de terceros (nuget.org)."
+  },
+  {
+    "termino": "MSBuild",
+    "definicion": "Motor de construcción de proyectos de Microsoft integrado con .NET CLI. Usa archivos .csproj (XML)."
+  },
+  {
+    "termino": "xUnit / NUnit / MSTest",
+    "definicion": "Frameworks de pruebas unitarias para .NET. xUnit es el más moderno y recomendado actualmente."
+  },
+  {
+    "termino": "Moq",
+    "definicion": "Biblioteca de mocking para .NET que permite crear objetos simulados de interfaces para pruebas unitarias. Equivalente a Mockito."
+  },
+  {
+    "termino": "AutoMapper",
+    "definicion": "Biblioteca para el mapeo automático entre objetos .NET (Modelos de dominio, DTOs y ViewModels)."
+  },
+  {
+    "termino": "Serilog",
+    "definicion": "Biblioteca de logging estructurado para .NET que registra eventos como objetos, facilitando su análisis."
+  },
+  {
+    "termino": "Polly",
+    "definicion": "Biblioteca .NET para implementar patrones de resiliencia y tolerancia a fallos (Retry, Circuit Breaker)."
+  },
+  {
+    "termino": "MediatR",
+    "definicion": "Implementación del patrón Mediator para .NET. Desacopla emisores y manejadores, muy usado en CQRS."
+  },
+  {
+    "termino": "FluentValidation",
+    "definicion": "Biblioteca para definir reglas de validación de objetos .NET mediante una API fluida (AbstractValidator)."
+  },
+  {
+    "termino": "Kestrel",
+    "definicion": "Servidor web multiplataforma, embebido y de alto rendimiento por defecto para aplicaciones ASP.NET Core."
+  },
+  {
+    "termino": "IIS (Internet Information Services)",
+    "definicion": "Servidor web de Microsoft para Windows. Se usa frecuentemente como proxy inverso sobre Kestrel."
+  },
+  {
+    "termino": "Azure SDK para .NET",
+    "definicion": "Conjunto de bibliotecas NuGet para interactuar con los servicios de Microsoft Azure (Blob Storage, Cosmos DB)."
+  },
+  {
+    "termino": "OWIN / Katana",
+    "definicion": "Especificación e implementación que define la interfaz entre servidores web y aplicaciones .NET. Precedente del middleware."
+  },
+  {
+    "termino": "Minimal APIs",
+    "definicion": "Modelo introducido en ASP.NET Core 6 para definir APIs REST con el mínimo código directamente en Program.cs."
+  }
+]
