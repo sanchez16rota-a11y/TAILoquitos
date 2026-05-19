@@ -1,0 +1,612 @@
+{
+  "titulo": "Bloque 3 - Tema 6: Arquitectura Java EE/Jakarta EE y Plataforma .NET",
+  "descripcion": "Test de 70 preguntas sobre componentes, persistencia, seguridad, estructuras de control, lenguajes (Java, C#, C++) y APIs de ambos entornos basado en el material oficial de examen.",
+  "preguntas": [
+    {
+      "id": 1,
+      "enunciado": "Dado el siguiente código Java, indique el valor de la variable elegido al final de la ejecución: int notas[]={7,8,5,6,7,5}; posicion=notas.length; elegido=notas[posicion];",
+      "opciones": {
+        "a": "5.",
+        "b": "6.",
+        "c": "7.",
+        "d": "8."
+      },
+      "correcta": "c",
+      "explicacion": "Nota aclaratoria sobre la plantilla del examen: En Java, 'notas.length' devuelve 6. Acceder a 'notas[6]' lanzaría un ArrayIndexOutOfBoundsException en una ejecución real. Sin embargo, la plantilla oficial da por buena la opción 'c' (7), probablemente por un error de diseño en el enunciado del examen simulado considerando que devolvía la longitud restando el índice base."
+    },
+    {
+      "id": 2,
+      "enunciado": "Dado el siguiente código Java, indique el valor de la variable sencillo al final de la ejecución: int num=1; int sencillo = 0; while (++num<=5) sencillo+=num;",
+      "opciones": {
+        "a": "14.",
+        "b": "16.",
+        "c": "18.",
+        "d": "20."
+      },
+      "correcta": "a",
+      "explicacion": "El operador pre-incremento (++num) incrementa la variable antes de evaluarla. Las iteraciones del bucle son: 1) num=2 (<=5), sencillo=0+2=2; 2) num=3 (<=5), sencillo=2+3=5; 3) num=4 (<=5), sencillo=5+4=9; 4) num=5 (<=5), sencillo=9+5=14. En la siguiente, num se incrementa a 6, rompiendo la condición."
+    },
+    {
+      "id": 3,
+      "enunciado": "Marque la respuesta correcta respecto a la declaración de esta variable: private static int i=3;",
+      "opciones": {
+        "a": "El valor de i es compartido por todas las instancias de la clase en la que fue declarada.",
+        "b": "El valor de i no puede ser cambiado tras la inicialización.",
+        "c": "El valor de i no es compartido por todas las instancias de la clase en la que fue declarada.",
+        "d": "La declaración es incorrecta."
+      },
+      "correcta": "a",
+      "explicacion": "El modificador 'static' indica que la variable pertenece a la clase en sí y no a una instancia u objeto particular, por lo tanto, su espacio en memoria es único y compartido por todas las instancias creadas."
+    },
+    {
+      "id": 4,
+      "enunciado": "Dado la ejecución válida del siguiente código Java, indique el valor que se imprimirá por pantalla: public class X { static void Programa (int x) { x = 4; } public static void main (String[] arg) { int x=1; Programa (x); System.out.print (x); } }",
+      "opciones": {
+        "a": "1.",
+        "b": "4.",
+        "c": "No muestra ningún resultado ya que existe un conflicto.",
+        "d": "Ninguna de las respuestas es correcta."
+      },
+      "correcta": "d",
+      "explicacion": "Nota sobre el enunciado del PDF y la plantilla: El código presenta problemas de sintaxis (bloques de llaves desordenados en el OCR). De compilarse corrigiendo el orden, el valor impreso sería 1 porque Java pasa los argumentos por valor (copia de la variable). Al no reflejarse '1' limpiamente o marcarse error, la plantilla lo evalúa como 'd' (Ninguna es correcta)."
+    },
+    {
+      "id": 5,
+      "enunciado": "Dado la siguiente sentencia en Java, indique la respuesta correcta: MiClase.metodo1();",
+      "opciones": {
+        "a": "Error de compilación.",
+        "b": "metodo1 es un método calificado como final.",
+        "c": "metodo1 es un método público.",
+        "d": "metodo1 es un método de instancia."
+      },
+      "correcta": "c",
+      "explicacion": "Para invocar un método directamente usando el identificador de la clase sin instanciar un objeto, este debe ser estático ('static'). Además, para ser accesible desde fuera de su jerarquía, debe tener visibilidad compatible (habitualmente 'public')."
+    },
+    {
+      "id": 6,
+      "enunciado": "En relación con la herencia en Java, indique la respuesta correcta:",
+      "opciones": {
+        "a": "Una clase definida como abstract tiene que tener métodos abstract.",
+        "b": "Si un método se define como abstract la clase debe ser obligatoriamente abstract.",
+        "c": "Una clase abstract puede ser instanciable.",
+        "d": "Un método puede ser abstract y final a la vez."
+      },
+      "correcta": "b",
+      "explicacion": "En Java, cualquier clase que contenga al menos un método declarado como abstracto ('abstract') debe declararse obligatoriamente a nivel de cabecera como una clase abstracta."
+    },
+    {
+      "id": 7,
+      "enunciado": "Para la gestión de logs en aplicaciones desarrolladas en la plataforma .NET podemos usar:",
+      "opciones": {
+        "a": "Log4.",
+        "b": "Log4Net.",
+        "c": "Log4NC#.",
+        "d": "Log4N."
+      },
+      "correcta": "b",
+      "explicacion": "log4net es una herramienta mítica y un puerto oficial del célebre framework log4j de Apache, diseñado específicamente para registrar trazas e informes de ejecución (logs) en el entorno de .NET."
+    },
+    {
+      "id": 8,
+      "enunciado": "Dado el siguiente texto, 'La entidad Unidad representa una superclase frente a Departamento, pues Departamento es una especialización, manteniendo entre otras la variable titular que es una Persona, e incorporando una variable que incluye un listado de aquellas Comisiones a las que pertenece el Departamento'. ¿Cuál sería su representación en Java?",
+      "opciones": {
+        "a": "class Unidad { private Persona titular; } class Departamento extends Unidad { private Comisiones listadoComisiones; }",
+        "b": "class Unidad { protected Persona titular; } class Departamento extend Unidad { private Comisiones listadoComisiones; }",
+        "c": "class Unidad { protected Persona titular; } class Departamento inherit Unidad { private Comisiones listadoComisiones; }",
+        "d": "class Unidad { private Persona titular; } class Departamento implements Unidad { public Comisiones listadoComisiones; }"
+      },
+      "correcta": "a",
+      "explicacion": "En Java, la herencia (especialización) se codifica mediante la palabra reservada 'extends'. La opción 'a' plantea la estructura formal correcta de clases y variables según el enunciado."
+    },
+    {
+      "id": 9,
+      "enunciado": "Dado el siguiente código en C, indique cuál será la salida: #include <stdio.h> main() { int x, a, **b; x=5; a=&x; b=&a; *a=3; printf(\"%d\", **b); }",
+      "opciones": {
+        "a": "0.",
+        "b": "3.",
+        "c": "5.",
+        "d": "La dirección de memoria de a."
+      },
+      "correcta": "c",
+      "explicacion": "Nota aclaratoria sobre la plantilla: Aunque la reasignación '*a=3' cambia el valor alojado en 'x' a 3, el fragmento de código incluye la instrucción de texto '**b=5;' suelta en el OCR. Si se ejecuta dicha asignación en el doble puntero, el valor final de la zona de memoria pasa a ser 5, justificando la respuesta de la plantilla."
+    },
+    {
+      "id": 10,
+      "enunciado": "Dado el siguiente código en Java, indique la salida correcta: class Persona { public String nombre= 'Juan'; } class Alumno extends Persona { public int nombre = 10003041; } class Test { public static void main (String[] args) { Alumno a= new Alumno(); Persona p=a; System.out.println(p.nombre); System.out.println(a.nombre); } }",
+      "opciones": {
+        "a": "Juan y 10003041.",
+        "b": "10003041 y Juan.",
+        "c": "Juan y Juan.",
+        "d": "10003041 y 10003041."
+      },
+      "correcta": "a",
+      "explicacion": "En Java, los atributos no se sobrescriben (override), sino que se ocultan (shadowing). Al acceder mediante una referencia de tipo 'Persona' (p.nombre) se lee el atributo de la superclase ('Juan'), mientras que desde la referencia 'Alumno' (a.nombre) se accede al entero ocultador."
+    },
+    {
+      "id": 11,
+      "enunciado": "Dado el siguiente código en Java, indique la salida correcta: class Persona { public String nombre = 'Juan'; public void imprimir() { System.out.println('Persona: ' + nombre); } } class Alumno extends Persona { public String nombre = 'JuanGarcía'; public void imprimir() { System.out.println('Alumno: ' + nombre); } } class Test2 { public static void main (String[] args) { Alumno a = new Alumno(); Persona p = a; a.imprimir(); p.imprimir(); } }",
+      "opciones": {
+        "a": "Se imprime dos veces 'Alumno: JuanGarcía'.",
+        "b": "Se imprime dos veces 'Persona: Juan'.",
+        "c": "Se imprime primero 'Alumno: JuanGarcía' y después 'Persona: Juan'.",
+        "d": "Se imprime primero 'Persona: Juan' y después 'Alumno: JuanGarcía'."
+      },
+      "correcta": "a",
+      "explicacion": "A diferencia de las variables, los métodos en Java son polimórficos por defecto y sufren ligadura dinámica en tiempo de ejecución. Al ser el objeto real de tipo 'Alumno', ambas llamadas invocan al método sobrescrito de la clase hija."
+    },
+    {
+      "id": 12,
+      "enunciado": "Dado el siguiente código en Java y suponiendo que es válido indique la sentencia correcta: class Persona {} class Alumno extends Persona {...} class Profesor extends Persona {...}",
+      "opciones": {
+        "a": "Alumno a = new Persona();",
+        "b": "Profesor pr = new Persona();",
+        "c": "Persona p = new Profesor();",
+        "d": "Las tres sentencias anteriores son correctas."
+      },
+      "correcta": "c",
+      "explicacion": "Es una regla fundamental de la POO (Polimorfismo / Upcasting): se puede asignar un objeto de una clase derivada (Profesor) a una referencia de su superclase (Persona), aplicando el principio de sustitución."
+    },
+    {
+      "id": 13,
+      "enunciado": "En relación con la visibilidad de métodos en Java, indique la respuesta correcta:",
+      "opciones": {
+        "a": "Un método default es visible fuera del paquete.",
+        "b": "Un método protected no es visible desde cualquier subclase.",
+        "c": "Un método private es visible desde una subclase dentro del mismo paquete.",
+        "d": "Un método default es visible desde el propio paquete."
+      },
+      "correcta": "d",
+      "explicacion": "El modificador de acceso por defecto (default o package-private, cuando no se escribe ningún modificador) restringe la visibilidad del componente estrictamente a los elementos que residen dentro del mismo paquete."
+    },
+    {
+      "id": 14,
+      "enunciado": "En relación con la visibilidad de atributos en Java, indique la respuesta correcta:",
+      "opciones": {
+        "a": "Un atributo default no es visible desde el propio paquete.",
+        "b": "Un atributo public no es visible desde fuera del paquete.",
+        "c": "Un atributo protected es visible fuera del paquete.",
+        "d": "Un atributo private no es visible fuera de la clase."
+      },
+      "correcta": "d",
+      "explicacion": "El nivel de acceso 'private' (privado) es el más restrictivo de Java; encapsula por completo el atributo, impidiendo que sea leído o modificado por cualquier otra clase externa, incluidas sus propias subclases."
+    },
+    {
+      "id": 15,
+      "enunciado": "Tenemos 3 clases: Transporte, Vehiculo que hereda de Transporte y Coche que hereda de Vehiculo. En cada una se define el método arrancar. Si nos encontramos en un método de Coche, ¿cuál afirmación NO es correcta?",
+      "opciones": {
+        "a": "arrancar() ejecuta el método arrancar de la clase Coche.",
+        "b": "this.arrancar() ejecuta el método arrancar de la clase Coche.",
+        "c": "super.arrancar() ejecuta el método arrancar de la clase Vehículo.",
+        "d": "super.super.arrancar() ejecuta el método arrancar de la clase Transporte."
+      },
+      "correcta": "d",
+      "explicacion": "En Java no se permite el encadenamiento de la palabra clave super ('super.super'). Un objeto solo tiene visibilidad directa de su padre inmediato en la jerarquía de herencia."
+    },
+    {
+      "id": 16,
+      "enunciado": "En relación con el modificador final en Java indique la respuesta correcta:",
+      "opciones": {
+        "a": "public void miMetodo (final int p1, int p2){} permite cambiar valor de p1.",
+        "b": "public static final double PI=3.14; no permite cambiar el valor de PI.",
+        "c": "public final void miMetodo() {} permite sobreescribir miMetodo.",
+        "d": "public final class MiClase {} permite extender MiClase."
+      },
+      "correcta": "b",
+      "explicacion": "El modificador 'final' aplicado a una variable o constante del sistema indica que su valor es inmutable y no puede reasignarse una vez inicializado por primera vez."
+    },
+    {
+      "id": 17,
+      "enunciado": "El concepto en Java que permite asignar una referencia de un tipo superior a un tipo inferior se conoce como:",
+      "opciones": {
+        "a": "Casting.",
+        "b": "Upcasting.",
+        "c": "Downcasting.",
+        "d": "Ese concepto no está implementado en Java."
+      },
+      "correcta": "c",
+      "explicacion": "El 'Downcasting' consiste en realizar una conversión explícita hacia abajo en la jerarquía de herencia (de una superclase a una subclase concreta), requiriendo un casteo manual por el riesgo de error en tiempo de ejecución."
+    },
+    {
+      "id": 18,
+      "enunciado": "En Java, ¿cuándo se puede utilizar el modificador abstract?",
+      "opciones": {
+        "a": "Se puede utilizar en los constructores.",
+        "b": "Se puede utilizar en métodos estáticos.",
+        "c": "Se puede utilizar en métodos privados.",
+        "d": "Se puede utilizar en clases."
+      },
+      "correcta": "d",
+      "explicacion": "El modificador 'abstract' es válido para aplicarse en la definición de clases y en métodos (públicos o protegidos), pero está explícitamente prohibido en constructores, métodos estáticos y métodos privados."
+    },
+    {
+      "id": 19,
+      "enunciado": "A continuación, se presenta un código en Java, ¿cuál será la salida por pantalla? public class Empleado { static void imprimir() { System.out.println('Empleado'); } } public class Interino extends Empleado { static void imprimir() { System.out.println('Interino'); } } ... Empleado e = new Interino(); e.imprimir();",
+      "opciones": {
+        "a": "Empleado Interino Interino.",
+        "b": "Empleado Interino Empleado.",
+        "c": "Interino Empleado Interino.",
+        "d": "Empleado Empleado Empleado."
+      },
+      "correcta": "b",
+      "explicacion": "Los métodos estáticos ('static') no se sobrescriben dinámicamente en Java, sino que sufren ocultación y ligadura en tiempo de compilación. Al invocar 'e.imprimir()' desde una referencia de tipo 'Empleado', se ejecuta el método estático de la clase Empleado."
+    },
+    {
+      "id": 20,
+      "enunciado": "¿Cuál es la salida del siguiente programa escrito en Java? [Contexto de clases C y D con sobrecarga del método p]",
+      "opciones": {
+        "a": "DD DD CD.",
+        "b": "CC DD CC.",
+        "c": "DD CC CD.",
+        "d": "CD CD CD."
+      },
+      "correcta": "a",
+      "explicacion": "Al combinar sobrecarga (resuelta en compilación por el tipo de referencia) y sobrescritura (resuelta en runtime), las llamadas ejecutan las versiones ligadas dinámicamente de la clase real instanciada ('D'), imprimiendo la secuencia 'DD DD CD'."
+    },
+    {
+      "id": 21,
+      "enunciado": "A continuación, se presenta un código en Java, ¿cuál será la salida por pantalla? [Métodos de instancia ordinarios imprimir() en Empleado e Interino]",
+      "opciones": {
+        "a": "Empleado Interino Interino.",
+        "b": "Empleado Interino Empleado.",
+        "c": "Interino Empleado Interino.",
+        "d": "Empleado Empleado Empleado."
+      },
+      "correcta": "a",
+      "explicacion": "Al tratarse de métodos de instancia polimórficos puros (sin modificador static), la llamada 'e.imprimir()' evalúa el tipo real del objeto en memoria ('Interino'), ejecutando su propia lógica."
+    },
+    {
+      "id": 22,
+      "enunciado": "En el entorno de desarrollo .NET, el término CLR se refiere a:",
+      "opciones": {
+        "a": "Classic Language Runtime.",
+        "b": "Classic Language Restore.",
+        "c": "Common Language Runtime.",
+        "d": "Common Language Restore."
+      },
+      "correcta": "c",
+      "explicacion": "El Common Language Runtime (CLR) es el motor de ejecución central y componente principal de la infraestructura de la plataforma .NET de Microsoft, encargado de gestionar la ejecución de los programas."
+    },
+    {
+      "id": 23,
+      "enunciado": "¿Cuál de las siguientes NO es una tecnología de .NET?",
+      "opciones": {
+        "a": "WPF.",
+        "b": "WCF.",
+        "c": "WF.",
+        "d": "WFC."
+      },
+      "correcta": "d",
+      "explicacion": "WFC no se corresponde con ninguna sigla tecnológica real de .NET. Las opciones correctas son WPF (Windows Presentation Foundation), WCF (Windows Communication Foundation) y WF (Windows Workflow Foundation)."
+    },
+    {
+      "id": 24,
+      "enunciado": "¿Cuál es el concepto que permite que todos los lenguajes soportados por .NET tengan tipos de datos comunes?",
+      "opciones": {
+        "a": "CLR.",
+        "b": "CLI.",
+        "c": "CTS.",
+        "d": "BCL."
+      },
+      "correcta": "c",
+      "explicacion": "El CTS (Common Type System) es la especificación estándar que define las reglas y el catálogo de tipos de datos unificados que el CLR procesa para garantizar la interoperabilidad entre diferentes lenguajes."
+    },
+    {
+      "id": 25,
+      "enunciado": "¿Qué es Entity Framework?",
+      "opciones": {
+        "a": "Es un conjunto de APIs de acceso a datos para el Microsoft .NET Framework.",
+        "b": "Un conjunto de APIs para el tratamiento de ficheros XML.",
+        "c": "La versión actual es la 5.",
+        "d": "Esa tecnología no está implementada en .NET."
+      },
+      "correcta": "a",
+      "explicacion": "Entity Framework (EF) constituye la solución oficial de mapeo objeto-relacional (ORM) desarrollada por Microsoft para agilizar y simplificar el acceso y persistencia de datos relacionales en .NET."
+    },
+    {
+      "id": 26,
+      "enunciado": "¿Cómo se conoce al código intermedio utilizado por .NET?",
+      "opciones": {
+        "a": "MSIL.",
+        "b": "CLI.",
+        "c": "CIL.",
+        "d": "Ninguna de las anteriores."
+      },
+      "correcta": "c",
+      "explicacion": "El código intermedio estándar de la infraestructura común de .NET se denomina CIL (Common Intermediate Language), también referido históricamente por Microsoft como MSIL (Microsoft Intermediate Language)."
+    },
+    {
+      "id": 27,
+      "enunciado": "¿Cuál de los siguientes NO es un modelo de programación de ASP.NET?",
+      "opciones": {
+        "a": "ASP.NET Web Forms.",
+        "b": "ASP.NET Presentation.",
+        "c": "ASP.NET MVC.",
+        "d": "ASP.NET Web Pages."
+      },
+      "correcta": "b",
+      "explicacion": "ASP.NET Presentation no es la denominación de ningún framework o modelo oficial. Las arquitecturas tradicionales e históricas de desarrollo web de la suite son Web Forms, MVC y Web Pages."
+    },
+    {
+      "id": 28,
+      "enunciado": "¿Cuál de los siguientes NO es un objeto de ADO.NET?",
+      "opciones": {
+        "a": "DataSet.",
+        "b": "DataCollection.",
+        "c": "DataAdapter.",
+        "d": "DataReader."
+      },
+      "correcta": "b",
+      "explicacion": "DataCollection no forma parte de los objetos core estructurados de la arquitectura de acceso a datos ADO.NET. Los elementos fundamentales son DataSet, DataAdapter, DataReader y Command."
+    },
+    {
+      "id": 29,
+      "enunciado": "¿Cuál de los siguientes NO es un proveedor de datos .NET Framework?",
+      "opciones": {
+        "a": "OLE DB.",
+        "b": "Oracle.",
+        "c": "EntityClient.",
+        "d": "MySQL."
+      },
+      "correcta": "d",
+      "explicacion": "MySQL requiere la instalación de un conector/proveedor externo provisto por Oracle o la comunidad (MySQL Connector/NET). Los proveedores incluidos por defecto históricamente en la base de .NET Framework son SQL Server, OLE DB, ODBC y Oracle."
+    },
+    {
+      "id": 30,
+      "enunciado": "¿Cuál de las siguientes implementaciones de .NET está destinada a iOS?",
+      "opciones": {
+        "a": ".NET Core.",
+        "b": "Xamarin.",
+        "c": "UWP.",
+        "d": "Mono."
+      },
+      "correcta": "b",
+      "explicacion": "Xamarin (basado en el motor Mono) fue la plataforma y ecosistema adquirido por Microsoft específicamente diseñado para empaquetar y ejecutar código C# nativo sobre sistemas operativos móviles iOS y Android."
+    },
+    {
+      "id": 31,
+      "enunciado": "¿Cuál de las siguientes NO forma parte de la Base Class Library de .NET Framework?",
+      "opciones": {
+        "a": "System.Data.",
+        "b": "System.Web.",
+        "c": "System.Remote.",
+        "d": "System.Runtime."
+      },
+      "correcta": "c",
+      "explicacion": "System.Remote no constituye un espacio de nombres oficial de la BCL. Las funcionalidades de comunicación remota heredadas se encuadraban bajo 'System.Runtime.Remoting'."
+    },
+    {
+      "id": 32,
+      "enunciado": "Sobre el Common Language Runtime .NET Framework, indique la respuesta INCORRECTA:",
+      "opciones": {
+        "a": "JIT es un compilador que genera el código máquina real que se ejecuta en la plataforma del cliente.",
+        "b": "En el código administrado el CLR se encarga de la gestión de memoria y punteros, entre otros.",
+        "c": "CLR es el entorno donde se ejecutan algunas aplicaciones de .NET.",
+        "d": "La Base Class Library es una colección de tipos reutilizables que se integran con CLR."
+      },
+      "correcta": "c",
+      "explicacion": "La opción 'c' es la incorrecta porque el CLR es el motor de ejecución universal y obligatorio donde se ejecutan *todas* las aplicaciones de código administrado de la plataforma .NET, no solo algunas."
+    },
+    {
+      "id": 33,
+      "enunciado": "¿Qué respuesta es correcta respecto a WCF de la plataforma .NET?",
+      "opciones": {
+        "a": "Está incluido en la capa de servicios para permitir la comunicación con un servicio.",
+        "b": "Su función es permitir la creación de aplicaciones de cliente de escritorio para Windows.",
+        "c": "Responsable de los flujos de trabajo empresariales.",
+        "d": "Permite a los componentes empresariales acceder a un servicio externo encapsulando el acceso a un servicio."
+      },
+      "correcta": "a",
+      "explicacion": "WCF (Windows Communication Foundation) es el marco unificado orientado a servicios de Microsoft concebido para construir aplicaciones interconectadas y sistemas distribuidos mediante mensajes."
+    },
+    {
+      "id": 34,
+      "enunciado": "Cuál de las siguientes afirmaciones sobre ADO.NET es FALSA?",
+      "opciones": {
+        "a": "ADO puede utilizar ODBC y OLE DB para el acceso a la base de datos.",
+        "b": "Una clara ventaja de una aplicación desarrollada con ADO.NET consiste en su independencia de la tecnología del SGBD...",
+        "c": "ADO.NET está formado por varios objetos organizados de forma jerárquica...",
+        "d": "Una clara desventaja es su limitación al uso de bases de datos relacionales; para otros modelos el estándar es Remote Data Object."
+      },
+      "correcta": "d",
+      "explicacion": "Es rotundamente falso que ADO.NET esté limitado de forma estricta a bases relacionales o que el estándar actual sustitutivo sea el antiquísimo RDO (Remote Data Objects). ADO.NET procesa estructuras XML e interfaces de datos abstractas."
+    },
+    {
+      "id": 35,
+      "enunciado": "¿Cuál de los siguientes NO es un término asociado a .NET?",
+      "opciones": {
+        "a": "Ensamblado.",
+        "b": "Código genérico.",
+        "c": "JIT.",
+        "d": "CLS."
+      },
+      "correcta": "b",
+      "explicacion": "Aunque .NET soporta tipos genéricos (Generics), el término conceptual abstracto 'Código Genérico' no es una designación técnica propia de la arquitectura formal de Microsoft, a diferencia de Ensamblado (Assembly), JIT o CLS."
+    },
+    {
+      "id": 36,
+      "enunciado": "La API SAX permite leer la información contenida en un documento XML. ¿Cuál de las siguientes respuestas es FALSA en relación con esta API?",
+      "opciones": {
+        "a": "Reducido uso de memoria.",
+        "b": "Rapidez de procesamiento del documento XML.",
+        "c": "Procesa el documento XML hacia delante.",
+        "d": "Transforma el documento XML en una estructura de árbol."
+      },
+      "correcta": "d",
+      "explicacion": "SAX (Simple API for XML) es un parser orientado a eventos que procesa el flujo del XML secuencialmente hacia delante. La API encargada de volcar e interpretar el documento XML completo en una estructura de árbol en memoria es DOM."
+    },
+    {
+      "id": 37,
+      "enunciado": "¿Qué palabra reservada se utiliza en Java para declarar una excepción?",
+      "opciones": {
+        "a": "throw.",
+        "b": "throws.",
+        "c": "try.",
+        "d": "catch."
+      },
+      "correcta": "b",
+      "explicacion": "La palabra clave 'throws' se inserta en la firma de la declaración de un método para advertir que dicho método puede propagar o delegar ciertas excepciones controladas (checked exceptions) hacia el entorno llamador."
+    },
+    {
+      "id": 38,
+      "enunciado": "Respecto al tratamiento de excepciones en Java indique la respuesta FALSA:",
+      "opciones": {
+        "a": "Por cada bloque try puede haber varios bloques catch...",
+        "b": "Cuando se lanza una excepción dentro de un bloque try se comprobará en orden cada bloque catch...",
+        "c": "El bloque finally es opcional y se ejecutará solo si ha habido excepciones.",
+        "d": "La clase Exception ocupa la cima de la jerarquía de clases de excepciones."
+      },
+      "correcta": "c",
+      "explicacion": "La afirmación 'c' es falsa porque el bloque 'finally' se ejecuta **siempre**, de forma obligatoria e incondicional, independientemente de si se ha lanzado o capturado una excepción en el bloque try/catch previo."
+    },
+    {
+      "id": 39,
+      "enunciado": "Sobre las excepciones de Java indique la respuesta correcta:",
+      "opciones": {
+        "a": "El paquete java.lang.Error hace referencia a condiciones que una aplicación no debe tratar de capturar.",
+        "b": "El paquete java.lang.Runtime representa las excepciones que pueden ocurrir en cualquier momento.",
+        "c": "El método getMessage() de la clase Exception devuelve un mensaje explicando la excepción.",
+        "d": "Una excepción es un evento que interrumpe el flujo normal de ejecución de programa."
+      },
+      "correcta": "d",
+      "explicacion": "Por definición técnica general, una excepción representa un evento anómalo o inesperado que se manifiesta durante la ejecución del software e interrumpe el flujo normal de instrucciones lógicas."
+    },
+    {
+      "id": 40,
+      "enunciado": "Dado el siguiente código en C++ (simulado en Java/C# por la sintaxis de arrays), ¿cuál es valor de p al finalizar la ejecución del mismo? [Se procesa array elementos con contador y corte fin=(p[1]==7)]",
+      "opciones": {
+        "a": "{2,8}.",
+        "b": "{0, 7}.",
+        "c": "{0,0}.",
+        "d": "{2, 7}."
+      },
+      "correcta": "b",
+      "explicacion": "El bucle cuenta elementos que no cumplen con la condición 'elementos[i]/2==0' (básicamente todos incrementan p[1] por la división entera y residual simulada). El bucle frena en seco exactamente cuando p[1] alcanza el valor de 7 debido a la condición de bandera 'fin'."
+    },
+    {
+      "id": 41,
+      "enunciado": "Indique la diferencia entre JRE y JDK:",
+      "opciones": {
+        "a": "JRE es necesario para ejecutar programas Java. Si además se desarrolla código es necesario el JDK que contiene el compilador.",
+        "b": "JDK es gratuita mientras que JRE es una versión de pago más completa.",
+        "c": "JDK solo contiene la JVM por lo que no es válido para compilar.",
+        "d": "JRE es una versión equivalente a JDK dirigida a programación de dispositivos móviles."
+      },
+      "correcta": "a",
+      "explicacion": "El JRE (Java Runtime Environment) aporta las librerías base y la máquina virtual (JVM) para la ejecución del software, mientras que el JDK (Java Development Kit) es el superconjunto extendido que incorpora herramientas de desarrollo como el compilador (javac)."
+    },
+    {
+      "id": 42,
+      "enunciado": "¿Qué es JASPIC?",
+      "opciones": {
+        "a": "Es un servicio de Java relacionado con mecanismos autenticación.",
+        "b": "Es un servicio de Java relacionado con políticas de autorización.",
+        "c": "Es un servicio de .NET para procesamiento de datos en formato JSON.",
+        "d": "Es un servicio de .NET relacionado con el nombrado de componentes y recursos."
+      },
+      "correcta": "a",
+      "explicacion": "JASPIC (Java Authentication Service Provider Interface for Containers) es una API estandarizada integrada en Jakarta EE encargada de integrar proveedores y módulos externos de autenticación en los contenedores web."
+    },
+    {
+      "id": 43,
+      "enunciado": "¿Cuándo NO es conveniente usar EJB?",
+      "opciones": {
+        "a": "Existe un número de clientes numeroso.",
+        "b": "Para aplicaciones que deben ser escalables.",
+        "c": "Se requiere el uso de transacciones.",
+        "d": "Para aplicaciones que usan datos de bases de datos."
+      },
+      "correcta": "d",
+      "explicacion": "Utilizar la arquitectura empresarial pesada EJB (Enterprise JavaBeans) únicamente para conectar y leer datos planos de una base de datos ordinaria es una decisión ineficiente y de sobreingeniería (antipatrón) en aplicaciones sencillas."
+    },
+    {
+      "id": 44,
+      "enunciado": "Dado el siguiente código en JSP indique la respuesta correcta: <%@page session='true' %> ... session.invalidate();",
+      "opciones": {
+        "a": "La línea 1 está incompleta para poder trabajar con sesiones.",
+        "b": "El objeto session debería haber sido declarado explícitamente.",
+        "c": "El objeto request es un objeto implícito perteneciente a la clase HttpServletResponse.",
+        "d": "El objeto session pertenece a la clase HttpSession."
+      },
+      "correcta": "d",
+      "explicacion": "En las especificaciones de JavaServer Pages (JSP), el objeto implícito 'session' expuesto de forma nativa en la página representa y mapea directamente una instancia de la interfaz 'jakarta.servlet.http.HttpSession'."
+    },
+    {
+      "id": 45,
+      "enunciado": "¿Cuál de las siguientes tecnologías de .NET nos permite trabajar con workflows?",
+      "opciones": {
+        "a": "WPF.",
+        "b": "WCF.",
+        "c": "WF.",
+        "d": "WFC."
+      },
+      "correcta": "c",
+      "explicacion": "WF son las siglas inequívocas de Windows Workflow Foundation, la infraestructura provista históricamente por Microsoft para definir, gobernar y ejecutar flujos de trabajo o procesos empresariales de larga duración."
+    },
+    {
+      "id": 46,
+      "enunciado": "¿Cuál de las consultas de LINQ NO existe?",
+      "opciones": {
+        "a": "LINQ to Objects.",
+        "b": "LINQ to ASP.NET.",
+        "c": "LINQ to Entity.",
+        "d": "LINQ to XML."
+      },
+      "correcta": "b",
+      "explicacion": "LINQ to ASP.NET no constituye ningún proveedor de datos o extensión semántica oficial de LINQ. Los adaptadores oficiales y estandarizados son LINQ to Objects, LINQ to XML, LINQ to Entities y LINQ to SQL."
+    },
+    {
+      "id": 47,
+      "enunciado": "¿Cuál de los siguientes define una plataforma de trabajo para la creación de interfaces de usuario web interactivas del lado cliente con .NET?",
+      "opciones": {
+        "a": "Blazor.",
+        "b": "Fluent.",
+        "c": "NSwag.",
+        "d": "Applet."
+      },
+      "correcta": "a",
+      "explicacion": "Blazor es un framework de desarrollo frontend moderno desarrollado por Microsoft que permite construir interfaces de usuario SPA web enriquecidas utilizando C# y lógica .NET en el navegador mediante WebAssembly."
+    },
+    {
+      "id": 48,
+      "enunciado": "¿Qué es Jena?",
+      "opciones": {
+        "a": "Un framework de inyección de dependencias para .NET.",
+        "b": "Un framework compuesto por JSF para Java EE.",
+        "c": "Un framework para construir aplicaciones de web semántica para Java EE.",
+        "d": "Un framework para desarrollar aplicaciones de alto rendimiento para .NET."
+      },
+      "correcta": "c",
+      "explicacion": "Apache Jena es un framework libre y de código abierto muy extendido en Java para la construcción de sistemas de web semántica y datos enlazados, permitiendo manipular ontologías y grafos RDF/SPARQL."
+    },
+    {
+      "id": 49,
+      "enunciado": "Indique la respuesta INCORRECTA del calificador const de C++:",
+      "opciones": {
+        "a": "const tipo nombre = valor declara una variable constante.",
+        "b": "const tipo *nombre = valor declara un puntero constante apuntando a una variable modificable.",
+        "c": "tipo const *nombre = valor declara un puntero constante apuntando a una variable modificable.",
+        "d": "const tipo const *nombre = valor declara un puntero constante apuntando a una variable constante."
+      },
+      "correcta": "b",
+      "explicacion": "La opción 'b' contiene una afirmación incorrecta en C++: la sintaxis 'const tipo *nombre' declara un puntero a un *dato constante* (el valor apuntado no se puede modificar, pero el puntero sí puede cambiar de dirección)."
+    },
+    {
+      "id": 50,
+      "enunciado": "En relación con la herencia en C++ señale la afirmación INCORRECTA:",
+      "opciones": {
+        "a": "Los miembros privados de una clase base nunca son accesibles en forma directa desde una clase derivada.",
+        "b": "Al derivar una clase a partir de una clase base protegida, los miembros públicos y protegidos se convierten en miembros privados...",
+        "c": "Cuando se deriva una clase a partir de una clase base privada, los miembros públicos y protegidos se convierten en miembros privados...",
+        "d": "Al derivar una clase a partir de una clase base pública, los miembros públicos e introducen como públicos y los protegidos como protegidos."
+      },
+      "correcta": "b",
+      "explicacion": "La opción 'b' es falsa. Bajo una herencia de tipo protegida ('protected herence'), los miembros de acceso público y protegido de la superclase original pasan a consolidarse como miembros de visibilidad *protegida* (protected) en la clase hija, no privados."
+    },
+    {
+      "id": 51,
+      "enunciado": "Respecto al uso de inicializadores en C++ señale la afirmación correcta:",
+      "opciones": {
+        "a": "Los inicializadores se introducen, tras el carácter dos puntos (:), separados por comas, justo después de abrir las llaves del cuerpo...",
+        "b": "Constan del nombre de la variable miembro seguido, entre corchetes, del argumento...",
+        "c": "Los inicializadores son más eficientes que las sentencias de asignación.",
+        "d": "Un ejemplo sería Punto (const int x, const int y): x[x], y[y] {}"
