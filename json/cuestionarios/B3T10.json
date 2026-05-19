@@ -1,0 +1,639 @@
+{
+  "titulo": "Bloque 3 - Tema 10: Repositorios, Desarrollo Colaborativo, Metodologías, Pruebas y Control de Versiones",
+  "descripcion": "Test de 66 preguntas sobre herramientas CASE, integración continua, métricas de calidad, control de versiones (Git), pruebas de software y metodologías ágiles (Scrum, XP) basado en el material oficial de examen.",
+  "preguntas": [
+    {
+      "id": 1,
+      "enunciado": "¿Qué herramienta CASE permite la definición de otras herramientas CASE?",
+      "opciones": {
+        "a": "U-CASE.",
+        "b": "M-CASE.",
+        "c": "MetaCASE.",
+        "d": "I-CASE."
+      },
+      "correcta": "c",
+      "explicacion": "Las herramientas MetaCASE (o CASE personalizables) son aquellas diseñadas específicamente para definir los metamodelos, métodos y reglas que gobernarán a otras herramientas CASE operativas."
+    },
+    {
+      "id": 2,
+      "enunciado": "¿Qué herramienta permite hacer un seguimiento de errores y bugs?",
+      "opciones": {
+        "a": "Jira.",
+        "b": "FishEye.",
+        "c": "IntelliJ IDEA.",
+        "d": "Crucible."
+      },
+      "correcta": "a",
+      "explicacion": "Jira es una herramienta de software comercial muy popular desarrollada por Atlassian que está orientada a la gestión de proyectos, el seguimiento de tareas y el control de errores o 'bugs'."
+    },
+    {
+      "id": 3,
+      "enunciado": "¿Qué herramienta permite comparar diferencias entre versiones de un archivo?",
+      "opciones": {
+        "a": "Redmine.",
+        "b": "JDiff.",
+        "c": "MDiff.",
+        "d": "Gerrit."
+      },
+      "correcta": "b",
+      "explicacion": "JDiff es una utilidad interactiva de comparación de código y diferencias orientada a examinar los cambios y discrepancias estructurales entre diferentes versiones de archivos fuente."
+    },
+    {
+      "id": 4,
+      "enunciado": "¿Qué herramienta permite integración continua?",
+      "opciones": {
+        "a": "Ant.",
+        "b": "Gradle.",
+        "c": "Trac.",
+        "d": "Jenkins."
+      },
+      "correcta": "d",
+      "explicacion": "Jenkins es un servidor de automatización de código abierto líder en el mercado que se utiliza para implementar flujos de Integración Continua (CI) y Despliegue Continuo (CD)."
+    },
+    {
+      "id": 5,
+      "enunciado": "¿Qué herramienta permite la revisión de código?",
+      "opciones": {
+        "a": "Crucible.",
+        "b": "Bamboo.",
+        "c": "Lux.",
+        "d": "Chef."
+      },
+      "correcta": "a",
+      "explicacion": "Crucible es una herramienta web de Atlassian destinada a la revisión colaborativa de código fuente, la detección de defectos y la discusión de cambios de manera previa a la integración definitiva."
+    },
+    {
+      "id": 6,
+      "enunciado": "¿Qué herramienta permite la revisión de logs?",
+      "opciones": {
+        "a": "Grafana.",
+        "b": "Kibana.",
+        "c": "Piwik.",
+        "d": "ATF."
+      },
+      "correcta": "b",
+      "explicacion": "Kibana es una interfaz de usuario visual de código abierto que se integra en el ecosistema Elastic (ELK stack) para la exploración, visualización y análisis de logs y datos indexados en tiempo real."
+    },
+    {
+      "id": 7,
+      "enunciado": "¿Qué herramienta permite la generación automática de código?",
+      "opciones": {
+        "a": "Visual Paradigm.",
+        "b": "Telegraf.",
+        "c": "KVM.",
+        "d": "CruiseControl."
+      },
+      "correcta": "a",
+      "explicacion": "Visual Paradigm es una potente herramienta CASE y de modelado UML que ofrece prestaciones avanzadas de ingeniería directa, permitiendo generar automáticamente el esqueleto de código a partir de diagramas visuales."
+    },
+    {
+      "id": 8,
+      "enunciado": "Respecto al mantenimiento en Métrica v3, señale la respuesta INCORRECTA:",
+      "opciones": {
+        "a": "El mantenimiento correctivo está excluido de Métrica v3.",
+        "b": "El mantenimiento adaptativo son las modificaciones que afectan a los entornos en los que el sistema opera.",
+        "c": "El mantenimiento perfectivo son las acciones llevadas a cabo para mejorar la calidad interna de los sistemas en cualquiera de sus aspectos.",
+        "d": "El mantenimiento evolutivo son las incorporaciones, modificaciones y eliminaciones necesarias en un producto software para cubrir la expansión o cambio en las necesidades del usuario."
+      },
+      "correcta": "a",
+      "explicacion": "Métrica v3 contempla de forma explícita el mantenimiento correctivo como una de sus categorías fundamentales de actuación para resolver defectos latentes detectados en el software tras su puesta en explotación."
+    },
+    {
+      "id": 9,
+      "enunciado": "¿Qué herramienta permite la generación automática de documentación en el lenguaje Ruby?",
+      "opciones": {
+        "a": "Sphinx.",
+        "b": "Telegraf.",
+        "c": "DocFX.",
+        "d": "YARD."
+      },
+      "correcta": "d",
+      "explicacion": "YARD (Yay! A Ruby Documentation Tool) es la herramienta estándar y más utilizada en el ecosistema de Ruby para analizar comentarios estructurados y generar documentación técnica del código."
+    },
+    {
+      "id": 10,
+      "enunciado": "El examen y modificación de un sistema para ser reconstruido de una forma nueva y además derivada de esa nueva forma se conoce como:",
+      "opciones": {
+        "a": "Ingeniería inversa.",
+        "b": "Ingeniería directa.",
+        "c": "Reingeniería.",
+        "d": "Reestructuración."
+      },
+      "correcta": "c",
+      "explicacion": "La reingeniería es la modificación integral y el examen profundo de un sistema de información para reconstruirlo bajo una arquitectura o forma nueva y evolucionada."
+    },
+    {
+      "id": 11,
+      "enunciado": "¿Qué problema del código hace referencia a aquel código mal diseñado candidato a ser reestructurado o refactorizado?",
+      "opciones": {
+        "a": "Code smell.",
+        "b": "Código lasaña.",
+        "c": "Código espagueti.",
+        "d": "Código pizza."
+      },
+      "correcta": "a",
+      "explicacion": "Un 'code smell' (hedor del código) es un síntoma superficial en el código fuente que indica un problema más profundo de diseño o violación de principios de desarrollo, haciendo al componente candidato a refactorización."
+    },
+    {
+      "id": 12,
+      "enunciado": "¿Qué problema del código se conoce como código ravioli?",
+      "opciones": {
+        "a": "Es el formado por clases simples y comprensibles que al interactuar entre sí se vuelven muy complejas desde un punto de vista global.",
+        "b": "Es el compuesto por muchas capas complejas e interconectadas entre sí que ante un cambio en una capa conlleva cambios en otras capas.",
+        "c": "Es aquel que tiene una arquitectura plana.",
+        "d": "Es el compuesto por complejas estructuras de control de flujo."
+      },
+      "correcta": "a",
+      "explicacion": "El 'código ravioli' describe un antipatrón en la orientación a objetos donde el sistema se compone de multitud de clases pequeñas, acopladas y autónomas que, individualmente son legibles, pero cuya interacción global es sumamente difícil de trazar."
+    },
+    {
+      "id": 13,
+      "enunciado": "El proceso de Desarrollo de Sistemas de Información de Métrica v3 incorpora los siguientes procesos:",
+      "opciones": {
+        "a": "Análisis del Sistema de Información, Diseño del Sistema de Información y Mantenimiento del Sistema de Información.",
+        "b": "Estudio de la Viabilidad del Sistema, Construcción del Sistema de Información e Implantación y Aceptación del Sistema.",
+        "c": "Análisis del Sistema de Información, Seguridad y Aseguramiento de la Calidad.",
+        "d": "Diseño del Sistema de Información, Construcción del Sistema de Información y Seguridad."
+      },
+      "correcta": "b",
+      "explicacion": "El proceso de desarrollo (DSI) de Métrica v3 abarca formalmente las fases esenciales que van desde el Estudio de la Viabilidad (EVS) hasta la Implantación y Aceptación del Sistema (IAS), pasando por Análisis, Diseño y Construcción."
+    },
+    {
+      "id": 14,
+      "enunciado": "¿Cuál de las siguientes es una interfaz Métrica v3?",
+      "opciones": {
+        "a": "Gestión de versiones.",
+        "b": "Planificación de proyectos.",
+        "c": "Gestión de la configuración.",
+        "d": "Aseguramiento del nivel de calidad."
+      },
+      "correcta": "c",
+      "explicacion": "Métrica v3 define formalmente cuatro interfaces que complementan a los procesos principales: Gestión de Proyectos (GP), Seguridad (SEG), Aseguramiento de la Calidad (CAL) y Gestión de la Configuración (GC)."
+    },
+    {
+      "id": 15,
+      "enunciado": "Las particiones de equivalencia son una técnica de pruebas de:",
+      "opciones": {
+        "a": "Integración.",
+        "b": "Implantación.",
+        "c": "Aceptación.",
+        "d": "Unitarias."
+      },
+      "correcta": "d",
+      "explicacion": "Las particiones o clases de equivalencia constituyen una técnica clásica de caja negra orientada al diseño de casos de prueba a nivel de módulo o pruebas unitarias, dividiendo los datos de entrada en grupos de comportamiento similar."
+    },
+    {
+      "id": 16,
+      "enunciado": "¿Cuál de las siguientes técnicas de prueba son de caja blanca?",
+      "opciones": {
+        "a": "Pruebas de comparación.",
+        "b": "De interfaz.",
+        "c": "Análisis de los valores límite.",
+        "d": "Grafo causa-efecto."
+      },
+      "correcta": "b",
+      "explicacion": "Las pruebas de interfaz evalúan las conexiones estructurales e internas de flujo de datos entre módulos o componentes, requiriendo conocimiento de la arquitectura del software (caja blanca), a diferencia de las de valores límite o causa-efecto que son puras de caja negra."
+    },
+    {
+      "id": 17,
+      "enunciado": "Las pruebas que tienen como objetivo verificar el correcto ensamblaje entre los distintos componentes una vez que han sido probados unitariamente con el fin de comprobar que interactúan correctamente a través de sus interfaces:",
+      "opciones": {
+        "a": "Pruebas unitarias.",
+        "b": "Pruebas de integración.",
+        "c": "Pruebas del sistema.",
+        "d": "Pruebas de regresión."
+      },
+      "correcta": "b",
+      "explicacion": "Esta es la definición funcional exacta de las pruebas de integración, cuyo foco prioritario es garantizar que los bloques funcionales previamente verificados de forma aislada operen de manera armoniosa e integrada."
+    },
+    {
+      "id": 18,
+      "enunciado": "¿Cuál del los siguientes tipos de prueba NO pertenecen a las pruebas del sistema?",
+      "opciones": {
+        "a": "Pruebas de volumen.",
+        "b": "Pruebas de sobrecarga.",
+        "c": "Pruebas de entorno.",
+        "d": "Pruebas de recuperación."
+      },
+      "correcta": "d",
+      "explicacion": "De acuerdo con el desglose formal de Métrica v3, las pruebas de recuperación y gestión de copias de seguridad son propias de la fase de implantación, mientras que las de volumen, sobrecarga y entorno técnico se encuadran en las pruebas del sistema (PSI)."
+    },
+    {
+      "id": 19,
+      "enunciado": "¿Cuál es el objetivo de las pruebas de regresión?",
+      "opciones": {
+        "a": "Eliminar el efecto onda, es decir, comprobar que los cambios sobre un componente de un sistema de información no introducen un comportamiento no deseado o errores adicionales en otros componentes no modificado.",
+        "b": "Validar que un sistema cumple con el funcionamiento esperado y permitir al usuario de dicho sistema que determine su aceptación, desde el punto de vista de su funcionalidad y rendimiento.",
+        "c": "Comprobar el funcionamiento correcto del sistema integrado de hardware y software en el entorno de operación.",
+        "d": "Ejercitar profundamente el sistema comprobando la integración del sistema de información globalmente."
+      },
+      "correcta": "a",
+      "explicacion": "Las pruebas de regresión se ejecutan de manera iterativa tras una modificación en el software para mitigar el 'efecto onda', certificando que lo que funcionaba con anterioridad sigue haciéndolo correctamente."
+    },
+    {
+      "id": 20,
+      "enunciado": "¿Qué herramienta de pruebas unitarias del software es para JavaScript?",
+      "opciones": {
+        "a": "xUnit.",
+        "b": "TestNG.",
+        "c": "QUnit.",
+        "d": "Postman."
+      },
+      "correcta": "c",
+      "explicacion": "QUnit es un potente framework de pruebas unitarias enfocado de manera nativa en el lenguaje JavaScript, muy utilizado originalmente por el proyecto jQuery y desarrollos web similares."
+    },
+    {
+      "id": 21,
+      "enunciado": "¿Cuál de los siguientes sistemas de control de versiones tiene una arquitectura centralizada?",
+      "opciones": {
+        "a": "Perforce.",
+        "b": "Bazaar.",
+        "c": "Mercurial.",
+        "d": "Darcs."
+      },
+      "correcta": "a",
+      "explicacion": "Perforce (P4) es un sistema de control de versiones de índole comercial y privativa que se apoya en un modelo de arquitectura cliente-servidor centralizado, a diferencia de Git, Bazaar o Mercurial que son distribuidos."
+    },
+    {
+      "id": 22,
+      "enunciado": "¿Cuál de los siguientes sistemas de control de versiones NO es de código abierto?",
+      "opciones": {
+        "a": "Perforce.",
+        "b": "Bazaar.",
+        "c": "Mercurial.",
+        "d": "Darcs."
+      },
+      "correcta": "a",
+      "explicacion": "Perforce Helix Core es una plataforma empresarial propietaria y de pago sujeta a licencias comerciales, mientras que Bazaar, Mercurial y Darcs operan bajo licencias de código abierto."
+    },
+    {
+      "id": 23,
+      "enunciado": "En Git, para añadir los cambios del fichero hola.java del directorio de trabajo a la zona de intercambio temporal ejecutaremos:",
+      "opciones": {
+        "a": "git commit hola.java.",
+        "b": "git commit -d hola.java.",
+        "c": "git add hola.java.",
+        "d": "git index hola.java."
+      },
+      "correcta": "c",
+      "explicacion": "El comando `git add` se encarga de subir y registrar el archivo especificado desde el directorio de trabajo activo directo hacia el área de preparación temporal o 'staging area'."
+    },
+    {
+      "id": 24,
+      "enunciado": "En Git, crear una nueva rama denominada pruebas, ejecutaremos:",
+      "opciones": {
+        "a": "git branch.",
+        "b": "git branch pruebas.",
+        "c": "git checkout pruebas.",
+        "d": "git clone pruebas."
+      },
+      "correcta": "b",
+      "explicacion": "La sintaxis formal `git branch <nombre_rama>` genera una nueva rama apuntando al commit actual sin mover el puntero de trabajo (HEAD) de la rama en la que se encuentra."
+    },
+    {
+      "id": 25,
+      "enunciado": "¿Cuál de las siguientes NO es una plataforma de desarrollo colaborativo de software?",
+      "opciones": {
+        "a": "Bitbucket.",
+        "b": "DevOps.",
+        "c": "Forja del CTT.",
+        "d": "GitHub."
+      },
+      "correcta": "b",
+      "explicacion": "DevOps es un movimiento cultural, metodológico y conceptual que une desarrollo y operaciones, mientras que Bitbucket, GitHub y la Forja del CTT son plataformas específicas que alojan repositorios."
+    },
+    {
+      "id": 26,
+      "enunciado": "Las pruebas alfa son pruebas de:",
+      "opciones": {
+        "a": "Aceptación.",
+        "b": "Regresión.",
+        "c": "Validación.",
+        "d": "Implantación."
+      },
+      "correcta": "a",
+      "explicacion": "Las pruebas alfa corresponden a la fase de pruebas de aceptación y son conducidas por el usuario final o un equipo interno de control de calidad dentro del propio entorno de desarrollo del constructor."
+    },
+    {
+      "id": 27,
+      "enunciado": "Las pruebas de campo son también conocidas como:",
+      "opciones": {
+        "a": "Pruebas de humo.",
+        "b": "Pruebas de integración.",
+        "c": "Pruebas beta.",
+        "d": "Pruebas alfa."
+      },
+      "correcta": "c",
+      "explicacion": "Las pruebas de campo o pruebas beta consisten en liberar una versión madura pero no definitiva del software a un grupo externo de usuarios reales para que la utilicen en escenarios de operación de la vida real."
+    },
+    {
+      "id": 28,
+      "enunciado": "¿Cuál de las siguientes es un tipo de prueba de implantación?",
+      "opciones": {
+        "a": "Pruebas de volumen.",
+        "b": "Pruebas de gestión de copias de seguridad y recuperación.",
+        "c": "Pruebas de sobrecarga.",
+        "d": "Pruebas de fiabilidad."
+      },
+      "correcta": "b",
+      "explicacion": "Las directrices oficiales de Métrica v3 especifican que los ensayos de mecanismos de salvaguarda, copias de seguridad y resiliencia ante caídas pertenecen estrictamente al bloque de pruebas de implantación."
+    },
+    {
+      "id": 29,
+      "enunciado": "Las pruebas que consisten en comprobar la correcta implementación de los procedimientos de operación, incluyendo la planificación y control de trabajos y arranque y rearranque del sistema se denominan:",
+      "opciones": {
+        "a": "Pruebas de entorno.",
+        "b": "Pruebas de seguridad.",
+        "c": "Pruebas de backup.",
+        "d": "Pruebas de operación."
+      },
+      "correcta": "d",
+      "explicacion": "Las pruebas de operación se centran en verificar la idoneidad técnica de las rutinas operacionales estándar cotidianas del equipo de sistemas que administrará el producto."
+    },
+    {
+      "id": 30,
+      "enunciado": "La técnica de prueba de condiciones límite son un tipo de prueba:",
+      "opciones": {
+        "a": "De validación.",
+        "b": "De aceptación.",
+        "c": "Unitaria.",
+        "d": "Regresión."
+      },
+      "correcta": "c",
+      "explicacion": "El análisis de valores o condiciones límite se aplica de manera prioritaria a nivel unitario (pruebas de módulos) para forzar los rangos numéricos extremos permitidos en las funciones."
+    },
+    {
+      "id": 31,
+      "enunciado": "¿Qué es Scrum?",
+      "opciones": {
+        "a": "Una metodología ágil para el desarrollo de sistemas software.",
+        "b": "Un gestor de proyectos.",
+        "c": "Una buena práctica de desarrollo software.",
+        "d": "Un paradigma de programación."
+      },
+      "correcta": "a",
+      "explicacion": "Scrum es un marco de trabajo de desarrollo ágil, iterativo e incremental diseñado para gestionar proyectos complejos mediante ciclos adaptativos denominados Sprints."
+    },
+    {
+      "id": 32,
+      "enunciado": "Según Métrica v3, ¿qué tipo de prueba ha de realizarse en primer lugar?",
+      "opciones": {
+        "a": "Pruebas validación.",
+        "b": "Pruebas del sistema.",
+        "c": "Pruebas de aceptación.",
+        "d": "Pruebas de implantación."
+      },
+      "correcta": "b",
+      "explicacion": "Dentro de la secuencia cronológica descendente de las pruebas del plan de sistemas en Métrica v3, las pruebas del sistema (PSI) anteceden a las de validación, aceptación e implantación."
+    },
+    {
+      "id": 33,
+      "enunciado": "¿Cuál de las siguientes herramientas para pruebas de software está dirigida a aplicaciones web?",
+      "opciones": {
+        "a": "Cypress.",
+        "b": "JMeter.",
+        "c": "Postman.",
+        "d": "TestNG."
+      },
+      "correcta": "a",
+      "explicacion": "Cypress es un framework moderno de pruebas front-end de extremo a extremo (E2E) concebido y desarrollado específicamente para aplicaciones que corren en navegadores web."
+    },
+    {
+      "id": 34,
+      "enunciado": "¿Cuál de las siguientes herramientas NO está enfocada a las pruebas unitarias?",
+      "opciones": {
+        "a": "TestNG.",
+        "b": "Mockito.",
+        "c": "PyUnit.",
+        "d": "Cucumber."
+      },
+      "correcta": "d",
+      "explicacion": "Cucumber es una herramienta de automatización para desarrollo guiado por comportamiento (BDD) enfocado en pruebas funcionales de aceptación legibles por negocio, no en pruebas unitarias atómicas."
+    },
+    {
+      "id": 35,
+      "enunciado": "Nexus 3 es:",
+      "opciones": {
+        "a": "Una herramienta de laC.",
+        "b": "Un servidor de integración continua.",
+        "c": "Un repositorio de artefactos.",
+        "d": "Una herramienta de monitorización."
+      },
+      "correcta": "c",
+      "explicacion": "Sonatype Nexus Repository es un gestor de artefactos binarios que sirve para almacenar y distribuir dependencias y empaquetados de software (como paquetes npm, jar, docker, etc.)."
+    },
+    {
+      "id": 36,
+      "enunciado": "Según Métrica v3, ¿qué tipo de pruebas son las que permiten comprobar el funcionamiento correcto del sistema integrado de hardware y software en el entorno de operación, y permitir al usuario que, desde el punto de vista de operación, realice la aceptación del sistema una vez instalado en su entorno real?",
+      "opciones": {
+        "a": "Pruebas integración.",
+        "b": "Pruebas del implantación.",
+        "c": "Pruebas de aceptación.",
+        "d": "Pruebas de regresión."
+      },
+      "correcta": "b",
+      "explicacion": "Métrica v3 estipula que las pruebas de implantación persiguen precisamente ratificar la estabilidad técnico-operativa del binomio hardware-software in situ previo a dar el cierre definitivo."
+    },
+    {
+      "id": 37,
+      "enunciado": "¿Cómo se denominan las pruebas de caja negra permiten descubrir errores de implementación mediante la introducción de datos al azar, inválidos o malformados?",
+      "opciones": {
+        "a": "Pruebas de humo.",
+        "b": "Pruebas lazy.",
+        "c": "Fuzzy testing.",
+        "d": "Pruebas de implementación."
+      },
+      "correcta": "c",
+      "explicacion": "El 'Fuzzing' o 'Fuzzy testing' consiste en inyectar flujos automatizados de datos aleatorios o inesperados a las interfaces del sistema para detectar fallos de desbordamiento de memoria o cuelgues inesperados."
+    },
+    {
+      "id": 38,
+      "enunciado": "Testlink es:",
+      "opciones": {
+        "a": "Un repositorio de objetos.",
+        "b": "Un servidor de integración continua.",
+        "c": "Una solución para la construcción de proyectos.",
+        "d": "Una herramienta para gestión de pruebas."
+      },
+      "correcta": "d",
+      "explicacion": "TestLink es una plataforma web abierta muy extendida orientada a la gestión de pruebas, permitiendo organizar planes de prueba, requisitos, casos de prueba e históricos de ejecución."
+    },
+    {
+      "id": 39,
+      "enunciado": "La plataforma de control de versiones de Microsoft es:",
+      "opciones": {
+        "a": "Plastic SCM.",
+        "b": "Azure Devops Server.",
+        "c": "Azure CVS Server.",
+        "d": "Bazaar."
+      },
+      "correcta": "b",
+      "explicacion": "Azure DevOps Server (anteriormente denominado TFS) constituye la suite colaborativa insignia de Microsoft orientada a ALM, control de código y automatización."
+    },
+    {
+      "id": 40,
+      "enunciado": "En Git, ¿cuál de los siguientes NO es un estado en el que se puedan encontrar los archivos del usuario?",
+      "opciones": {
+        "a": "Rastreado.",
+        "b": "Modificado.",
+        "c": "Confirmado.",
+        "d": "Preparado."
+      },
+      "correcta": "a",
+      "explicacion": "Git define formalmente los estados principales como: Modificado (modified), Preparado (staged/committed) y Confirmado (committed). Estar 'rastreado' (tracked) es una tipología de categorización del fichero, pero no un estado dinámico del flujo de trabajo."
+    },
+    {
+      "id": 41,
+      "enunciado": "En Git, selecciona la respuesta correcta en relación con la ejecución del comando git init:",
+      "opciones": {
+        "a": "Crea el directorio oculto .git que contiene la base de datos donde se registran los cambios en el repositorio.",
+        "b": "Inicia el servidor de base de datos.",
+        "c": "Levanta un repositorio.",
+        "d": "Descarga ficheros de un repositorio remoto."
+      },
+      "correcta": "a",
+      "explicacion": "`git init` inicializa un repositorio local, generando la carpeta interna oculta `.git` donde la herramienta almacenará todos los objetos, referencias y configuraciones del versionado."
+    },
+    {
+      "id": 42,
+      "enunciado": "En Git, para copiar un repositorio ubicado en miservidor, se debe ejecutar el comando:",
+      "opciones": {
+        "a": "git copy miservidor.",
+        "b": "git clone miservidor.",
+        "c": "git pull miservidor.",
+        "d": "git checkout miservidor."
+      },
+      "correcta": "b",
+      "explicacion": "El comando `git clone` descarga de manera íntegra un repositorio remoto (incluyendo su histórico completo de ramas y confirmaciones) hacia la máquina local."
+    },
+    {
+      "id": 43,
+      "enunciado": "El proceso que consiste en mejorar el código una vez escrito cambiando su estructura interna sin modificar su comportamiento externo se denomina:",
+      "opciones": {
+        "a": "Ofuscación.",
+        "b": "Encapsular.",
+        "c": "Refactorización.",
+        "d": "Comprimir."
+      },
+      "correcta": "c",
+      "explicacion": "La refactorización persigue optimizar atributos cualitativos no funcionales del código (legibilidad, mantenibilidad, complejidad ciclomática) sin alterar en absoluto la funcionalidad externa original."
+    },
+    {
+      "id": 44,
+      "enunciado": "¿Qué tipo de migración de aplicaciones consiste en sustituir la aplicación de forma completa por una o varias aplicaciones nuevas?",
+      "opciones": {
+        "a": "Retirada.",
+        "b": "Refronting.",
+        "c": "Refactoring.",
+        "d": "Replacement."
+      },
+      "correcta": "d",
+      "explicacion": "Dentro de las estrategias de evolución de sistemas heredados, el 'Replacement' o reemplazo implica desechar la aplicación antigua e implantar una nueva solución desde cero."
+    },
+    {
+      "id": 45,
+      "enunciado": "¿Qué tipo de migración de aplicaciones consiste en mover la aplicación de un entorno hardware a otro entorno más moderno, sin modificar el código ni la arquitectura?",
+      "opciones": {
+        "a": "Refacing.",
+        "b": "Rearchiteting.",
+        "c": "Rehosting.",
+        "d": "Retain."
+      },
+      "correcta": "c",
+      "explicacion": "El 'Rehosting' (también conocido popularmente como 'Lift and Shift') migra la aplicación física o virtual de servidores obsoletos hacia infraestructuras modernas (como la nube) sin tocar código."
+    },
+    {
+      "id": 46,
+      "enunciado": "El tipo de migración de aplicaciones interoperation consiste en:",
+      "opciones": {
+        "a": "No migrar una aplicación a la nube.",
+        "b": "Encapsular la aplicación o algunos de sus componentes para que sean utilizados por otras aplicaciones o infraestructura con tecnología más moderna.",
+        "c": "Modificar únicamente la interfaz gráfica de una aplicación, sin necesidad de reescribir la aplicación completa.",
+        "d": "Desarrollar de nuevo la aplicación utilizando nuevos paradigmas de programación."
+      },
+      "correcta": "b",
+      "explicacion": "La interoperación encapsula lógica heredada (por ejemplo, mediante la creación de APIs REST sobre sistemas mainframe) para permitir la comunicación fluida con componentes modernos."
+    },
+    {
+      "id": 47,
+      "enunciado": "En Scrum, ¿qué es el backlog del producto?",
+      "opciones": {
+        "a": "Son los requisitos del proyecto software pendientes de hacer.",
+        "b": "Son los requisitos del proyecto software ya implementados.",
+        "c": "Son los requisitos del proyecto software a desarrollar en el siguiente sprint.",
+        "d": "Son los requisitos del proyecto software no planificados para las siguientes iteraciones."
+      },
+      "correcta": "a",
+      "explicacion": "El Product Backlog es un listado dinámico, priorizado y único que contiene todas las necesidades, historias de usuario y mejoras pendientes de realizar en el producto bajo la responsabilidad del Product Owner."
+    },
+    {
+      "id": 48,
+      "enunciado": "En Extreme Programming, NO es un rol:",
+      "opciones": {
+        "a": "Consultor.",
+        "b": "Tester.",
+        "c": "Tracker.",
+        "d": "Usuario."
+      },
+      "correcta": "d",
+      "explicacion": "XP formaliza roles explícitos como Programador, Cliente (Customer), Tester, Rastreador (Tracker) y Entrenador (Coach). El término 'Usuario' como tal no es una denominación formal de rol en XP."
+    },
+    {
+      "id": 49,
+      "enunciado": "¿Qué proceso de Métrica v3 tiene como propósito analizar un conjunto concreto de necesidades, con la idea de proponer una solución a corto plazo? Los criterios con los que se hace esta propuesta no serán estratégicos sino tácticos y relacionados con aspectos económicos, técnicos, legales y operativos.",
+      "opciones": {
+        "a": "Análisis de Sistema de Información.",
+        "b": "Planificación del Sistema de Información.",
+        "c": "Estudio de la Viabilidad del Sistema.",
+        "d": "Diseño del Sistema de Información."
+      },
+      "correcta": "c",
+      "explicacion": "El Estudio de Viabilidad del Sistema (EVS) analiza la viabilidad táctica (técnica, operativa y económica) de acometer un desarrollo, proponiendo alternativas viables a corto plazo."
+    },
+    {
+      "id": 50,
+      "enunciado": "Métrica v3, contempla los siguientes tipos de mantenimiento:",
+      "opciones": {
+        "a": "Perfectivo y evolutivo.",
+        "b": "Adaptativo y perfectivo.",
+        "c": "Adaptativo y correctivo.",
+        "d": "Correctivo y evolutivo."
+      },
+      "correcta": "d",
+      "explicacion": "Aunque conceptualmente abarque más variantes, Métrica v3 unifica de forma metodológica la clasificación en dos grandes procesos operativos del ciclo: Mantenimiento Correctivo y Mantenimiento Evolutivo (absorbiendo en este último los cambios perfectivos y adaptativos del software)."
+    },
+    {
+      "id": 51,
+      "enunciado": "En Git, el fichero en que se indican aquellos ficheros que NO deben ser tenidos en cuenta en el control de versiones se denomina:",
+      "opciones": {
+        "a": ".gitignore.",
+        "b": ".gitexclude.",
+        "c": ".gituntruck.",
+        "d": ".gitread."
+      },
+      "correcta": "a",
+      "explicacion": "El archivo `.gitignore` le especifica de manera explícita a Git qué patrones de nombres de archivos o carpetas del directorio de trabajo local deben ignorarse deliberadamente (como binarios o variables de entorno)."
+    },
+    {
+      "id": 52,
+      "enunciado": "¿Qué significa en Git hacer un checkout?",
+      "opciones": {
+        "a": "La action de descargar una rama de un repositorio central.",
+        "b": "La acción de cambiar de una rama a otra.",
+        "c": "La acción de subir una rama a un repositorio remoto.",
+        "d": "La acción de eliminar todos los cambios desde el último commit."
+      },
+      "correcta": "b",
+      "explicacion": "Históricamente en Git, el comando `git checkout <nombre_rama>` sirve para restaurar los archivos del árbol de trabajo y desplazar el puntero hacia la rama indicada para continuar el desarrollo."
+    },
+    {
+      "id": 53,
+      "enunciado": "¿Qué significa en Git hacer un reset?",
+      "opciones": {
+        "a": "La acción de descargar una rama de un repositorio central.",
+        "b": "La acción de cambiar de una rama a otra.",
+        "c": "La acción de subir una rama a un repositorio remoto.",
+        "d": "La acción de eliminar todos los cambios desde el último commit."
+      },
+      "correcta": "d",
+      "explicacion": "El comando `git reset --hard` fuerza al puntero de la rama actual y al directorio de trabajo a descartar cualquier modificación realizada con posterioridad a la confirmación especificada."
