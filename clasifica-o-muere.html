@@ -67,7 +67,21 @@
           <button onclick="restartGame()">Repetir</button>
           <button onclick="goSetup()">← Cambiar JSON</button>
         </div>
+<section class="chooser-panel" id="chooser-panel">
+    <div class="chooser-head">
+      <div>
+        <p class="chooser-subtitle" id="chooser-subtitle">Elige una categoría</p>
+      </div>
+      <button id="btn-back-folders" style="display: none; padding: 4px 10px; font-size: 11px;">
+        <i class="ti ti-arrow-left" aria-hidden="true"></i> Categorías
+      </button>
+    </div>
+    <div class="json-grid" id="json-grid">
+      <div class="json-loading">Buscando categorías disponibles...</div>
+    </div>
+  </section>
       </section>
+
     </main>
   </div>
 
@@ -413,6 +427,149 @@
     });
 
     loadJsonList();
+// Nueva variable global para saber en qué carpeta estamos ubicados
+  let currentFolderUrl = GITHUB_API_URL;
+
+  // Evento para el botón de volver atrás
+  document.getElementById('btn-back-folders').addEventListener('click', () => {
+    currentFolderUrl = GITHUB_API_URL;
+    cargarListaJsonServidor(GITHUB_API_URL, true);
+  });
+
+  async function cargarListaJsonServidor(urlDestino, esRaiz = false) {
+    const grid = document.getElementById('json-grid');
+    const btnBack = document.getElementById('btn-back-folders');
+    const subtitle = document.getElementById('chooser-subtitle');
+    
+    grid.innerHTML = '<div class="json-loading">Cargando contenido desde GitHub...</div>';
+    
+    if (esRaiz) {
+      btnBack.style.display = 'none';
+      subtitle.textContent = 'Elige una categoría';
+    } else {
+      btnBack.style.display = 'inline-flex';
+    }
+
+    try {
+      const respuesta = await fetch((urlDestino || GITHUB_API_URL) + '?ts=' + Date.now());
+      if (!respuesta.ok) throw new Error('No se pudo leer la carpeta en GitHub');
+
+      const elementos = await respuesta.json();
+      grid.innerHTML = '';
+
+      if (elementos.length === 0) {
+        grid.innerHTML = '<div class="json-empty">Esta carpeta está vacía.</div>';
+        if (esRaiz) pintarTarjetaDemo(grid);
+        return;
+      }
+
+      // Separamos lo que nos devuelve la API de GitHub
+      const carpetas = elementos.filter(el => el.type === 'dir').sort((a, b) => a.name.localeCompare(b.name, 'es'));
+      const archivos = elementos.filter(el => el.type === 'file' && el.name.toLowerCase().endsWith('.json')).sort((a, b) => a.name.localeCompare(b.name, 'es'));
+
+      // 1. SI ESTAMOS EN LA RAÍZ: Pintamos las subcarpetas como categorías
+      if (esRaiz) {
+        if (carpetas.length === 0 && archivos.length === 0) {
+          grid.innerHTML = '<div class="json-empty">No hay contenido en <strong>json/relacionar/</strong>.</div>';
+          pintarTarjetaDemo(grid);
+          return;
+        }
+
+        // Renderizar carpetas
+        carpetas.forEach(carpeta => {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'json-card';
+          const titulo = nombreBonitoArchivo(carpeta.name);
+          btn.innerHTML = `
+            <span class="json-name" style="color: #378ADD;"><i class="ti ti-folder" aria-hidden="true" style="margin-right:4px"></i>${titulo}</span>
+            <span class="json-meta">Ver temas de este bloque</span>
+          `;
+          btn.addEventListener('click', () => {
+            subtitle.textContent = `Categoría: ${titulo}`;
+            currentFolderUrl = carpeta.url; // URL de la API para los contenidos de esta subcarpeta
+            cargarListaJsonServidor(carpeta.url, false);
+          });
+          grid.appendChild(btn);
+        });
+
+        // Por si tienes algún JSON suelto en la raíz
+        archivos.forEach(archivo => {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'json-card';
+          const titulo = nombreBonitoArchivo(archivo.name);
+          btn.innerHTML = `
+            <span class="json-name">${titulo}</span>
+            <span class="json-meta"><i class="ti ti-player-play" aria-hidden="true"></i>Cargar actividad</span>
+          `;
+          btn.addEventListener('click', () => cargarJsonDesdeUrl(archivo.download_url, titulo, btn));
+          grid.appendChild(btn);
+        });
+
+        pintarTarjetaDemo(grid);
+      } 
+      // 2. SI ESTAMOS DENTRO DE UNA SUBCARPETA: Pintamos solo sus archivos JSON
+      else {
+        if (archivos.length === 0) {
+          grid.innerHTML = '<div class="json-empty">No se encontraron archivos JSON en esta categoría.</div>';
+          return;
+        }
+
+        archivos.forEach(archivo => {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'json-card';
+          const titulo = nombreBonitoArchivo(archivo.name);
+          btn.innerHTML = `
+            <span class="json-name">${titulo}</span>
+            <span class="json-meta"><i class="ti ti-player-play" aria-hidden="true"></i>Cargar actividad</span>
+          `;
+          btn.addEventListener('click', () => cargarJsonDesdeUrl(archivo.download_url, titulo, btn));
+          grid.appendChild(btn);
+        });
+      }
+
+    } catch (error) {
+      console.error(error);
+      grid.innerHTML = '<div class="json-empty">Error al conectar con GitHub. Revisa la ruta de las carpetas.</div>';
+      if (esRaiz) pintarTarjetaDemo(grid);
+    }
+  }
+
+  async function cargarJsonDesdeUrl(ruta, nombre, tarjeta) {
+    try {
+      document.querySelectorAll('.json-card.active').forEach(c => c.classList.remove('active'));
+      if (tarjeta) tarjeta.classList.add('active');
+
+      const respuesta = await fetch(ruta + '?ts=' + Date.now());
+      if (!respuesta.ok) throw new Error('No se pudo abrir ' + ruta);
+
+      const parsed = await respuesta.json();
+      const data = getDataFromParsedJSON(parsed);
+
+      document.getElementById('file-name-text').textContent = nombre;
+      document.getElementById('pair-count').textContent = `· ${data.length} pares`;
+      document.getElementById('file-label').style.display = 'flex';
+
+      loadJSON(data);
+      document.getElementById('app').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } catch (error) {
+      console.error(error);
+      showMsg('Error al cargar el JSON. Revisa el formato del archivo.', 'msg-err', 3000);
+      if (tarjeta) tarjeta.classList.remove('active');
+    }
+  }
+
+  // Modificamos el botón actualizar para que refresque la carpeta en la que estemos situados
+  document.getElementById('btn-refresh-list').addEventListener('click', () => {
+    const esRaiz = (currentFolderUrl === GITHUB_API_URL);
+    cargarListaJsonServidor(currentFolderUrl, esRaiz);
+  });
+
+  // Al arrancar la primera vez, cargamos la raíz (esRaiz = true)
+  currentFolderUrl = GITHUB_API_URL;
+  cargarListaJsonServidor(GITHUB_API_URL, true);
   </script>
 <script src="js/nav.js"></script>
 </body>
