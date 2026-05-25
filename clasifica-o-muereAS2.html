@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clasifica o Muere</title>
+<link rel="stylesheet" href="css/nav.css">
+<link rel="stylesheet" href="css/estilos.css">  
+<link rel="stylesheet" href="css/clasificaomuere.css">  
+</head>
+<body>
+  <div id="app">
+    <header class="hero">
+      <h1>Clasifica o Muere</h1>
+      <p>Elige un JSON, arrastra cada tarjeta a su categoría y deja que el suspenso tiemble.</p>
+    </header>
+
+    <main class="panel">
+      <section id="screen-setup" class="active">
+        <p style="font-size:14px;color:var(--color-text-secondary);margin-bottom:8px">Selecciona un mazo de clasificación:</p>
+        <select id="json-select" disabled>
+          <option>Cargando JSON...</option>
+        </select>
+        <div class="err" id="json-err"></div>
+        <div class="btn-row">
+          <button onclick="loadSelectedDeck()" id="btn-play" class="btn-primary" disabled>Jugar →</button>
+          <button onclick="loadJsonList()">Recargar carpeta</button>
+        </div>
+      </section>
+
+      <section id="screen-game" style="display:none">
+        <div id="score-bar">
+          <span id="score-txt">0 correctas</span>
+          <div id="progress"><div id="progress-fill" style="width:0%"></div></div>
+          <span id="remain-txt"></span>
+        </div>
+        <div id="card-area">
+          <div class="card card-ghost" id="ghost2" style="transform:rotate(2deg) translateY(12px)"></div>
+          <div class="card card-ghost" id="ghost1" style="transform:rotate(-2deg) translateY(6px)"></div>
+          <div class="card" id="main-card" style="z-index:10">
+            <div class="card-tag" id="card-tag">—</div>
+            <div class="card-title" id="card-title">—</div>
+            <div class="card-hint" id="card-hint">—</div>
+          </div>
+          <div class="hint-side hint-left" id="hint-l">✗</div>
+          <div class="hint-side hint-right" id="hint-r">✓</div>
+        </div>
+        <div id="categories"></div>
+        <div id="feedback"></div>
+        <div class="btn-row">
+          <button onclick="skipCard()">Saltar</button>
+          <button onclick="goSetup()">← Cambiar JSON</button>
+        </div>
+      </section>
+
+      <section id="screen-results" style="display:none">
+        <h2 id="res-title"></h2>
+        <p id="res-sub"></p>
+        <div class="res-stats">
+          <div class="res-cell"><div class="res-num" id="res-correct">0</div><div class="res-lbl">Correctas</div></div>
+          <div class="res-cell"><div class="res-num" id="res-wrong">0</div><div class="res-lbl">Incorrectas</div></div>
+          <div class="res-cell"><div class="res-num" id="res-skip">0</div><div class="res-lbl">Saltadas</div></div>
+        </div>
+        <div class="corrections-title" id="corr-title"></div>
+        <div id="corrections-list"></div>
+        <div class="res-actions">
+          <button onclick="restartGame()">Repetir</button>
+          <button onclick="goSetup()">← Cambiar JSON</button>
+        </div>
+<section class="chooser-panel" id="chooser-panel">
+    <div class="chooser-head">
+      <div>
+        <p class="chooser-subtitle" id="chooser-subtitle">Elige una categoría</p>
+      </div>
+      <button id="btn-back-folders" style="display: none; padding: 4px 10px; font-size: 11px;">
+        <i class="ti ti-arrow-left" aria-hidden="true"></i> Categorías
+      </button>
+    </div>
+    <div class="json-grid" id="json-grid">
+      <div class="json-loading">Buscando categorías disponibles...</div>
+    </div>
+  </section>
+      </section>
+
+    </main>
+  </div>
+
+  <script>
+    const JSON_FOLDER = 'json/clasifica-o-muere';
+    // En GitHub Pages se intenta detectar automáticamente usuario y repositorio.
+    // Si usas dominio personalizado o una rama rara, rellena estos campos:
+    const GITHUB_OWNER = '';
+    const GITHUB_REPO = '';
+
+    let manifest = [];
+    let deck = [], originalDeck = [], idx = 0, correct = 0, wrong = 0, skipped = 0;
+    let mistakes = [];
+    let cats = [], catCounts = {};
+
+    function shuffle(a) {
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a;
+    }
+
+    function show(id) {
+      ['screen-setup', 'screen-game', 'screen-results'].forEach(s => {
+        document.getElementById(s).style.display = s === id ? 'block' : 'none';
+      });
+    }
+
+    function setError(msg) {
+      document.getElementById('json-err').textContent = msg || '';
+    }
+
+    function inferGitHubRepo() {
+      const host = location.hostname;
+      const parts = location.pathname.split('/').filter(Boolean);
+      const owner = GITHUB_OWNER || (host.endsWith('.github.io') ? host.split('.')[0] : '');
+      const repo = GITHUB_REPO || (host.endsWith('.github.io') && parts.length ? parts[0] : '');
+      return { owner, repo };
+    }
+
+    function niceTitleFromFile(name) {
+      return String(name)
+        .replace(/\.json$/i, '')
+        .replace(/[-_]/g, ' ')
+        .replace(/\b\w/g, c => c.toUpperCase());
+    }
+
+    async function loadJsonList() {
+      const select = document.getElementById('json-select');
+      const btn = document.getElementById('btn-play');
+      select.disabled = true;
+      btn.disabled = true;
+      select.innerHTML = '<option>Cargando JSON...</option>';
+      setError('');
+
+      const { owner, repo } = inferGitHubRepo();
+      if (!owner || !repo) {
+        select.innerHTML = '<option>No se pudo detectar el repositorio</option>';
+        setError('sin datos.');
+        return;
+      }
+
+      const apiURL = `https://api.github.com/repos/${owner}/${repo}/contents/${JSON_FOLDER}`;
+      try {
+        const res = await fetch(apiURL, { cache: 'no-store' });
+        if (!res.ok) throw new Error('No puedo leer la carpeta ' + JSON_FOLDER + ' en GitHub (' + res.status + ')');
+        const files = await res.json();
+        manifest = files
+          .filter(item => item.type === 'file' && item.name.toLowerCase().endsWith('.json'))
+          .map(item => ({ file: item.name, title: niceTitleFromFile(item.name), url: item.download_url }))
+          .sort((a, b) => a.title.localeCompare(b.title, 'es'));
+
+        if (manifest.length === 0) throw new Error('No hay archivos .json en ' + JSON_FOLDER);
+        select.innerHTML = manifest.map((item, i) => `<option value="${i}">${escapeHTML(item.title)}</option>`).join('');
+        select.disabled = false;
+        btn.disabled = false;
+      } catch (err) {
+        select.innerHTML = '<option>No se pudo cargar la lista</option>';
+        setError(err.message + '. Revisa que la carpeta exista, que el repositorio sea público y que GitHub Pages esté publicado.');
+      }
+    }
+
+    function escapeHTML(str) {
+      return String(str).replace(/[&<>"]/g, ch => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;' }[ch]));
+    }
+
+    async function loadSelectedDeck() {
+      const selected = manifest[Number(document.getElementById('json-select').value)];
+      if (!selected) return setError('Elige un JSON válido.');
+      const url = selected.url;
+      setError('');
+
+      try {
+        const res = await fetch(url, { cache: 'no-store' });
+        if (!res.ok) throw new Error('No se pudo cargar ' + url + ' (' + res.status + ')');
+        const data = await res.json();
+        startFromData(data, selected.title);
+      } catch (err) {
+        setError(err.message);
+      }
+    }
+
+    function normalizeCard(item) {
+      return {
+        title: item.title || item.titulo || item.term || item.termino || item.concepto || item.text || item.texto,
+        hint: item.hint || item.pista || item.explanation || item.explicacion || item.descripcion || '',
+        cat: item.cat || item.category || item.categoria || item.grupo || item.tipo,
+        tag: item.tag || item.etiqueta || 'Clasificar'
+      };
+    }
+
+    function startFromData(data, deckTitle) {
+      if (!Array.isArray(data) || data.length === 0) throw new Error('El JSON debe ser un array con al menos un elemento.');
+      const normalized = data.map(normalizeCard);
+      const badIndex = normalized.findIndex(x => !x.title || !x.cat);
+      if (badIndex !== -1) throw new Error('Elemento ' + (badIndex + 1) + ': necesita title y cat.');
+
+      originalDeck = normalized;
+      deck = shuffle([...normalized]);
+      cats = [...new Set(normalized.map(d => d.cat))];
+      initGame();
+    }
+
+    function goSetup() { show('screen-setup'); }
+
+    function initGame() {
+      idx = 0; correct = 0; wrong = 0; skipped = 0; mistakes = [];
+      catCounts = {};
+      cats.forEach(c => catCounts[c] = 0);
+      buildCategories();
+      show('screen-game');
+      showCard();
+      updateScore();
+    }
+
+    function restartGame() {
+      deck = shuffle([...originalDeck]);
+      initGame();
+    }
+
+    function buildCategories() {
+      const el = document.getElementById('categories');
+      el.innerHTML = '';
+      cats.forEach((cat, index) => {
+        const z = document.createElement('div');
+        z.className = 'cat-zone';
+        z.dataset.cat = cat;
+        z.innerHTML = `<span class="cat-label">${escapeHTML(cat)}</span><span class="cat-count" id="cnt-${index}">0</span>`;
+        z.addEventListener('click', () => classify(cat));
+        el.appendChild(z);
+      });
+    }
+
+    function showCard() {
+      if (idx >= deck.length) { showResults(); return; }
+      const c = deck[idx];
+      document.getElementById('card-tag').textContent = c.tag || 'Clasificar';
+      document.getElementById('card-title').textContent = c.title;
+      document.getElementById('card-hint').textContent = c.hint || '';
+      document.getElementById('feedback').textContent = '';
+      document.getElementById('feedback').className = '';
+      resetCard();
+    }
+
+    function updateScore() {
+      document.getElementById('score-txt').textContent = correct + ' correctas';
+      document.getElementById('remain-txt').textContent = (deck.length - idx) + ' restantes';
+      document.getElementById('progress-fill').style.width = Math.round((idx / deck.length) * 100) + '%';
+    }
+
+    function classify(cat) {
+      if (idx >= deck.length) return;
+      const current = deck[idx];
+      catCounts[cat]++;
+      const catIndex = cats.indexOf(cat);
+      const el = document.getElementById('cnt-' + catIndex);
+      if (el) el.textContent = catCounts[cat];
+
+      const fb = document.getElementById('feedback');
+      if (current.cat === cat) {
+        correct++;
+        fb.textContent = '✓ Correcto';
+        fb.className = 'fb-ok';
+      } else {
+        wrong++;
+        mistakes.push({ card: current, chosen: cat });
+        fb.textContent = '✗ Era: ' + current.cat;
+        fb.className = 'fb-err';
+      }
+      idx++;
+      updateScore();
+      setTimeout(showCard, 850);
+    }
+
+    function skipCard() {
+      skipped++;
+      idx++;
+      updateScore();
+      showCard();
+    }
+
+    function showResults() {
+      show('screen-results');
+      const pct = deck.length > 0 ? Math.round((correct / deck.length) * 100) : 0;
+      document.getElementById('res-title').textContent = pct >= 80 ? '¡Excelente! 🎉' : pct >= 50 ? 'Buen intento 👍' : 'Sigue practicando 💪';
+      document.getElementById('res-sub').textContent = pct + '% de acierto (' + correct + '/' + deck.length + ')';
+      document.getElementById('res-correct').textContent = correct;
+      document.getElementById('res-wrong').textContent = wrong;
+      document.getElementById('res-skip').textContent = skipped;
+
+      const list = document.getElementById('corrections-list');
+      list.innerHTML = '';
+      if (mistakes.length === 0) {
+        document.getElementById('corr-title').textContent = '';
+        list.innerHTML = '<div class="no-errors">¡Sin errores! Clasificaste todo correctamente 🏆</div>';
+      } else {
+        document.getElementById('corr-title').textContent = 'Corrección de errores (' + mistakes.length + ')';
+        mistakes.forEach(m => {
+          const div = document.createElement('div');
+          div.className = 'correction-item';
+          div.innerHTML = `
+            <div class="ci-name">${escapeHTML(m.card.title)}</div>
+            <div class="ci-row">
+              <span class="ci-wrong">✗ Dijiste: ${escapeHTML(m.chosen)}</span>
+              <span class="ci-right">✓ Correcto: ${escapeHTML(m.card.cat)}</span>
+            </div>
+            ${m.card.hint ? `<div class="ci-hint">${escapeHTML(m.card.hint)}</div>` : ''}
+          `;
+          list.appendChild(div);
+        });
+      }
+    }
+
+    const card = document.getElementById('main-card');
+    let startX = 0;
+    let startY = 0;
+    let dragging = false;
+
+    function resetCard() {
+      card.style.transform = '';
+      card.style.opacity = '1';
+      card.style.transition = '';
+      document.getElementById('hint-l').style.opacity = '0';
+      document.getElementById('hint-r').style.opacity = '0';
+      document.querySelectorAll('.cat-zone').forEach(z => z.classList.remove('highlight'));
+    }
+
+    function getOverZone(x, y) {
+      for (const z of document.querySelectorAll('.cat-zone')) {
+        const r = z.getBoundingClientRect();
+        if (
+          x >= r.left &&
+          x <= r.right &&
+          y >= r.top &&
+          y <= r.bottom
+        ) {
+          return z.dataset.cat;
+        }
+      }
+      return null;
+    }
+
+    function onMove(dx, dy, absX, absY) {
+      const rot = dx * 0.045;
+      const distance = Math.min(320, Math.hypot(dx, dy));
+      const opacity = Math.max(0.55, 1 - distance / 420);
+
+      card.style.transform = `translate(${dx}px, ${dy}px) rotate(${rot}deg)`;
+      card.style.opacity = opacity;
+
+      const over = getOverZone(absX, absY);
+
+      document.querySelectorAll('.cat-zone').forEach(z => {
+        z.classList.toggle('highlight', z.dataset.cat === over);
+      });
+
+      document.getElementById('hint-l').style.opacity = dx < -30 ? Math.min(1, Math.abs(dx) / 80) : 0;
+      document.getElementById('hint-r').style.opacity = dx > 30 ? Math.min(1, dx / 80) : 0;
+    }
+
+    function onEnd(absX, absY) {
+      if (!dragging) return;
+
+      dragging = false;
+      card.classList.remove('dragging');
+
+      const over = getOverZone(absX, absY);
+
+      if (over) {
+        card.style.transition = 'transform 0.18s ease, opacity 0.18s';
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(-24px) scale(0.93)';
+        setTimeout(() => classify(over), 180);
+      } else {
+        resetCard();
+      }
+    }
+
+    card.addEventListener('mousedown', e => {
+      dragging = true;
+      startX = e.clientX;
+      startY = e.clientY;
+      card.classList.add('dragging');
+    });
+
+    card.addEventListener('touchstart', e => {
+      dragging = true;
+      startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
+      card.classList.add('dragging');
+    }, { passive: true });
+
+    document.addEventListener('mousemove', e => {
+      if (dragging) {
+        onMove(e.clientX - startX, e.clientY - startY, e.clientX, e.clientY);
+      }
+    });
+
+    document.addEventListener('touchmove', e => {
+      if (dragging) {
+        e.preventDefault();
+        onMove(
+          e.touches[0].clientX - startX,
+          e.touches[0].clientY - startY,
+          e.touches[0].clientX,
+          e.touches[0].clientY
+        );
+      }
+    }, { passive: false });
+
+    document.addEventListener('mouseup', e => {
+      if (dragging) onEnd(e.clientX, e.clientY);
+    });
+
+    document.addEventListener('touchend', e => {
+      if (dragging) {
+        onEnd(
+          e.changedTouches[0].clientX,
+          e.changedTouches[0].clientY
+        );
+      }
+    });
+
+    loadJsonList();
+// Nueva variable global para saber en qué carpeta estamos ubicados
+  let currentFolderUrl = GITHUB_API_URL;
+
+  // Evento para el botón de volver atrás
+  document.getElementById('btn-back-folders').addEventListener('click', () => {
+    currentFolderUrl = GITHUB_API_URL;
+    cargarListaJsonServidor(GITHUB_API_URL, true);
+  });
+
+  async function cargarListaJsonServidor(urlDestino, esRaiz = false) {
+    const grid = document.getElementById('json-grid');
+    const btnBack = document.getElementById('btn-back-folders');
+    const subtitle = document.getElementById('chooser-subtitle');
+    
+    grid.innerHTML = '<div class="json-loading">Cargando contenido desde GitHub...</div>';
+    
+    if (esRaiz) {
+      btnBack.style.display = 'none';
+      subtitle.textContent = 'Elige una categoría';
+    } else {
+      btnBack.style.display = 'inline-flex';
+    }
+
+    try {
+      const respuesta = await fetch((urlDestino || GITHUB_API_URL) + '?ts=' + Date.now());
+      if (!respuesta.ok) throw new Error('No se pudo leer la carpeta en GitHub');
+
+      const elementos = await respuesta.json();
+      grid.innerHTML = '';
+
+      if (elementos.length === 0) {
+        grid.innerHTML = '<div class="json-empty">Esta carpeta está vacía.</div>';
+        if (esRaiz) pintarTarjetaDemo(grid);
+        return;
+      }
+
+      // Separamos lo que nos devuelve la API de GitHub
+      const carpetas = elementos.filter(el => el.type === 'dir').sort((a, b) => a.name.localeCompare(b.name, 'es'));
+      const archivos = elementos.filter(el => el.type === 'file' && el.name.toLowerCase().endsWith('.json')).sort((a, b) => a.name.localeCompare(b.name, 'es'));
+
+      // 1. SI ESTAMOS EN LA RAÍZ: Pintamos las subcarpetas como categorías
+      if (esRaiz) {
+        if (carpetas.length === 0 && archivos.length === 0) {
+          grid.innerHTML = '<div class="json-empty">No hay contenido en <strong>json/relacionar/</strong>.</div>';
+          pintarTarjetaDemo(grid);
+          return;
+        }
+
+        // Renderizar carpetas
+        carpetas.forEach(carpeta => {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'json-card';
+          const titulo = nombreBonitoArchivo(carpeta.name);
+          btn.innerHTML = `
+            <span class="json-name" style="color: #378ADD;"><i class="ti ti-folder" aria-hidden="true" style="margin-right:4px"></i>${titulo}</span>
+            <span class="json-meta">Ver temas de este bloque</span>
+          `;
+          btn.addEventListener('click', () => {
+            subtitle.textContent = `Categoría: ${titulo}`;
+            currentFolderUrl = carpeta.url; // URL de la API para los contenidos de esta subcarpeta
+            cargarListaJsonServidor(carpeta.url, false);
+          });
+          grid.appendChild(btn);
+        });
+
+        // Por si tienes algún JSON suelto en la raíz
+        archivos.forEach(archivo => {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'json-card';
+          const titulo = nombreBonitoArchivo(archivo.name);
+          btn.innerHTML = `
+            <span class="json-name">${titulo}</span>
+            <span class="json-meta"><i class="ti ti-player-play" aria-hidden="true"></i>Cargar actividad</span>
+          `;
+          btn.addEventListener('click', () => cargarJsonDesdeUrl(archivo.download_url, titulo, btn));
+          grid.appendChild(btn);
+        });
+
+        pintarTarjetaDemo(grid);
+      } 
+      // 2. SI ESTAMOS DENTRO DE UNA SUBCARPETA: Pintamos solo sus archivos JSON
+      else {
+        if (archivos.length === 0) {
+          grid.innerHTML = '<div class="json-empty">No se encontraron archivos JSON en esta categoría.</div>';
+          return;
+        }
+
+        archivos.forEach(archivo => {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'json-card';
+          const titulo = nombreBonitoArchivo(archivo.name);
+          btn.innerHTML = `
+            <span class="json-name">${titulo}</span>
+            <span class="json-meta"><i class="ti ti-player-play" aria-hidden="true"></i>Cargar actividad</span>
+          `;
+          btn.addEventListener('click', () => cargarJsonDesdeUrl(archivo.download_url, titulo, btn));
+          grid.appendChild(btn);
+        });
+      }
+
+    } catch (error) {
+      console.error(error);
+      grid.innerHTML = '<div class="json-empty">Error al conectar con GitHub. Revisa la ruta de las carpetas.</div>';
+      if (esRaiz) pintarTarjetaDemo(grid);
+    }
+  }
+
+  async function cargarJsonDesdeUrl(ruta, nombre, tarjeta) {
+    try {
+      document.querySelectorAll('.json-card.active').forEach(c => c.classList.remove('active'));
+      if (tarjeta) tarjeta.classList.add('active');
+
+      const respuesta = await fetch(ruta + '?ts=' + Date.now());
+      if (!respuesta.ok) throw new Error('No se pudo abrir ' + ruta);
+
+      const parsed = await respuesta.json();
+      const data = getDataFromParsedJSON(parsed);
+
+      document.getElementById('file-name-text').textContent = nombre;
+      document.getElementById('pair-count').textContent = `· ${data.length} pares`;
+      document.getElementById('file-label').style.display = 'flex';
+
+      loadJSON(data);
+      document.getElementById('app').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } catch (error) {
+      console.error(error);
+      showMsg('Error al cargar el JSON. Revisa el formato del archivo.', 'msg-err', 3000);
+      if (tarjeta) tarjeta.classList.remove('active');
+    }
+  }
+
+  // Modificamos el botón actualizar para que refresque la carpeta en la que estemos situados
+  document.getElementById('btn-refresh-list').addEventListener('click', () => {
+    const esRaiz = (currentFolderUrl === GITHUB_API_URL);
+    cargarListaJsonServidor(currentFolderUrl, esRaiz);
+  });
+
+  // Al arrancar la primera vez, cargamos la raíz (esRaiz = true)
+  currentFolderUrl = GITHUB_API_URL;
+  cargarListaJsonServidor(GITHUB_API_URL, true);
+  </script>
+<script src="js/nav.js"></script>
+</body>
+</html>
